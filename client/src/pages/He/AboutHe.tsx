@@ -2,12 +2,13 @@ import { Header } from "../../components/Header"
 import ArrowPosts from "./ArrowPosts"
 import { SocialMediaList } from "./SocialMediaList"
 import mypic from "../../assets/he-pic.jpg"
+import { PageType } from "../../data/constants"
 
 export function AboutHe() {
 
     return (
         <>
-            <Header />
+            <Header type={PageType.HE}/>
             <main className="h-screen bg-he-background px-page-default space-y-14 pt-24" >
 
                 <div className="border-2 border-red-500 font-jomolhari flex justify-between h-4/6">
