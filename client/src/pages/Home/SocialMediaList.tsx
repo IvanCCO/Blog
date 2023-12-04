@@ -25,6 +25,20 @@ export function SocialMediaList() {
         }, {
             url: "https://www.youtube.com/channel/UCGl5UhjdrFYYPryKV5OIsiQ",
         },
+        // TODO Colocar o link do whatsapp
+        {
+            url: "https://wa.me/551192015034",
+            useDefault: false,
+            network: "whatsapp",
+        },
+        {
+            url: "ivanmedeiros0903@outlook.com",
+            useDefault: false,
+            network: "mailto",
+        },
+        {
+            url: "https://www.twitch.tv/lullyfito",
+        },
     ]
 
 

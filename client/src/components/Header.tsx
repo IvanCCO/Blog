@@ -5,7 +5,7 @@ import { IconInput } from './Input';
 export function Header() {
 
     return (
-        <div className="top-0 flex justify-between bg-he-background py-1 px-10 border-2 border-blue-100">
+        <div className="top-0 flex justify-between bg-he-background py-1 px-10">
 
             <div className="flex-none text-white font-itim text-5xl py-3">
                 Taxco.

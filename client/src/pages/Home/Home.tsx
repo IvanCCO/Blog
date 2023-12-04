@@ -1,6 +1,7 @@
 import { Header } from "../../components/Header"
 import ArrowPosts from "./ArrowPosts"
 import { SocialMediaList } from "./SocialMediaList"
+import mypic from "../../assets/he-pic.jpg"
 
 export function Home() {
 
@@ -9,8 +10,8 @@ export function Home() {
             <Header />
             <main className="h-screen bg-he-background px-page-default space-y-14 pt-24" >
 
-                <div className="border-2 border-red-500 font-jomolhari flex justify-between">
-                    <div className="flex flex-col justify-center w-2/3 border-2 border-yellow-300 px-7 space-y-9">
+                <div className="border-2 border-red-500 font-jomolhari flex justify-between h-4/6">
+                    <div className="flex flex-col justify-center w-1/2 border-2 border-yellow-300 px-7 space-y-9">
 
                         <div className="space-y-2">
                             <div>
@@ -28,7 +29,14 @@ export function Home() {
                         <SocialMediaList />
 
                     </div>
-                    <div className="flex items-center bg-slate-600 w-1/3 rounded-tl-full rounded-bl-full rounded-br-sm rounded-tr-sm"></div>
+                    <div className="flex items-center bg-slate-100 w-1/2 rounded-tl-full rounded-bl-full rounded-br-sm rounded-tr-sm overflow-hidden max-h-fit">
+                        <img
+                            src={mypic}
+                            alt="Descrição da imagem"
+                            className="w-full h-full object-cover rounded-tl-full rounded-bl-full rounded-br-sm rounded-tr-sm"
+                        />
+                    </div>
+
                 </div>
             </main>
 
