@@ -2,31 +2,33 @@ import { IconInput } from './Input';
 import { Logo } from "../components/Logo";
 import { PageType } from '../data/constants';
 
-const headerTemplate = (type: PageType) : string => {
+// const headerTemplate = (type: typeof PageType) : string => {
 
-    let bg = "#fff"
+//     let bg = "#fff"
 
-    switch (type) {
+//     switch (type) {
 
-        case 'HE':
-            bg = "#000"
-            break;
-        case 'SHE':
-            bg = "#000"
-            break;
-        case 'US':
-            bg = "#000"
-            break;
+//         case He:
+//             bg = "#000"
+//             break;
+//         case 'SHE':
+//             bg = "#000"
+//             break;
+//         case 'US':
+//             bg = "#000"
+//             break;
 
-    }
+//     }
 
-    return bg
+//     return bg
 
-}
+// }
 
-export function Header(type: typeof PageType) {
+export function Header({type} : {type: PageType}) {
 
-    const background = headerTemplate(type)
+    console.log(type)
+
+    // const background = headerTemplate(type)
 
     const headerItens = () => {
         return (

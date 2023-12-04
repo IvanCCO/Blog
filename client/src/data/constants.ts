@@ -4,3 +4,4 @@ export const PageType = {
   US: "US" as const,
   DEFAULT: "DEFAULT" as const,
 };
+export type PageType = typeof PageType[keyof typeof PageType];
