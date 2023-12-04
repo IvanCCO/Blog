@@ -11,8 +11,8 @@ export function AboutHe() {
             <Header type={PageType.HE}/>
             <main className="h-screen bg-he-background px-page-default space-y-14 pt-24" >
 
-                <div className="border-2 border-red-500 font-jomolhari flex justify-between h-4/6">
-                    <div className="flex flex-col justify-center w-1/2 border-2 border-yellow-300 px-7 space-y-9">
+                <div className="font-jomolhari flex justify-between h-4/6">
+                    <div className="flex flex-col justify-center w-1/2 px-7 space-y-9">
 
                         <div className="space-y-2">
                             <div>

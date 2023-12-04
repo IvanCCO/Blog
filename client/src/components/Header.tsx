@@ -1,38 +1,31 @@
 import { IconInput } from './Input';
 import { Logo } from "../components/Logo";
 import { PageType } from '../data/constants';
+import {
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+    MenuDivider,
+    IconButton,
+} from '@chakra-ui/react'
+import { HamburgerIcon, InfoOutlineIcon } from '@chakra-ui/icons'
+import { IoIosFemale, IoIosMale, IoIosHeartEmpty } from "react-icons/io";
+import { FaRegEdit } from "react-icons/fa";
 
-// const headerTemplate = (type: typeof PageType) : string => {
 
-//     let bg = "#fff"
+{/* TODO: Colocar aqui essa página para levar para sobre o projeto 
+    TODO: Mostrar apenas o command para quando a tela for grande
+                        
+*/}
 
-//     switch (type) {
-
-//         case He:
-//             bg = "#000"
-//             break;
-//         case 'SHE':
-//             bg = "#000"
-//             break;
-//         case 'US':
-//             bg = "#000"
-//             break;
-
-//     }
-
-//     return bg
-
-// }
-
-export function Header({type} : {type: PageType}) {
+export function Header({ type }: { type: PageType }) {
 
     console.log(type)
 
-    // const background = headerTemplate(type)
-
     const headerItens = () => {
         return (
-            <div className="hidden flex flex-row space-x-20 justify-between text-white text-md  place-items-center font-inter text-xl font-light ">
+            <div className="hidden flex-row space-x-20 justify-between text-white text-md  place-items-center font-inter text-xl font-light ">
                 <div>
                     <p className='cursor-pointer'>She</p>
                 </div>
@@ -46,8 +39,40 @@ export function Header({type} : {type: PageType}) {
         )
     }
 
+    const hamburguer = () => {
+        return (
+            <Menu>
+                <MenuButton
+                    as={IconButton}
+                    aria-label='Options'
+                    icon={<HamburgerIcon boxSize={6} />}
+                    variant='outline'
+                />
+                <MenuList>
+                    <MenuItem icon={<IoIosFemale />}>
+                        She
+                    </MenuItem>
+                    <MenuItem icon={<IoIosHeartEmpty />} >
+                        Us
+                    </MenuItem>
+                    <MenuItem icon={<IoIosMale />} >
+                        He
+                    </MenuItem>
+                    <MenuDivider />
+                    <MenuItem icon={<FaRegEdit />} >
+                        Create
+                    </MenuItem>
+                    <MenuItem icon={<InfoOutlineIcon />} command='⌘H'>
+
+                        About
+                    </MenuItem>
+                </MenuList>
+            </Menu>
+        )
+    }
+
     return (
-        <div className="top-0 flex justify-between bg-he-background py-1 px-10">
+        <div className="top-0 flex justify-between bg-he-background py-1 px-10 place-items-center">
 
             <Logo />
             {headerItens()}
@@ -55,6 +80,8 @@ export function Header({type} : {type: PageType}) {
             <div className='flex place-items-center'>
                 <IconInput />
             </div>
+
+            {hamburguer()}
 
         </div>
     )
