@@ -12,6 +12,7 @@ import {
 import { HamburgerIcon, InfoOutlineIcon } from '@chakra-ui/icons'
 import { IoIosFemale, IoIosMale, IoIosHeartEmpty } from "react-icons/io";
 import { FaRegEdit } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 {/* TODO: Colocar aqui essa página para levar para sobre o projeto 
@@ -25,7 +26,7 @@ export function Header({ type }: { type: PageType }) {
 
     const headerItens = () => {
         return (
-            <div className="hidden flex-row space-x-20 justify-between text-white text-md  place-items-center font-inter text-xl font-light ">
+            <div className="hidden flex-row space-x-20 justify-between text-white text-md  place-items-center font-inter text-xl font-light">
                 <div>
                     <p className='cursor-pointer'>She</p>
                 </div>
@@ -49,30 +50,42 @@ export function Header({ type }: { type: PageType }) {
                     variant='outline'
                 />
                 <MenuList>
-                    <MenuItem icon={<IoIosFemale />}>
-                        She
-                    </MenuItem>
-                    <MenuItem icon={<IoIosHeartEmpty />} >
-                        Us
-                    </MenuItem>
-                    <MenuItem icon={<IoIosMale />} >
-                        He
-                    </MenuItem>
-                    <MenuDivider />
-                    <MenuItem icon={<FaRegEdit />} >
-                        Create
-                    </MenuItem>
-                    <MenuItem icon={<InfoOutlineIcon />} command='⌘H'>
 
-                        About
-                    </MenuItem>
+                    <Link to={"about/she"}>
+                        <MenuItem icon={<IoIosFemale />}>
+                            She
+                        </MenuItem>
+                    </Link>
+                    <Link to={"/"}>
+                        <MenuItem icon={<IoIosHeartEmpty />} >
+                            Us
+                        </MenuItem>
+                    </Link>
+                    <Link to={"/about/he"}>
+                        <MenuItem icon={<IoIosMale />} >
+                            He
+                        </MenuItem>
+                    </Link>
+                    <MenuDivider />
+
+                    <Link to={"create"}>
+                        <MenuItem icon={<FaRegEdit />} >
+                            Create
+                        </MenuItem>
+                    </Link>
+
+                    <Link to={"about"}>
+                        <MenuItem icon={<InfoOutlineIcon />} command='⌘H'>
+                            About
+                        </MenuItem>
+                    </Link>
                 </MenuList>
-            </Menu>
+            </Menu >
         )
     }
 
     return (
-        <div className="top-0 flex justify-between bg-he-background py-1 px-10 place-items-center">
+        <div className="top-0 flex justify-between bg-he-background py-1 px-5 place-items-center">
 
             <Logo />
             {headerItens()}
