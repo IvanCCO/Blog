@@ -20,25 +20,43 @@ import { Link } from "react-router-dom";
                         
 */}
 
-export function Header({ type }: { type: PageType }) {
+const chooseBgColor = (type: PageType) => {
 
     console.log(type)
 
-    const headerItens = () => {
-        return (
-            <div className="hidden flex-row space-x-20 justify-between text-white text-md  place-items-center font-inter text-xl font-light">
-                <div>
-                    <p className='cursor-pointer'>She</p>
-                </div>
-                <div>
-                    <p className='cursor-pointer'>Us</p>
-                </div>
-                <div>
-                    <p className='cursor-pointer'>He</p>
-                </div>
-            </div>
-        )
+    switch (type) {
+        case 'HE':
+            return "he-background"
+        case 'SHE':
+            return "she-background"
+        case 'US':
+            return "white"
+        case 'DEFAULT':
+            return "white"
     }
+
+}
+
+const headerItens = () => {
+    return (
+        <div className="hidden flex-row space-x-20 justify-between text-white text-md  place-items-center font-inter text-xl font-light">
+            <div>
+                <p className='cursor-pointer'>She</p>
+            </div>
+            <div>
+                <p className='cursor-pointer'>Us</p>
+            </div>
+            <div>
+                <p className='cursor-pointer'>He</p>
+            </div>
+        </div>
+    )
+}
+
+
+export function Header({ type }: { type: PageType }) {
+
+    console.log(type)
 
     const hamburguer = () => {
         return (
@@ -85,8 +103,8 @@ export function Header({ type }: { type: PageType }) {
     }
 
     return (
-        <div className="top-0 flex justify-between bg-he-background py-1 px-5 place-items-center">
 
+        <div className={` bg-${chooseBgColor(type)} flex justify-between py-1 px-5 place-items-center`}>
             <Logo />
             {headerItens()}
 
