@@ -2,7 +2,11 @@ import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react'
 import { IoSearchOutline } from "react-icons/io5";
 
 /* This function should receive as a parameter right element, left element, and hasElement : Boolean*/
-export function IconInput() {
+interface IconInputProps {
+  bg: string;
+}
+
+export function IconInput({bg} : IconInputProps) {
   return (
   <InputGroup bg={'#5B5B5B'} border={'none'} borderRadius='full'>
     <InputLeftElement pointerEvents='none'>

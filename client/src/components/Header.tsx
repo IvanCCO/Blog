@@ -54,49 +54,39 @@ const headerItens = () => {
 }
 
 
+/* Colorscheme on dark mode is whiteAlpha and on white mode is default" */
 export function Header({ type }: { type: PageType }) {
-
-    console.log(type)
 
     const hamburguer = () => {
         return (
-            <Menu>
+            <Menu >
                 <MenuButton
                     as={IconButton}
                     aria-label='Options'
                     icon={<HamburgerIcon boxSize={6} />}
                     variant='outline'
+                    colorScheme='whiteAlpha'
                 />
-                <MenuList>
+                <MenuList bg={'teal'} color={'teal'}>
 
-                    <Link to={"about/she"}>
-                        <MenuItem icon={<IoIosFemale />}>
-                            She
-                        </MenuItem>
-                    </Link>
-                    <Link to={"/"}>
-                        <MenuItem icon={<IoIosHeartEmpty />} >
-                            Us
-                        </MenuItem>
-                    </Link>
-                    <Link to={"/about/he"}>
-                        <MenuItem icon={<IoIosMale />} >
-                            He
-                        </MenuItem>
-                    </Link>
+                    <MenuItem as='a' href='/about/she' icon={<IoIosFemale />} bg={'teal'}>
+                        She
+                    </MenuItem>
+                    <MenuItem as='a' href='/' icon={<IoIosHeartEmpty />} >
+                        Us
+                    </MenuItem>
+                    <MenuItem as='a' href='/about/he' icon={<IoIosMale />} >
+                        He
+                    </MenuItem>
                     <MenuDivider />
 
-                    <Link to={"create"}>
-                        <MenuItem icon={<FaRegEdit />} >
-                            Create
-                        </MenuItem>
-                    </Link>
+                    <MenuItem as='a' href='/create' icon={<FaRegEdit />} >
+                        Create
+                    </MenuItem>
 
-                    <Link to={"about"}>
-                        <MenuItem icon={<InfoOutlineIcon />} command='⌘H'>
-                            About
-                        </MenuItem>
-                    </Link>
+                    <MenuItem as='a' href='/about/taxco' icon={<InfoOutlineIcon />} command='⌘H'>
+                        About
+                    </MenuItem>
                 </MenuList>
             </Menu >
         )
@@ -109,7 +99,7 @@ export function Header({ type }: { type: PageType }) {
             {headerItens()}
 
             <div className='flex place-items-center'>
-                <IconInput />
+                <IconInput bg="d" />
             </div>
 
             {hamburguer()}
