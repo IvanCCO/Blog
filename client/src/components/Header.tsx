@@ -67,24 +67,24 @@ export function Header({ type }: { type: PageType }) {
                     variant='outline'
                     colorScheme='whiteAlpha'
                 />
-                <MenuList bg={'teal'} color={'teal'}>
+                <MenuList bg={'teal'} color={'white'} bgColor={"teal"} borderColor={"teal"}>
 
-                    <MenuItem as='a' href='/about/she' icon={<IoIosFemale />} bg={'teal'}>
+                    <MenuItem as='a' href='/about/she' icon={<IoIosFemale />} bg={"teal"}>
                         She
                     </MenuItem>
-                    <MenuItem as='a' href='/' icon={<IoIosHeartEmpty />} >
+                    <MenuItem as='a' href='/' icon={<IoIosHeartEmpty />} bg={"teal"}>
                         Us
                     </MenuItem>
-                    <MenuItem as='a' href='/about/he' icon={<IoIosMale />} >
+                    <MenuItem as='a' href='/about/he' icon={<IoIosMale />} bg={"teal"}>
                         He
                     </MenuItem>
-                    <MenuDivider />
+                    <MenuDivider color={"teal"}/>
 
-                    <MenuItem as='a' href='/create' icon={<FaRegEdit />} >
+                    <MenuItem as='a' href='/create' icon={<FaRegEdit />} bg={"teal"}>
                         Create
                     </MenuItem>
 
-                    <MenuItem as='a' href='/about/taxco' icon={<InfoOutlineIcon />} command='⌘H'>
+                    <MenuItem as='a' href='/about/taxco' icon={<InfoOutlineIcon />} command='⌘H' bg={"teal"}>
                         About
                     </MenuItem>
                 </MenuList>
