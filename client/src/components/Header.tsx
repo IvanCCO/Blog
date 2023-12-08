@@ -94,8 +94,8 @@ export function Header({ type }: { type: PageType }) {
 
     return (
 
-        <div className={` bg-${chooseBgColor(type)} flex justify-between py-1 px-5 place-items-center`}>
-            <Logo />
+        <div className={`bg-${chooseBgColor(type)} flex justify-between py-1 px-5 place-items-center`}>
+            <Logo color='black'/>
             {headerItens()}
 
             <div className='flex place-items-center'>
