@@ -12,7 +12,6 @@ import {
 import { HamburgerIcon, InfoOutlineIcon } from '@chakra-ui/icons'
 import { IoIosFemale, IoIosMale, IoIosHeartEmpty } from "react-icons/io";
 import { FaRegEdit } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 
 {/* TODO: Colocar aqui essa página para levar para sobre o projeto 
@@ -22,8 +21,10 @@ import { Link } from "react-router-dom";
 type HeaderStyle = {
     mainBackground: string,
     logoColor: string,
-    hamburguerColor: string,
-    menuListBackground: string
+    hamburgerTheme: string,
+    menuListBackground: string,
+    menuListBorder: string, 
+    inputBackground: string
 }
 
 const chooseHeaderStyle = (type: PageType): HeaderStyle => {
@@ -32,29 +33,37 @@ const chooseHeaderStyle = (type: PageType): HeaderStyle => {
             return {
                 mainBackground: 'he-background',
                 logoColor: 'white',
-                hamburguerColor: 'whiteAlpha',
-                menuListBackground: 'he-menu-list-background'
+                hamburgerTheme: 'whiteAlpha',
+                menuListBackground: 'white',
+                inputBackground: "black",
+                menuListBorder: "black", 
             };
         case 'SHE':
             return {
                 mainBackground: 'she-background',
                 logoColor: 'she-logo-color',
-                hamburguerColor: 'she-hamburguer-color',
-                menuListBackground: 'she-menu-list-background'
+                hamburgerTheme: 'gray',
+                menuListBackground: 'white',
+                inputBackground: "black",
+                menuListBorder: "black", 
             };
         case 'US':
             return {
                 mainBackground: 'white',
-                logoColor: 'us-logo-color',
-                hamburguerColor: 'us-hamburguer-color',
-                menuListBackground: 'us-menu-list-background'
+                logoColor: 'black',
+                hamburgerTheme: 'blackAlpha',
+                menuListBackground: 'white',
+                inputBackground: "white",
+                menuListBorder: "black", 
             };
         case 'DEFAULT':
             return {
                 mainBackground: 'white',
-                logoColor: 'default-logo-color',
-                hamburguerColor: 'default-hamburguer-color',
-                menuListBackground: 'default-menu-list-background'
+                logoColor: 'black',
+                hamburgerTheme: 'default-hamburguer-color',
+                menuListBackground: 'white',
+                inputBackground: "black",
+                menuListBorder: "black", 
             };
         default:
             throw new Error(`Invalid page type: ${type}`);
@@ -93,26 +102,27 @@ export function Header({ type }: { type: PageType }) {
                     aria-label='Options'
                     icon={<HamburgerIcon boxSize={6} />}
                     variant='outline'
-                    colorScheme={headerStyle.hamburguerColor}
+                    colorScheme={headerStyle.hamburgerTheme}
                 />
-                <MenuList bg={'teal'} color={'white'} bgColor={"teal"} borderColor={"teal"}>
+                <MenuList bg={headerStyle.menuListBackground} color={"black"} bgColor={headerStyle.menuListBackground} borderColor={"black"}>
 
-                    <MenuItem as='a' href='/about/she' icon={<IoIosFemale />} bg={"teal"}>
+                    <MenuItem as='a' href='/about/she' icon={<IoIosFemale />} bg={headerStyle.menuListBackground}>
                         She
                     </MenuItem>
-                    <MenuItem as='a' href='/' icon={<IoIosHeartEmpty />} bg={"teal"}>
+                    <MenuItem as='a' href='/' icon={<IoIosHeartEmpty />} bg={headerStyle.menuListBackground}>
                         Us
                     </MenuItem>
-                    <MenuItem as='a' href='/about/he' icon={<IoIosMale />} bg={"teal"}>
+                    <MenuItem as='a' href='/about/he' icon={<IoIosMale />} bg={headerStyle.menuListBackground}>
                         He
                     </MenuItem>
-                    <MenuDivider color={"teal"}/>
 
-                    <MenuItem as='a' href='/create' icon={<FaRegEdit />} bg={"teal"}>
+                    <MenuDivider color={headerStyle.menuListBackground}/>
+
+                    <MenuItem as='a' href='/create' icon={<FaRegEdit />} bg={headerStyle.menuListBackground}>
                         Create
                     </MenuItem>
 
-                    <MenuItem as='a' href='/about/taxco' icon={<InfoOutlineIcon />} command='⌘H' bg={"teal"}>
+                    <MenuItem as='a' href='/about/taxco' icon={<InfoOutlineIcon />} command='⌘H' bg={headerStyle.menuListBackground}>
                         About
                     </MenuItem>
                 </MenuList>
@@ -128,11 +138,9 @@ export function Header({ type }: { type: PageType }) {
             {headerItens()}
 
             <div className='flex place-items-center'>
-                <IconInput bg={headerStyle.hamburguerColor} />
+                <IconInput bg={headerStyle.inputBackground} />
             </div>
-
             {hamburguer()}
-
         </div>
     )
 

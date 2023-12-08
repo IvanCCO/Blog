@@ -8,11 +8,11 @@ interface IconInputProps {
 
 export function IconInput({bg} : IconInputProps) {
   return (
-  <InputGroup bg={'#5B5B5B'} border={'none'} borderRadius='full'>
+  <InputGroup bg={"#F1F1F1"} border={'none'} borderRadius='full'>
     <InputLeftElement pointerEvents='none'>
-      <IoSearchOutline color='white'/>
+      <IoSearchOutline color='black'/>
     </InputLeftElement>
-    <Input type='tel' placeholder='Search' borderRadius='full' color={'white'} border={'none'} _placeholder={{ opacity: 0.4, color: 'inherit' }}/>
+    <Input type='tel' colorScheme='blackAlpha'  placeholder='Search' borderRadius='full' color={'black'} border={'none'} _placeholder={{ opacity: 0.4, color: 'inherit' }}/>
   </InputGroup>
   );
 }
