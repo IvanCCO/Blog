@@ -17,25 +17,50 @@ import { Link } from "react-router-dom";
 
 {/* TODO: Colocar aqui essa página para levar para sobre o projeto 
     TODO: Mostrar apenas o command para quando a tela for grande
-                        
 */}
 
-const chooseBgColor = (type: PageType) => {
+type HeaderStyle = {
+    mainBackground: string,
+    logoColor: string,
+    hamburguerColor: string,
+    menuListBackground: string
+}
 
-    console.log(type)
-
+const chooseHeaderStyle = (type: PageType): HeaderStyle => {
     switch (type) {
         case 'HE':
-            return "he-background"
+            return {
+                mainBackground: 'he-background',
+                logoColor: 'white',
+                hamburguerColor: 'whiteAlpha',
+                menuListBackground: 'he-menu-list-background'
+            };
         case 'SHE':
-            return "she-background"
+            return {
+                mainBackground: 'she-background',
+                logoColor: 'she-logo-color',
+                hamburguerColor: 'she-hamburguer-color',
+                menuListBackground: 'she-menu-list-background'
+            };
         case 'US':
-            return "white"
+            return {
+                mainBackground: 'white',
+                logoColor: 'us-logo-color',
+                hamburguerColor: 'us-hamburguer-color',
+                menuListBackground: 'us-menu-list-background'
+            };
         case 'DEFAULT':
-            return "white"
+            return {
+                mainBackground: 'white',
+                logoColor: 'default-logo-color',
+                hamburguerColor: 'default-hamburguer-color',
+                menuListBackground: 'default-menu-list-background'
+            };
+        default:
+            throw new Error(`Invalid page type: ${type}`);
     }
+};
 
-}
 
 const headerItens = () => {
     return (
@@ -57,6 +82,9 @@ const headerItens = () => {
 /* Colorscheme on dark mode is whiteAlpha and on white mode is default" */
 export function Header({ type }: { type: PageType }) {
 
+
+    const headerStyle = chooseHeaderStyle(type)
+
     const hamburguer = () => {
         return (
             <Menu >
@@ -65,7 +93,7 @@ export function Header({ type }: { type: PageType }) {
                     aria-label='Options'
                     icon={<HamburgerIcon boxSize={6} />}
                     variant='outline'
-                    colorScheme='whiteAlpha'
+                    colorScheme={headerStyle.hamburguerColor}
                 />
                 <MenuList bg={'teal'} color={'white'} bgColor={"teal"} borderColor={"teal"}>
 
@@ -94,12 +122,13 @@ export function Header({ type }: { type: PageType }) {
 
     return (
 
-        <div className={`bg-${chooseBgColor(type)} flex justify-between py-1 px-5 place-items-center`}>
-            <Logo color='black'/>
+        <div className={`bg-${headerStyle.mainBackground} flex justify-between py-1 px-5 place-items-center`}>
+            <Logo color={headerStyle.logoColor}/>
+
             {headerItens()}
 
             <div className='flex place-items-center'>
-                <IconInput bg="d" />
+                <IconInput bg={headerStyle.hamburguerColor} />
             </div>
 
             {hamburguer()}
