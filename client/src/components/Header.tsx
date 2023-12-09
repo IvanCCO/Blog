@@ -14,6 +14,7 @@ type HeaderStyle = {
     menuListBorder: string, 
     inputBackground: string,
     inputForeground: string
+    colorText: string
 }
 
 const chooseHeaderStyle = (type: PageType): HeaderStyle => {
@@ -23,10 +24,11 @@ const chooseHeaderStyle = (type: PageType): HeaderStyle => {
                 mainBackground: 'he-background',
                 logoColor: 'white',
                 hamburgerTheme: 'whiteAlpha',
-                menuListBackground: 'white',
+                menuListBackground: '#3A3A3E',
                 inputBackground: "#5B5B5B",
-                menuListBorder: "black", 
-                inputForeground: "white"
+                menuListBorder: "white", 
+                inputForeground: "white",
+                colorText: "white" 
             };
         case 'SHE':
             return {
@@ -36,17 +38,19 @@ const chooseHeaderStyle = (type: PageType): HeaderStyle => {
                 menuListBackground: 'white',
                 inputBackground: "black",
                 menuListBorder: "black", 
-                inputForeground: "black"
+                inputForeground: "black",
+                colorText: "white" 
             };
         case 'US':
             return {
                 mainBackground: 'white',
                 logoColor: 'black',
                 hamburgerTheme: 'blackAlpha',
-                menuListBackground: 'white',
+                menuListBackground: '#F1F1F1',
                 inputBackground: "white",
                 menuListBorder: "black", 
-                inputForeground: "black"
+                inputForeground: "black",
+                colorText: "white" 
             };
         case 'DEFAULT':
             return {
@@ -56,7 +60,8 @@ const chooseHeaderStyle = (type: PageType): HeaderStyle => {
                 menuListBackground: 'white',
                 inputBackground: "black",
                 menuListBorder: "black", 
-                inputForeground: "black"
+                inputForeground: "black",
+                colorText: "white" 
             };
         default:
             throw new Error(`Invalid page type: ${type}`);
@@ -84,10 +89,9 @@ const headerItens = () => {
 /* Colorscheme on dark mode is whiteAlpha and on white mode is default" */
 export function Header({ type }: { type: PageType }) {
 
-
     const headerStyle = chooseHeaderStyle(type)
     const searchInput = IconInput({backgroundColor: headerStyle.inputBackground, foregroundColor: headerStyle.inputForeground});
-    const hamburger = Hamburguer({theme: headerStyle.hamburgerTheme, menuListBackground: headerStyle.menuListBackground})
+    const hamburger = Hamburguer({theme: headerStyle.hamburgerTheme, menuListBackground: headerStyle.menuListBackground, textColor: headerStyle.colorText})
 
     return (
 

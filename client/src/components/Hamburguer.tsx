@@ -10,7 +10,7 @@ import { HamburgerIcon, InfoOutlineIcon } from '@chakra-ui/icons'
 import { IoIosFemale, IoIosMale, IoIosHeartEmpty } from "react-icons/io";
 import { FaRegEdit } from "react-icons/fa";
 
-export function Hamburguer({theme, menuListBackground} : {theme : string; menuListBackground : string}) {
+export function Hamburguer({theme, menuListBackground, textColor} : {theme : string; menuListBackground : string; textColor : string}) {
     return (
         <Menu >
             <MenuButton
@@ -20,7 +20,7 @@ export function Hamburguer({theme, menuListBackground} : {theme : string; menuLi
                 variant='outline'
                 colorScheme={theme}
             />
-            <MenuList bg={menuListBackground} color={"black"} bgColor={menuListBackground} borderColor={"black"}>
+            <MenuList bg={menuListBackground} color={textColor} bgColor={menuListBackground} borderColor={"black"}>
 
                 <MenuItem as='a' href='/about/she' icon={<IoIosFemale />} bg={menuListBackground}>
                     She
