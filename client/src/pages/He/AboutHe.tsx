@@ -5,7 +5,7 @@ import mypic from "../../assets/he-pic.jpg"
 import { PageType } from "../../data/constants"
 
 const desktopWorking = <>
-    <main className="h-screen bg-he-background px-page-default space-y-14 pt-24" >
+    <main className="h-full bg-he-background px-page-default space-y-14 pt-24" >
 
         <div className="font-jomolhari flex justify-between h-4/6">
             <div className="flex flex-col justify-center w-1/2 px-7 space-y-9">
@@ -46,7 +46,7 @@ export function AboutHe() {
         <>
             <Header type={PageType.HE} />
 
-            <main className="h-screen pt-32 bg-he-background px-default-width" >
+            <main className="h-full py-32 bg-he-background px-default-width" >
 
                 <div className="font-jomolhari flex flex-col text-font-black-color space-y-default-heigh">
 
@@ -65,6 +65,18 @@ export function AboutHe() {
                         </div>
                     </div>
                     {/* TODO:  My posts components -> arrow maybe change to something better*/}
+                    <div className="flex flex-row">
+                        <div className="w-1/2">
+                            <SocialMediaList />
+                        </div>
+                        <div className="w-1/2 h-full">
+                            <img
+                                src={mypic}
+                                alt="Descrição da imagem"
+                                className="w-full object-cover rounded-tl-full rounded-bl-full rounded-br-sm rounded-tr-sm"
+                            />
+                        </div>
+                    </div>
                     <ArrowPosts />
 
                 </div>

@@ -44,8 +44,10 @@ export function SocialMediaList() {
 
     return (
 
-        <ul className='flex flex-row space-x-5'>
+        <ul className='grid grid-cols-3 gap-2'>
+
             {socialMedias.map((value, index) => (
+                // Iterate over the social medias and put on a list
                 <li key={index}>
                     <SocialIcon
                         url={value.url}
