@@ -22,7 +22,8 @@ module.exports = {
         "2xl": "1.75rem",
       },
       spacing: {
-        'page-default' : "18rem"
+        'default-width' : "1.25rem",
+        'default-heigh' : "2.5rem" 
       }
     },
   },
