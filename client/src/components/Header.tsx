@@ -130,6 +130,8 @@ export function Header({ type }: { type: PageType }) {
         )
     }
 
+    const searchInput = IconInput({backgroundColor: "#5B5B5B", foregroundColor: "#FFFFFF"});
+
     return (
 
         <div className={`fixed top-0 left-0 right-0 bg-${headerStyle.mainBackground} flex justify-between py-1 px-5 place-items-center`}>
@@ -138,7 +140,7 @@ export function Header({ type }: { type: PageType }) {
             {headerItens()}
 
             <div className='flex place-items-center'>
-                <IconInput bg={headerStyle.inputBackground} />
+                {searchInput}
             </div>
             {hamburguer()}
         </div>
