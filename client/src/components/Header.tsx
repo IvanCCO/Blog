@@ -17,6 +17,7 @@ type HeaderStyle = {
     colorText: string
 }
 
+/* Choose header style like input color hamburguer and etc depending on page */
 const chooseHeaderStyle = (type: PageType): HeaderStyle => {
     switch (type) {
         case 'HE':
@@ -47,21 +48,21 @@ const chooseHeaderStyle = (type: PageType): HeaderStyle => {
                 logoColor: 'black',
                 hamburgerTheme: 'blackAlpha',
                 menuListBackground: '#F1F1F1',
-                inputBackground: "white",
+                inputBackground: "#F1F1F1",
                 menuListBorder: "black", 
                 inputForeground: "black",
-                colorText: "white" 
+                colorText: "low-text-black" 
             };
         case 'DEFAULT':
             return {
                 mainBackground: 'white',
                 logoColor: 'black',
-                hamburgerTheme: 'default-hamburguer-color',
-                menuListBackground: 'white',
-                inputBackground: "black",
+                hamburgerTheme: 'blackAlpha',
+                menuListBackground: '#F1F1F1',
+                inputBackground: "#F1F1F1",
                 menuListBorder: "black", 
                 inputForeground: "black",
-                colorText: "white" 
+                colorText: "low-text-black" 
             };
         default:
             throw new Error(`Invalid page type: ${type}`);
