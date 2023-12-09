@@ -6,7 +6,11 @@ import { IoIosFemale, IoIosMale, IoIosHeartEmpty } from "react-icons/io";
 ====== 
 Just if i need lol
 */
-export function IconInput({ backgroundColor, foregroundColor }: { backgroundColor: string; foregroundColor: string }) {
+interface IconInputProps {
+  backgroundColor: string; 
+  foregroundColor: string;
+}
+export function SearchInput({backgroundColor, foregroundColor }: IconInputProps) {
   return (
   <InputGroup bg={backgroundColor} border={'none'} borderRadius='full'>
     <InputLeftElement pointerEvents='none'>

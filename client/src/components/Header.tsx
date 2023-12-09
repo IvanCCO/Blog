@@ -1,7 +1,7 @@
-import { IconInput } from './Input';
 import { Logo } from "../components/Logo";
 import { PageType } from '../data/constants';
 import { Hamburguer } from './Hamburguer';
+import { SearchInput } from "./SearchInput";
 
 {/* TODO: Colocar aqui essa página para levar para sobre o projeto 
     TODO: Mostrar apenas o command para quando a tela for grande
@@ -91,9 +91,7 @@ const headerItens = () => {
 export function Header({ type }: { type: PageType }) {
 
     const headerStyle = chooseHeaderStyle(type)
-    const searchInput = IconInput({backgroundColor: headerStyle.inputBackground, foregroundColor: headerStyle.inputForeground});
-    const hamburger = Hamburguer({theme: headerStyle.hamburgerTheme, menuListBackground: headerStyle.menuListBackground, textColor: headerStyle.colorText})
-
+    
     return (
 
         <div className={`fixed top-0 left-0 right-0 bg-${headerStyle.mainBackground} flex justify-between py-1 px-5 place-items-center`}>
@@ -102,7 +100,7 @@ export function Header({ type }: { type: PageType }) {
             {headerItens()}
 
             <div className='flex place-items-center'>
-                {searchInput}
+                <SearchInput backgroundColor={headerStyle.inputBackground} foregroundColor={headerStyle.inputForeground}/>
             </div>
 
             <Hamburguer theme={headerStyle.hamburgerTheme} menuListBackground={headerStyle.menuListBackground} textColor={headerStyle.colorText} />
