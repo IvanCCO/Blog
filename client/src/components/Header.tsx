@@ -17,14 +17,14 @@ import { FaRegEdit } from "react-icons/fa";
 {/* TODO: Colocar aqui essa página para levar para sobre o projeto 
     TODO: Mostrar apenas o command para quando a tela for grande
 */}
-
 type HeaderStyle = {
     mainBackground: string,
     logoColor: string,
     hamburgerTheme: string,
     menuListBackground: string,
     menuListBorder: string, 
-    inputBackground: string
+    inputBackground: string,
+    inputForeground: string
 }
 
 const chooseHeaderStyle = (type: PageType): HeaderStyle => {
@@ -35,8 +35,9 @@ const chooseHeaderStyle = (type: PageType): HeaderStyle => {
                 logoColor: 'white',
                 hamburgerTheme: 'whiteAlpha',
                 menuListBackground: 'white',
-                inputBackground: "black",
+                inputBackground: "#5B5B5B",
                 menuListBorder: "black", 
+                inputForeground: "white"
             };
         case 'SHE':
             return {
@@ -46,6 +47,7 @@ const chooseHeaderStyle = (type: PageType): HeaderStyle => {
                 menuListBackground: 'white',
                 inputBackground: "black",
                 menuListBorder: "black", 
+                inputForeground: "black"
             };
         case 'US':
             return {
@@ -55,6 +57,7 @@ const chooseHeaderStyle = (type: PageType): HeaderStyle => {
                 menuListBackground: 'white',
                 inputBackground: "white",
                 menuListBorder: "black", 
+                inputForeground: "black"
             };
         case 'DEFAULT':
             return {
@@ -64,6 +67,7 @@ const chooseHeaderStyle = (type: PageType): HeaderStyle => {
                 menuListBackground: 'white',
                 inputBackground: "black",
                 menuListBorder: "black", 
+                inputForeground: "black"
             };
         default:
             throw new Error(`Invalid page type: ${type}`);
@@ -93,6 +97,8 @@ export function Header({ type }: { type: PageType }) {
 
 
     const headerStyle = chooseHeaderStyle(type)
+
+    const searchInput = IconInput({backgroundColor: headerStyle.inputBackground, foregroundColor: headerStyle.inputForeground});
 
     const hamburguer = () => {
         return (
@@ -130,7 +136,6 @@ export function Header({ type }: { type: PageType }) {
         )
     }
 
-    const searchInput = IconInput({backgroundColor: "#5B5B5B", foregroundColor: "#FFFFFF"});
 
     return (
 
