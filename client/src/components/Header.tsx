@@ -1,18 +1,7 @@
 import { IconInput } from './Input';
 import { Logo } from "../components/Logo";
 import { PageType } from '../data/constants';
-import {
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    MenuDivider,
-    IconButton,
-} from '@chakra-ui/react'
-import { HamburgerIcon, InfoOutlineIcon } from '@chakra-ui/icons'
-import { IoIosFemale, IoIosMale, IoIosHeartEmpty } from "react-icons/io";
-import { FaRegEdit } from "react-icons/fa";
-
+import { Hamburguer } from './Hamburguer';
 
 {/* TODO: Colocar aqui essa página para levar para sobre o projeto 
     TODO: Mostrar apenas o command para quando a tela for grande
@@ -97,45 +86,8 @@ export function Header({ type }: { type: PageType }) {
 
 
     const headerStyle = chooseHeaderStyle(type)
-
     const searchInput = IconInput({backgroundColor: headerStyle.inputBackground, foregroundColor: headerStyle.inputForeground});
-
-    const hamburguer = () => {
-        return (
-            <Menu >
-                <MenuButton
-                    as={IconButton}
-                    aria-label='Options'
-                    icon={<HamburgerIcon boxSize={6} />}
-                    variant='outline'
-                    colorScheme={headerStyle.hamburgerTheme}
-                />
-                <MenuList bg={headerStyle.menuListBackground} color={"black"} bgColor={headerStyle.menuListBackground} borderColor={"black"}>
-
-                    <MenuItem as='a' href='/about/she' icon={<IoIosFemale />} bg={headerStyle.menuListBackground}>
-                        She
-                    </MenuItem>
-                    <MenuItem as='a' href='/' icon={<IoIosHeartEmpty />} bg={headerStyle.menuListBackground}>
-                        Us
-                    </MenuItem>
-                    <MenuItem as='a' href='/about/he' icon={<IoIosMale />} bg={headerStyle.menuListBackground}>
-                        He
-                    </MenuItem>
-
-                    <MenuDivider color={headerStyle.menuListBackground}/>
-
-                    <MenuItem as='a' href='/create' icon={<FaRegEdit />} bg={headerStyle.menuListBackground}>
-                        Create
-                    </MenuItem>
-
-                    <MenuItem as='a' href='/about/taxco' icon={<InfoOutlineIcon />} command='⌘H' bg={headerStyle.menuListBackground}>
-                        About
-                    </MenuItem>
-                </MenuList>
-            </Menu >
-        )
-    }
-
+    const hamburger = Hamburguer({theme: headerStyle.hamburgerTheme, menuListBackground: headerStyle.menuListBackground})
 
     return (
 
@@ -147,7 +99,7 @@ export function Header({ type }: { type: PageType }) {
             <div className='flex place-items-center'>
                 {searchInput}
             </div>
-            {hamburguer()}
+            {hamburger}
         </div>
     )
 
