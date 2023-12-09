@@ -104,7 +104,9 @@ export function Header({ type }: { type: PageType }) {
             <div className='flex place-items-center'>
                 {searchInput}
             </div>
-            {hamburger}
+
+            <Hamburguer theme={headerStyle.hamburgerTheme} menuListBackground={headerStyle.menuListBackground} textColor={headerStyle.colorText} />
+
         </div>
     )
 

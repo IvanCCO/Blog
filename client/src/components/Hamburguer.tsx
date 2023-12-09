@@ -10,7 +10,13 @@ import { HamburgerIcon, InfoOutlineIcon } from '@chakra-ui/icons'
 import { IoIosFemale, IoIosMale, IoIosHeartEmpty } from "react-icons/io";
 import { FaRegEdit } from "react-icons/fa";
 
-export function Hamburguer({theme, menuListBackground, textColor} : {theme : string; menuListBackground : string; textColor : string}) {
+interface MenuProps {
+  theme: string;
+  menuListBackground: string;
+  textColor: string;
+}
+
+export function Hamburguer({ theme, menuListBackground, textColor }: MenuProps) {
     return (
         <Menu >
             <MenuButton
