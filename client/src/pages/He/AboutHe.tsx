@@ -46,7 +46,7 @@ export function AboutHe() {
         <>
             <Header type={PageType.HE} />
 
-            <main className="h-screen py-32 bg-he-background px-default-width" >
+            <main className="h-full py-32 bg-he-background px-default-width" >
 
                 <div className="font-jomolhari flex flex-col text-font-black-color space-y-default-heigh">
 
@@ -66,17 +66,21 @@ export function AboutHe() {
                     </div>
                     {/* TODO:  My posts components -> arrow maybe change to something better*/}
                     <div className="flex flex-row">
-                        <div className="w-full h-full">
-                            <img
-                                src={mypic}
-                                alt="Descrição da imagem"
-                                className="w-full object-cover rounded-tl-full rounded-bl-full rounded-br-sm rounded-tr-sm"
-                            />
+                        <img
+                            src={mypic}
+                            alt="Descrição da imagem"
+                            className="w-1/2 object-cover rounded-tl-sm rounded-bl-sm rounded-br-full rounded-tr-full"
+                        />
+                        <div className="w-1/2">
+                            <SocialMediaList />
                         </div>
                     </div>
                     <ArrowPosts />
 
-                    <h1>About me</h1>
+                    <div className="text-white font-inter space-y-4">
+                        <h1 className="text-2xl border-b-4 border-purple-800 w-fit ">About me</h1>
+                        <p className="text-md font-extralight leading-relaxed"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id. Praesent lorem orci, mattis non efficitur id, ultricies vel nibh.</p>
+                    </div>
 
                 </div>
 

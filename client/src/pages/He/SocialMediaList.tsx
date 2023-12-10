@@ -36,15 +36,12 @@ export function SocialMediaList() {
             useDefault: false,
             network: "mailto",
         },
-        {
-            url: "https://www.twitch.tv/lullyfito",
-        },
     ]
 
 
     return (
 
-        <ul className='grid grid-cols-3 gap-2'>
+        <ul className='grid grid-cols-3 gap-2 absolute'>
 
             {socialMedias.map((value, index) => (
                 // Iterate over the social medias and put on a list
