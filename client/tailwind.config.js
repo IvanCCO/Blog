@@ -11,20 +11,21 @@ module.exports = {
         "he-background": "#2E2E32",
         "low-text-black": "#797979",
         "purple-soft": "#AB9ADD",
-        "white": "#ffff",
+        white: "#ffff",
+        "he-cycle": "#7A7A8D",
       },
       fontFamily: {
         itim: ["Itim", "cursive"],
         inter: ["Inter", "sans-serif"],
-        jomolhari: ["Jomolhari", "serif"]
+        jomolhari: ["Jomolhari", "serif"],
       },
       fontSize: {
         "2xl": "1.75rem",
       },
       spacing: {
-        'default-width' : "1.25rem",
-        'default-heigh' : "2.5rem" 
-      }
+        "default-width": "1.25rem",
+        "default-heigh": "2.5rem",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],

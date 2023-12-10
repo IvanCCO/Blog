@@ -3,6 +3,7 @@ import ArrowPosts from "./ArrowPosts"
 import { SocialMediaList } from "./SocialMediaList"
 import mypic from "../../assets/he-pic.jpg"
 import { PageType } from "../../data/constants"
+import { SkillsCycle } from "./SkillsCycle"
 
 const desktopWorking = <>
     <main className="h-full bg-he-background px-page-default space-y-14 pt-24" >
@@ -78,8 +79,13 @@ export function AboutHe() {
                     <ArrowPosts />
 
                     <div className="text-white font-inter space-y-4">
-                        <h1 className="text-2xl border-b-4 border-purple-800 w-fit ">About me</h1>
+                        <h1 className="text-2xl border-b-4 border-purple-800 w-fit pr-4">About me</h1>
                         <p className="text-md font-extralight leading-relaxed"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id. Praesent lorem orci, mattis non efficitur id, ultricies vel nibh.</p>
+                    </div>
+
+                    <div className="text-white font-inter flex flex-col items-center justify-center space-y-4 border-2 border-red-400 h-full">
+                        <h1 className="text-2xl border-b-4 border-purple-800 w-fit text-center px-4">Skills</h1>
+                        <SkillsCycle/>
                     </div>
 
                 </div>
