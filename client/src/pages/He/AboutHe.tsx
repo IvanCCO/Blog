@@ -46,7 +46,7 @@ export function AboutHe() {
         <>
             <Header type={PageType.HE} />
 
-            <main className="h-full py-32 bg-he-background px-default-width" >
+            <main className="h-screen py-32 bg-he-background px-default-width" >
 
                 <div className="font-jomolhari flex flex-col text-font-black-color space-y-default-heigh">
 
@@ -66,10 +66,7 @@ export function AboutHe() {
                     </div>
                     {/* TODO:  My posts components -> arrow maybe change to something better*/}
                     <div className="flex flex-row">
-                        <div className="w-1/2">
-                            <SocialMediaList />
-                        </div>
-                        <div className="w-1/2 h-full">
+                        <div className="w-full h-full">
                             <img
                                 src={mypic}
                                 alt="Descrição da imagem"
@@ -78,6 +75,8 @@ export function AboutHe() {
                         </div>
                     </div>
                     <ArrowPosts />
+
+                    <h1>About me</h1>
 
                 </div>
 
