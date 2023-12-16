@@ -1,6 +1,6 @@
 import { Header } from "../../components/Header";
 import { PageType } from "../../data/constants";
-import { Card } from "../../components/Card"
+import { SampleCard } from "../../components/SampleCard"
 
 export function Home(){
     return (
@@ -9,7 +9,7 @@ export function Home(){
 
             <main className="h-screen py-32 px-default-width" >
             
-                <Card/>
+                <SampleCard/>
 
             </main>
 
