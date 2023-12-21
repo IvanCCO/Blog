@@ -21,7 +21,7 @@ export function SampleCard() {
             boxSize={"100px"}
           />
           <Stack mt="6" spacing="3">
-            <Heading size="md">Orquestando conteiners com Kubernets</Heading>
+            <Heading size="lg">Orquestando conteiners com Kubernets</Heading>
             <Text>
               Que o Kubernetes está ficando o tal tal tal todo mundo sabe mas
               agora como de fato orquestrar conteiners com ele e fazer a
