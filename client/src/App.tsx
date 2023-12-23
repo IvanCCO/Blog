@@ -4,6 +4,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import "./App.css";
 import { AboutHe } from "./pages/He/AboutHe";
 import { Home } from "./pages/Home/Home";
+import { Post } from "../src/pages/Post/Post";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/about">
           <Route path="he" element={<AboutHe />} />
         </Route>
+        <Route path="/post" element={<Post />} />
         <Route path="*" element={<h1>Not found</h1>} />
       </Routes>
     </ChakraProvider>
