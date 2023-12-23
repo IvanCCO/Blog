@@ -1,6 +1,6 @@
 import { PageType } from "../../data/constants";
 import { Header } from "../../components/Header";
-import MarkdownHtml from "../../utils/Markdown/MarkdownHtml";
+import MarkdownHtml from "../../components/Markdown/MarkdownHtml";
 
 export function Post() {
   const markdown = `# Introdução ao Kubernetes: Orquestração de Contêineres
@@ -39,24 +39,17 @@ Os Deployments gerenciam a implantação de aplicações e permitem atualizaçõ
 
 Vamos criar um Deployment simples para ilustrar o poder do Kubernetes:
 
-~~~yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: minha-aplicacao
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: minha-aplicacao
-  template:
-    metadata:
-      labels:
-        app: minha-aplicacao
-    spec:
-      containers:
-      - name: meu-contenedor
-        image: minha-imagem:latest
+~~~html
+<>
+      <Header type={PageType.DEFAULT} />
+      <main className="h-screen py-32 px-default-width space-y-6">
+        <div className="border-2 border-purple-800 flex-row justify-between">
+          <div>
+            <MarkdownHtml text={markdown} />
+          </div>
+        </div>
+      </main>
+    </>
 ~~~
 `;
 

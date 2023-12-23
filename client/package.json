@@ -25,6 +25,8 @@
     "react-scripts": "5.0.1",
     "react-social-icons": "^6.7.0",
     "react-syntax-highlighter": "^15.5.0",
+    "refractor": "^3.6.0",
+    "rehype-highlight": "^7.0.0",
     "remark-gfm": "^4.0.0",
     "sort-by": "^1.2.0",
     "swiper": "^11.0.5",
@@ -57,6 +59,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-syntax-highlighter": "^15.5.11",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "eslint": "^8.56.0",
