@@ -5,6 +5,7 @@ import "./App.css";
 import { AboutHe } from "./pages/He/AboutHe";
 import { Home } from "./pages/Home/Home";
 import { Post } from "../src/pages/Post/Post";
+import About from "./pages/About/About";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about">
           <Route path="he" element={<AboutHe />} />
+          <Route path="taxco" element={<About />} />
         </Route>
         <Route path="/post" element={<Post />} />
         <Route path="*" element={<h1>Not found</h1>} />

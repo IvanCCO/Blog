@@ -76,7 +76,6 @@ export function Hamburguer({
           as="a"
           href="/about/taxco"
           icon={<InfoOutlineIcon />}
-          command="⌘H"
           bg={menuListBackground}
         >
           About

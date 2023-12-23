@@ -1,27 +1,16 @@
-import { useState, useEffect } from "react";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
-import EX from "../../assets/Markdown/ex.md";
 import remarkGfm from "remark-gfm";
 
-export default function MarkdownCode() {
-  const [post, setPost] = useState("");
+interface MarkdownText {
+  text : string;
+}
 
-  useEffect(() => {
-    fetch(EX)
-      .then((res) => res.text())
-      .then((md) => {
-        setPost(md);
-      });
-  }),
-    [];
-
-  console.log(post);
-
+export default function MarkdownFormatter({text} : MarkdownText) {
   return (
     <Markdown
-      children={post}
+      children={text}
       remarkPlugins={[remarkGfm]}
       components={{
         code(props) {
