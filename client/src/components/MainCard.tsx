@@ -22,7 +22,7 @@ export function MainCard() {
             />
           </AspectRatio>
           <CardBody>
-            <Stack mt="6" spacing="3">
+            <Stack spacing="3">
               <Heading size="lg">Orquestando conteiners com Kubernets</Heading>
               <Text>
                 Que o Kubernetes está ficando o tal tal tal todo mundo sabe mas

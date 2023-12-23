@@ -5,15 +5,16 @@ import {
   Stack,
   Heading,
   CardFooter,
+  Divider,
 } from "@chakra-ui/react";
 import { TopicTag } from "./TopicTag";
 
 export function SampleCard() {
   return (
     <>
-      <Card maxW="sm" variant={"outline"}>
+      <Card maxW="sm" variant={"outline"} cursor={"pointer"}>
         <CardBody>
-          <Stack mt="6" spacing="3">
+          <Stack spacing="3">
             <Heading size="lg">Orquestando conteiners com Kubernets</Heading>
             <Text>
               Que o Kubernetes está ficando o tal tal tal todo mundo sabe mas
@@ -22,11 +23,21 @@ export function SampleCard() {
             </Text>
           </Stack>
         </CardBody>
-        <CardFooter justify="space-between">
-          <TopicTag />
-          <Text fontSize="sm" color="gray.500">
-            02-12-2022
-          </Text>
+        <Divider />
+        <CardFooter>
+          <div className="w-full space-y-2">
+            <div className="flex flex-row w-full justify-between h-fit">
+              <TopicTag />
+              <Text fontSize="sm" color="gray.500">
+                02-12-2022
+              </Text>
+            </div>
+            <div>
+              <Text fontSize="sm" color="gray.500" align={"end"}>
+                writed by @ivan_miranda
+              </Text>
+            </div>
+          </div>
         </CardFooter>
       </Card>
     </>
