@@ -1,4 +1,3 @@
-import { url } from 'inspector';
 import { SocialIcon } from 'react-social-icons'
 
 type SocialMedia = {
