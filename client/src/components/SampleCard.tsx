@@ -27,7 +27,7 @@ export function SampleCard() {
         <CardFooter>
           <div className="w-full space-y-2">
             <div className="flex flex-row w-full justify-between h-fit">
-              <TopicTag />
+              <TopicTag title="Política" color="twitter" />
               <Text fontSize="sm" color="gray.500">
                 02-12-2022
               </Text>
