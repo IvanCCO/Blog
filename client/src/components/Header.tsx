@@ -91,6 +91,8 @@ const headerItens = () => {
 export function Header({ type }: { type: PageType }) {
 
     const headerStyle = chooseHeaderStyle(type)
+
+    console.log(headerStyle.mainBackground)
     
     return (
 

@@ -2,7 +2,6 @@ import {
   Card,
   CardBody,
   Text,
-  Image,
   Stack,
   Heading,
   CardFooter,
@@ -13,13 +12,6 @@ export function SampleCard() {
     <>
       <Card maxW="sm">
         <CardBody>
-          <Image
-            src="https://th.bing.com/th/id/OIG.pM5yvYt8jXgKE4HyVvUx?pid=ImgGn"
-            alt="A big octopus managing containers"
-            borderRadius="lg"
-            objectFit={"cover"}
-            boxSize={"100px"}
-          />
           <Stack mt="6" spacing="3">
             <Heading size="lg">Orquestando conteiners com Kubernets</Heading>
             <Text>
@@ -29,8 +21,11 @@ export function SampleCard() {
             </Text>
           </Stack>
         </CardBody>
-        <CardFooter justify={"flex-end"}>
-          <Text fontSize={"sm"} color={"gray.500"}>
+        <CardFooter justify="space-between">
+          <Text fontSize="sm" color="gray.500">
+            02-12-2022
+          </Text>
+          <Text fontSize="sm" color="gray.500">
             writed by @ivan_miranda
           </Text>
         </CardFooter>
