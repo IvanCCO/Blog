@@ -15,8 +15,13 @@ export function Home() {
           <MainCard />
         </div>
         <div>
-          <Text fontSize={"4xl"}>Posts</Text>
-          <SampleCard />
+          <div className="space-y-5">
+            <Text fontSize={"4xl"}>Posts</Text>
+            <SampleCard />
+            <SampleCard />
+            <SampleCard />
+            <SampleCard />
+          </div>
         </div>
       </main>
     </>

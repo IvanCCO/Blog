@@ -6,11 +6,12 @@ import {
   Heading,
   CardFooter,
 } from "@chakra-ui/react";
+import { TopicTag } from "./TopicTag";
 
 export function SampleCard() {
   return (
     <>
-      <Card maxW="sm">
+      <Card maxW="sm" variant={"outline"}>
         <CardBody>
           <Stack mt="6" spacing="3">
             <Heading size="lg">Orquestando conteiners com Kubernets</Heading>
@@ -22,11 +23,9 @@ export function SampleCard() {
           </Stack>
         </CardBody>
         <CardFooter justify="space-between">
+          <TopicTag />
           <Text fontSize="sm" color="gray.500">
             02-12-2022
-          </Text>
-          <Text fontSize="sm" color="gray.500">
-            writed by @ivan_miranda
           </Text>
         </CardFooter>
       </Card>
