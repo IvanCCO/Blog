@@ -27,14 +27,19 @@ export function SampleCard() {
         <CardFooter>
           <div className="w-full space-y-2">
             <div className="flex flex-row w-full justify-between h-fit">
-              <TopicTag title="Política" color="twitter" />
-              <Text fontSize="sm" color="gray.500">
-                02-12-2022
+              <TopicTag
+                title="Política"
+                color="twitter"
+                variant="solid"
+                borderRadius="full"
+              />
+              <Text fontSize="sm" color="gray.600">
+                Dec 12 · 4 min read
               </Text>
             </div>
-            <div>
-              <Text fontSize="sm" color="gray.500" align={"end"}>
-                writed by @ivan_miranda
+            <div className="flex flex-row-reverse w-full justify-between h-fit">
+              <Text fontSize="sm" color="gray.400" textAlign={"end"}>
+                wrote by @ivan_miranda
               </Text>
             </div>
           </div>

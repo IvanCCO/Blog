@@ -33,7 +33,7 @@ export function MainCard() {
         </CardBody>
         <CardFooter justify="space-between">
           <Text fontSize="sm" color="gray.500">
-            02-12-2022
+            4 min read
           </Text>
           <Text fontSize="sm" color="gray.500">
             writed by @ivan_miranda
