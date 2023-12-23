@@ -1,6 +1,5 @@
 import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react'
 import { IoSearchOutline } from "react-icons/io5";
-import { IoIosFemale, IoIosMale, IoIosHeartEmpty } from "react-icons/io";
 
 /* This function should receive as a parameter right element, left element, and hasElement : Boolean
 ====== 
