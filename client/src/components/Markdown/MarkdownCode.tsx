@@ -42,35 +42,35 @@ export default function MarkdownCode() {
         },
         h1(props) {
           return (
-            <h1 className="text-3xl font-semibold my-9" {...props}>
+            <h1 className="text-3xl font-semibold my-8" {...props}>
               {props.children}
             </h1>
           );
         },
         h2(props) {
           return (
-            <h1 className="text-xl font-semibold my-7" {...props}>
+            <h1 className="text-xl font-semibold my-6" {...props}>
               {props.children}
             </h1>
           );
         },
         h3(props) {
           return (
-            <h1 className="text-lg font-semibold my-5" {...props}>
+            <h1 className="text-lg font-semibold my-4" {...props}>
               {props.children}
             </h1>
           );
         },
         h4(props) {
           return (
-            <h1 className="text-base font-semibold my-5" {...props}>
+            <h1 className="text-base font-bold my-2" {...props}>
               {props.children}
             </h1>
           );
         },
         ul(props) {
           return (
-            <ul className="list-disc ml-4" {...props}>
+            <ul className="list-disc ml-4 text-sm" {...props}>
               {props.children}
             </ul>
           );
@@ -80,6 +80,13 @@ export default function MarkdownCode() {
             <li className="my-6" {...props}>
               {props.children}
             </li>
+          );
+        },
+        p(props) {
+          return (
+            <p className="leading-relaxed" {...props}>
+              {props.children}
+            </p>
           );
         },
       }}
