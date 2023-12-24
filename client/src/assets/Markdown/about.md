@@ -35,5 +35,6 @@ If you wish to contribute, please provide clear and concise commit messages to h
 > Porque se ele ficar como titulo do markdown talvez fique mais complicado, ai estou achando melhor deixar
 > Separado porque dessa forma diferencia o titulo do texto, ai vai ficar mais facil pra renderizar os componentes
 - [ ]  Colocar o icone do (T) ná página
+- [ ]  Deixar espaço na parte de baixo para não limitar quando acabar o conteudo (talvez um footer)
 
 
