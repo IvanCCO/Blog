@@ -14,7 +14,7 @@ export function SearchInput({
   foregroundColor,
 }: IconInputProps) {
   return (
-    <InputGroup bg={backgroundColor} border={"none"} borderRadius="full">
+    <InputGroup bg={backgroundColor} border={"none"} borderRadius="full" maxW={"200px"} >
       <InputLeftElement pointerEvents="none">
         <IoSearchOutline color={foregroundColor} />
       </InputLeftElement>

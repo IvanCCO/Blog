@@ -4,19 +4,11 @@ import { Header } from "../../components/Header";
 import MarkdownFormatter from "../../components/MarkdownFormatter";
 import { Image } from "@chakra-ui/react";
 import EX from "../../assets/Markdown/ex.md"
+import { importLocalMarkdownFile } from "../../hooks/useFileUtils";
 
 export function Post() {
-  const [post, setPost] = useState("");
 
-  useEffect(() => {
-    fetch(EX)
-      .then((res) => res.text())
-      .then((md) => {
-        setPost(md);
-      });
-  }),
-    [];
-
+  const content = importLocalMarkdownFile(EX)
 
   return (
     <>
@@ -30,7 +22,7 @@ export function Post() {
             borderStartStartRadius="2xl"
             objectFit="cover"
           />
-          <MarkdownFormatter text={post}/>
+          <MarkdownFormatter text={content}/>
         </div>
       </main>
     </>

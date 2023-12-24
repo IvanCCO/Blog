@@ -28,6 +28,7 @@
     "refractor": "^3.6.0",
     "rehype-highlight": "^7.0.0",
     "remark-gfm": "^4.0.0",
+    "remark-toc": "^9.0.0",
     "sort-by": "^1.2.0",
     "swiper": "^11.0.5",
     "tailwind-scrollbar-hide": "^1.1.7",
