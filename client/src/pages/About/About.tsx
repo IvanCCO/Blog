@@ -7,7 +7,7 @@ import HARDCORE from "../../assets/Markdown/hardcore.md"
 
 export default function About() {
 
-  const file = importLocalMarkdownFile(HARDCORE)
+  const file = importLocalMarkdownFile(ABOUTMD)
 
   return (
     <>

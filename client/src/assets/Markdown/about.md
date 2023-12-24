@@ -20,3 +20,20 @@ npm start
 
 If you wish to contribute, please provide clear and concise commit messages to help me understand the changes you made. Your contributions are greatly appreciated!
 
+
+### TODOS:
+
+- [ ]  Página de Not Found
+- [ ]  Mandar pro email das pessoas que querem ter o email associado
+- [ ]  Colocar filtro no header para ser editor (eu steh) e nao
+- [ ]  Botao de compartilhar artigo
+- [ ]  Sempre ir salvando o arquivo quando estiver escrevendo para não perder
+- [ ]  Criptografar a url.
+- [ ]  Token jwt para confirmar se pode editar as páginas ou não.
+- [ ]  Página de login (isso faz sentido?)
+- [ ]  Titulo vai ficar separado ou junto?
+> Porque se ele ficar como titulo do markdown talvez fique mais complicado, ai estou achando melhor deixar
+> Separado porque dessa forma diferencia o titulo do texto, ai vai ficar mais facil pra renderizar os componentes
+- [ ]  Colocar o icone do (T) ná página
+
+
