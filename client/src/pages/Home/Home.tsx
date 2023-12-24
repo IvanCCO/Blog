@@ -9,14 +9,14 @@ export function Home() {
     <>
       <Header type={PageType.US} />
 
-      <main className="h-screen py-32 px-default-width space-y-6">
+      <main className="main space-y-6">
         <div>
-          <Text fontSize={"4xl"}>News</Text>
+          <Text fontSize={"3xl"}>News</Text>
           <MainCard />
         </div>
         <div>
           <div className="space-y-5">
-            <Text fontSize={"4xl"}>Posts</Text>
+            <Text fontSize={"3xl"}>Posts</Text>
             <SampleCard />
             <SampleCard />
             <SampleCard />

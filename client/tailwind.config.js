@@ -2,10 +2,26 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        ".main": {
+          minHeight: "100vh",
+          paddingTop: "5rem",
+          paddingBottom: "5rem",
+          paddingLeft: "1.25rem",
+          paddingRight: "1.25rem",
+        },
+      });
+    },
+  ],
   theme: {
     extend: {
       borderRadius: {
         default: "5px",
+      },
+      backgroundColor: {
+        white: "#ffff",
       },
       colors: {
         "font-black-color": "#434343",
@@ -29,5 +45,5 @@ module.exports = {
       },
     },
   },
-}
+};
 /* eslint-enable no-undef */

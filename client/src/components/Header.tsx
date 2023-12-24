@@ -93,7 +93,7 @@ export function Header({ type }: { type: PageType }) {
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 bg-${headerStyle.mainBackground} flex justify-between py-1 px-default-width place-items-center z-50`}
+      className={`fixed top-0 left-0 right-0 bg-white flex justify-between py-1 px-default-width place-items-center z-50`}
     >
       <Logo color={headerStyle.logoColor} />
 
