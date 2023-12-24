@@ -93,6 +93,11 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
             </a>
           );
         },
+        th(props){
+          return (
+            <th className="text-left">{props.children}</th>
+          )
+        }
       }}
     />
   );

@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  text-align: center;
+  vertical-align: middle;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+}
+thead th {
+  width: 25%;
+}
+caption {
+  font-weight: bold;
+  font-size: 24px;
+  text-align: left;
+  color: #333;
+margin-bottom: 16px;
+}
+thead{
+	color: white;
+	font-size: 0.875rem;
+	text-transform: uppercase;
+	letter-spacing: 2%;
+}
+
+tr th:nth-child(odd){
+	background-color: #4b2e53;
+}
+tr th:nth-child(even){
+	background-color: #482d4b;
+}
+
+
