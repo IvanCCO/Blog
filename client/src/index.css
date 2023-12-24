@@ -11,7 +11,7 @@ table {
 
 th,
 td {
-  border: 1px solid black;
+  border: 1px solid rgb(177, 196, 196);
   padding: 8px;
 }
 thead th {
@@ -22,20 +22,18 @@ caption {
   font-size: 24px;
   text-align: left;
   color: #333;
-margin-bottom: 16px;
+  margin-bottom: 16px;
 }
-thead{
-	color: white;
-	font-size: 0.875rem;
-	text-transform: uppercase;
-	letter-spacing: 2%;
-}
-
-tr th:nth-child(odd){
-	background-color: #4b2e53;
-}
-tr th:nth-child(even){
-	background-color: #482d4b;
+thead {
+  color: rgb(66, 66, 66);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 2%;
 }
 
-
+tr th:nth-child(odd) {
+  background-color: #b8ece1d2;
+}
+tr th:nth-child(even) {
+  background-color: #e4bcee;
+}

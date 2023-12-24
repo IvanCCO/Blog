@@ -56,7 +56,7 @@ These features **do not work by default**.
 | Feature    | Support              |
 | ---------: | :------------------- |
 | CommonMark | 100%                 |
-| GFM        | 100% w/ `remark-gfm` |
+| GFM        | 100%                 |
 
 ~~strikethrough~~
 

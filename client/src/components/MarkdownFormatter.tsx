@@ -2,7 +2,7 @@ import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import remarkGfm from "remark-gfm";
-import remarkToc from 'remark-toc'
+import remarkToc from "remark-toc";
 
 interface MarkdownText {
   text: string;
@@ -93,16 +93,13 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
             </a>
           );
         },
-        th(props){
-          return (
-            <th className="text-left">{props.children}</th>
-          )
-        }
+        th(props) {
+          return <th className="text-left">{props.children}</th>;
+        },
+        td(props) {
+          return <td className="text-left">{props.children}</td>;
+        },
       }}
     />
   );
 }
-
-// Tabela não funciona at all
-// Table of contents tbm não funciona
-// Trecho destaco tambem não funciona `react-markdown`
