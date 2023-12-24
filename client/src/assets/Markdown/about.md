@@ -36,5 +36,6 @@ If you wish to contribute, please provide clear and concise commit messages to h
 > Separado porque dessa forma diferencia o titulo do texto, ai vai ficar mais facil pra renderizar os componentes
 - [ ]  Colocar o icone do (T) ná página
 - [ ]  Deixar espaço na parte de baixo para não limitar quando acabar o conteudo (talvez um footer)
+- [ ]  Cokkies pop-ups para permitir ou não os cookies
 
 
