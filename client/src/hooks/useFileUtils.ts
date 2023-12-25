@@ -19,7 +19,5 @@ export const importLocalMarkdownFile = (path: string): string => {
   return post;
 };
 
-const fallbackContent = 
-  `# It was not possible to render page
+const fallbackContent = `# It was not possible to render page
 > The server could not render requested page, please try again later and we are sorry for the incovenience`;
-
