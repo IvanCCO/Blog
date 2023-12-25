@@ -7,7 +7,7 @@ module.exports = {
       addComponents({
         ".main": {
           minHeight: "100vh",
-          paddingTop: "5rem",
+          paddingTop: "6rem",
           paddingBottom: "5rem",
           paddingLeft: "1.25rem",
           paddingRight: "1.25rem",

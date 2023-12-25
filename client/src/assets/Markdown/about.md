@@ -23,19 +23,29 @@ If you wish to contribute, please provide clear and concise commit messages to h
 
 ### TODOS:
 
+#### NOW
 - [ ]  Página de Not Found
-- [ ]  Mandar pro email das pessoas que querem ter o email associado
-- [ ]  Colocar filtro no header para ser editor (eu steh) e nao
-- [ ]  Botao de compartilhar artigo
-- [ ]  Sempre ir salvando o arquivo quando estiver escrevendo para não perder
-- [ ]  Criptografar a url.
-- [ ]  Token jwt para confirmar se pode editar as páginas ou não.
-- [ ]  Página de login (isso faz sentido?)
-- [ ]  Titulo vai ficar separado ou junto?
+- [ ]  Colocar o icone do (T) ná página
+- [ ]  Colocar filtro no header para ser editor (eu steh) e nao -> Vou fazer isso mesmo? pq acho que é só formatar um md e mandar pro s3 -> mas tem que ter um lugar para colocar o arquivo md.
+- [ ]  Botao de compartilhar artigo. -> Ficaria legal colocar isso no post.
+- [ ]  Titulo vai ficar separado ou junto? ***Separado***
 > Porque se ele ficar como titulo do markdown talvez fique mais complicado, ai estou achando melhor deixar
 > Separado porque dessa forma diferencia o titulo do texto, ai vai ficar mais facil pra renderizar os componentes
-- [ ]  Colocar o icone do (T) ná página
-- [ ]  Deixar espaço na parte de baixo para não limitar quando acabar o conteudo (talvez um footer)
+- [x]  Deixar espaço na parte de baixo para não limitar quando acabar o conteudo (talvez um footer)
+- [ ]  Carrosel no home.
+- [ ]  Colocar animação na minha página para ir escrevendo as coisas e a imagem ir descendo, deixar mais animado [Como fazer os componentes irem aparecendo](https://youtu.be/vqXLGX0szIQ?t=16914)
+- [ ]  Adicionar components de skeleton
+- [ ]  Mouse select ter uma cor diferente do azul normal
+
+
+#### Sec
+
+- [ ]  Criptografar a url.
+- [ ]  Token jwt para confirmar se pode editar as páginas ou não.
+
+#### Pós
+- [ ]  Mandar pro email das pessoas que querem ter o email associado (talvez ter um icone no header para colocar o email), salvar no cache caso já tenha clikado na notificação.
 - [ ]  Cokkies pop-ups para permitir ou não os cookies
+- [ ]  Sempre ir salvando o arquivo quando estiver escrevendo para não perder
 
 
