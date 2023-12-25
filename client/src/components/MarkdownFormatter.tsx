@@ -88,7 +88,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         a(props) {
           return (
-            <a href={props.href} className="text-blue-600 font-semibold">
+            <a href={props.href} className="text-blue-600 underline">
               {props.children}
             </a>
           );
