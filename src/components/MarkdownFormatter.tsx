@@ -32,28 +32,21 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         h1(props) {
           return (
-            <h1 className="text-3xl font-semibold my-8" {...props}>
+            <h1 className="text-xl font-semibold my-8" {...props}>
               {props.children}
             </h1>
           );
         },
         h2(props) {
           return (
-            <h1 className="text-xl font-semibold my-6" {...props}>
+            <h1 className="text-lg font-semibold my-6" {...props}>
               {props.children}
             </h1>
           );
         },
         h3(props) {
           return (
-            <h1 className="text-lg font-semibold my-4" {...props}>
-              {props.children}
-            </h1>
-          );
-        },
-        h4(props) {
-          return (
-            <h1 className="text-base font-bold my-2" {...props}>
+            <h1 className="text-base font-semibold my-4" {...props}>
               {props.children}
             </h1>
           );

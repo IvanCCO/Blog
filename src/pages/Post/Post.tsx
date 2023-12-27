@@ -12,15 +12,14 @@ export function Post() {
   return (
     <>
       <Header type={PageType.DEFAULT} />
-      <main className="main space-y-6">
-        <div className="flex-col space-y-5">
-          <Image
-            src="https://th.bing.com/th/id/OIG.rFZQiB1UylKPh2zrH_Pt?pid=ImgGn"
-            alt="A big octopus managing containers"
-            borderStartEndRadius="2xl"
-            borderStartStartRadius="2xl"
-            objectFit="cover"
-          />
+      <main className="main space-y-6 px-0">
+        <Image
+          src="https://th.bing.com/th/id/OIG.dkD1meYhDHXfRc6PlsNr?pid=ImgGn"
+          alt="A big octopus managing containers"
+          objectFit="cover"
+        />
+
+        <div className="flex-col space-y-5 px-6">
           <TopicTag color="red" variant="solid" title="Art" />
           <MarkdownFormatter text={content} />
         </div>
