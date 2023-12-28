@@ -1,7 +1,3 @@
-# Introdução ao Kubernetes: Orquestração de Contêineres
-
-O Kubernetes, frequentemente abreviado como K8s, é uma poderosa plataforma de orquestração de contêineres de código aberto que automatiza a implantação, o dimensionamento e a gestão de aplicativos em contêineres. Desenvolvido pelo Google e agora mantido pela Cloud Native Computing Foundation (CNCF), o Kubernetes se tornou uma peça fundamental na construção e operação de aplicações distribuídas em escala.
-
 ## O que são Contêineres?
 
 Antes de mergulharmos no Kubernetes, vamos entender o que são contêineres. Os contêineres são unidades leves e portáteis que encapsulam o código, suas dependências e configurações. Eles garantem que uma aplicação seja executada de maneira consistente em diferentes ambientes.
@@ -30,7 +26,7 @@ Os Serviços Kubernetes são usados para expor aplicações e seus componentes a
 
 Os Deployments gerenciam a implantação de aplicações e permitem atualizações sem tempo de inatividade. Eles garantem que o número desejado de réplicas esteja sempre em execução.
 
-#### Exemplo Prático
+### Exemplo Prático
 
 Vamos criar um Deployment simples para ilustrar o poder do Kubernetes:
 

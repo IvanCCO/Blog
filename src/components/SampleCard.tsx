@@ -16,10 +16,13 @@ export function SampleCard() {
         <CardBody>
           <Stack spacing="3">
             <Heading size="lg">Orquestando conteiners com Kubernets</Heading>
-            <Text>
-              Que o Kubernetes está ficando o tal tal tal todo mundo sabe mas
-              agora como de fato orquestrar conteiners com ele e fazer a
-              diferenca é algo que pou...
+            <Text
+              bgGradient="linear(to-b, #1a1a1a 0%, rgba(118, 111, 154, 0.08) 100%)"
+              backgroundClip="text"
+            >
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum
+              eius blanditiis repudiandae, beatae cum temporibus autem,
+              molestias aperiam perferendis, ipsam voluptatum consequuntur
             </Text>
           </Stack>
         </CardBody>
