@@ -3,7 +3,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import remarkGfm from "remark-gfm";
 import remarkToc from "remark-toc";
-import { TableContainer, Table, TableCaption, Thead, Tr, Th, Td, Tbody  } from "@chakra-ui/react";
+import { TableContainer, Table, TableCaption, Thead, Tr, Th, Td, Tbody, Divider  } from "@chakra-ui/react";
 
 interface MarkdownText {
   text: string;
@@ -112,6 +112,19 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         td(props) {
           return <Td className="text-left">{props.children}</Td>;
         },
+        hr(props) {
+          return (
+            <div className="w-full space-x-3 flex justify-center my-7 place-items-baseline">
+              <div className="w-[7px] h-[7px] bg-neutral-500 rounded-full"></div>
+              <div className="w-[8px] h-[8px] bg-neutral-500 rounded-full"></div>
+              <div className="w-[9px] h-[9px] bg-neutral-500 rounded-full"></div>
+              <div className="w-[8px] h-[8px] bg-neutral-500 rounded-full"></div>
+              <div className="w-[7px] h-[7px] bg-neutral-500 rounded-full"></div>
+            </div>
+          )
+
+        }
+        
       }}
     />
   );

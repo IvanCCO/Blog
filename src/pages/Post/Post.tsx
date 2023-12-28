@@ -12,6 +12,7 @@ import {
   Button,
   Stack,
 } from "@chakra-ui/react";
+import { Pagination } from "../../components/Pagination";
 
 import EX from "../../assets/Markdown/ex.md";
 import { importLocalMarkdownFile } from "../../hooks/useFileUtils";
@@ -31,7 +32,7 @@ export function Post() {
     sampleCards.push(<SampleCard key={index} />);
   }
 
-  const color = (n: number) : string => {
+  const color = (n: number): string => {
     switch (n) {
       case 1:
         return "purple";
@@ -44,7 +45,7 @@ export function Post() {
       case 5:
         return "gray";
       default:
-        return "linkedin"
+        return "linkedin";
     }
   };
 
@@ -82,7 +83,10 @@ export function Post() {
           <Text fontSize={"2xl"} py={8}>
             Related Posts
           </Text>
-          <VStack spacing={5}>{sampleCards}</VStack>
+          <VStack spacing={5}>
+            {sampleCards}
+            <Pagination />
+          </VStack>
         </div>
       </main>
     </>

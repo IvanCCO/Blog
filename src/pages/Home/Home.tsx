@@ -4,7 +4,7 @@ import { SampleCard } from "../../components/SampleCard";
 import { PageType } from "../../data/constants";
 import { Text } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
-import { ArrowForwardIcon, ArrowBackIcon} from '@chakra-ui/icons'
+import { Pagination } from "../../components/Pagination";
 
 export function Home() {
   const sampleCards: JSX.Element[] = [];
@@ -35,26 +35,8 @@ export function Home() {
               </Button>
             </div>
             {sampleCards}
-            <div className="flex justify-between place-items-center pt-3">
-              <Button
-                colorScheme="gray"
-                size="md"
-                variant={"link"}
-                leftIcon={<ArrowBackIcon/>}
-                isDisabled={true}
-              >
-                Prev
-              </Button>
-              <Button
-                colorScheme="gray"
-                size="md"
-                variant={"link"}
-                rounded={"base"}
-                rightIcon={<ArrowForwardIcon/>}
-              >
-                Next
-              </Button>
-            </div>
+            <Pagination/>
+            
           </div>
         </div>
       </main>
