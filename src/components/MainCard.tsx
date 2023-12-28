@@ -22,7 +22,7 @@ export function MainCard() {
           <Image
             src="https://th.bing.com/th/id/OIG.pM5yvYt8jXgKE4HyVvUx?pid=ImgGn"
             alt="A big octopus managing containers"
-            borderRadius="lg"
+            borderTopRadius="lg"
             objectFit="cover"
           />
         </AspectRatio>
