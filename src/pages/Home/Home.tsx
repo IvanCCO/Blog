@@ -16,7 +16,7 @@ export function Home() {
     <>
       <Header type={PageType.US} />
 
-      <main className="main space-y-8">
+      <main className="main space-y-8 grid place-items-center">
         <div className="space-y-2">
           <Text fontSize={"3xl"}>News</Text>
           <MainCard />
@@ -37,11 +37,9 @@ export function Home() {
             {sampleCards}
             <div className="flex justify-between place-items-center pt-3">
               <Button
-                colorScheme="blackAlpha"
+                colorScheme="gray"
                 size="md"
                 variant={"link"}
-                rounded={"base"}
-                className="underline"
                 leftIcon={<ArrowBackIcon/>}
                 isDisabled={true}
               >

@@ -11,8 +11,6 @@ module.exports = {
           paddingBottom: "5rem",
           paddingLeft: "1.25rem",
           paddingRight: "1.25rem",
-          display: "grid",
-          placeItems: "center"
         },
       });
     },
@@ -23,14 +21,14 @@ module.exports = {
         default: "5px",
       },
       backgroundColor: {
-        white: "#ffff",
+        "white-main": "#ffffff",
       },
       colors: {
         "font-black-color": "#434343",
         "he-background": "#2E2E32",
         "low-text-black": "#797979",
         "purple-soft": "#AB9ADD",
-        white: "#ffff",
+        "white-main": "#ffffff",
         "he-cycle": "#7A7A8D",
       },
       fontFamily: {

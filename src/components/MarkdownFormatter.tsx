@@ -90,7 +90,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         table(props) {
           return (
             <TableContainer>
-              <Table variant={"simple"}>
+              <Table variant={"simple"} my={10}>
                 <TableCaption>Metricas de sucesso</TableCaption>
                 {props.children}
               </Table>

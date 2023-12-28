@@ -46,7 +46,7 @@ const chooseHeaderStyle = (type: PageType): HeaderStyle => {
       };
     case "US":
       return {
-        mainBackground: "white",
+        mainBackground: "gray-50",
         logoColor: "black",
         hamburgerTheme: "blackAlpha",
         menuListBackground: "#F1F1F1",
@@ -57,7 +57,7 @@ const chooseHeaderStyle = (type: PageType): HeaderStyle => {
       };
     case "DEFAULT":
       return {
-        mainBackground: "white",
+        mainBackground: "",
         logoColor: "black",
         hamburgerTheme: "blackAlpha",
         menuListBackground: "#F1F1F1",
@@ -93,7 +93,7 @@ export function Header({ type }: { type: PageType }) {
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 flex justify-between px-default-width place-items-center z-50 bg-${headerStyle.mainBackground}`}
+      className={`fixed top-0 left-0 right-0 flex justify-between px-default-width place-items-center z-50 ${"bg-" + headerStyle.mainBackground}`}
     >
       <Logo color={headerStyle.logoColor} />
 

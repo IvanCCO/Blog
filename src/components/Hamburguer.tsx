@@ -50,7 +50,7 @@ export function Hamburguer({
           icon={<IoIosHeartEmpty />}
           bg={menuListBackground}
         >
-          Home 
+          Us 
         </MenuItem>
         <MenuItem
           as="a"
