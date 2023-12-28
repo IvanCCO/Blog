@@ -12,7 +12,7 @@ import { TopicTag } from "./TopicTag";
 export function SampleCard() {
   return (
     <>
-      <Card maxW="sm" variant={"outline"} cursor={"pointer"} boxShadow={"base"}>
+      <Card maxW="md" variant={"outline"} cursor={"pointer"} boxShadow={"base"}>
         <CardBody>
           <Stack spacing="3">
             <Heading size="md">Orquestando conteiners com Kubernets</Heading>

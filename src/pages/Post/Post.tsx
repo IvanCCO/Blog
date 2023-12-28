@@ -34,32 +34,38 @@ export function Post() {
     <>
       <Header type={PageType.DEFAULT} />
       <main className="main space-y-2">
-        <TopicTag
-          color="purple"
-          variant="solid"
-          title="Tecnology"
-          borderRadius="full"
-        />
-        <Heading size={"lg"}>
-          Modern online and offline payments for Africa
-        </Heading>
-        <Text fontSize={"sm"} fontWeight={"light"} color={"#727272"}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
-          delectus dignissimos doloremque aliquid ullam iure, tempora obcaecati
-          nulla consequuntur accusamus nam!
-        </Text>
-        <ProfileRow />
-        <ActionRow />
+        <div className="space-y-4">
+          <TopicTag
+            color="purple"
+            variant="solid"
+            title="Tecnology"
+            borderRadius="full"
+          />
+          <Heading size={"lg"}>
+            Modern online and offline payments for Africa
+          </Heading>
+          <Text fontSize={"sm"} fontWeight={"light"} color={"#727272"}>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+            delectus dignissimos doloremque aliquid ullam iure, tempora
+            obcaecati nulla consequuntur accusamus nam!
+          </Text>
+          <ProfileRow />
+          <ActionRow />
+        </div>
         <div className="py-6">
           <ImageBlock />
         </div>
 
-        <MarkdownFormatter text={content} />
+        <div>
+          <MarkdownFormatter text={content} />
+        </div>
 
-        <Text fontSize={"2xl"} pt={8}>
-          Related Posts
-        </Text>
-        <VStack spacing={5}>{sampleCards}</VStack>
+        <div className="border-2 border-red-500 w-full">
+          <Text fontSize={"2xl"} py={8}>
+            Related Posts
+          </Text>
+          <VStack spacing={5}>{sampleCards}</VStack>
+        </div>
       </main>
     </>
   );

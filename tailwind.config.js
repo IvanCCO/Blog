@@ -11,7 +11,7 @@ module.exports = {
           paddingBottom: "5rem",
           paddingLeft: "1.25rem",
           paddingRight: "1.25rem",
-          diplay: "grid",
+          display: "grid",
           placeItems: "center"
         },
       });
