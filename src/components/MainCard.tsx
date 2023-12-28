@@ -17,7 +17,7 @@ export function MainCard() {
   return (
     <>
     {/* TODO: Arrumar esse cara para ficar dinâmico */}
-      <Card maxW={["md", "lg"]} onClick={() => navigate("/post")} cursor={"pointer"}>
+      <Card maxW={["md", "lg"]} onClick={() => navigate("/post")} cursor={"pointer"} boxShadow={"lg"}>
         <AspectRatio ratio={16 / 9}>
           <Image
             src="https://th.bing.com/th/id/OIG.pM5yvYt8jXgKE4HyVvUx?pid=ImgGn"

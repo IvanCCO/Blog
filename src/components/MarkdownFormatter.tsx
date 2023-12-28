@@ -114,12 +114,10 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         hr(props) {
           return (
-            <div className="w-full space-x-3 flex justify-center my-7 place-items-baseline">
-              <div className="w-[7px] h-[7px] bg-neutral-500 rounded-full"></div>
-              <div className="w-[8px] h-[8px] bg-neutral-500 rounded-full"></div>
-              <div className="w-[9px] h-[9px] bg-neutral-500 rounded-full"></div>
-              <div className="w-[8px] h-[8px] bg-neutral-500 rounded-full"></div>
-              <div className="w-[7px] h-[7px] bg-neutral-500 rounded-full"></div>
+            <div className="w-full space-x-3 flex justify-center my-3 place-items-baseline">
+              <p className="font-itim text-5xl text-black">.</p>
+              <p className="font-itim text-5xl text-black">.</p>
+              <p className="font-itim text-5xl text-black">.</p>
             </div>
           )
 

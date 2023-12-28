@@ -18,13 +18,13 @@ export function Home() {
 
       <main className="main space-y-8 grid place-items-center">
         <div className="space-y-2">
-          <Text fontSize={"3xl"}>News</Text>
+          <Text fontSize={"3xl"} fontWeight={"medium"} >News</Text>
           <MainCard />
         </div>
         <div>
           <div className="space-y-3">
             <div className="flex justify-between place-items-center">
-              <Text fontSize={"3xl"}>Posts</Text>
+              <Text fontSize={"3xl"} fontWeight={"medium"}>Posts</Text>
               <Button
                 colorScheme="gray"
                 size="sm"

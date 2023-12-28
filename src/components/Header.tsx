@@ -91,8 +91,6 @@ const headerItens = () => {
 export function Header({ type }: { type: PageType }) {
   const headerStyle = chooseHeaderStyle(type);
 
-  console.log(headerStyle.mainBackground);
-
   return (
     <div
       className={`fixed top-0 left-0 right-0 flex justify-between px-default-width place-items-center z-50 ${

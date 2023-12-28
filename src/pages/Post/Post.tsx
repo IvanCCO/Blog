@@ -79,7 +79,7 @@ export function Post() {
           <MarkdownFormatter text={content} />
         </div>
 
-        <div className="border-2 border-red-500 w-full">
+        <div className="w-full">
           <Text fontSize={"2xl"} py={8}>
             Related Posts
           </Text>
