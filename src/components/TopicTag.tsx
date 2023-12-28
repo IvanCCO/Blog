@@ -15,7 +15,7 @@ export function TopicTag({ title, color, variant, borderRadius }: TagProps) {
       variant={variant}
       colorScheme={color}
     >
-      <TagLabel>{title}</TagLabel>
+      <TagLabel fontWeight={"semibold"}>{title}</TagLabel>
     </Tag>
   );
 }

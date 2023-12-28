@@ -37,6 +37,9 @@ If you wish to contribute, please provide clear and concise commit messages to h
 - [ ] Adicionar components de skeleton
 - [ ] Mouse select ter uma cor diferente do azul normal
 - [ ] Mudar forma como o link é exposto, sendo com linha light e com underline
+- [ ] Divider ficar bonitinho que nem do Medium, tipo 3 pontinhos jkk
+- [ ] Maior espaçamento entre os titulos h1, h2, h3
+- [ ] Deixar imagem ocupando 100% da página no post
 
 #### Sec
 
@@ -48,3 +51,4 @@ If you wish to contribute, please provide clear and concise commit messages to h
 - [ ] Mandar pro email das pessoas que querem ter o email associado (talvez ter um icone no header para colocar o email), salvar no cache caso já tenha clikado na notificação.
 - [ ] Cokkies pop-ups para permitir ou não os cookies
 - [ ] Sempre ir salvando o arquivo quando estiver escrevendo para não perder
+- [ ] Testar qualidade do site
