@@ -20,6 +20,7 @@ import { SampleCard } from "../../components/SampleCard";
 import { ImageBlock } from "./ImageBlock";
 import { ProfileRow } from "./ProfileRow";
 import { ActionRow } from "./ActionRow";
+import { randomInt } from "crypto";
 
 export function Post() {
   const content = importLocalMarkdownFile(EX);
@@ -30,13 +31,30 @@ export function Post() {
     sampleCards.push(<SampleCard key={index} />);
   }
 
+  const color = (n: number) : string => {
+    switch (n) {
+      case 1:
+        return "purple";
+      case 2:
+        return "cyan";
+      case 3:
+        return "pink";
+      case 4:
+        return "linkedin";
+      case 5:
+        return "gray";
+      default:
+        return "linkedin"
+    }
+  };
+
   return (
     <>
       <Header type={PageType.DEFAULT} />
       <main className="main space-y-2">
         <div className="space-y-4">
           <TopicTag
-            color="purple"
+            color={color(Math.floor(Math.random() * (5 - 0 + 1) + 0))}
             variant="solid"
             title="Tecnology"
             borderRadius="full"

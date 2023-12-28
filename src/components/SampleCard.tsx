@@ -10,6 +10,23 @@ import {
 import { TopicTag } from "./TopicTag";
 
 export function SampleCard() {
+  const color = (n: number): string => {
+    switch (n) {
+      case 1:
+        return "purple";
+      case 2:
+        return "cyan";
+      case 3:
+        return "pink";
+      case 4:
+        return "linkedin";
+      case 5:
+        return "gray";
+      default:
+        return "linkedin";
+    }
+  };
+
   return (
     <>
       <Card maxW="md" variant={"outline"} cursor={"pointer"} boxShadow={"base"}>
@@ -33,7 +50,7 @@ export function SampleCard() {
             <div className="flex flex-row w-full justify-between h-fit">
               <TopicTag
                 title="Política"
-                color="twitter"
+                color={color(Math.floor(Math.random() * (5 - 0 + 1) + 0))}
                 variant="solid"
                 borderRadius="full"
               />
