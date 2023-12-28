@@ -8,11 +8,16 @@ import {
   CardFooter,
   AspectRatio,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 export function MainCard() {
+
+  const navigate = useNavigate()
+
   return (
     <>
-      <Card maxW="sm">
+    {/* TODO: Arrumar esse cara para ficar dinâmico */}
+      <Card maxW="sm" onClick={() => navigate("/post")}>
         <AspectRatio ratio={16 / 9}>
           <Image
             src="https://th.bing.com/th/id/OIG.pM5yvYt8jXgKE4HyVvUx?pid=ImgGn"
@@ -24,7 +29,10 @@ export function MainCard() {
         <CardBody>
           <Stack spacing="3">
             <Heading size="lg">Orquestando conteiners com Kubernets</Heading>
-            <Text>
+            <Text
+              bgGradient="linear(to-b, #1a1a1a 0%, rgba(118, 111, 154, 0.08) 100%)"
+              backgroundClip="text"
+            >
               Que o Kubernetes está ficando o tal tal tal todo mundo sabe mas
               agora como de fato orquestrar conteiners com ele e fazer a
               diferenca é algo que pou...
