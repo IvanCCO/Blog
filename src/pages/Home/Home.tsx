@@ -9,7 +9,7 @@ export function Home() {
     <>
       <Header type={PageType.US} />
 
-      <main className="main space-y-6">
+      <main className="main space-y-6 ">
         <div>
           <Text fontSize={"3xl"}>News</Text>
           <MainCard />
