@@ -33,21 +33,21 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         h1(props) {
           return (
-            <h1 className="text-xl font-medium my-8" {...props}>
+            <h1 className="text-xl font-medium !my-5" {...props}>
               {props.children}
             </h1>
           );
         },
         h2(props) {
           return (
-            <h1 className="text-lg font-medium my-6" {...props}>
+            <h1 className="text-lg font-medium !my-4" {...props}>
               {props.children}
             </h1>
           );
         },
         h3(props) {
           return (
-            <h1 className="text-lg font-normal my-4" {...props}>
+            <h1 className="text-lg font-normal !my-2" {...props}>
               {props.children}
             </h1>
           );

@@ -26,7 +26,7 @@ Os Serviços Kubernetes são usados para expor aplicações e seus componentes a
 
 Os Deployments gerenciam a implantação de aplicações e permitem atualizações sem tempo de inatividade. Eles garantem que o número desejado de réplicas esteja sempre em execução.
 
-### Exemplo Prático
+***Exemplo Prático***
 
 Vamos criar um Deployment simples para ilustrar o poder do Kubernetes:
 

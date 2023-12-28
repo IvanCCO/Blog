@@ -13,7 +13,6 @@ import {
   Stack,
 } from "@chakra-ui/react";
 
-import { ExternalLinkIcon } from "@chakra-ui/icons";
 import EX from "../../assets/Markdown/ex.md";
 import { importLocalMarkdownFile } from "../../hooks/useFileUtils";
 import { TopicTag } from "../../components/TopicTag";
@@ -24,6 +23,12 @@ import { ActionRow } from "./ActionRow";
 
 export function Post() {
   const content = importLocalMarkdownFile(EX);
+
+  const sampleCards: JSX.Element[] = [];
+
+  for (let index = 0; index < 3; index++) {
+    sampleCards.push(<SampleCard key={index} />);
+  }
 
   return (
     <>
@@ -54,8 +59,7 @@ export function Post() {
         <Text fontSize={"2xl"} pt={8}>
           Related Posts
         </Text>
-
-        <SampleCard />
+        <VStack spacing={5}>{sampleCards}</VStack>
       </main>
     </>
   );
