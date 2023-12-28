@@ -3,6 +3,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import remarkGfm from "remark-gfm";
 import remarkToc from "remark-toc";
+import { TableContainer, Table, TableCaption, Thead, Tr, Th, Td, Tbody  } from "@chakra-ui/react";
 
 interface MarkdownText {
   text: string;
@@ -32,7 +33,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         h1(props) {
           return (
-            <h1 className="text-lg font-medium my-8" {...props}>
+            <h1 className="text-xl font-medium my-8" {...props}>
               {props.children}
             </h1>
           );
@@ -86,11 +87,30 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
             </a>
           );
         },
+        table(props) {
+          return (
+            <TableContainer>
+              <Table variant={"simple"}>
+                <TableCaption>Metricas de sucesso</TableCaption>
+                {props.children}
+              </Table>
+            </TableContainer>
+          );
+        },
+        thead(props) {
+          return <Thead>{props.children}</Thead>;
+        },
+        tbody(props){
+          return <Tbody>{props.children}</Tbody>
+        },
+        tr(props) {
+          return <Tr>{props.children}</Tr>;
+        },
         th(props) {
-          return <th className="text-left">{props.children}</th>;
+          return <Th className="text-left">{props.children}</Th>;
         },
         td(props) {
-          return <td className="text-left">{props.children}</td>;
+          return <Td className="text-left">{props.children}</Td>;
         },
       }}
     />

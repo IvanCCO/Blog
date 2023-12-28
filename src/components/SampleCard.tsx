@@ -15,10 +15,11 @@ export function SampleCard() {
       <Card maxW="sm" variant={"outline"} cursor={"pointer"}>
         <CardBody>
           <Stack spacing="3">
-            <Heading size="lg">Orquestando conteiners com Kubernets</Heading>
+            <Heading size="md">Orquestando conteiners com Kubernets</Heading>
             <Text
               bgGradient="linear(to-b, #1a1a1a 0%, rgba(118, 111, 154, 0.08) 100%)"
               backgroundClip="text"
+              fontSize={"sm"}
             >
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum
               eius blanditiis repudiandae, beatae cum temporibus autem,

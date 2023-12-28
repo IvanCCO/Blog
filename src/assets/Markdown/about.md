@@ -25,14 +25,13 @@ If you wish to contribute, please provide clear and concise commit messages to h
 
 #### NOW
 
-- [ ] Página de Not Found
+- [ ] Página de Not Found (fazer figma primeiro)
 - [ ] Colocar o icone do (T) ná página
 - [ ] Colocar filtro no header para ser editor (eu steh) e nao -> Vou fazer isso mesmo? pq acho que é só formatar um md e mandar pro s3 -> mas tem que ter um lugar para colocar o arquivo md.
 - [ ] Botao de compartilhar artigo. -> Ficaria legal colocar isso no post.
 - [ ] Titulo vai ficar separado ou junto? **_Separado_**
   > Porque se ele ficar como titulo do markdown talvez fique mais complicado, ai estou achando melhor deixar
   > Separado porque dessa forma diferencia o titulo do texto, ai vai ficar mais facil pra renderizar os componentes
-- [x] Deixar espaço na parte de baixo para não limitar quando acabar o conteudo (talvez um footer)
 - [ ] Carrosel no home.
 - [ ] Colocar animação na minha página para ir escrevendo as coisas e a imagem ir descendo, deixar mais animado [Como fazer os componentes irem aparecendo](https://youtu.be/vqXLGX0szIQ?t=16914)
 - [ ] Adicionar components de skeleton
