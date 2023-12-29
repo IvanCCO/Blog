@@ -5,7 +5,8 @@ Taxco is my personal portfolio where I will share articles about technology and 
 Taxco bears some resemblance to Medium, but it's exclusively for my use. Currently, I am in the process of learning TypeScript, React, and frontend development in general. While I am more accustomed to backend development, Taxco is designed to be a full-stack project. I am committed to adhering to best practices for frontend development as I continue to explore and learn.
 
 > For some components, I am using Chakra UI.
-___
+
+---
 
 ### Requirements
 
@@ -19,10 +20,20 @@ npm start
 ```
 
 ### Contribute
+
 If you wish to contribute, please provide clear and concise commit messages to help me understand the changes you made. Your contributions are greatly appreciated!
 
-___
-### ***TODOS:***
+---
+
+### Thanks
+
+This project could only be made with the support of my future wife who helped me keep
+going and don't give up when i was not motivaded and helped me
+building this project, thank you Stéphanie.
+
+---
+
+### **_TODOS:_**
 
 ## NOW
 
@@ -35,7 +46,9 @@ ___
 - [ ] Mudar forma como o link é exposto, sendo com linha light e com underline
 - [ ] Divider ficar bonitinho que nem do Medium, tipo 3 pontinhos jkk
 - [ ] Maior espaçamento entre os titulos h1, h2, h3
-- [ ] Deixar imagem ocupando 100% da página no post
+- [ ] Deixar imagem ocupando 100% da página no post (acho que gostei como ta)
+- [ ] Deixar o texto da página responsivo
+- [ ] Menu buttom ta com muita sombra e ta mt feio
 
 ## Sec
 

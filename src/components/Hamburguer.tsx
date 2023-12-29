@@ -26,7 +26,7 @@ export function Hamburguer({
       <MenuButton
         as={IconButton}
         aria-label="Options"
-        icon={<HamburgerIcon boxSize={6} color={textColor} />}
+        icon={<HamburgerIcon boxSize={6} color={"black"} />}
         variant="outline"
       />
       <MenuList
