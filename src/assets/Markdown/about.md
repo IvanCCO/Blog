@@ -41,7 +41,7 @@ building this project, thank you Stéphanie.
 - [ ] Colocar o icone do (T) ná página
 - [ ] Colocar filtro no header para ser editor (eu steh) e nao -> Vou fazer isso mesmo? pq acho que é só formatar um md e mandar pro s3 -> mas tem que ter um lugar para colocar o arquivo md.
 - [ ] Carrosel no home.
-- [ ] Colocar animação na minha página para ir escrevendo as coisas e a imagem ir descendo, deixar mais animado [Como fazer os componentes irem aparecendo](https://youtu.be/vqXLGX0szIQ?t=16914)
+- [ ] Colocar animação na minha página para ir escrevendo as coisas e a imagem ir descendo, deixar mais [animado](https://youtu.be/vqXLGX0szIQ?t=16914)
 - [ ] Adicionar components de skeleton
 - [ ] Mudar forma como o link é exposto, sendo com linha light e com underline
 - [ ] Divider ficar bonitinho que nem do Medium, tipo 3 pontinhos jkk
