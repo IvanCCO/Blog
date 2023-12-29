@@ -9,6 +9,7 @@ import {
 import { HamburgerIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 import { IoIosFemale, IoIosMale, IoIosHeartEmpty } from "react-icons/io";
 import { FaRegEdit } from "react-icons/fa";
+import { color } from "framer-motion";
 
 interface MenuProps {
   theme: string;
@@ -26,9 +27,8 @@ export function Hamburguer({
       <MenuButton
         as={IconButton}
         aria-label="Options"
-        icon={<HamburgerIcon boxSize={6} />}
+        icon={<HamburgerIcon boxSize={6} color={textColor} />}
         variant="outline"
-        colorScheme={theme}
       />
       <MenuList
         bg={menuListBackground}
@@ -50,7 +50,7 @@ export function Hamburguer({
           icon={<IoIosHeartEmpty />}
           bg={menuListBackground}
         >
-          Us 
+          Us
         </MenuItem>
         <MenuItem
           as="a"
