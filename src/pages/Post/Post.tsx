@@ -1,4 +1,13 @@
-import { Heading, Text, VStack } from "@chakra-ui/react";
+import { StarIcon } from "@chakra-ui/icons";
+import {
+  Divider,
+  Heading,
+  HStack,
+  IconButton,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
+import { useState } from "react";
 import { Header } from "../../components/Header";
 import MarkdownFormatter from "../../components/MarkdownFormatter";
 import { Pagination } from "../../components/Pagination";
@@ -16,6 +25,8 @@ export function Post() {
   const content = importLocalMarkdownFile(EX);
 
   const sampleCards: JSX.Element[] = [];
+
+  const [hasLiked, setHasLiked] = useState<boolean>(false);
 
   for (let index = 0; index < 3; index++) {
     sampleCards.push(<SampleCard key={index} />);
@@ -42,7 +53,7 @@ export function Post() {
     <>
       <Header type={PageType.DEFAULT} />
       {/*  px-96  */}
-      <main className="main space-y-2">
+      <main className="main space-y-2 sm:px-28 md:px-44 lg:px-96">
         <div className="space-y-4">
           <TopicTag
             color={color(Math.floor(Math.random() * (5 - 0 + 1) + 0))}
@@ -69,8 +80,25 @@ export function Post() {
           <MarkdownFormatter text={content} />
         </div>
 
+        <Divider />
+
+        {/* TODO: Pensar em como ficaria as estrelas em prod sendo que não vai ter nenhum login*/}
+        <div className="w-full flex justify-start">
+          <HStack spacing={6}>
+            <IconButton
+              variant={"ghost"}
+              size={"lg"}
+              aria-label="Star this post"
+              icon={<StarIcon color={hasLiked ? "gold" : "silver"} />}
+              onClick={() => setHasLiked(!hasLiked)}
+            />
+            <Text fontWeight={"semibold"}>299</Text>
+          </HStack>
+        </div>
+
+        <Divider />
         <div className="w-full">
-          <Text fontSize={"2xl"} py={8}>
+          <Text fontSize={"2xl"} py={8} fontWeight={"semibold"}>
             Related Posts
           </Text>
           <VStack spacing={5}>
