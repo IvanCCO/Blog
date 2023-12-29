@@ -1,7 +1,7 @@
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export function SkillsCycle() {
   const javaIcon = (

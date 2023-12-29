@@ -1,11 +1,11 @@
 import {
   Card,
   CardBody,
-  Text,
-  Stack,
-  Heading,
   CardFooter,
   Divider,
+  Heading,
+  Stack,
+  Text,
 } from "@chakra-ui/react";
 import { TopicTag } from "./TopicTag";
 

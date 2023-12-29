@@ -1,5 +1,5 @@
-import { ExternalLinkIcon, DownloadIcon, EditIcon } from "@chakra-ui/icons";
-import { Button, HStack, Stack } from "@chakra-ui/react";
+import { DownloadIcon, EditIcon, ExternalLinkIcon } from "@chakra-ui/icons";
+import { Button, HStack } from "@chakra-ui/react";
 import React from "react";
 
 export function ActionRow() {

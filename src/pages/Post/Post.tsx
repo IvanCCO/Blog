@@ -1,27 +1,16 @@
-import { PageType } from "../../data/constants";
+import { Heading, Text, VStack } from "@chakra-ui/react";
 import { Header } from "../../components/Header";
 import MarkdownFormatter from "../../components/MarkdownFormatter";
-import {
-  Image,
-  Text,
-  VStack,
-  Flex,
-  Avatar,
-  Box,
-  Heading,
-  Button,
-  Stack,
-} from "@chakra-ui/react";
 import { Pagination } from "../../components/Pagination";
+import { PageType } from "../../data/constants";
 
 import EX from "../../assets/Markdown/ex.md";
-import { importLocalMarkdownFile } from "../../hooks/useFileUtils";
-import { TopicTag } from "../../components/TopicTag";
 import { SampleCard } from "../../components/SampleCard";
+import { TopicTag } from "../../components/TopicTag";
+import { importLocalMarkdownFile } from "../../hooks/useFileUtils";
+import { ActionRow } from "./ActionRow";
 import { ImageBlock } from "./ImageBlock";
 import { ProfileRow } from "./ProfileRow";
-import { ActionRow } from "./ActionRow";
-import { randomInt } from "crypto";
 
 export function Post() {
   const content = importLocalMarkdownFile(EX);

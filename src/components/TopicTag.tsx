@@ -1,4 +1,4 @@
-import { TagLabel, Tag } from "@chakra-ui/react";
+import { Tag, TagLabel } from "@chakra-ui/react";
 
 interface TagProps {
   title: string;

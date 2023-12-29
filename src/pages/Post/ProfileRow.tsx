@@ -1,12 +1,4 @@
-import {
-  Image,
-  Text,
-  VStack,
-  Flex,
-  Avatar,
-  Box,
-  Heading,
-} from "@chakra-ui/react";
+import { Avatar, Box, Flex, Heading, Text } from "@chakra-ui/react";
 import DEEU from "../../assets/deeu.jpg";
 
 export function ProfileRow() {

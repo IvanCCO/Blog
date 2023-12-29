@@ -1,10 +1,9 @@
+import { Button, Text } from "@chakra-ui/react";
 import { Header } from "../../components/Header";
 import { MainCard } from "../../components/MainCard";
+import { Pagination } from "../../components/Pagination";
 import { SampleCard } from "../../components/SampleCard";
 import { PageType } from "../../data/constants";
-import { Text } from "@chakra-ui/react";
-import { Button } from "@chakra-ui/react";
-import { Pagination } from "../../components/Pagination";
 
 export function Home() {
   const sampleCards: JSX.Element[] = [];

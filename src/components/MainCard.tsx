@@ -1,12 +1,12 @@
 import {
+  AspectRatio,
   Card,
   CardBody,
-  Text,
+  CardFooter,
+  Heading,
   Image,
   Stack,
-  Heading,
-  CardFooter,
-  AspectRatio,
+  Text,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 

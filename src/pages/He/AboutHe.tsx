@@ -1,9 +1,9 @@
-import { Header } from "../../components/Header";
-import ArrowPosts from "./ArrowPosts";
-import { SocialMediaList } from "./SocialMediaList";
 import mypic from "../../assets/he-pic.jpg";
+import { Header } from "../../components/Header";
 import { PageType } from "../../data/constants";
+import ArrowPosts from "./ArrowPosts";
 import { SkillsCycle } from "./SkillsCycle";
+import { SocialMediaList } from "./SocialMediaList";
 
 const desktopWorking = (
   <>

@@ -1,5 +1,5 @@
+import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import { Button } from "@chakra-ui/react";
-import { ArrowForwardIcon, ArrowBackIcon } from "@chakra-ui/icons";
 
 export function Pagination() {
   return (

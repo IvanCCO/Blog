@@ -1,15 +1,14 @@
+import { HamburgerIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 import {
+  IconButton,
   Menu,
   MenuButton,
-  MenuList,
-  MenuItem,
   MenuDivider,
-  IconButton,
+  MenuItem,
+  MenuList,
 } from "@chakra-ui/react";
-import { HamburgerIcon, InfoOutlineIcon } from "@chakra-ui/icons";
-import { IoIosFemale, IoIosMale, IoIosHeartEmpty } from "react-icons/io";
 import { FaRegEdit } from "react-icons/fa";
-import { color } from "framer-motion";
+import { IoIosFemale, IoIosHeartEmpty, IoIosMale } from "react-icons/io";
 
 interface MenuProps {
   theme: string;

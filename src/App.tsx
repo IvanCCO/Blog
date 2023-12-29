@@ -1,11 +1,10 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
+import { Route, Routes } from "react-router-dom";
+import { Post } from "../src/pages/Post/Post";
 import "./App.css";
+import About from "./pages/About/About";
 import { AboutHe } from "./pages/He/AboutHe";
 import { Home } from "./pages/Home/Home";
-import { Post } from "../src/pages/Post/Post";
-import About from "./pages/About/About";
 
 function App() {
   return (
