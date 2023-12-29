@@ -41,6 +41,7 @@ export function Post() {
   return (
     <>
       <Header type={PageType.DEFAULT} />
+      {/*  px-96  */}
       <main className="main space-y-2">
         <div className="space-y-4">
           <TopicTag

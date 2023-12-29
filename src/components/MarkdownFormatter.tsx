@@ -1,12 +1,16 @@
 import {
+  Center,
+  Image,
   Table,
   TableCaption,
   TableContainer,
   Tbody,
   Td,
+  Text,
   Th,
   Thead,
   Tr,
+  VStack,
 } from "@chakra-ui/react";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -28,12 +32,14 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
           const { children, className, node, ...rest } = props;
           const match = /language-(\w+)/.exec(className || "");
           return match ? (
-            <SyntaxHighlighter
-              PreTag="div"
-              children={String(children).replace(/\n$/, "")}
-              language={match[1]}
-              style={prism}
-            />
+            <div className="my-12">
+              <SyntaxHighlighter
+                PreTag="div"
+                children={String(children).replace(/\n$/, "")}
+                language={match[1]}
+                style={prism}
+              />
+            </div>
           ) : (
             <code {...rest} className={"bg-gray-200 px-1"}>
               {children}
@@ -56,7 +62,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         h3(props) {
           return (
-            <h1 className="text-lg font-normal !my-2" {...props}>
+            <h1 className="text-lg font-normal !my-4" {...props}>
               {props.children}
             </h1>
           );
@@ -128,6 +134,19 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
               <p className="font-itim text-5xl text-black">.</p>
               <p className="font-itim text-5xl text-black">.</p>
             </div>
+          );
+        },
+        img(props) {
+          console.log(props.src);
+          return (
+            <Center>
+              <VStack>
+                <Image src={props.src} boxSize="250px" />
+                <Text fontSize={"xs"} color={"GrayText"}>
+                  {props.alt}
+                </Text>
+              </VStack>
+            </Center>
           );
         },
       }}
