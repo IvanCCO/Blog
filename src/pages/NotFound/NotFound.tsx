@@ -14,14 +14,21 @@ import {
 } from "@chakra-ui/react";
 import { Header } from "../../components/Header";
 import { PageType } from "../../data/constants";
+import { useNavigate } from "react-router-dom";
+import HORSE from "../../assets/Designer-no-background.png"
 
 export function NotFound() {
+
+
+  const navigate = useNavigate()
+
+
   return (
     <main className="main sm:px-28 md:px-44 lg:px-96">
       <Header type={PageType.DEFAULT} />
       <Center>
         <Image
-          src="https://th.bing.com/th/id/OIG.I7Xvxuab3JL68Nrm9VH_?w=1024&h=1024&rs=1&pid=ImgDetMain"
+          src={HORSE}
           boxSize={["200px", "300px"]}
         />
       </Center>
@@ -41,7 +48,7 @@ export function NotFound() {
             </a>
           </Text>
         </div>
-        <Button colorScheme="teal" variant={"solid"} size={["md", "lg"]}>
+        <Button colorScheme="teal" variant={"solid"} size={["md", "lg"]} onClick={() => navigate("/")}>
           Back to Home
         </Button>
 
