@@ -5,6 +5,7 @@ import "./App.css";
 import About from "./pages/About/About";
 import { AboutHe } from "./pages/He/AboutHe";
 import { Home } from "./pages/Home/Home";
+import { NotFound } from "./pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <Route path="taxco" element={<About />} />
         </Route>
         <Route path="/post" element={<Post />} />
-        <Route path="*" element={<h1>Not found</h1>} />
+        <Route path="*" element={<NotFound/>} />
       </Routes>
     </ChakraProvider>
   );
