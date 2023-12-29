@@ -3,7 +3,17 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import remarkGfm from "remark-gfm";
 import remarkToc from "remark-toc";
-import { TableContainer, Table, TableCaption, Thead, Tr, Th, Td, Tbody, Divider  } from "@chakra-ui/react";
+import {
+  TableContainer,
+  Table,
+  TableCaption,
+  Thead,
+  Tr,
+  Th,
+  Td,
+  Tbody,
+  Divider,
+} from "@chakra-ui/react";
 
 interface MarkdownText {
   text: string;
@@ -100,8 +110,8 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         thead(props) {
           return <Thead>{props.children}</Thead>;
         },
-        tbody(props){
-          return <Tbody>{props.children}</Tbody>
+        tbody(props) {
+          return <Tbody>{props.children}</Tbody>;
         },
         tr(props) {
           return <Tr>{props.children}</Tr>;
@@ -119,10 +129,8 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
               <p className="font-itim text-5xl text-black">.</p>
               <p className="font-itim text-5xl text-black">.</p>
             </div>
-          )
-
-        }
-        
+          );
+        },
       }}
     />
   );

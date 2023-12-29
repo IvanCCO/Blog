@@ -7,16 +7,12 @@ import {
   Box,
   Heading,
 } from "@chakra-ui/react";
-import DEEU from "../../assets/deeu.jpg"
+import DEEU from "../../assets/deeu.jpg";
 
 export function ProfileRow() {
   return (
     <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap" py={3}>
-      <Avatar
-        name="Segun Adebayo"
-        src={DEEU}
-        size={"md"}
-      />
+      <Avatar name="Segun Adebayo" src={DEEU} size={"md"} />
       <Box>
         <Heading size="xs">De Euzinha</Heading>
         <Text fontSize={"xs"} color={"#727272"}>

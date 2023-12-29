@@ -11,13 +11,17 @@ import {
 import { useNavigate } from "react-router-dom";
 
 export function MainCard() {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <>
-    {/* TODO: Arrumar esse cara para ficar dinâmico */}
-      <Card maxW={["md", "lg"]} onClick={() => navigate("/post")} cursor={"pointer"} boxShadow={"lg"}>
+      {/* TODO: Arrumar esse cara para ficar dinâmico */}
+      <Card
+        maxW={["md", "lg"]}
+        onClick={() => navigate("/post")}
+        cursor={"pointer"}
+        boxShadow={"lg"}
+      >
         <AspectRatio ratio={16 / 9}>
           <Image
             src="https://th.bing.com/th/id/OIG.pM5yvYt8jXgKE4HyVvUx?pid=ImgGn"
