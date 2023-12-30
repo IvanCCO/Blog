@@ -71,8 +71,7 @@ export function SampleCard() {
               w="full"
               justifyContent={"space-between"}
               h="fit-content"
-              placeItems={"center"}
-              alignItems={"baseline"}
+              alignItems={{ base: "baseline", md: "center", lg: "baseline" }}
             >
               <TopicTag
                 title="Política"

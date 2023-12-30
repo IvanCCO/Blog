@@ -12,6 +12,7 @@ export function TopicTag({ title, color, variant, borderRadius }: TagProps) {
     <Tag
       size={"md"}
       {...(borderRadius && { borderRadius })}
+      cursor="pointer"
       variant={variant}
       colorScheme={color}
       textAlign="center"

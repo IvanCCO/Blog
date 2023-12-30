@@ -1,8 +1,9 @@
-import { Button, Stack, Text } from "@chakra-ui/react";
+import { SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import { Header } from "../../components/Header";
 import { MainCard } from "../../components/MainCard";
 import { Pagination } from "../../components/Pagination";
 import { SampleCard } from "../../components/SampleCard";
+import { TopicTag } from "../../components/TopicTag";
 import { PageType } from "../../data/constants";
 
 export function Home() {
@@ -28,14 +29,16 @@ export function Home() {
               <Text fontSize={"3xl"} fontWeight={"medium"}>
                 Posts
               </Text>
-              <Button
-                colorScheme="gray"
-                size="sm"
-                variant={"solid"}
-                rounded={"base"}
-              >
-                Filtrar
-              </Button>
+              <SimpleGrid spacingX={"5px"} spacingY={"10px"} columns={[2, 4]}>
+                <TopicTag title="All Articles" color="yellow" variant="solid" />
+                <TopicTag
+                  title="Veterinary"
+                  color="whatsapp"
+                  variant="outline"
+                />
+                <TopicTag title="Tecnlogy" color="purple" variant="outline" />
+                <TopicTag title="More" color="linkedin" variant="outline" />
+              </SimpleGrid>
             </div>
             {/* <SimpleGrid */}
             {/*   minChildWidth="230px" */}
