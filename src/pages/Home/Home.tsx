@@ -1,4 +1,4 @@
-import { Button, Text } from "@chakra-ui/react";
+import { Button, Text, Center } from "@chakra-ui/react";
 import { Header } from "../../components/Header";
 import { MainCard } from "../../components/MainCard";
 import { Pagination } from "../../components/Pagination";
@@ -15,7 +15,7 @@ export function Home() {
     <>
       <Header type={PageType.US} />
 
-      <main className="main space-y-8 grid place-items-center">
+      <main className="main space-y-8 grid place-items-center sm:px-28 md:px-44 lg:px-72">
         <div className="space-y-2">
           <Text fontSize={"3xl"} fontWeight={"medium"}>
             News
