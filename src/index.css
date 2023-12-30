@@ -29,13 +29,48 @@
 
 .circle {
   position: absolute;
-  width: 10px; 
-  height: 30px; 
+  width: 10px;
+  height: 30px;
   border-radius: 33.45px 0px 22.85px 0px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
   z-index: -1;
+}
+
+/* Hover do Header  */
+.header-item::before {
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+.header-item:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.header-item::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  inset: 0 0 0 0;
+  z-index: -1;
+  transition: transform 0.2s ease;
+}
+
+#He::before {
+  background-color: rgb(126 34 206);
+}
+#She::before {
+  background-color: rgb(252 211 77);
+}
+#Us::before {
+  background-color: rgb(253 186 116);
+}
+#About::before {
+	background-color: rgb(187 247 208);
 }
 
 p::selection,

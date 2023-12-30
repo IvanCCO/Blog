@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Logo } from "../components/Logo";
 import { PageType } from "../data/constants";
+import { Hamburguer } from "./Hamburguer";
 import { SearchInput } from "./SearchInput";
 {
   /* TODO: Colocar aqui essa página para levar para sobre o projeto 
@@ -74,17 +75,24 @@ const chooseHeaderStyle = (type: PageType): HeaderStyle => {
 const gracinha = (
   text: string,
   color: string,
-  path: string
+  path: string,
 ): React.ReactElement => {
- 
   const location = useLocation();
   const isActive = location.pathname === path;
 
-  const isHe = location.pathname === "/about/he"
+  const isHe = location.pathname === "/about/he";
+
+  const beforeStyleBackground = `before:${color}`
+
 
   return (
     <Link to={path}>
-      <span className={`relative  cursor-pointer ${isHe?"text-white" : "text-black"}`}>
+      <span
+        className={`${!isActive && "header-item"} relative  cursor-pointer p-1 ${
+          isHe ? "text-white" : "text-black"
+        } `}
+        id={text}
+      >
         <span>{text}</span>
         {isActive && <span className={`circle ${color}`}></span>}
       </span>
@@ -94,10 +102,10 @@ const gracinha = (
 
 const headerItens = () => {
   return (
-    <div className="inline-flex w-1/2 justify-between text-xl pt-2">
+    <div className="hidden md:inline-flex w-1/2 justify-between text-lg">
       {gracinha("He", "bg-purple-700", "/about/he")}
       {gracinha("She", "bg-amber-300", "/about/she")}
-      {gracinha("Us", "bg-red-200", "/")}
+      {gracinha("Us", "bg-orange-300", "/")}
       {gracinha("About", "bg-green-200", "/about/taxco")}
     </div>
   );
@@ -122,11 +130,13 @@ export function Header({ type }: { type: PageType }) {
         />
       </div>
 
-      {/* <Hamburguer
-        theme={headerStyle.hamburgerTheme}
-        menuListBackground={headerStyle.menuListBackground}
-        textColor={headerStyle.colorText}
-      /> */}
+      <div className="md:hidden">
+        <Hamburguer
+          theme={headerStyle.hamburgerTheme}
+          menuListBackground={headerStyle.menuListBackground}
+          textColor={headerStyle.colorText}
+        />
+      </div>
     </div>
   );
 }
