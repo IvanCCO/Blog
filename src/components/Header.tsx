@@ -82,9 +82,6 @@ const gracinha = (
 
   const isHe = location.pathname === "/about/he";
 
-  const beforeStyleBackground = `before:${color}`
-
-
   return (
     <Link to={path}>
       <span
