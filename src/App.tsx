@@ -12,8 +12,8 @@ function App() {
     <ChakraProvider>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="about/he" element={<AboutHe />} />
-        <Route path="about/taxco" element={<About />} />
+        <Route path="/about/he" element={<AboutHe />} />
+        <Route path="/about/taxco" element={<About />} />
         <Route path="/post" element={<Post />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
