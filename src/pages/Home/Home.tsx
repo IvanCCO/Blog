@@ -37,7 +37,13 @@ export function Home() {
                 Filtrar
               </Button>
             </div>
-            <SimpleGrid minChildWidth='230px' spacingX={'10px'} spacingY={'20px'}>{sampleCards}</SimpleGrid>
+            <SimpleGrid
+              minChildWidth="230px"
+              spacingX={"10px"}
+              spacingY={"20px"}
+            >
+              {sampleCards}
+            </SimpleGrid>
             <Pagination />
           </div>
         </div>

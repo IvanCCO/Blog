@@ -17,7 +17,7 @@ function App() {
           <Route path="taxco" element={<About />} />
         </Route>
         <Route path="/post" element={<Post />} />
-        <Route path="*" element={<NotFound/>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </ChakraProvider>
   );

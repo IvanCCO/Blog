@@ -12,25 +12,19 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
+import HORSE from "../../assets/Designer-no-background.png";
 import { Header } from "../../components/Header";
 import { PageType } from "../../data/constants";
-import { useNavigate } from "react-router-dom";
-import HORSE from "../../assets/Designer-no-background.png"
 
 export function NotFound() {
-
-
-  const navigate = useNavigate()
-
+  const navigate = useNavigate();
 
   return (
     <main className="main sm:px-28 md:px-44 lg:px-96">
       <Header type={PageType.DEFAULT} />
       <Center>
-        <Image
-          src={HORSE}
-          boxSize={["200px", "300px"]}
-        />
+        <Image src={HORSE} boxSize={["200px", "300px"]} />
       </Center>
 
       <VStack spacing={10}>
@@ -48,7 +42,12 @@ export function NotFound() {
             </a>
           </Text>
         </div>
-        <Button colorScheme="teal" variant={"solid"} size={["md", "lg"]} onClick={() => navigate("/")}>
+        <Button
+          colorScheme="teal"
+          variant={"solid"}
+          size={["md", "lg"]}
+          onClick={() => navigate("/")}
+        >
           Back to Home
         </Button>
 

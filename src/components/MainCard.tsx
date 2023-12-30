@@ -1,4 +1,5 @@
 import {
+  AspectRatio,
   Card,
   CardBody,
   CardFooter,
@@ -7,16 +8,16 @@ import {
   Image,
   Stack,
   Text,
-AspectRatio
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
 export function MainCard() {
   const navigate = useNavigate();
 
-      {/* TODO: Arrumar esse cara para ficar dinâmico */}
+  {
+    /* TODO: Arrumar esse cara para ficar dinâmico */
+  }
   return (
-
     <Center>
       <Card
         direction={{ base: "column", md: "row" }}
@@ -25,21 +26,23 @@ export function MainCard() {
         boxShadow={"lg"}
       >
         <AspectRatio ratio={16 / 9} w={"full"}>
-        <Image
-          src="https://th.bing.com/th/id/OIG.pM5yvYt8jXgKE4HyVvUx?pid=ImgGn"
-          alt="A big octopus managing containers"
-          borderTopRadius={{ base: "lg"}}
-          borderLeftRadius="lg"
-          objectFit="cover"
-        />
+          <Image
+            src="https://th.bing.com/th/id/OIG.pM5yvYt8jXgKE4HyVvUx?pid=ImgGn"
+            alt="A big octopus managing containers"
+            borderTopRadius={{ base: "lg" }}
+            borderLeftRadius="lg"
+            objectFit="cover"
+          />
         </AspectRatio>
         <Stack>
           <CardBody>
-            <Heading size={["lg", "md"]} mb={2}>Orquestando conteiners com Kubernets</Heading>
+            <Heading size={["lg", "md"]} mb={2}>
+              Orquestando conteiners com Kubernets
+            </Heading>
             <Text
               bgGradient="linear(to-b, #1a1a1a 0%, rgba(118, 111, 154, 0.08) 100%)"
               backgroundClip="text"
-              maxW={{lg: "70%"}}
+              maxW={{ lg: "70%" }}
             >
               Que o Kubernetes está ficando o tal tal tal todo mundo sabe mas
               Que o Kubernetes está ficando o tal tal tal todo mundo sabe mas
@@ -57,8 +60,6 @@ export function MainCard() {
           </CardFooter>
         </Stack>
       </Card>
-
-
     </Center>
   );
 }

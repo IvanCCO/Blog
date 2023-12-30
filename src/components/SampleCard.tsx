@@ -1,13 +1,13 @@
 import {
+  AspectRatio,
   Card,
   CardBody,
   CardFooter,
   Divider,
   Heading,
+  Image,
   Stack,
   Text,
-Image,
-AspectRatio
 } from "@chakra-ui/react";
 import { TopicTag } from "./TopicTag";
 
@@ -31,17 +31,19 @@ export function SampleCard() {
 
   return (
     <>
-      <Card
-        variant={"outline"}
-        cursor={"pointer"}
-        boxShadow={"base"}
-      >
+      <Card variant={"outline"} cursor={"pointer"} boxShadow={"base"}>
         <CardBody>
-          <AspectRatio ratio={4/3} maxW={"full"} maxH={"150px"} mb={3} display={{base: "none", sm: "none", md: "none", lg: "block"}}>
-          <Image
-            src="https://th.bing.com/th/id/OIG.wP.0xTjqyTThzWawHxaL?pid=ImgGn"
-            alt="Green double couch with wooden legs"
-          />
+          <AspectRatio
+            ratio={4 / 3}
+            maxW={"full"}
+            maxH={"150px"}
+            mb={3}
+            display={{ base: "none", sm: "none", md: "none", lg: "block" }}
+          >
+            <Image
+              src="https://th.bing.com/th/id/OIG.wP.0xTjqyTThzWawHxaL?pid=ImgGn"
+              alt="Green double couch with wooden legs"
+            />
           </AspectRatio>
           <Stack spacing="3">
             <Heading size="sm">Orquestando conteiners com Kubernets</Heading>

@@ -97,7 +97,10 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         a(props) {
           return (
-            <a href={props.href} className="link-color bg-transparent hover:text-white">
+            <a
+              href={props.href}
+              className="link-color bg-transparent hover:text-white"
+            >
               {props.children}
             </a>
           );

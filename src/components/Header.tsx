@@ -85,9 +85,9 @@ const gracinha = (
   return (
     <Link to={path}>
       <span
-        className={`${!isActive && "header-item"} relative  cursor-pointer p-1 ${
-          isHe ? "text-white" : "text-black"
-        } `}
+        className={`${
+          !isActive && "header-item"
+        } relative  cursor-pointer p-1 ${isHe ? "text-white" : "text-black"} `}
         id={text}
       >
         <span>{text}</span>
