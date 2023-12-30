@@ -7,6 +7,7 @@ import {
   Image,
   Stack,
   Text,
+AspectRatio
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
@@ -23,24 +24,22 @@ export function MainCard() {
         cursor={"pointer"}
         boxShadow={"lg"}
       >
-        {/* <AspectRatio ratio={16 / 9}> */}
+        <AspectRatio ratio={16 / 9} w={"full"}>
         <Image
           src="https://th.bing.com/th/id/OIG.pM5yvYt8jXgKE4HyVvUx?pid=ImgGn"
           alt="A big octopus managing containers"
           borderTopRadius={{ base: "lg"}}
           borderLeftRadius="lg"
           objectFit="cover"
-          aspectRatio={16/9}
-          maxW={{ md: "150px" }}
         />
-        {/* </AspectRatio> */}
+        </AspectRatio>
         <Stack>
           <CardBody>
             <Heading size={["lg", "md"]} mb={2}>Orquestando conteiners com Kubernets</Heading>
             <Text
               bgGradient="linear(to-b, #1a1a1a 0%, rgba(118, 111, 154, 0.08) 100%)"
               backgroundClip="text"
-              maxW={"70%"}
+              maxW={{lg: "70%"}}
             >
               Que o Kubernetes está ficando o tal tal tal todo mundo sabe mas
               Que o Kubernetes está ficando o tal tal tal todo mundo sabe mas

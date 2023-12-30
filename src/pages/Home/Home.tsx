@@ -23,7 +23,7 @@ export function Home() {
           <MainCard />
         </div>
         <div>
-          <div className="space-y-3">
+          <div className="space-y-3 w-full">
             <div className="flex justify-between place-items-center">
               <Text fontSize={"3xl"} fontWeight={"medium"}>
                 Posts
@@ -37,7 +37,7 @@ export function Home() {
                 Filtrar
               </Button>
             </div>
-            <SimpleGrid minChildWidth='270px' spacingX={'40px'} spacingY={'20px'}>{sampleCards}</SimpleGrid>
+            <SimpleGrid minChildWidth='230px' spacingX={'10px'} spacingY={'20px'}>{sampleCards}</SimpleGrid>
             <Pagination />
           </div>
         </div>
