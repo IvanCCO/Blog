@@ -4,6 +4,7 @@ import {
   CardBody,
   CardFooter,
   Divider,
+  Flex,
   Heading,
   Image,
   Stack,
@@ -31,7 +32,12 @@ export function SampleCard() {
 
   return (
     <>
-      <Card variant={"outline"} cursor={"pointer"} boxShadow={"base"}>
+      <Card
+        variant={"outline"}
+        cursor={"pointer"}
+        boxShadow={"base"}
+        minW="210px"
+      >
         <CardBody>
           <AspectRatio
             ratio={4 / 3}
@@ -59,21 +65,36 @@ export function SampleCard() {
         </CardBody>
         <Divider />
         <CardFooter>
-          <div className="w-full space-y-2">
-            <div className="flex flex-row w-full justify-between h-fit">
+          <div className="w-full space-y-4">
+            <Flex
+              direction={{ base: "row", md: "column", lg: "row" }}
+              w="full"
+              justifyContent={"space-between"}
+              h="fit-content"
+              placeItems={"center"}
+              alignItems={"baseline"}
+            >
               <TopicTag
                 title="Política"
                 color={color(Math.floor(Math.random() * (5 - 0 + 1) + 0))}
                 variant="solid"
                 borderRadius="full"
               />
-              <Text fontSize="sm" color="gray.600">
-                Dec 12 · 4 min read
-              </Text>
-            </div>
+              <div className="inline-flex space-x-1 place-items-center minW-fit">
+                <Text fontSize="sm" color="gray.600" mt={4} minW="fit-content">
+                  Dec 12
+                </Text>
+                <Text fontSize="sm" color="gray.600" mt={4} minW="fit-content">
+                  ·
+                </Text>
+                <Text fontSize="sm" color="gray.600" mt={4} minW="fit-content">
+                  4 min read
+                </Text>
+              </div>
+            </Flex>
             <div className="flex flex-row-reverse w-full justify-between h-fit">
               <Text fontSize="sm" color="gray.400" textAlign={"end"}>
-                wrote by @ivan_miranda
+                ivan_miranda
               </Text>
             </div>
           </div>

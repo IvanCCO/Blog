@@ -1,4 +1,4 @@
-import { Button, SimpleGrid, Text } from "@chakra-ui/react";
+import { Button, Stack, Text } from "@chakra-ui/react";
 import { Header } from "../../components/Header";
 import { MainCard } from "../../components/MainCard";
 import { Pagination } from "../../components/Pagination";
@@ -15,7 +15,7 @@ export function Home() {
     <>
       <Header type={PageType.US} />
 
-      <main className="main space-y-8 grid place-items-center sm:px-28 md:px-44 lg:px-72">
+      <main className="main space-y-8 grid place-items-center sm:px-28 md:px-44 lg:px-72 justify-center">
         <div className="space-y-2">
           <Text fontSize={"3xl"} fontWeight={"medium"}>
             News
@@ -37,13 +37,14 @@ export function Home() {
                 Filtrar
               </Button>
             </div>
-            <SimpleGrid
-              minChildWidth="230px"
-              spacingX={"10px"}
-              spacingY={"20px"}
-            >
-              {sampleCards}
-            </SimpleGrid>
+            {/* <SimpleGrid */}
+            {/*   minChildWidth="230px" */}
+            {/*   spacingX={"10px"} */}
+            {/*   spacingY={"20px"} */}
+            {/* > */}
+            {/*   {sampleCards} */}
+            {/* </SimpleGrid> */}
+            <Stack direction={["column", "column", "row"]}>{sampleCards}</Stack>
             <Pagination />
           </div>
         </div>

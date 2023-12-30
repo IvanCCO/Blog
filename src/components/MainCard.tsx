@@ -24,6 +24,7 @@ export function MainCard() {
         onClick={() => navigate("/post")}
         cursor={"pointer"}
         boxShadow={"lg"}
+        bg="white"
       >
         <AspectRatio ratio={16 / 9} w={"full"}>
           <Image

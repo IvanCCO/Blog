@@ -14,6 +14,10 @@ export function TopicTag({ title, color, variant, borderRadius }: TagProps) {
       {...(borderRadius && { borderRadius })}
       variant={variant}
       colorScheme={color}
+      textAlign="center"
+      placeItems={"center"}
+      justifyContent="center"
+      minW={{ base: "max-content", md: "80%", lg: "max-content" }}
     >
       <TagLabel fontWeight={"semibold"}>{title}</TagLabel>
     </Tag>
