@@ -49,6 +49,7 @@ building this project, thank you Stéphanie.
 - [ ] Deixar imagem ocupando 100% da página no post (acho que gostei como ta)
 - [ ] Deixar o texto da página responsivo
 - [ ] Menu buttom ta com muita sombra e ta mt feio
+- [ ] Botão de filtro filtrar por tag outline ficar as tags em row -> todas
 
 ## Sec
 
