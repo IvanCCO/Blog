@@ -26,3 +26,27 @@
   );
   background-position: 0 100%;
 }
+
+.circle {
+  position: absolute;
+  width: 10px; 
+  height: 30px; 
+  border-radius: 33.45px 0px 22.85px 0px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  z-index: -1;
+}
+
+p::selection,
+h1::selection,
+h2::selection,
+h3::selection,
+ul::selection,
+li::selection,
+strong::selection,
+span::selection,
+h4::selection {
+  color: white;
+  background: #a2a2a2;
+}

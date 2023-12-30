@@ -1,8 +1,7 @@
+import { Link, useLocation } from "react-router-dom";
 import { Logo } from "../components/Logo";
 import { PageType } from "../data/constants";
-import { Hamburguer } from "./Hamburguer";
 import { SearchInput } from "./SearchInput";
-
 {
   /* TODO: Colocar aqui essa página para levar para sobre o projeto 
     TODO: Mostrar apenas o command para quando a tela for grande
@@ -24,7 +23,7 @@ const chooseHeaderStyle = (type: PageType): HeaderStyle => {
   switch (type) {
     case "HE":
       return {
-        mainBackground: "he-background",
+        mainBackground: "bg-he-background",
         logoColor: "white",
         hamburgerTheme: "whiteAlpha",
         menuListBackground: "#3A3A3E",
@@ -46,7 +45,7 @@ const chooseHeaderStyle = (type: PageType): HeaderStyle => {
       };
     case "US":
       return {
-        mainBackground: "gray-50",
+        mainBackground: "bg-white",
         logoColor: "black",
         hamburgerTheme: "blackAlpha",
         menuListBackground: "#F1F1F1",
@@ -57,7 +56,7 @@ const chooseHeaderStyle = (type: PageType): HeaderStyle => {
       };
     case "DEFAULT":
       return {
-        mainBackground: "gray-50",
+        mainBackground: "bg-white",
         logoColor: "black",
         hamburgerTheme: "blackAlpha",
         menuListBackground: "#F1F1F1",
@@ -71,18 +70,35 @@ const chooseHeaderStyle = (type: PageType): HeaderStyle => {
   }
 };
 
+// TODO: Renomear isso kk
+const gracinha = (
+  text: string,
+  color: string,
+  path: string
+): React.ReactElement => {
+ 
+  const location = useLocation();
+  const isActive = location.pathname === path;
+
+  const isHe = location.pathname === "/about/he"
+
+  return (
+    <Link to={path}>
+      <span className={`relative  cursor-pointer ${isHe?"text-white" : "text-black"}`}>
+        <span>{text}</span>
+        {isActive && <span className={`circle ${color}`}></span>}
+      </span>
+    </Link>
+  );
+};
+
 const headerItens = () => {
   return (
-    <div className="hidden flex-row space-x-20 justify-between text-white text-md  place-items-center font-inter text-xl font-light">
-      <div>
-        <p className="cursor-pointer">She</p>
-      </div>
-      <div>
-        <p className="cursor-pointer">Us</p>
-      </div>
-      <div>
-        <p className="cursor-pointer">He</p>
-      </div>
+    <div className="inline-flex w-1/2 justify-between text-xl pt-2">
+      {gracinha("He", "bg-purple-700", "/about/he")}
+      {gracinha("She", "bg-amber-300", "/about/she")}
+      {gracinha("Us", "bg-red-200", "/")}
+      {gracinha("About", "bg-green-200", "/about/taxco")}
     </div>
   );
 };
@@ -93,7 +109,7 @@ export function Header({ type }: { type: PageType }) {
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 flex justify-between px-default-width place-items-center z-50 bg-white`}
+      className={`fixed top-0 left-0 right-0 inline-flex justify-between px-default-width place-items-center z-50 ${headerStyle.mainBackground}`}
     >
       <Logo color={headerStyle.logoColor} />
 
@@ -106,11 +122,11 @@ export function Header({ type }: { type: PageType }) {
         />
       </div>
 
-      <Hamburguer
+      {/* <Hamburguer
         theme={headerStyle.hamburgerTheme}
         menuListBackground={headerStyle.menuListBackground}
         textColor={headerStyle.colorText}
-      />
+      /> */}
     </div>
   );
 }

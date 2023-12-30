@@ -18,7 +18,8 @@ export function SearchInput({
       bg={backgroundColor}
       border={"none"}
       borderRadius="full"
-      maxW={"200px"}
+      size={"sm"}
+      maxW={"140px"}
     >
       <InputLeftElement pointerEvents="none">
         <IoSearchOutline color={foregroundColor} />
