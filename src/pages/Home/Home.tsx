@@ -1,4 +1,4 @@
-import { Button, Text, Center } from "@chakra-ui/react";
+import { Button, SimpleGrid, Text } from "@chakra-ui/react";
 import { Header } from "../../components/Header";
 import { MainCard } from "../../components/MainCard";
 import { Pagination } from "../../components/Pagination";
@@ -37,7 +37,7 @@ export function Home() {
                 Filtrar
               </Button>
             </div>
-            {sampleCards}
+            <SimpleGrid minChildWidth='270px' spacingX={'40px'} spacingY={'20px'}>{sampleCards}</SimpleGrid>
             <Pagination />
           </div>
         </div>

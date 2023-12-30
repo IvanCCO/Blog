@@ -10,7 +10,7 @@ interface TagProps {
 export function TopicTag({ title, color, variant, borderRadius }: TagProps) {
   return (
     <Tag
-      size={["md", "lg"]}
+      size={"md"}
       {...(borderRadius && { borderRadius })}
       variant={variant}
       colorScheme={color}

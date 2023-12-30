@@ -36,7 +36,7 @@ export function MainCard() {
         {/* </AspectRatio> */}
         <Stack>
           <CardBody>
-            <Heading size={["lg", "md"]} mb={3}>Orquestando conteiners com Kubernets</Heading>
+            <Heading size={["lg", "md"]} mb={2}>Orquestando conteiners com Kubernets</Heading>
             <Text
               bgGradient="linear(to-b, #1a1a1a 0%, rgba(118, 111, 154, 0.08) 100%)"
               backgroundClip="text"

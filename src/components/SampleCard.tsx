@@ -29,7 +29,9 @@ export function SampleCard() {
 
   return (
     <>
-      <Card maxW="md" variant={"outline"} cursor={"pointer"} boxShadow={"base"}>
+      <Card maxW={[
+        "full"
+      ]} variant={"outline"} cursor={"pointer"} boxShadow={"base"} >
         <CardBody>
           <Stack spacing="3">
             <Heading size="md">Orquestando conteiners com Kubernets</Heading>
@@ -38,6 +40,8 @@ export function SampleCard() {
               backgroundClip="text"
               fontSize={"sm"}
             >
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum
               eius blanditiis repudiandae, beatae cum temporibus autem,
               molestias aperiam perferendis, ipsam voluptatum consequuntur
