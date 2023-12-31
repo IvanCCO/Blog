@@ -27,31 +27,4 @@ If you wish to contribute, please provide clear and concise commit messages to h
 
 ### Thanks
 
-This project could only be made with the support of my future wife who helped me keep
-going and don't give up when i was not motivaded and helped me
-building this project, thank you Stéphanie.
-
----
-
-### **_TODOS:_**
-
-## NOW
-
-- [ ] [Carrosel](https://www.react-fast-marquee.com/) no home.
-- [ ] Deixar minha página responsiva após terminar
-- [ ] Colocar animação na minha página para ir escrevendo as coisas e a imagem ir descendo, deixar mais [animado](https://youtu.be/vqXLGX0szIQ?t=16914)
-- [ ] Adicionar components de skeleton
-- [ ] Permitir cookie -> (caso eu coloque algum no site)
-
-## Sec
-- [ ] Criptografar a url.
-- [ ] Token jwt para confirmar se pode editar as páginas ou não.
-
-
-## Pós
-- [ ] Mandar pro email das pessoas que querem ter o email associado (talvez ter um icone no header para colocar o email), salvar no cache caso já tenha clikado na notificação.
-  > ***Anotação quote***
-  >
-  > Como eu vou fazer para a pessoa colocar o email? vai ser alguma tela, botão no header? não sei. -? Alguma notificação aparecendo como pop na tela.
-- [ ] Cokkies pop-ups para permitir ou não os cookies
-- [ ] Testar qualidade do site
+This project could only be made with the support of my future wife who helped me keep going and don't give up when i was not motivaded and helped me building this project, thank you Stéphanie. ---
