@@ -10,7 +10,7 @@ export default function About() {
   return (
     <>
       <Header type={PageType.US} />
-      <main className="main sm:px-28 md:px-44 lg:px-96">
+      <main className="main sm:px-28 md:px-44 lg:px-72 xl:px-96 2xl:px-96">
         <MarkdownFormatter text={String(file)} />
       </main>
     </>

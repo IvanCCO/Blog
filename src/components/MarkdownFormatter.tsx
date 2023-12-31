@@ -90,7 +90,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         blockquote(props) {
           return (
-            <blockquote className="border-l-4 border-[#EEEEEE] pl-4  bg-[#F5F5F5] my-5 py-2 italic font-serif">
+            <blockquote className="border-l-4 border-[#EEEEEE] pl-4  bg-[#F5F5F5] my-5 p-2 italic font-serif ">
               {props.children}
             </blockquote>
           );

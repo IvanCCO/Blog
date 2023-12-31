@@ -37,7 +37,7 @@ building this project, thank you Stéphanie.
 
 ## NOW
 
-- [ ] Carrosel no home.
+- [ ] [Carrosel](https://www.react-fast-marquee.com/) no home.
 - [ ] Deixar minha página responsiva após terminar
 - [ ] Colocar animação na minha página para ir escrevendo as coisas e a imagem ir descendo, deixar mais [animado](https://youtu.be/vqXLGX0szIQ?t=16914)
 - [ ] Adicionar components de skeleton

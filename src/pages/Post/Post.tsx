@@ -52,14 +52,17 @@ export function Post() {
   return (
     <>
       <Header type={PageType.DEFAULT} />
-      <main className="main space-y-2 sm:px-28 md:px-44 lg:px-96">
+      <main className="main space-y-2 sm:px-28 md:px-44 lg:px-72 xl:px-96 2xl:px-96">
         <div className="space-y-4">
-          <TopicTag
-            color={color(Math.floor(Math.random() * (5 - 0 + 1) + 0))}
-            variant="solid"
-            title="Tecnology"
-            borderRadius="full"
-          />
+          <div className="w-fit">
+            <TopicTag
+              color={color(Math.floor(Math.random() * (5 - 0 + 1) + 0))}
+              variant="solid"
+              title="Tecnology"
+              borderRadius="full"
+            />
+          </div>
+
           <Heading size={"lg"}>
             Modern online and offline payments for Africa
           </Heading>
