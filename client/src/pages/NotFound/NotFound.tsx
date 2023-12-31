@@ -36,7 +36,7 @@ export function NotFound() {
           <Text fontSize={"lg"} color={"#727272"}>
             Go to our home page, that definitely does exists.
             <br></br>
-            If you think thats a bug,{" "}
+            If you think that's a bug,{" "}
             <a href="#" className="link-color text-purple-800 font-semibold">
               contact me
             </a>
@@ -63,7 +63,7 @@ export function NotFound() {
           <PopoverContent>
             <PopoverArrow />
             <PopoverBody>
-              That's simple, my babys dream is to work with horse genetics
+              Simple, my baby's dream is to work with horse genetics
             </PopoverBody>
           </PopoverContent>
         </Popover>
