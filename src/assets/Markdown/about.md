@@ -37,28 +37,21 @@ building this project, thank you Stéphanie.
 
 ## NOW
 
-- [ ] Página de Not Found (fazer figma primeiro)
-- [ ] Colocar o icone do (T) ná página
-- [ ] Colocar filtro no header para ser editor (eu steh) e nao -> Vou fazer isso mesmo? pq acho que é só formatar um md e mandar pro s3 -> mas tem que ter um lugar para colocar o arquivo md.
 - [ ] Carrosel no home.
+- [ ] Deixar minha página responsiva após terminar
 - [ ] Colocar animação na minha página para ir escrevendo as coisas e a imagem ir descendo, deixar mais [animado](https://youtu.be/vqXLGX0szIQ?t=16914)
 - [ ] Adicionar components de skeleton
-- [ ] Mudar forma como o link é exposto, sendo com linha light e com underline
-- [ ] Divider ficar bonitinho que nem do Medium, tipo 3 pontinhos jkk
-- [ ] Maior espaçamento entre os titulos h1, h2, h3
-- [ ] Deixar imagem ocupando 100% da página no post (acho que gostei como ta)
-- [ ] Deixar o texto da página responsivo
-- [ ] Menu buttom ta com muita sombra e ta mt feio
-- [ ] Botão de filtro filtrar por tag outline ficar as tags em row -> todas
+- [ ] Permitir cookie -> (caso eu coloque algum no site)
 
 ## Sec
-
 - [ ] Criptografar a url.
 - [ ] Token jwt para confirmar se pode editar as páginas ou não.
 
-## Pós
 
+## Pós
 - [ ] Mandar pro email das pessoas que querem ter o email associado (talvez ter um icone no header para colocar o email), salvar no cache caso já tenha clikado na notificação.
+  > ***Anotação quote***
+  >
+  > Como eu vou fazer para a pessoa colocar o email? vai ser alguma tela, botão no header? não sei. -? Alguma notificação aparecendo como pop na tela.
 - [ ] Cokkies pop-ups para permitir ou não os cookies
-- [ ] Sempre ir salvando o arquivo quando estiver escrevendo para não perder
 - [ ] Testar qualidade do site
