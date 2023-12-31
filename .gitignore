@@ -25,3 +25,4 @@ yarn-error.log*
 
 # others
 /client/.vscode
+/.idea
