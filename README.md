@@ -32,6 +32,8 @@ If you wish to contribute, please provide clear and concise commit messages to h
 - [ ] Fluxo principal de arquivos do backend funcionando e pronto para v2
   > Menos a parte de mandar para os email e etc. Posts relacionados tambem não é pra fazer agora afinal não vai ter posts para serem relacionados kk
 - [ ] Testar qualidade do site
+- [ ] Comentar codigo que não será deployado nessa primeira versão.
+  > Talvez ter duas branchs uma principal que é a v1 com as coisas da primeira e outra develop
 
 Precisa estar feito o fluxo principal de conseguir enviar um post com todas informações necessárias, esse post conseguir aparecer no site de maneira dinâmica com sua tag e subtitulos.
 Conseguir ler o post sem problemas.
