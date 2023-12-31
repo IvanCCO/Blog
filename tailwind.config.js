@@ -35,6 +35,7 @@ module.exports = {
         itim: ["Itim", "cursive"],
         inter: ["Inter", "sans-serif"],
         jomolhari: ["Jomolhari", "serif"],
+        playfair: ["Playfair"]
       },
       fontSize: {
         "2xl": "1.75rem",
