@@ -22,11 +22,10 @@ If you wish to contribute, please provide clear and concise commit messages to h
 ### **_TODOS V1:_**
 
 - [ ] [Carrosel](https://www.react-fast-marquee.com/) na pagina ivan.
-- [ ] texto de about me
+- [ ] texto de about me (pensar bem nessa descrição)
 - [ ] Deixar minha página responsiva
 - [ ] Colocar animação na minha página para ir escrevendo as coisas e a imagem ir descendo, deixar mais [animado](https://youtu.be/vqXLGX0szIQ?t=16914)
 - [ ] Adicionar components de skeleton
-- [ ] Arrumar Tabela com titulo mockado
 - [ ] Página do post não ta bem distrubido os posts relacionados (colocar igual do post funciona bem)
 - [ ] Criptografar a url.
 - [ ] Fluxo principal de arquivos do backend funcionando e pronto para v2
