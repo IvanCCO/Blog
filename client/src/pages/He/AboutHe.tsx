@@ -4,6 +4,7 @@ import { PageType } from "../../data/constants";
 import ArrowPosts from "./ArrowPosts";
 import { SkillsCycle } from "./SkillsCycle";
 import { SocialMediaList } from "./SocialMediaList";
+import { Footer } from "../../components/Footer";
 
 // TODO: Componentes irem aparecendo conforme o scroll do mouse vai descendo
 const desktopWorking = (
@@ -117,6 +118,8 @@ export function AboutHe() {
           </div>
 
           {/* TODO: Aba de experiência */}
+          <Footer/>
+
         </div>
       </main>
     </>
