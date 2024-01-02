@@ -1,16 +1,15 @@
-import { Button } from "@chakra-ui/react";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 import mypic from "../../assets/he-pic.jpg";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { PageType } from "../../data/constants";
 import { SkillsCycle } from "./SkillsCycle";
 import { SocialMediaList } from "./SocialMediaList";
-import {ArrowForwardIcon} from "@chakra-ui/icons"
 
 // TODO: Componentes irem aparecendo conforme o scroll do mouse vai descendo
 const desktopWorking = (
   <>
-    <main className="h-full bg-he-background px-page-default space-y-14 pt-24">
+    <main className="h-full bg-he-background px-page-default">
       <div className="font-jomolhari flex justify-between h-4/6">
         <div className="flex flex-col justify-center w-1/2 px-7 space-y-9">
           <div className="space-y-2">
@@ -47,7 +46,7 @@ export function AboutHe() {
     <>
       <Header type={PageType.HE} />
 
-      <main className="h-full py-32 bg-he-background px-default-width lg:px-96">
+      <main className="h-full py-24 bg-he-background px-default-width lg:px-96">
         <div className="font-jomolhari flex flex-col text-font-black-color space-y-default-heigh">
           <div className="flex flex-col justify-center space-y-2">
             <div>
@@ -73,10 +72,12 @@ export function AboutHe() {
               alt="Descrição da imagem"
               className="w-1/2 object-cover rounded-tl-sm rounded-bl-sm rounded-br-full rounded-tr-full"
             />
-            <div className="w-1/2 flex flex-col space-y-4 justify-center place-items-center">
+            <div className="w-1/2 flex flex-col space-y-3 justify-center place-items-center">
               <SocialMediaList />
-              {/* TODO: Deixar um botão mais maneiro. */}
-              <Button w={"100%"} variant={"solid"} colorScheme="purple" fontWeight={"bold"} rightIcon={<ArrowForwardIcon color={"white"} boxSize={5}/>}>My Posts</Button>
+              <div className="gradient relative items-center content-center text-white text-md rounded-md py-2 px-4 z-0 flex-row inline-flex w-full justify-center cursor-pointer">
+                <p className="text-center">My Posts</p>
+                <ArrowForwardIcon />
+              </div>
             </div>
           </div>
 
@@ -85,7 +86,7 @@ export function AboutHe() {
               About me
             </h1>
             {/* TODO: Colocar um texto verdadeiro  */}
-            <p className="text-md font-light leading-relaxed">
+            <p className="text-md font-light leading-relaxed text-justify">
               {" "}
               My name is Ivan Miranda, i am a Software Enginner Lorem ipsum
               dolor, sit amet consectetur adipisicing elit. Dicta provident
@@ -113,7 +114,7 @@ export function AboutHe() {
           </div>
 
           {/* TODO: Aba de experiência */}
-          <Footer textColor="white"/>
+          <Footer textColor="white" />
         </div>
       </main>
     </>

@@ -1,5 +1,4 @@
 import { SocialIcon } from "react-social-icons";
-import { Button } from "@chakra-ui/react";
 
 type SocialMedia = {
   url: string;
@@ -45,6 +44,7 @@ export function SocialMediaList() {
       {socialMedias.map((value, index) => (
         <li key={index}>
           <SocialIcon
+            style={{ height: 45, width: 45 }}
             url={value.url}
             {...(!value.useDefault && {
               bgColor: value.bg,
