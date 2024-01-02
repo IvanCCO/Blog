@@ -1,3 +1,4 @@
+import { Icon } from "@chakra-ui/icons";
 import mypic from "../../assets/he-pic.jpg";
 import { Header } from "../../components/Header";
 import { PageType } from "../../data/constants";
@@ -103,9 +104,7 @@ export function AboutHe() {
             </h1>
             <SkillsCycle />
             <div>
-              <span className="text-xs">
-                All those icons are from ️
-              </span>
+              <span className="text-xs">All those icons are from ️</span>
               <a
                 target="_blank"
                 href="https://icons8.com"

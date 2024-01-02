@@ -7,6 +7,8 @@ import K8S from "../../assets/SkillsIcons/icons8-kubernetes.svg"
 import DOCKER from "../../assets/SkillsIcons/icons8-docker.svg"
 import JAVA from "../../assets/SkillsIcons/java.svg"
 import KOTLIN from "../../assets/SkillsIcons/icons8-kotlin.svg"
+import REACT from "../../assets/SkillsIcons/react.svg"
+import SPRING from "../../assets/SkillsIcons/spring.svg"
 
 export function SkillsCycle() {
 
@@ -22,6 +24,10 @@ export function SkillsCycle() {
         {image(DOCKER)}
         {image(JAVA)}
         {image(KOTLIN)}
+        {image(REACT)}
+        {image(SPRING)}
       </Marquee>
   );
 }
+
+{/* <a target="_blank" href="https://icons8.com/icon/bzf0DqjXFHIW/react">React</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */}
