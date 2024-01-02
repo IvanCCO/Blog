@@ -48,7 +48,7 @@ export function Hamburguer({
           icon={<IoIosMale />}
           bg={menuListBackground}
         >
-          About
+          Me 
         </MenuItem>
 
         <MenuDivider color={menuListBackground} />

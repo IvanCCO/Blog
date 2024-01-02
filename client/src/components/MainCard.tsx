@@ -14,9 +14,6 @@ import { useNavigate } from "react-router-dom";
 export function MainCard() {
   const navigate = useNavigate();
 
-  {
-    /* TODO: Arrumar esse cara para ficar dinâmico */
-  }
   return (
     <Center>
       <Card

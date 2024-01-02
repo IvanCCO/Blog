@@ -3,11 +3,7 @@ import { Logo } from "../components/Logo";
 import { PageType } from "../data/constants";
 import { Hamburguer } from "./Hamburguer";
 import { SearchInput } from "./SearchInput";
-{
-  /* TODO: Colocar aqui essa página para levar para sobre o projeto 
-    TODO: Mostrar apenas o command para quando a tela for grande
-*/
-}
+
 type HeaderStyle = {
   mainBackground: string;
   logoColor: string;
@@ -19,7 +15,6 @@ type HeaderStyle = {
   colorText: string;
 };
 
-/* Choose header style like input color hamburguer and etc depending on page */
 const chooseHeaderStyle = (type: PageType): HeaderStyle => {
   switch (type) {
     case "HE":
@@ -60,8 +55,7 @@ const chooseHeaderStyle = (type: PageType): HeaderStyle => {
   }
 };
 
-// TODO: Renomear isso kk
-const gracinha = (
+const beforeStyle = (
   text: string,
   color: string,
   path: string,
@@ -89,14 +83,13 @@ const gracinha = (
 const headerItens = () => {
   return (
     <div className="hidden md:inline-flex w-1/2 justify-between text-lg">
-      {gracinha("Me", "bg-purple-700", "/about/he")}
-      {gracinha("Posts", "bg-orange-300", "/")}
-      {gracinha("Taxco", "bg-green-200", "/about/taxco")}
+      {beforeStyle("Me", "bg-purple-700", "/about/he")}
+      {beforeStyle("Posts", "bg-orange-300", "/")}
+      {beforeStyle("Taxco", "bg-green-200", "/about/taxco")}
     </div>
   );
 };
 
-/* Colorscheme on dark mode is whiteAlpha and on white mode is default" */
 export function Header({ type }: { type: PageType }) {
   const headerStyle = chooseHeaderStyle(type);
 

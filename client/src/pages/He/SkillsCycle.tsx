@@ -29,10 +29,10 @@ export function SkillsCycle() {
 
   return (
     <Marquee
-      speed={20}
+      speed={30}
       gradient={true}
       autoFill={true}
-      pauseOnClick={true}
+      pauseOnHover={true}
       direction="right"
       gradientColor="#2E2E32"
       gradientWidth={100}

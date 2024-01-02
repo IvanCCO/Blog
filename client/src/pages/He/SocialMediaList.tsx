@@ -1,4 +1,5 @@
 import { SocialIcon } from "react-social-icons";
+import { Button } from "@chakra-ui/react";
 
 type SocialMedia = {
   url: string;
@@ -18,7 +19,7 @@ export function SocialMediaList() {
       network: "github",
     },
     {
-      url: "www.linkedin.com/in/ivan-medeiros-024133241",
+      url: "https://www.linkedin.com/in/ivan-medeiros-024133241",
     },
     {
       url: "https://www.instagram.com/ivan_oliverss/",
@@ -40,9 +41,8 @@ export function SocialMediaList() {
   ];
 
   return (
-    <ul className="grid grid-cols-3 gap-2 absolute">
+    <ul className="grid grid-cols-3 gap-2">
       {socialMedias.map((value, index) => (
-        // Iterate over the social medias and put on a list
         <li key={index}>
           <SocialIcon
             url={value.url}

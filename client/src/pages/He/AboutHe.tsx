@@ -1,10 +1,11 @@
+import { Button } from "@chakra-ui/react";
 import mypic from "../../assets/he-pic.jpg";
+import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { PageType } from "../../data/constants";
-import ArrowPosts from "./ArrowPosts";
 import { SkillsCycle } from "./SkillsCycle";
 import { SocialMediaList } from "./SocialMediaList";
-import { Footer } from "../../components/Footer";
+import {ArrowForwardIcon} from "@chakra-ui/icons"
 
 // TODO: Componentes irem aparecendo conforme o scroll do mouse vai descendo
 const desktopWorking = (
@@ -27,7 +28,6 @@ const desktopWorking = (
               </p>
             </div>
           </div>
-          <ArrowPosts />
           <SocialMediaList />
         </div>
         <div className="flex items-center bg-slate-100 w-1/2 rounded-tl-full rounded-bl-full rounded-br-sm rounded-tr-sm overflow-hidden max-h-fit">
@@ -47,9 +47,8 @@ export function AboutHe() {
     <>
       <Header type={PageType.HE} />
 
-      <main className="h-full py-32 bg-he-background px-default-width">
+      <main className="h-full py-32 bg-he-background px-default-width lg:px-96">
         <div className="font-jomolhari flex flex-col text-font-black-color space-y-default-heigh">
-          {/* Box apresentaçao, com nome cargo e onde trabalho */}
           <div className="flex flex-col justify-center space-y-2">
             <div>
               <div>
@@ -74,29 +73,25 @@ export function AboutHe() {
               alt="Descrição da imagem"
               className="w-1/2 object-cover rounded-tl-sm rounded-bl-sm rounded-br-full rounded-tr-full"
             />
-            <div className="w-1/2">
+            <div className="w-1/2 flex flex-col space-y-4 justify-center place-items-center">
               <SocialMediaList />
+              {/* TODO: Deixar um botão mais maneiro. */}
+              <Button w={"100%"} variant={"solid"} colorScheme="purple" fontWeight={"bold"} rightIcon={<ArrowForwardIcon color={"white"} boxSize={5}/>}>My Posts</Button>
             </div>
           </div>
-          <ArrowPosts />
 
           <div className="text-white font-inter space-y-4">
             <h1 className="text-2xl border-b-4 border-purple-800 w-fit pr-4">
               About me
             </h1>
             {/* TODO: Colocar um texto verdadeiro  */}
-            <p className="text-md font-extralight leading-relaxed">
+            <p className="text-md font-light leading-relaxed">
               {" "}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et
-              massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
-              fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
-              vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum
-              auctor ornare leo, non suscipit magna interdum eu. Curabitur
-              pellentesque nibh nibh, at maximus ante fermentum sit amet.
-              Pellentesque commodo lacus at sodales sodales. Quisque sagittis
-              orci ut diam condimentum, vel euismod erat placerat. In iaculis
-              arcu eros, eget tempus orci facilisis id. Praesent lorem orci,
-              mattis non efficitur id, ultricies vel nibh.
+              My name is Ivan Miranda, i am a Software Enginner Lorem ipsum
+              dolor, sit amet consectetur adipisicing elit. Dicta provident
+              rerum earum beatae aspernatur odit, iure eveniet molestiae sequi
+              recusandae ratione, voluptatibus dolore ab. Nulla officia
+              assumenda beatae consequatur fugiat?
             </p>
           </div>
 
@@ -118,8 +113,7 @@ export function AboutHe() {
           </div>
 
           {/* TODO: Aba de experiência */}
-          <Footer/>
-
+          <Footer textColor="white"/>
         </div>
       </main>
     </>

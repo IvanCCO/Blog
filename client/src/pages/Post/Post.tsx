@@ -2,6 +2,7 @@ import { Heading, Text } from "@chakra-ui/react";
 import { Header } from "../../components/Header";
 import MarkdownFormatter from "../../components/MarkdownFormatter";
 import { PageType } from "../../data/constants";
+import { Footer } from "../../components/Footer";
 
 import EX from "../../assets/Markdown/ex.md";
 import { SampleCard } from "../../components/SampleCard";
@@ -72,6 +73,8 @@ export function Post() {
         <div>
           <MarkdownFormatter text={content} />
         </div>
+
+        <Footer textColor="black"/>
       </main>
     </>
   );
