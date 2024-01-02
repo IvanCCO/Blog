@@ -21,7 +21,6 @@ If you wish to contribute, please provide clear and concise commit messages to h
 
 ### **_TODOS V1:_**
 
-- [ ] [Carrosel](https://www.react-fast-marquee.com/) na pagina ivan.
 - [ ] texto de about me (pensar bem nessa descrição)
 - [ ] Deixar minha página responsiva
 - [ ] Colocar animação na minha página para ir escrevendo as coisas e a imagem ir descendo, deixar mais [animado](https://youtu.be/vqXLGX0szIQ?t=16914)
@@ -33,6 +32,8 @@ If you wish to contribute, please provide clear and concise commit messages to h
 - [ ] Testar qualidade do site
 - [ ] Comentar codigo que não será deployado nessa primeira versão.
   > Talvez ter duas branchs uma principal que é a v1 com as coisas da primeira e outra develop
+- [ ] Colocar a descrição dos links do icons 8 pra não der ruim e dar processo.
+- [ ] Refatorar o carrousel da imagem
 
 Precisa estar feito o fluxo principal de conseguir enviar um post com todas informações necessárias, esse post conseguir aparecer no site de maneira dinâmica com sua tag e subtitulos.
 Conseguir ler o post sem problemas.
