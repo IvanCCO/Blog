@@ -21,23 +21,10 @@ If you wish to contribute, please provide clear and concise commit messages to h
 
 ### **_TODOS V1:_**
 
-- [ ] texto de about me (pensar bem nessa descrição)
-- [ ] Deixar minha página responsiva
-- [ ] Colocar animação na minha página para ir escrevendo as coisas e a imagem ir descendo, deixar mais [animado](https://youtu.be/vqXLGX0szIQ?t=16914)
-- [ ] Adicionar components de skeleton
+- [ ] Adicionar components de skeleton -> principalmente na página home e do post pq fazem consulta
 - [ ] Criptografar a url.
-- [ ] Fluxo principal de arquivos do backend funcionando e pronto para v2
-  > Menos a parte de mandar para os email e etc. Posts relacionados tambem não é pra fazer agora afinal não vai ter posts para serem relacionados kk
-- [ ] Testar qualidade do site
-- [ ] Comentar codigo que não será deployado nessa primeira versão.
-  > Talvez ter duas branchs uma principal que é a v1 com as coisas da primeira e outra develop
 - [ ] Colocar a descrição dos links do icons 8 pra não der ruim e dar processo.
-- [ ] Refatorar o carrousel da imagem
-- [ ] Botão de voltar no post se voltar não for pro taxco voltar pra home
-- [ ] Ter o botão de se inscrever para receber email com novo post
-
-Precisa estar feito o fluxo principal de conseguir enviar um post com todas informações necessárias, esse post conseguir aparecer no site de maneira dinâmica com sua tag e subtitulos.
-Conseguir ler o post sem problemas.
+- [ ] Testar qualidade do site
 
 ---
 
@@ -58,22 +45,3 @@ Conseguir ler o post sem problemas.
 - Fazer upload de um markdown
 - Conseguir editar o arquivo (talvez fazendo o upload de um novo arquivo)
 - Remover o arquivo
-
-## **V2**
-
-- Mandar pro email das pessoas que querem ter o email associado (talvez ter um icone no header para colocar o email), salvar no cache caso já tenha clikado na notificação.
-  > **_Anotação quote_**
-  >
-  > Como eu vou fazer para a pessoa colocar o email? vai ser alguma tela, botão no header? não sei. -? Alguma notificação aparecendo como pop na tela.
-- Cokkies pop-ups para permitir ou não os cookies
-- Página she
-- Input de search funcionando
-- Dica para mostrar verdinho formatado
-- Note para mostrar verdinho formatado
-- Posts relacionados
-
-## **V3**
-
-- Authentificacao dinamica.
-- Conseguir editar direto no site no mesmo arquivo.
-- Likes funcionando

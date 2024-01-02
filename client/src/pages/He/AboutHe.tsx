@@ -6,6 +6,7 @@ import ArrowPosts from "./ArrowPosts";
 import { SkillsCycle } from "./SkillsCycle";
 import { SocialMediaList } from "./SocialMediaList";
 
+// TODO: Componentes irem aparecendo conforme o scroll do mouse vai descendo
 const desktopWorking = (
   <>
     <main className="h-full bg-he-background px-page-default space-y-14 pt-24">
@@ -83,6 +84,7 @@ export function AboutHe() {
             <h1 className="text-2xl border-b-4 border-purple-800 w-fit pr-4">
               About me
             </h1>
+            {/* TODO: Colocar um texto verdadeiro  */}
             <p className="text-md font-extralight leading-relaxed">
               {" "}
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et
@@ -114,6 +116,8 @@ export function AboutHe() {
               </a>
             </div>
           </div>
+
+          {/* TODO: Aba de experiência */}
         </div>
       </main>
     </>
