@@ -45,3 +45,4 @@ export function Home() {
     </>
   );
 }
+{/* <a target="_blank" href="https://icons8.com/icon/8rKdRqZFLurS/mongodb-a-cross-platform-document-oriented-database-program">MongoDB a cross-platform document-oriented database program</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */}
