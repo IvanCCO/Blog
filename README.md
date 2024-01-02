@@ -50,7 +50,7 @@ Conseguir ler o post sem problemas.
 - Não vai conseguir curtir
 - Não vai ter a opção de receber no email news
 - Compartilhar o post
-- Download do post (mardown e página?)
+- Download do post (markdown e página?)
 - Pesquisar por post
 
 ### ADEMIR:
