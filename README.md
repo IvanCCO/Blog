@@ -22,11 +22,9 @@ If you wish to contribute, please provide clear and concise commit messages to h
 ### **_TODOS V1:_**
 
 - [ ] texto de about me (pensar bem nessa descrição)
-
 - [ ] Deixar minha página responsiva
 - [ ] Colocar animação na minha página para ir escrevendo as coisas e a imagem ir descendo, deixar mais [animado](https://youtu.be/vqXLGX0szIQ?t=16914)
 - [ ] Adicionar components de skeleton
-- [ ] Página do post não ta bem distrubido os posts relacionados (colocar igual do post funciona bem)
 - [ ] Criptografar a url.
 - [ ] Fluxo principal de arquivos do backend funcionando e pronto para v2
   > Menos a parte de mandar para os email e etc. Posts relacionados tambem não é pra fazer agora afinal não vai ter posts para serem relacionados kk
@@ -36,6 +34,7 @@ If you wish to contribute, please provide clear and concise commit messages to h
 - [ ] Colocar a descrição dos links do icons 8 pra não der ruim e dar processo.
 - [ ] Refatorar o carrousel da imagem
 - [ ] Botão de voltar no post se voltar não for pro taxco voltar pra home
+- [ ] Ter o botão de se inscrever para receber email com novo post
 
 Precisa estar feito o fluxo principal de conseguir enviar um post com todas informações necessárias, esse post conseguir aparecer no site de maneira dinâmica com sua tag e subtitulos.
 Conseguir ler o post sem problemas.
@@ -51,7 +50,6 @@ Conseguir ler o post sem problemas.
 - Não vai ter a opção de receber no email news
 - Compartilhar o post
 - Download do post (markdown e página?)
-- Pesquisar por post
 
 ### ADEMIR:
 
