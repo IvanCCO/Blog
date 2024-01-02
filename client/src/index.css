@@ -60,16 +60,16 @@
   transition: transform 0.2s ease;
 }
 
-#He::before {
+#Me::before {
   background-color: rgb(126 34 206);
 }
-#She::before {
-  background-color: rgb(252 211 77);
+#Me:hover {
+  color: white;
 }
-#Us::before {
+#Posts::before {
   background-color: rgb(253 186 116);
 }
-#About::before {
+#Taxco::before {
 	background-color: rgb(187 247 208);
 }
 

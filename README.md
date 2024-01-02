@@ -22,6 +22,7 @@ If you wish to contribute, please provide clear and concise commit messages to h
 ### **_TODOS V1:_**
 
 - [ ] texto de about me (pensar bem nessa descrição)
+
 - [ ] Deixar minha página responsiva
 - [ ] Colocar animação na minha página para ir escrevendo as coisas e a imagem ir descendo, deixar mais [animado](https://youtu.be/vqXLGX0szIQ?t=16914)
 - [ ] Adicionar components de skeleton
@@ -34,6 +35,7 @@ If you wish to contribute, please provide clear and concise commit messages to h
   > Talvez ter duas branchs uma principal que é a v1 com as coisas da primeira e outra develop
 - [ ] Colocar a descrição dos links do icons 8 pra não der ruim e dar processo.
 - [ ] Refatorar o carrousel da imagem
+- [ ] Botão de voltar no post se voltar não for pro taxco voltar pra home
 
 Precisa estar feito o fluxo principal de conseguir enviar um post com todas informações necessárias, esse post conseguir aparecer no site de maneira dinâmica com sua tag e subtitulos.
 Conseguir ler o post sem problemas.

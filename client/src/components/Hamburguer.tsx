@@ -8,7 +8,7 @@ import {
   MenuList,
 } from "@chakra-ui/react";
 import { FaRegEdit } from "react-icons/fa";
-import { IoIosFemale, IoIosHeartEmpty, IoIosMale } from "react-icons/io";
+import { IoIosHeartEmpty, IoIosMale } from "react-icons/io";
 
 interface MenuProps {
   theme: string;
@@ -37,19 +37,11 @@ export function Hamburguer({
       >
         <MenuItem
           as="a"
-          href="/about/she"
-          icon={<IoIosFemale />}
-          bg={menuListBackground}
-        >
-          She
-        </MenuItem>
-        <MenuItem
-          as="a"
           href="/"
           icon={<IoIosHeartEmpty />}
           bg={menuListBackground}
         >
-          Us
+         Home 
         </MenuItem>
         <MenuItem
           as="a"
@@ -57,19 +49,10 @@ export function Hamburguer({
           icon={<IoIosMale />}
           bg={menuListBackground}
         >
-          He
+          About
         </MenuItem>
 
         <MenuDivider color={menuListBackground} />
-
-        <MenuItem
-          as="a"
-          href="/create"
-          icon={<FaRegEdit />}
-          bg={menuListBackground}
-        >
-          Create
-        </MenuItem>
 
         <MenuItem
           as="a"
@@ -77,7 +60,7 @@ export function Hamburguer({
           icon={<InfoOutlineIcon />}
           bg={menuListBackground}
         >
-          About
+          Taxco
         </MenuItem>
       </MenuList>
     </Menu>
