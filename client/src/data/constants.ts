@@ -1,7 +1,6 @@
 export const PageType = {
   HE: "HE" as const,
-  SHE: "SHE" as const,
-  US: "US" as const,
+  US: "HOME" as const,
   DEFAULT: "DEFAULT" as const,
 };
 // eslint-disable-next-line @typescript-eslint/no-redeclare

@@ -84,21 +84,6 @@ export function Post() {
 
         <Divider />
 
-        {/* TODO: Pensar em como ficaria as estrelas em prod sendo que não vai ter nenhum login*/}
-        <div className="w-full flex justify-start">
-          <HStack spacing={6}>
-            <IconButton
-              variant={"ghost"}
-              size={"lg"}
-              aria-label="Star this post"
-              icon={<StarIcon color={hasLiked ? "gold" : "silver"} />}
-              onClick={() => setHasLiked(!hasLiked)}
-            />
-            <Text fontWeight={"semibold"}>299</Text>
-          </HStack>
-        </div>
-
-        <Divider />
         <div className="w-full">
           <Text fontSize={"2xl"} py={8} fontWeight={"semibold"}>
             Related Posts

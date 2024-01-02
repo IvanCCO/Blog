@@ -36,7 +36,8 @@ export function SampleCard() {
         variant={"outline"}
         cursor={"pointer"}
         boxShadow={"base"}
-        minW="210px"
+        minW="220px"
+        maxW={"300px"}
       >
         <CardBody>
           <AspectRatio

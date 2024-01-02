@@ -33,18 +33,7 @@ const chooseHeaderStyle = (type: PageType): HeaderStyle => {
         inputForeground: "white",
         colorText: "white",
       };
-    case "SHE":
-      return {
-        mainBackground: "she-background",
-        logoColor: "she-logo-color",
-        hamburgerTheme: "gray",
-        menuListBackground: "white",
-        inputBackground: "black",
-        menuListBorder: "black",
-        inputForeground: "black",
-        colorText: "white",
-      };
-    case "US":
+    case "HOME":
       return {
         mainBackground: "bg-white",
         logoColor: "black",
@@ -100,10 +89,9 @@ const gracinha = (
 const headerItens = () => {
   return (
     <div className="hidden md:inline-flex w-1/2 justify-between text-lg">
-      {gracinha("He", "bg-purple-700", "/about/he")}
-      {gracinha("She", "bg-amber-300", "/about/she")}
-      {gracinha("Us", "bg-orange-300", "/")}
-      {gracinha("About", "bg-green-200", "/about/taxco")}
+      {gracinha("About", "bg-purple-700", "/about/he")}
+      {gracinha("Home", "bg-orange-300", "/")}
+      {gracinha("Taxco", "bg-green-200", "/about/taxco")}
     </div>
   );
 };
@@ -120,7 +108,7 @@ export function Header({ type }: { type: PageType }) {
 
       {headerItens()}
 
-      <div className="flex place-items-center">
+      <div className="flex place-items-center invisible">
         <SearchInput
           backgroundColor={headerStyle.inputBackground}
           foregroundColor={headerStyle.inputForeground}
