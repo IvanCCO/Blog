@@ -22,6 +22,7 @@ If you wish to contribute, please provide clear and concise commit messages to h
 ### **_TODOS V1:_**
 
 - [ ] texto de about me (pensar bem nessa descrição)
+
 - [ ] Deixar minha página responsiva
 - [ ] Colocar animação na minha página para ir escrevendo as coisas e a imagem ir descendo, deixar mais [animado](https://youtu.be/vqXLGX0szIQ?t=16914)
 - [ ] Adicionar components de skeleton
