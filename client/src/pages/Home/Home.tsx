@@ -20,14 +20,14 @@ export function Home() {
 
       <main className="main space-y-8 grid place-items-center sm:px-28 md:px-44 lg:px-72 justify-center">
         <div className="space-y-2">
-          <Text fontSize={"3xl"} fontWeight={"medium"}>
+          <Text fontSize={"3xl"} fontWeight={"semibold"} >
             News
           </Text>
           <MainCard />
         </div>
         <div className="space-y-3 w-full">
           <div className="flex justify-between place-items-center">
-            <Text fontSize={"3xl"} fontWeight={"medium"}>
+            <Text fontSize={"3xl"} fontWeight={"semibold"}>
               Posts
             </Text>
           </div>

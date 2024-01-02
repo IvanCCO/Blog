@@ -60,10 +60,13 @@
   transition: transform 0.2s ease;
 }
 
-#About::before {
+#Me::before {
   background-color: rgb(126 34 206);
 }
-#Home::before {
+#Me:hover {
+  color: white;
+}
+#Posts::before {
   background-color: rgb(253 186 116);
 }
 #Taxco::before {

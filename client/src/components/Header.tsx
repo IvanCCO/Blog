@@ -89,8 +89,8 @@ const gracinha = (
 const headerItens = () => {
   return (
     <div className="hidden md:inline-flex w-1/2 justify-between text-lg">
-      {gracinha("About", "bg-purple-700", "/about/he")}
-      {gracinha("Home", "bg-orange-300", "/")}
+      {gracinha("Me", "bg-purple-700", "/about/he")}
+      {gracinha("Posts", "bg-orange-300", "/")}
       {gracinha("Taxco", "bg-green-200", "/about/taxco")}
     </div>
   );

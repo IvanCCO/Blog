@@ -1,12 +1,4 @@
-import { StarIcon } from "@chakra-ui/icons";
-import {
-  Divider,
-  Heading,
-  HStack,
-  IconButton,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Divider, Heading, Stack, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { Header } from "../../components/Header";
 import MarkdownFormatter from "../../components/MarkdownFormatter";
@@ -26,11 +18,12 @@ export function Post() {
 
   const sampleCards: JSX.Element[] = [];
 
-  const [hasLiked, setHasLiked] = useState<boolean>(false);
 
-  for (let index = 0; index < 3; index++) {
+  for (let index = 0; index < 2; index++) {
     sampleCards.push(<SampleCard key={index} />);
   }
+
+  const justifyContent = sampleCards?.length < 3 ? "flex-start" : "space-between"
 
   const color = (n: number): string => {
     switch (n) {
@@ -80,18 +73,6 @@ export function Post() {
 
         <div>
           <MarkdownFormatter text={content} />
-        </div>
-
-        <Divider />
-
-        <div className="w-full">
-          <Text fontSize={"2xl"} py={8} fontWeight={"semibold"}>
-            Related Posts
-          </Text>
-          <VStack spacing={5}>
-            {sampleCards}
-            <Pagination />
-          </VStack>
         </div>
       </main>
     </>
