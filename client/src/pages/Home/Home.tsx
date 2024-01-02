@@ -1,4 +1,4 @@
-import { SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { Stack, Text } from "@chakra-ui/react";
 import { Header } from "../../components/Header";
 import { MainCard } from "../../components/MainCard";
 import { Pagination } from "../../components/Pagination";
@@ -12,7 +12,8 @@ export function Home() {
     sampleCards.push(<SampleCard key={index} />);
   }
 
-  const justifyContent = sampleCards?.length < 3 ? "flex-start" : "space-between"
+  const justifyContent =
+    sampleCards?.length < 3 ? "flex-start" : "space-between";
 
   return (
     <>
@@ -20,7 +21,7 @@ export function Home() {
 
       <main className="main space-y-8 grid place-items-center sm:px-28 md:px-44 lg:px-72 justify-center">
         <div className="space-y-2">
-          <Text fontSize={"3xl"} fontWeight={"semibold"} >
+          <Text fontSize={"3xl"} fontWeight={"semibold"}>
             News
           </Text>
           <MainCard />
@@ -34,7 +35,7 @@ export function Home() {
           <Stack
             direction={["column", "column", "row"]}
             placeItems={"center"}
-            justifyContent={["center","center", justifyContent]}
+            justifyContent={["center", "center", justifyContent]}
             w={"full"}
           >
             {sampleCards}
@@ -45,4 +46,6 @@ export function Home() {
     </>
   );
 }
-{/* <a target="_blank" href="https://icons8.com/icon/8rKdRqZFLurS/mongodb-a-cross-platform-document-oriented-database-program">MongoDB a cross-platform document-oriented database program</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */}
+{
+  /* <a target="_blank" href="https://icons8.com/icon/8rKdRqZFLurS/mongodb-a-cross-platform-document-oriented-database-program">MongoDB a cross-platform document-oriented database program</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */
+}

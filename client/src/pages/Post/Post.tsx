@@ -1,8 +1,6 @@
-import { Divider, Heading, Stack, Text } from "@chakra-ui/react";
-import { useState } from "react";
+import { Heading, Text } from "@chakra-ui/react";
 import { Header } from "../../components/Header";
 import MarkdownFormatter from "../../components/MarkdownFormatter";
-import { Pagination } from "../../components/Pagination";
 import { PageType } from "../../data/constants";
 
 import EX from "../../assets/Markdown/ex.md";
@@ -18,12 +16,12 @@ export function Post() {
 
   const sampleCards: JSX.Element[] = [];
 
-
   for (let index = 0; index < 2; index++) {
     sampleCards.push(<SampleCard key={index} />);
   }
 
-  const justifyContent = sampleCards?.length < 3 ? "flex-start" : "space-between"
+  const justifyContent =
+    sampleCards?.length < 3 ? "flex-start" : "space-between";
 
   const color = (n: number): string => {
     switch (n) {

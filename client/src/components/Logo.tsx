@@ -9,8 +9,6 @@ export function Logo({ color }: { color: string }) {
   // Pegar se a página que está tem /post
   const location = useLocation();
 
-
-
   const isPostPage: boolean = location.pathname.includes("/post");
 
   // TODO: Ver se a página antiga é do taxco se nao for voltar pra home

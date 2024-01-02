@@ -1,4 +1,3 @@
-import { Icon } from "@chakra-ui/icons";
 import mypic from "../../assets/he-pic.jpg";
 import { Header } from "../../components/Header";
 import { PageType } from "../../data/constants";

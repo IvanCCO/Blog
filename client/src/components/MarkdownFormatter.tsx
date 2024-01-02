@@ -2,7 +2,6 @@ import {
   Center,
   Image,
   Table,
-  TableCaption,
   TableContainer,
   Tbody,
   Td,
