@@ -16,7 +16,7 @@ export function He() {
       <Header type={PageType.HE} />
 
       <main className="h-full py-24 bg-he-background px-default-width lg:px-96">
-        <div className="font-jomolhari flex flex-col text-font-black-color space-y-default-heigh">
+        <div className="font-jomolhari flex flex-col text-font-black-color space-y-16">
           <div className="flex flex-col justify-center space-y-2">
             <div>
               <div>

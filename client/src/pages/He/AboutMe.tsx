@@ -24,7 +24,7 @@ export default function AboutMe() {
         </p>
       </div>
 
-      <div className="w-full grid place-items-center">
+      <div className="w-full grid place-items-center py-5">
         <Button
           leftIcon={<Icon as={IoMdPaper} />}
           size={"sm"}
