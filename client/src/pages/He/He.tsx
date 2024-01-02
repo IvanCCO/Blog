@@ -4,6 +4,7 @@ import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { PageType } from "../../data/constants";
 import AboutMe from "./AboutMe";
+import Experience from "./Experience";
 import { SkillsCycle } from "./SkillsCycle";
 import { SocialMediaList } from "./SocialMediaList";
 
@@ -67,8 +68,12 @@ export function He() {
             </div>
           </div>
 
-          {/* TODO: Aba de experiência */}
-
+          <div className="text-white font-inter flex flex-col items-start space-y-4 h-full ">
+            <h1 className="text-2xl border-b-4 border-purple-800 w-fit text-start pr-2 text-white">
+              Experience & Projects
+            </h1>
+            <Experience />
+          </div>
           <Footer textColor="white" />
         </div>
       </main>

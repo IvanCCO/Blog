@@ -11,7 +11,16 @@ export default function AboutMe() {
       <div>
         <p className="text-md font-light leading-relaxed text-justify">
           {" "}
-          Hello, my name is Ivan, 
+          Hello, my name is Ivan, Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Voluptas maiores veniam voluptatem? Sequi debitis
+          placeat doloremque quaerat! Repellendus, et nobis, illum maiores
+          iusto, quasi rem cupiditate consectetur at ab expedita! Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Ut saepe quidem magnam
+          totam modi rem accusantium corrupti vitae sunt dolore quas ea nemo,
+          nam sint repellendus maxime hic inventore ab. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Amet iusto blanditiis magni
+          voluptates, alias pariatur est rerum explicabo, rem recusandae autem,
+          placeat aliquid architecto ab aperiam sed quod. Similique, suscipit.
         </p>
       </div>
 
