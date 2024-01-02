@@ -97,11 +97,23 @@ export function AboutHe() {
             </p>
           </div>
 
-          <div className="text-white font-inter flex flex-col items-center justify-center space-y-4 border-2 border-red-400 h-full">
+          <div className="text-white font-inter flex flex-col items-center justify-center space-y-4 h-full ">
             <h1 className="text-2xl border-b-4 border-purple-800 w-fit text-center px-4">
               Skills
             </h1>
             <SkillsCycle />
+            <div>
+              <span className="text-xs">
+                All those icons are from ️
+              </span>
+              <a
+                target="_blank"
+                href="https://icons8.com"
+                className="link-color text-xs"
+              >
+                Icons8 ❤
+              </a>
+            </div>
           </div>
         </div>
       </main>

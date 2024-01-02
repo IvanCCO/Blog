@@ -40,13 +40,6 @@ export function Home() {
                 <TopicTag title="More" color="linkedin" variant="outline" />
               </SimpleGrid>
             </div>
-            {/* <SimpleGrid */}
-            {/*   minChildWidth="230px" */}
-            {/*   spacingX={"10px"} */}
-            {/*   spacingY={"20px"} */}
-            {/* > */}
-            {/*   {sampleCards} */}
-            {/* </SimpleGrid> */}
             <Stack direction={["column", "column", "row"]}>{sampleCards}</Stack>
             <Pagination />
           </div>
