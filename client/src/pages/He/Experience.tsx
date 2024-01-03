@@ -35,19 +35,7 @@ export default function Experience() {
   );
 
   return (
-    // <VStack
-    //   py={4}
-    //   color={"white"}
-    //   fontFamily={"sans-serif"}
-    //   placeItems={"center"}
-    //   spacing={6}
-    //   justifyContent={"center"}
-    // >
-    //   {/* {experienceIcon} */}
-
-    // </VStack>
     <div className="container">
-      {test}
       {test}
       {test}
     </div>

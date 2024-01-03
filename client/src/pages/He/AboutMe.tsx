@@ -24,13 +24,13 @@ export default function AboutMe() {
         </p>
       </div>
 
-      <div className="w-full grid place-items-center py-5">
+      <div className="w-full grid place-items-center pt-5">
         <Button
           leftIcon={<Icon as={IoMdPaper} />}
-          size={"sm"}
+          size={"md"}
           colorScheme="teal"
         >
-          Resume
+          See my Resume
         </Button>
       </div>
     </div>
