@@ -81,9 +81,13 @@ export function He() {
           </Reveal>
           <Reveal>{skills}</Reveal>
           <div className="text-white font-inter flex flex-col items-start space-y-4 h-full ">
-            
             <Reveal>
-              <Experience />
+              <>
+                <h1 className="text-xl border-b-4 border-purple-800 w-fit text-start pr-2 text-white mb-5">
+                  Experience & Projects
+                </h1>
+                <Experience />
+              </>
             </Reveal>
           </div>
           <Footer textColor="white" />
