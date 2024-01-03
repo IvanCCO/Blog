@@ -2,6 +2,7 @@ import { ArrowForwardIcon } from "@chakra-ui/icons";
 import mypic from "../../assets/he-pic.jpg";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
+import { Reveal } from "../../components/Reveal";
 import { PageType } from "../../data/constants";
 import AboutMe from "./AboutMe";
 import Experience from "./Experience";
@@ -11,29 +12,36 @@ import { SocialMediaList } from "./SocialMediaList";
 // TODO: Componentes irem aparecendo conforme o scroll do mouse vai descendo
 
 export function He() {
+  const introdution = (
+    <div className="flex flex-col justify-center space-y-2">
+      <div>
+        <div>
+          <p className="text-md text-white">Hi there, i am</p>
+        </div>
+        <div>
+          <p className="text-5xl leading-tight text-white">
+            Ivan, Software Enginner🤙
+          </p>
+        </div>
+      </div>
+      <div>
+        <p className="text-sm text-low-text-black font-inter">
+          Currently working at @C6Bank, São Paulo Brasil
+        </p>
+      </div>
+    </div>
+  );
+
   return (
     <>
       <Header type={PageType.HE} />
 
       <main className="h-full py-24 bg-he-background px-default-width lg:px-96">
         <div className="font-jomolhari flex flex-col text-font-black-color space-y-16">
-          <div className="flex flex-col justify-center space-y-2">
-            <div>
-              <div>
-                <p className="text-md text-white">Hi there, i am</p>
-              </div>
-              <div>
-                <p className="text-5xl leading-tight text-white">
-                  Ivan Miranda, Software Enginner🤙
-                </p>
-              </div>
-            </div>
-            <div>
-              <p className="text-sm text-low-text-black font-inter">
-                Currently working at @C6Bank, São Paulo Brasil
-              </p>
-            </div>
-          </div>
+          <Reveal>
+            {introdution}
+          </Reveal>
+
           <div className="flex flex-row">
             <img
               src={mypic}
