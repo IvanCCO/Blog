@@ -13,20 +13,30 @@ export function He() {
   const introdution = (
     <div className="flex flex-col justify-center space-y-2">
       <div>
+        <Reveal
+          position={{ y: -100 }}
+          animation={{ delay: 0.3, duration: 1.2 }}
+        >
+          <div>
+            <p className="text-md text-white">Hi there, i am</p>
+          </div>
+        </Reveal>
+
         <div>
-          <p className="text-md text-white">Hi there, i am</p>
+          <Reveal position={{ y: 120 }} animation={{ delay: 0.8 }}>
+            <p className="text-5xl leading-tight text-white">
+              Ivan, Software Enginner🤙
+            </p>
+          </Reveal>
         </div>
+      </div>
+      <Reveal position={{ x: 120 }} animation={{ delay: 1.5 }}>
         <div>
-          <p className="text-5xl leading-tight text-white">
-            Ivan, Software Enginner🤙
+          <p className="text-sm text-low-text-black font-inter">
+            Currently working at @C6Bank, São Paulo Brasil
           </p>
         </div>
-      </div>
-      <div>
-        <p className="text-sm text-low-text-black font-inter">
-          Currently working at @C6Bank, São Paulo Brasil
-        </p>
-      </div>
+      </Reveal>
     </div>
   );
 
@@ -72,22 +82,20 @@ export function He() {
 
       <main className="h-full py-24 bg-he-background px-default-width lg:px-96">
         <div className="font-jomolhari flex flex-col text-font-black-color space-y-16">
-          <Reveal>{introdution}</Reveal>
+          {introdution}
           <Reveal>{contact}</Reveal>
-          <Reveal>
+          <Reveal position={{ y: 75 }}>
             <AboutMe />
           </Reveal>
-          <Reveal>{skills}</Reveal>
+          <Reveal position={{x: -75}}>{skills}</Reveal>
           <div className="text-white font-inter flex flex-col items-start space-y-4 h-full ">
-            <Reveal>
-              <>
-                <h1 className="text-2xl border-b-4 border-purple-800 w-fit text-start pr-2 text-white mb-5">
-                  Experience <span className="text-lg font-normal">&</span>{" "}
-                  Projects
-                </h1>
-                <Experience />
-              </>
-            </Reveal>
+            <>
+              <h1 className="text-2xl border-b-4 border-purple-800 w-fit text-start pr-2 text-white mb-5">
+                Experience <span className="text-lg font-normal">&</span>{" "}
+                Projects
+              </h1>
+              <Experience />
+            </>
           </div>
           <Footer textColor="white" />
         </div>

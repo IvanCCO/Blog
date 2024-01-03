@@ -1,5 +1,6 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { Link } from "@chakra-ui/react";
+import { Reveal } from "../../components/Reveal";
 
 interface LinkProps {
   name: string;
@@ -42,19 +43,25 @@ export default function Experience() {
     link: "https://c6bank.com",
   };
 
+  const experiences = [
+    test(
+      2023,
+      "Bankend Developer",
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laudantium sit, sequi dicta commodi iste tenetur, molestiae ipsum qui praesentium quisquam deleniti, necessitatibus ut libero maxime voluptas illo hic assumenda.",
+      c6Link,
+    ),
+    test(
+      2023,
+      "Freelancer",
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laudantium sit, sequi dicta commodi iste tenetur, molestiae ipsum qui praesentium quisquam deleniti, necessitatibus ut libero maxime voluptas illo hic assumenda.",
+    ),
+  ];
+
   return (
     <div className="container">
-      {test(
-        2023,
-        "Bankend Developer",
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laudantium sit, sequi dicta commodi iste tenetur, molestiae ipsum qui praesentium quisquam deleniti, necessitatibus ut libero maxime voluptas illo hic assumenda.",
-        c6Link,
-      )}
-      {test(
-        2023,
-        "Freelancer",
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laudantium sit, sequi dicta commodi iste tenetur, molestiae ipsum qui praesentium quisquam deleniti, necessitatibus ut libero maxime voluptas illo hic assumenda.",
-      )}
+      {experiences.map((value, index) => (
+        <Reveal position={{ y: 75 }} animation={{delay: (1.0 + index / 8)}}>{value}</Reveal>
+      ))}
     </div>
   );
 }

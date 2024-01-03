@@ -1,4 +1,5 @@
 import { SocialIcon } from "react-social-icons";
+import { Reveal } from "../../components/Reveal";
 
 type SocialMedia = {
   url: string;
@@ -26,7 +27,6 @@ export function SocialMediaList() {
     {
       url: "https://www.youtube.com/channel/UCGl5UhjdrFYYPryKV5OIsiQ",
     },
-    // TODO Colocar o link do whatsapp
     {
       url: "https://wa.me/551192015034",
       useDefault: false,
@@ -42,17 +42,19 @@ export function SocialMediaList() {
   return (
     <ul className="grid grid-cols-3 gap-2">
       {socialMedias.map((value, index) => (
-        <li key={index}>
-          <SocialIcon
-            style={{ height: 45, width: 45 }}
-            url={value.url}
-            {...(!value.useDefault && {
-              bgColor: value.bg,
-              fgColor: value.fg,
-              network: value.network,
-            })}
-          />
-        </li>
+        <Reveal animation={{delay : (1.0 + index / 3)}} position={{y: -75, x: -30}}>
+          <li key={index}>
+            <SocialIcon
+              style={{ height: 45, width: 45 }}
+              url={value.url}
+              {...(!value.useDefault && {
+                bgColor: value.bg,
+                fgColor: value.fg,
+                network: value.network,
+              })}
+            />
+          </li>
+        </Reveal>
       ))}
     </ul>
   );
