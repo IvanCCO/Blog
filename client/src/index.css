@@ -123,9 +123,9 @@ h4::selection {
   animation: rotation 20s linear infinite;
 }
 
-.gradient::after {
-  filter: blur(2.5rem);
-}
+/* .gradient::after {
+  filter: blur(0.5rem);
+} */
 
 .gradient:hover {
   transform: skew(-5deg);
@@ -137,6 +137,7 @@ h4::selection {
   padding: 20px 0;
   position: relative;
   overflow: hidden;
+  font-weight: bold;
 }
 
 .container:before {
