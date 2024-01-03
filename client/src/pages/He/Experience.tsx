@@ -1,28 +1,12 @@
-import { ExternalLinkIcon } from "@chakra-ui/icons";
-
 // TODO: Adicionar mais coisas aqui e colocar o ano
 export default function Experience() {
-  const experienceIcon = (
-    <div className="px-3 border-l-2 border-white ml-">
-      <p className="text-sm">2023 - Now</p>
-      <div className="space-y-1">
-        <p className="text-xs">Backend Developer Intern</p>
-
-        <p className="text-xs">São Paulo, Brazil</p>
-      </div>
-    </div>
-  );
-
   const test = (
     <div className="timeline-block timeline-block-right">
       <div className="marker"></div>
       <div className="timeline-content">
-        <h3>2023 - Now</h3>
-        <span>Backend Developer Intern</span>
+        <h3>2022</h3>
+        <span>Freelancer</span>
         <br />
-        <a href="https://www.c6bank.com.br/" className="text-xs underline">
-          C6Bank <ExternalLinkIcon />
-        </a>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

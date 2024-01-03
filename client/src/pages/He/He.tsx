@@ -9,8 +9,6 @@ import Experience from "./Experience";
 import { SkillsCycle } from "./SkillsCycle";
 import { SocialMediaList } from "./SocialMediaList";
 
-// TODO: Componentes irem aparecendo conforme o scroll do mouse vai descendo
-
 export function He() {
   const introdution = (
     <div className="flex flex-col justify-center space-y-2">
@@ -83,8 +81,9 @@ export function He() {
           <div className="text-white font-inter flex flex-col items-start space-y-4 h-full ">
             <Reveal>
               <>
-                <h1 className="text-xl border-b-4 border-purple-800 w-fit text-start pr-2 text-white mb-5">
-                  Experience & Projects
+                <h1 className="text-2xl border-b-4 border-purple-800 w-fit text-start pr-2 text-white mb-5">
+                  Experience <span className="text-lg font-normal">&</span>{" "}
+                  Projects
                 </h1>
                 <Experience />
               </>
