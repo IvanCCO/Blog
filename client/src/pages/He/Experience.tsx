@@ -1,27 +1,60 @@
-// TODO: Adicionar mais coisas aqui e colocar o ano
+import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { Link } from "@chakra-ui/react";
+
+interface LinkProps {
+  name: string;
+  link: string;
+}
+
 export default function Experience() {
-  const test = (
-    <div className="timeline-block timeline-block-right">
-      <div className="marker"></div>
-      <div className="timeline-content">
-        <h3>2022</h3>
-        <span>Freelancer</span>
+  const link = (link: LinkProps) => {
+    return (
+      <>
         <br />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate.
-        </p>
+        <Link href={link.link} isExternal fontSize={"xs"}>
+          {link.name} <ExternalLinkIcon mx="2px" />
+        </Link>
+      </>
+    );
+  };
+
+  const test = (
+    year: number,
+    title: string,
+    content: string,
+    external?: LinkProps,
+  ) => {
+    return (
+      <div className="timeline-block timeline-block-right">
+        <div className="marker"></div>
+        <div className="timeline-content">
+          <h3>{year}</h3>
+          <span>{title}</span>
+          {external && link(external)}
+          <p>{content}</p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
+
+  const c6Link: LinkProps = {
+    name: "C6Bank",
+    link: "https://c6bank.com",
+  };
 
   return (
     <div className="container">
-      {test}
-      {test}
+      {test(
+        2023,
+        "Bankend Developer",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laudantium sit, sequi dicta commodi iste tenetur, molestiae ipsum qui praesentium quisquam deleniti, necessitatibus ut libero maxime voluptas illo hic assumenda.",
+        c6Link,
+      )}
+      {test(
+        2023,
+        "Freelancer",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laudantium sit, sequi dicta commodi iste tenetur, molestiae ipsum qui praesentium quisquam deleniti, necessitatibus ut libero maxime voluptas illo hic assumenda.",
+      )}
     </div>
   );
 }

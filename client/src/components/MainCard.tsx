@@ -27,8 +27,7 @@ export function MainCard() {
           <Image
             src="https://th.bing.com/th/id/OIG.pM5yvYt8jXgKE4HyVvUx?pid=ImgGn"
             alt="A big octopus managing containers"
-            borderTopRadius={{ base: "lg" }}
-            borderLeftRadius="lg"
+            borderRadius={"md"}
             objectFit="cover"
           />
         </AspectRatio>

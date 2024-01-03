@@ -101,6 +101,7 @@ h4::selection {
   }
 }
 
+/* TODO: Ver se tira o before e after pq ta tendo um pequeno bug */
 .gradient::before,
 .gradient::after {
   content: "";
@@ -122,10 +123,6 @@ h4::selection {
   background-size: 300% 300%;
   animation: rotation 20s linear infinite;
 }
-
-/* .gradient::after {
-  filter: blur(0.5rem);
-} */
 
 .gradient:hover {
   transform: skew(-5deg);
