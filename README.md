@@ -1,4 +1,4 @@
-# Taxco
+<img src="https://cdn.discordapp.com/attachments/1035338615141695561/1192496285413015653/image.png?ex=65a949b5&is=6596d4b5&hm=0711fe347f8236e1bbbb465dd3a7205c51f5a7bbad5fd4fd9a53da23d3949094&"/>
 
 Taxco is my personal portfolio where I will share articles about technology and other topics that interest me. It marks my first complete personal project.
 
