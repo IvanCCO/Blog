@@ -1,7 +1,10 @@
 import { Button, Icon } from "@chakra-ui/react";
 import { IoMdPaper } from "react-icons/io";
+import RESUME from "../../assets/Resume.pdf"
+import { Link } from "@chakra-ui/react";
 
 export default function AboutMe() {
+
   return (
     <div className="text-white font-inter space-y-4">
       <h1 className="text-2xl border-b-4 border-purple-800 w-fit pr-4">
@@ -25,13 +28,15 @@ export default function AboutMe() {
       </div>
 
       <div className="w-full grid place-items-center pt-5">
-        <Button
-          leftIcon={<Icon as={IoMdPaper} />}
-          size={"md"}
-          colorScheme="teal"
-        >
-          See my Resume
-        </Button>
+        <Link href={RESUME} isExternal>
+          <Button
+            leftIcon={<Icon as={IoMdPaper} />}
+            size={"md"}
+            colorScheme="teal"
+          >
+            See my Resume
+          </Button>
+        </Link>
       </div>
     </div>
   );

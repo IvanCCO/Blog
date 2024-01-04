@@ -97,6 +97,7 @@ export function He() {
               <Experience />
             </>
           </div>
+          {/* TODO: Colocar mais alguma coisinha para finalizar */}
           <Footer textColor="white" />
         </div>
       </main>
