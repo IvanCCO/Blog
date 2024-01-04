@@ -1,3 +1,4 @@
+import { SimpleGrid } from "@chakra-ui/react";
 import { SocialIcon } from "react-social-icons";
 import { Reveal } from "../../components/Reveal";
 
@@ -40,22 +41,24 @@ export function SocialMediaList() {
   ];
 
   return (
-    <ul className="grid grid-cols-3 gap-2">
+    <SimpleGrid  columns={3} spacing={{base: 4, sm: 6}}>
       {socialMedias.map((value, index) => (
-        <Reveal animation={{delay : (1.0 + index / 3)}} position={{y: -75, x: -30}}>
-          <li key={index}>
-            <SocialIcon
-              style={{ height: 45, width: 45 }}
-              url={value.url}
-              {...(!value.useDefault && {
-                bgColor: value.bg,
-                fgColor: value.fg,
-                network: value.network,
-              })}
-            />
-          </li>
+        <Reveal
+          animation={{ delay: 1.0 + index / 3 }}
+          position={{ y: -75, x: -30 }}
+        >
+          <SocialIcon
+            key={index}
+            style={{ height: "10vw", width: "10vw" }}
+            url={value.url}
+            {...(!value.useDefault && {
+              bgColor: value.bg,
+              fgColor: value.fg,
+              network: value.network,
+            })}
+          />
         </Reveal>
       ))}
-    </ul>
+    </SimpleGrid>
   );
 }
