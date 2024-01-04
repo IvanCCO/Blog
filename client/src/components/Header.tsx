@@ -82,6 +82,7 @@ const beforeStyle = (
 
 const headerItens = () => {
   return (
+    // TODO: adicionar campo para criar post -> como vai ser um botão que vai aparecer só pra mim acho que não faz tanto mal ficar feio de início.
     <div className="hidden md:inline-flex w-1/2 justify-between text-lg">
       {beforeStyle("Me", "bg-purple-700", "/about/he")}
       {beforeStyle("Posts", "bg-orange-300", "/")}

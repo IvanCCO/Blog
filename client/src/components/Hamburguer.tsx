@@ -20,6 +20,7 @@ export function Hamburguer({
   menuListBackground,
   textColor,
 }: MenuProps) {
+  // TODO: Página de criar post
   return (
     <Menu>
       <MenuButton
