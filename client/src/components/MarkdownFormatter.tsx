@@ -47,21 +47,21 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         h1(props) {
           return (
-            <h1 className="text-xl font-medium !my-5" {...props}>
+            <h1 className="text-2xl font-medium !my-10 lg:text-3xl" {...props}>
               {props.children}
             </h1>
           );
         },
         h2(props) {
           return (
-            <h1 className="text-lg font-medium !my-4" {...props}>
+            <h1 className="text-xl font-medium !my-12 lg:text-2xl" {...props}>
               {props.children}
             </h1>
           );
         },
         h3(props) {
           return (
-            <h1 className="text-lg font-normal !my-4" {...props}>
+            <h1 className="text-lg font-normal !my-6 lg:text-xl" {...props}>
               {props.children}
             </h1>
           );
@@ -82,7 +82,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         p(props) {
           return (
-            <p className="text-sm leading-relaxed" {...props}>
+            <p className="text-sm leading-relaxed lg:text-base" {...props}>
               {props.children}
             </p>
           );
