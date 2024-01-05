@@ -1,4 +1,4 @@
-import { SimpleGrid } from "@chakra-ui/react";
+import { SimpleGrid, useBreakpointValue } from "@chakra-ui/react";
 import { SocialIcon } from "react-social-icons";
 import { Reveal } from "../../components/Reveal";
 
@@ -40,19 +40,20 @@ export function SocialMediaList() {
     },
   ];
 
+  const iconSize = useBreakpointValue({ base: "10vw", sm: "60px", lg: "30px" });
+
   return (
-    <SimpleGrid columns={3} spacing={{ base: 2, sm: 6, md: 2 }}>
+    <SimpleGrid columns={3} spacingX={{ base: 2, sm: 2, md: 3 }} spacingY={{ base: 4, sm: 6, md: 7 }}>
       {socialMedias.map((value, index) => (
         <Reveal
           animation={{ delay: 1.0 + index / 3 }}
           position={{ y: -75, x: -30 }}
         >
-          {/* TODO: Fui derrotado tem que deixar esse cara responsivo */}
           <SocialIcon
             key={index}
             style={{
-              height: "7vw",
-              width: "7vw",
+              height: iconSize,
+              width: iconSize,
             }}
             url={value.url}
             {...(!value.useDefault && {

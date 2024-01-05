@@ -9,7 +9,9 @@ import ContactMe from "./ContactMe";
 import Experience from "./Experience";
 import { SkillsCycle } from "./SkillsCycle";
 import { SocialMediaList } from "./SocialMediaList";
+import Suggestions from "./Suggestions";
 
+// TODO: Colocar para quando a tela for > lg: fazer o template do figma
 export function He() {
   const introdution = (
     <div className="flex flex-col justify-center space-y-2">
@@ -19,7 +21,9 @@ export function He() {
           animation={{ delay: 0.3, duration: 1.2 }}
         >
           <div>
-            <p className="text-md sm:text-lg lg:text-lg text-white">Hi there, i am</p>
+            <p className="text-md sm:text-lg lg:text-lg text-white">
+              Hi there, i am
+            </p>
           </div>
         </Reveal>
 
@@ -51,7 +55,9 @@ export function He() {
       <div className="w-1/2 flex flex-col space-y-3 justify-center place-items-center">
         <SocialMediaList />
         <div className="gradient relative items-center content-center text-white text-md rounded-md py-2 px-4 z-0 flex-row inline-flex w-full justify-center cursor-pointer">
-          <p className="text-center font-inter font-bold text-base sm:text-lg">My Posts</p>
+          <p className="text-center font-inter font-bold text-base sm:text-lg">
+            My Posts
+          </p>
           {/* TODO: Linkar para página dos meus posts */}
           <ArrowForwardIcon />
         </div>
@@ -99,6 +105,8 @@ export function He() {
               <Experience />
             </>
           </div>
+
+          <Suggestions />
 
           <ContactMe />
 
