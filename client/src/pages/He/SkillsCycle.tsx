@@ -15,6 +15,8 @@ import REACT from "../../assets/SkillsIcons/react.svg";
 import REDIS from "../../assets/SkillsIcons/redis.svg";
 import SPRING from "../../assets/SkillsIcons/spring.svg";
 import TF from "../../assets/SkillsIcons/terraform.svg";
+import JS from "../../assets/SkillsIcons/javascript.svg"
+import TAILWIND from "../../assets/SkillsIcons/tailwind.svg"
 
 export function SkillsCycle() {
   const image = (icon: string, nome: string) => {
@@ -37,18 +39,20 @@ export function SkillsCycle() {
       gradientColor="#2E2E32"
       gradientWidth={100}
     >
-      {image(K8S, "Kubernetes")}
-      {image(DOCKER, "Docker")}
       {image(JAVA, "Java")}
       {image(KOTLIN, "Kotlin")}
       {image(REACT, "React")}
       {image(SPRING, "Spring")}
       {image(AWS, "AWS")}
       {image(MONGO, "MongoDB")}
+      {image(TAILWIND, "Tailwind")}
       {image(REDIS, "Redis")}
       {image(TF, "Terraform")}
+      {image(DOCKER, "Docker")}
       {image(GRAFANA, "Grafana")}
       {image(APIGEE, "Apigee")}
+      {image(K8S, "Kubernetes")}
+      {image(JS, "JavaScript")}
     </Marquee>
   );
 }
