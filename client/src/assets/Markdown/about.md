@@ -23,8 +23,10 @@ npm start
 
 If you wish to contribute, please provide clear and concise commit messages to help me understand the changes you made. Your contributions are greatly appreciated!
 
----
+___
 
 ### Thanks
 
-This project could only be made with the support of my future wife who helped me keep going and don't give up when i was not motivaded and helped me building this project, thank you Stéphanie. ---
+This project could only be made with the support of my future wife who helped me keep going and don't give up when i was not motivaded and helped me building this project, thank you Stéphanie. 
+
+___

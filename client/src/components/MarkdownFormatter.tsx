@@ -54,7 +54,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         h2(props) {
           return (
-            <h1 className="text-xl font-medium !my-12 lg:text-2xl" {...props}>
+            <h1 className="text-xl font-medium !my-8 lg:text-2xl" {...props}>
               {props.children}
             </h1>
           );

@@ -31,7 +31,7 @@ export function SkillsCycle() {
 
   return (
     <Marquee
-      speed={30}
+      speed={50}
       gradient={true}
       autoFill={true}
       pauseOnHover={true}
