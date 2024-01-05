@@ -1,4 +1,5 @@
 import { Button, Image } from "@chakra-ui/react";
+import { Reveal } from "../../components/Reveal";
 
 interface Props {
   title: string;
@@ -28,40 +29,51 @@ export default function Suggestions() {
     </div>
   );
 
+  const books = [
+    <Recomendation
+      title="Domain Driven Design"
+      author="Eric Evans"
+      url="https://images.isbndb.com/covers/12/73/9780132181273.jpg"
+    />,
+    <Recomendation
+      title="The Pragmatic Programmer"
+      author="Eric Evans"
+      url="https://resources.mindx.edu.vn/uploads/images/sach-day-lap-trinh-co-ban-2.jpg"
+    />,
+    <Recomendation
+      title="12 Rules for live"
+      author="Jordam Petterson"
+      url="https://images-na.ssl-images-amazon.com/images/I/71YYF%2B1ZGSL.jpg"
+    />,
+    <Recomendation
+      title="I, Robot"
+      author="Isac Asimov"
+      url="http://www.socialbookshelves.com/wp-content/uploads/2013/05/i-robot.jpg"
+    />,
+    <Recomendation
+      title="Sapiens"
+      author="Yuval Harari"
+      url="https://media.s-bol.com/36zOVvQ41qzx/831x1200.jpg"
+    />,
+  ];
+
   return (
     <div className="text-white font-inter flex flex-col items-center space-y-4 h-full md:items-center">
       <h1 className="text-2xl border-b-4 border-purple-800 w-fit text-start pr-2 text-white mb-5">
         Books I recommend
       </h1>
 
-      {/* TODO: Colocar 5 Livros */}
-      <div className="flex flex-col space-y-16">
-        <Recomendation
-          title="Domain Driven Design"
-          author="Eric Evans"
-          url="https://images.isbndb.com/covers/12/73/9780132181273.jpg"
-        />
-        <Recomendation
-          title="The Pragmatic Programmer"
-          author="Eric Evans"
-          url="https://resources.mindx.edu.vn/uploads/images/sach-day-lap-trinh-co-ban-2.jpg"
-        />
-        <Recomendation
-          title="12 Rules for live"
-          author="Jordam Petterson"
-          url="https://images-na.ssl-images-amazon.com/images/I/71YYF%2B1ZGSL.jpg"
-        />
-        <Recomendation
-          title="I, Robot"
-          author="Isac Asimov"
-          url="http://www.socialbookshelves.com/wp-content/uploads/2013/05/i-robot.jpg"
-        />
-        <Recomendation
-          title="Sapiens"
-          author="Yuval Harari"
-          url="https://media.s-bol.com/36zOVvQ41qzx/831x1200.jpg"
-        />
-      </div>
+      {books.map((value, index) => (
+        <Reveal
+          key={index}
+          animation={{ delay: index / 8 }}
+          position={{ x: -75 }}
+        >
+          {value}
+        </Reveal>
+      ))}
+
+      <div className="flex flex-col space-y-16"></div>
     </div>
   );
 }
