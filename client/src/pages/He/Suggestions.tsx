@@ -62,18 +62,17 @@ export default function Suggestions() {
       <h1 className="text-2xl border-b-4 border-purple-800 w-fit text-start pr-2 text-white mb-5">
         Books I recommend
       </h1>
-
-      {books.map((value, index) => (
-        <Reveal
-          key={index}
-          animation={{ delay: index / 8 }}
-          position={{ x: -75 }}
-        >
-          {value}
-        </Reveal>
-      ))}
-
-      <div className="flex flex-col space-y-16"></div>
+      <div className="flex flex-col space-y-16">
+        {books.map((value, index) => (
+          <Reveal
+            key={index}
+            animation={{ delay: index / 8 }}
+            position={{ x: -75 }}
+          >
+            {value}
+          </Reveal>
+        ))}
+      </div>
     </div>
   );
 }
