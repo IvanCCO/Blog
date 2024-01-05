@@ -48,7 +48,7 @@ export default function Suggestions() {
         />
         <Recomendation
           title="Sapiens"
-          author="Yurval Harari"
+          author="Yuval Harari"
           url="https://media.s-bol.com/36zOVvQ41qzx/831x1200.jpg"
         />
       </div>
