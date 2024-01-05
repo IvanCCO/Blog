@@ -5,6 +5,7 @@ import MarkdownFormatter from "../../components/MarkdownFormatter";
 import { PageType } from "../../data/constants";
 
 import EX from "../../assets/Markdown/ex.md";
+import ProgressBar from "../../components/ProgressBar";
 import { SampleCard } from "../../components/SampleCard";
 import { TopicTag } from "../../components/TopicTag";
 import { importLocalMarkdownFile } from "../../hooks/useFileUtils";
@@ -40,9 +41,9 @@ export function Post() {
         return "linkedin";
     }
   };
-
   return (
     <>
+      <ProgressBar />
       <Header type={PageType.DEFAULT} />
       <main className="main space-y-2 sm:px-28 md:px-44 lg:px-72 xl:px-96 2xl:px-96">
         <div className="space-y-4">
