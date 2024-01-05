@@ -19,14 +19,18 @@ export default function Experience() {
     );
   };
 
+  let chooseNextSide = "left";
+
   const test = (
     year: number,
     title: string,
     content: string,
     external?: LinkProps,
   ) => {
+    chooseNextSide = chooseNextSide === "right" ? "left" : "right";
+
     return (
-      <div className="timeline-block timeline-block-right">
+      <div className={`timeline-block timeline-block-${chooseNextSide}`}>
         <div className="marker"></div>
         <div className="timeline-content">
           <h3>{year}</h3>
@@ -60,7 +64,9 @@ export default function Experience() {
   return (
     <div className="container">
       {experiences.map((value, index) => (
-        <Reveal position={{ y: 75 }} animation={{delay: (1.0 + index / 8)}}>{value}</Reveal>
+        <Reveal position={{ y: 75 }} animation={{ delay: 1.0 + index / 8 }}>
+          {value}
+        </Reveal>
       ))}
     </div>
   );

@@ -83,7 +83,7 @@ const beforeStyle = (
 const headerItens = () => {
   return (
     // TODO: adicionar campo para criar post -> como vai ser um botão que vai aparecer só pra mim acho que não faz tanto mal ficar feio de início.
-    <div className="hidden md:inline-flex w-1/2 justify-between text-lg">
+    <div className="hidden sm:inline-flex w-1/2 justify-between text-lg">
       {beforeStyle("Me", "bg-purple-700", "/about/he")}
       {beforeStyle("Posts", "bg-orange-300", "/")}
       {beforeStyle("Taxco", "bg-green-200", "/about/taxco")}
@@ -96,20 +96,20 @@ export function Header({ type }: { type: PageType }) {
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 inline-flex justify-between px-default-width place-items-center z-50 ${headerStyle.mainBackground}`}
+      className={`fixed top-0 left-0 right-0 inline-flex justify-between px-default-width md:px-44 sm:px-28 lg:px-52 xl:px-72 2xl:px-96 place-items-center z-50 ${headerStyle.mainBackground}`}
     >
       <Logo color={headerStyle.logoColor} />
 
       {headerItens()}
 
-      <div className="flex place-items-center invisible">
+      <div className="place-items-center hidden">
         <SearchInput
           backgroundColor={headerStyle.inputBackground}
           foregroundColor={headerStyle.inputForeground}
         />
       </div>
 
-      <div className="md:hidden">
+      <div className="sm:hidden">
         <Hamburguer
           theme={headerStyle.hamburgerTheme}
           menuListBackground={headerStyle.menuListBackground}

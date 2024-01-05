@@ -105,6 +105,7 @@ h4::selection {
 .gradient::before,
 .gradient::after {
   content: "";
+  min-width: 90px;
   position: absolute;
   inset: 0;
   z-index: -1;
@@ -207,7 +208,7 @@ h4::selection {
   color: #888;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .container:before {
     left: 8px;
     width: 2px;
