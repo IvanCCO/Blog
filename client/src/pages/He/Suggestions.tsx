@@ -21,11 +21,12 @@ export default function Suggestions() {
   const theme = extendTheme({ breakpoints });
 
   const Recomendation = ({ title, author, url }: Props) => (
-    <div className="flex flex-col justify-center place-items-center space-y-3 self-center lg:flex-row  lg:justify-start">
+    <div className="flex flex-col justify-center place-items-center space-y-3 self-center lg:flex-row  lg:justify-start lg:space-x-4">
       <Image
         src={url}
-        boxSize={"200px"}
+        boxSize={"180px"}
         objectFit={"contain"}
+        maxW={"150px"}
       />
       <div className="flex justify-between flex-col space-y-5">
         <div className="text-center lg:text-start">
@@ -76,7 +77,7 @@ export default function Suggestions() {
     <Recomendation
       title="Sapiens"
       author="Yuval Harari"
-      url="https://media.s-bol.com/36zOVvQ41qzx/831x1200.jpg"
+      url="https://i5.walmartimages.com/asr/cabff08d-655c-4e15-933c-57e4bd0f1736.56cd376c9fd1dd0c093ccb7af0481fcb.jpeg"
     />,
   ];
 
@@ -86,7 +87,7 @@ export default function Suggestions() {
         Books I recommend
       </h1>
       {/* <div className="flex flex-col space-y-16"> */}
-      <SimpleGrid columns={{ base: 1, sm: 2 }} spacingY={10} w={"full"}>
+      <SimpleGrid columns={{ base: 1, sm: 2 }} spacingY={10} w={"full"} >
         {books.map((value, index) => (
           <Reveal
             key={index}
@@ -97,7 +98,6 @@ export default function Suggestions() {
           </Reveal>
         ))}
       </SimpleGrid>
-
       {/* </div> */}
     </div>
   );

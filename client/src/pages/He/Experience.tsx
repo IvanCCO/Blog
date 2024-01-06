@@ -47,17 +47,33 @@ export default function Experience() {
     link: "https://c6bank.com",
   };
 
+  const geekbusLink: LinkProps = {
+    name: "Geekbus",
+    link: "https://geekbus.com",
+  };
+
+  const pointLink: LinkProps = {
+    name: "Point",
+    link: "https://youtu.be/gsrfYBNBXMc?t=86",
+  };
+
   const experiences = [
     test(
       2023,
       "Bankend Developer",
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laudantium sit, sequi dicta commodi iste tenetur, molestiae ipsum qui praesentium quisquam deleniti, necessitatibus ut libero maxime voluptas illo hic assumenda.",
+      "Responsible for the backend development of limit, secure location management projects, and external integrations. Developed business logic to handle Brazilian monetary transactions such as TED, TEF, and PIX. Additionally, worked on Kubernetes cluster management, conducting migrations, overseeing pods, removing unnecessary resources, contributing to cloud cost reduction, and applying FinOps concepts. Developed solutions to enhance observability and monitoring by constructing dashboards with the necessary metrics. (AND A LOT MORE)",
       c6Link,
     ),
     test(
       2023,
-      "Freelancer",
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laudantium sit, sequi dicta commodi iste tenetur, molestiae ipsum qui praesentium quisquam deleniti, necessitatibus ut libero maxime voluptas illo hic assumenda.",
+      "Geekbus - College",
+      "As part of a college project, I developed and deployed a web application on AWS aimed at connecting bus drivers with individuals interested in group travel. The application facilitates seamless matching for a more efficient and enjoyable group travel experience.",
+    ),
+    test(
+      2022,
+      "Point - College",
+      "I have designed and deployed a web and Java application on AWS and Azure for a monitoring system. This application renders a global heat map displaying the locations of machines, providing comprehensive monitoring capabilities.",
+      pointLink,
     ),
   ];
 
