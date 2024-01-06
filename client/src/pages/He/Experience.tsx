@@ -83,7 +83,7 @@ export default function Experience() {
 test(
       2022,
       "Start Travel - College",
-      "A revolutionary social media platform crafted specifically for tech-savvy professionals seamlessly navigating the landscape of remote work, all while indulging their fervor for globetrotting",
+      "A social media platform crafted specifically for tech-savvy professionals seamlessly navigating the landscape of remote work, all while indulging their fervor for globetrotting",
       startTravel,
     )
   ];
