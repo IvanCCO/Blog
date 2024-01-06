@@ -52,6 +52,11 @@ export default function Experience() {
     link: "https://geekbus.com",
   };
 
+  const startTravel : LinkProps = {
+    name : "Start Travel",
+    link: "https://github.com/IvanCCO/StarTravel"
+  }
+
   const pointLink: LinkProps = {
     name: "Point",
     link: "https://youtu.be/gsrfYBNBXMc?t=86",
@@ -72,9 +77,15 @@ export default function Experience() {
     test(
       2022,
       "Point - College",
-      "I have designed and deployed a web and Java application on AWS and Azure for a monitoring system. This application renders a global heat map displaying the locations of machines, providing comprehensive monitoring capabilities.",
+      "I have designed and deployed a web and Java application on AWS and Azure for a monitoring system. This application renders a global heat map displaying the locations of machines basead on the IP Address, providing comprehensive monitoring capabilities.",
       pointLink,
     ),
+test(
+      2022,
+      "Start Travel - College",
+      "A revolutionary social media platform crafted specifically for tech-savvy professionals seamlessly navigating the landscape of remote work, all while indulging their fervor for globetrotting",
+      startTravel,
+    )
   ];
 
   return (
