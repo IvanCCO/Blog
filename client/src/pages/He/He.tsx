@@ -1,6 +1,6 @@
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { useMediaQuery } from "@chakra-ui/react";
-import mypic from "../../assets/he-pic.jpg";
+import mypic from "../../assets/imagem-ia-keyboard.jpeg";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { Reveal } from "../../components/Reveal";
