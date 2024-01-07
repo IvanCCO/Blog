@@ -74,6 +74,13 @@
   background-color: rgb(187 247 208);
 }
 
+#World::before {
+  background-color: rgb(14 116 144);
+}
+#World:hover {
+  color: white
+}
+
 p::selection,
 h1::selection,
 h2::selection,

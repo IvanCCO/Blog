@@ -98,7 +98,7 @@ export default function Places() {
     <main className="bg-he-background h-screen">
       <Header type={PageType.HE} />
       <div>
-        <div className="top-0 left-0 z-10 absolute pt-20 text-white w-full text-center flex justify-center flex-col bg-transparent backdrop-blur-sm">
+        <div className="top-0 left-0 z-10 absolute pt-20 text-white w-full text-center flex justify-center flex-col bg-transparent backdrop-blur-sm space-y-3">
           <p className="text-lg md:text-2xl font-semibold font-inter">World</p>
           <p className="text-sm md:text-base text-low-text-black ">
             The places i've been - I will travel the world thats my dream

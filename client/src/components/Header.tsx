@@ -86,6 +86,7 @@ const headerItens = () => {
     <div className="hidden sm:inline-flex w-1/2 justify-between text-lg">
       {beforeStyle("Me", "bg-purple-700", "/about/he")}
       {beforeStyle("Posts", "bg-orange-300", "/")}
+      {beforeStyle("World", "bg-cyan-700", "/world")}
       {beforeStyle("Taxco", "bg-green-200", "/about/taxco")}
     </div>
   );

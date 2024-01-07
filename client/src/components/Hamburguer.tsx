@@ -7,7 +7,7 @@ import {
   MenuItem,
   MenuList,
 } from "@chakra-ui/react";
-import { IoIosHeartEmpty, IoIosMale } from "react-icons/io";
+import { IoIosHeartEmpty, IoIosMale , IoMdGlobe} from "react-icons/io";
 
 interface MenuProps {
   theme: string;
@@ -50,6 +50,14 @@ export function Hamburguer({
           bg={menuListBackground}
         >
           Me
+        </MenuItem>
+        <MenuItem
+          as="a"
+          href="/world"
+          icon={< IoMdGlobe/>}
+          bg={menuListBackground}
+        >
+          World 
         </MenuItem>
 
         <MenuDivider color={menuListBackground} />
