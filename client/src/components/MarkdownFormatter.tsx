@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { gruvboxDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import remarkGfm from "remark-gfm";
 import remarkToc from "remark-toc";
 
@@ -26,6 +26,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
     <Markdown
       children={text}
       remarkPlugins={[remarkGfm, remarkToc]}
+      className={"text-white"}
       components={{
         code(props) {
           const { children, className, node, ...rest } = props;
@@ -36,7 +37,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
                 PreTag="div"
                 children={String(children).replace(/\n$/, "")}
                 language={match[1]}
-                style={prism}
+                style={gruvboxDark}
               />
             </div>
           ) : (
@@ -89,7 +90,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         blockquote(props) {
           return (
-            <blockquote className="border-l-4 border-[#EEEEEE] pl-4  bg-[#F5F5F5] my-5 p-2 italic font-serif ">
+            <blockquote className="border-l-4 border-[#EEEEEE] pl-4  bg-neutral-800 my-5 p-2 italic font-serif ">
               {props.children}
             </blockquote>
           );
@@ -131,16 +132,16 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         hr(props) {
           return (
             <div className="w-full space-x-3 flex justify-center my-3 place-items-baseline">
-              <p className="font-itim text-5xl text-black">.</p>
-              <p className="font-itim text-5xl text-black">.</p>
-              <p className="font-itim text-5xl text-black">.</p>
+              <p className="font-itim text-5xl ">.</p>
+              <p className="font-itim text-5xl ">.</p>
+              <p className="font-itim text-5xl ">.</p>
             </div>
           );
         },
         img(props) {
           console.log(props.src);
           return (
-            <Center>
+            <Center my={6}>
               <VStack>
                 <Image src={props.src} boxSize="250px" />
                 <Text fontSize={"xs"} color={"GrayText"}>

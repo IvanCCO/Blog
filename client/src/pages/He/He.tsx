@@ -155,7 +155,7 @@ export function He() {
           <Suggestions />
 
           <ContactMe />
-          <Footer textColor="white" />
+          <Footer />
         </div>
       </main>
     </>

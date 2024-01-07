@@ -44,8 +44,8 @@ export function Post() {
   return (
     <>
       <ProgressBar />
-      <Header type={PageType.DEFAULT} />
-      <main className="main space-y-2 sm:px-28 md:px-44 lg:px-72 xl:px-96 2xl:px-96">
+      <Header type={PageType.HE} />
+      <main className="main space-y-2 sm:px-28 md:px-44 lg:px-52 xl:px-72 2xl:px-96  bg-he-background">
         <div className="space-y-4">
           <div className="w-fit">
             <TopicTag
@@ -56,7 +56,7 @@ export function Post() {
             />
           </div>
 
-          <Heading size={"lg"}>
+          <Heading size={"lg"} color={"white"}>
             Modern online and offline payments for Africa
           </Heading>
           <Text fontSize={"sm"} fontWeight={"light"} color={"#727272"}>
@@ -75,7 +75,7 @@ export function Post() {
           <MarkdownFormatter text={content} />
         </div>
 
-        <Footer textColor="black" />
+        <Footer/>
       </main>
     </>
   );

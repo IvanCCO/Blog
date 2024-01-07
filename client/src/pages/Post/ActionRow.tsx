@@ -10,7 +10,7 @@ export function ActionRow() {
         boxShadow="md"
         rounded="full"
         colorScheme="gray"
-        color={"black"}
+        color={"white"}
         size={"xs"}
         leftIcon={icon}
         fontWeight={"normal"}

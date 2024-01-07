@@ -33,11 +33,13 @@ export function SampleCard() {
   return (
     <>
       <Card
-        variant={"outline"}
+        // variant={"outline"}
         cursor={"pointer"}
         boxShadow={"base"}
         minW="220px"
         maxW={"300px"}
+        bg={"whiteAlpha.200"}
+        color={"white"}
       >
         <CardBody>
           <AspectRatio
@@ -55,8 +57,9 @@ export function SampleCard() {
           <Stack spacing="3">
             <Heading size="sm">Orquestando conteiners com Kubernets</Heading>
             <Text
-              bgGradient="linear(to-b, #1a1a1a 0%, rgba(118, 111, 154, 0.08) 100%)"
-              backgroundClip="text"
+              // bgGradient="linear(to-b, #1a1a1a 0%, rgba(118, 111, 154, 0.08) 100%)"
+              // backgroundClip="text"
+              color={"white"}
               fontSize={"sm"}
             >
               eius blanditiis repudiandae, beatae cum temporibus autem,

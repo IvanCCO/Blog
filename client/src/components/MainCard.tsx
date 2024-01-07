@@ -21,7 +21,8 @@ export function MainCard() {
         onClick={() => navigate("/post")}
         cursor={"pointer"}
         boxShadow={"lg"}
-        bg="white"
+        bg="whiteAlpha.200"
+        color={"white"}
       >
         <AspectRatio ratio={16 / 9} w={"full"}>
           <Image
@@ -37,8 +38,9 @@ export function MainCard() {
               Orquestando conteiners com Kubernets
             </Heading>
             <Text
-              bgGradient="linear(to-b, #1a1a1a 0%, rgba(118, 111, 154, 0.08) 100%)"
-              backgroundClip="text"
+              // bgGradient="linear(to-b, #1a1a1a 0%, rgba(118, 111, 154, 0.08) 100%)"
+              // backgroundClip="text"
+              color={"white"}
               maxW={{ lg: "70%" }}
             >
               Que o Kubernetes está ficando o tal tal tal todo mundo sabe mas

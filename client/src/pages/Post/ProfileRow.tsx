@@ -3,7 +3,7 @@ import DEEU from "../../assets/deeu.jpg";
 
 export function ProfileRow() {
   return (
-    <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap" py={3}>
+    <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap" py={3} color={"white"}>
       <Avatar name="Segun Adebayo" src={DEEU} size={"md"} />
       <Box>
         <Heading size="xs">De Euzinha</Heading>

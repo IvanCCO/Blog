@@ -17,17 +17,17 @@ export function Home() {
 
   return (
     <>
-      <Header type={PageType.US} />
+      <Header type={PageType.HE} />
 
-      <main className="main space-y-8 grid place-items-center sm:px-28 md:px-44 lg:px-72 justify-center">
-        <div className="space-y-2">
+      <main className="main space-y-8 grid place-items-center sm:px-28 md:px-44 lg:px-72 justify-center bg-he-background">
+        <div className="space-y-2 text-white">
           <Text fontSize={"3xl"} fontWeight={"semibold"}>
             News
           </Text>
           <MainCard />
         </div>
         <div className="space-y-3 w-full">
-          <div className="flex justify-between place-items-center">
+          <div className="flex justify-between place-items-center text-white">
             <Text fontSize={"3xl"} fontWeight={"semibold"}>
               Posts
             </Text>
