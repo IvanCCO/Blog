@@ -3,6 +3,7 @@
 import mapboxgl from "mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 import "mapbox-gl/dist/mapbox-gl.css";
 import { useEffect, useRef } from "react";
+import PLACES from "../../assets/JSON/places.json";
 import { Header } from "../../components/Header";
 import { PageType } from "../../data/constants";
 
@@ -12,62 +13,16 @@ mapboxgl.accessToken =
 
 export default function Places() {
   // FIXME: Colocar os lugares que estive
-  const geojson = {
-    type: "FeatureCollection",
-    features: [
-      {
-        type: "Feature",
-        geometry: {
-          type: "Point",
-          coordinates: [-77.032, 38.913],
-        },
-        properties: {
-          title: "Mapbox",
-          description: "Washington, D.C.",
-        },
-      },
-      {
-        type: "Feature",
-        geometry: {
-          type: "Point",
-          coordinates: [-122.414, 37.776],
-        },
-        properties: {
-          title: "Mapbox",
-          description: "San Francisco, California",
-        },
-      },
-      {
-        type: "Feature",
-        geometry: {
-          type: "Point",
-          coordinates: [-22.44, -37.776],
-        },
-        properties: {
-          title: "Mapbox",
-          description: "San Francisco, California",
-        },
-      },
-      {
-        type: "Feature",
-        geometry: {
-          type: "Point",
-          coordinates: [-28.44, -46.776],
-        },
-        properties: {
-          title: "Mapbox",
-          description: "San Francisco, California",
-        },
-      },
-    ],
-  };
+  const geojson = PLACES;
 
-  const bgMarkerList = [
-    "bg-purple-800",
-    "bg-pink-800",
-    "bg-red-800",
-    "bg-green-600",
-    "bg-blue-600",
+  const idStyle = [
+    "marker-orange",
+    "marker-blue",
+    "marker-green",
+    "marker-purple",
+    "marker-red",
+    "marker-white",
+    "marker-yellow"
   ];
 
   const mapContainer = useRef(null);
@@ -84,12 +39,13 @@ export default function Places() {
 
     geojson.features.map((value, index) => {
       const el = document.createElement("div");
+    
+      el.className = `marker`;
+      el.id = idStyle[index % idStyle.length];
 
-      const color = bgMarkerList[index % bgMarkerList.length];
-
-      el.className = `w-2 h-2 rounded-full ${color} opacity-30`;
       new mapboxgl.Marker(el)
         .setLngLat(value.geometry.coordinates)
+
         .addTo(map.current);
     });
   });

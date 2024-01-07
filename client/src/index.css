@@ -181,16 +181,6 @@ h4::selection {
   direction: rtl;
 }
 
-.marker {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  border: 2px solid #f5f7fa;
-  background: #2e2e32;
-  margin-top: 10px;
-  z-index: 1;
-}
-
 .timeline-content {
   width: 95%;
   padding: 0 15px;
@@ -234,3 +224,59 @@ h4::selection {
   }
 }
 
+.marker {
+  height: 0.5rem;
+  border-radius: 100%;
+  width: 0.5rem;
+  cursor: pointer;
+}
+
+#marker-orange {
+  border: 2px solid rgb(255, 123, 0);
+  background-color: rgb(255, 123, 0);
+  box-shadow: 0 0 10px 2px rgb(255, 123, 0);
+  animation: alert 2.1s infinite alternate;
+}
+
+#marker-blue {
+  border: 2px solid rgb(0, 183, 255);
+  background-color: rgb(0, 183, 255);
+  box-shadow: 0 0 10px 2px rgb(0, 183, 255);
+  animation: alert 2.2s infinite alternate;
+}
+#marker-green {
+  border: 2px solid rgb(102, 255, 0);
+  background-color: rgb(102, 255, 0);
+  box-shadow: 0 0 10px 2px rgb(102, 255, 0);
+  animation: alert 2.3s infinite alternate;
+}
+#marker-purple {
+  border: 2px solid rgb(183, 0, 255);
+  background-color: rgb(183, 0, 255);
+  box-shadow: 0 0 10px 2px rgb(183, 0, 255);
+  animation: alert 2.4s infinite alternate;
+}
+#marker-red {
+  border: 2px solid rgb(255, 0, 64);
+  background-color: rgb(255, 0, 64);
+  box-shadow: 0 0 10px 2px rgb(255, 0, 64);
+  animation: alert 2.5s infinite alternate;
+}
+#marker-white {
+  border: 2px solid rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px 2px rgb(255, 255, 255);
+  animation: alert 2.6s infinite alternate;
+}
+#marker-yellow {
+  border: 2px solid rgb(246, 255, 0);
+  background-color: rgb(246, 255, 0);
+  box-shadow: 0 0 10px 2px rgb(246, 255, 0);
+  animation: alert 2.6s infinite alternate;
+}
+
+@keyframes alert {
+  0% {
+    box-shadow: none;
+  }
+}

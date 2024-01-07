@@ -17,7 +17,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      borderRadius: {
+            borderRadius: {
         default: "5px",
       },
       backgroundColor: {
@@ -35,7 +35,7 @@ module.exports = {
         itim: ["Itim", "cursive"],
         inter: ["Inter", "sans-serif"],
         jomolhari: ["Jomolhari", "serif"],
-        playfair: ["Playfair"]
+        playfair: ["Playfair"],
       },
       fontSize: {
         "2xl": "1.75rem",
