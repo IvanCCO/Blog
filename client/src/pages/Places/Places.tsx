@@ -9,7 +9,7 @@ import { PageType } from "../../data/constants";
 
 // FIXME: Criar arquivo no .gitignore para não mostrar a env
 mapboxgl.accessToken =
-  "";
+  "pk.eyJ1IjoiaXZhbm1lZGVpcm9zIiwiYSI6ImNscjJzb2JsYTE1NXYyanBhbDJuODVnbGIifQ.BFnN9Vcd0ZzWpi3dAUKdMA";
 
 export default function Places() {
   // FIXME: Colocar os lugares que estive
