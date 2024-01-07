@@ -1,6 +1,6 @@
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { useMediaQuery } from "@chakra-ui/react";
-import mypic from "../../assets/imagem-ia-keyboard.jpeg";
+import mypic from "../../assets/digitando.jpeg";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { Reveal } from "../../components/Reveal";
@@ -15,28 +15,27 @@ import Suggestions from "./Suggestions";
 export function He() {
   const desktopWorking = (
     <div className="font-jomolhari flex justify-between h-4/6">
-      <div className="flex flex-col justify-center w-1/2 pr-7">
-        <div className="space-y-7">
+      <div className="flex flex-col w-1/2 pr-7 space-y-7 xl:justify-evenly">
           <Reveal position={{ y: 120 }} animation={{ delay: 0.8 }}>
             <div>
-<div>
-              <p className="text-xl text-white">Hi there, i am</p>
-            </div>
+              <div>
+                <p className="text-xl text-white">Hi there, i am</p>
+              </div>
               <p className="text-5xl text-white leading-tight">
                 Ivan Miranda, Software Enginner🤙
               </p>
+              <Reveal position={{ x: 120 }} animation={{ delay: 1.5 }}>
+                <div>
+                  <p className="text-sm text-low-text-black font-inter">
+                    Currently working at @C6Bank, São Paulo Brasil
+                  </p>
+                </div>
+              </Reveal>
             </div>
           </Reveal>
 
-          <Reveal position={{ x: 120 }} animation={{ delay: 1.5 }}>
-            <div>
-              <p className="text-sm text-low-text-black font-inter">
-                Currently working at @C6Bank, São Paulo Brasil
-              </p>
-            </div>
-          </Reveal>
           <SocialMediaList />
-          <Reveal position={{y : -75}} animation={{duration: 0.2, delay: 2}}>
+          <Reveal position={{ y: -75 }} animation={{ duration: 0.2, delay: 2 }}>
             <div className="gradient relative items-center content-center text-white text-md rounded-md py-2 px-4 z-0 flex-row inline-flex w-full justify-center cursor-pointer">
               <p className="text-center font-inter font-bold text-base sm:text-lg">
                 My Posts
@@ -45,12 +44,11 @@ export function He() {
               <ArrowForwardIcon />
             </div>
           </Reveal>
-        </div>
       </div>
       <img
         src={mypic}
         alt="Descrição da imagem"
-        className="w-1/2 object-cover rounded-tl-full rounded-bl-full rounded-br-sm rounded-tr-sm max-h-[500px] max-w-[500px]"
+        className="w-1/2 object-cover rounded-tl-full rounded-bl-full rounded-br-md rounded-tr-md max-h-[500px] max-w-[500px]"
       />
     </div>
   );
