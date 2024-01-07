@@ -6,6 +6,7 @@ import About from "./pages/About/About";
 import { He } from "./pages/He/He";
 import { Home } from "./pages/Home/Home";
 import { NotFound } from "./pages/NotFound/NotFound";
+import Places from "./pages/Places/Places";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/about/he" element={<He />} />
         <Route path="/about/taxco" element={<About />} />
         <Route path="/post" element={<Post />} />
+        <Route path="/world" element={<Places />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </ChakraProvider>

@@ -16,34 +16,34 @@ export function He() {
   const desktopWorking = (
     <div className="font-jomolhari flex justify-between h-4/6">
       <div className="flex flex-col w-1/2 pr-7 space-y-7 xl:justify-evenly">
-          <Reveal position={{ y: 120 }} animation={{ delay: 0.8 }}>
+        <Reveal position={{ y: 120 }} animation={{ delay: 0.8 }}>
+          <div>
             <div>
+              <p className="text-xl text-white">Hi there, i am</p>
+            </div>
+            <p className="text-5xl text-white leading-tight">
+              Ivan Miranda, Software Enginner🤙
+            </p>
+            <Reveal position={{ x: 120 }} animation={{ delay: 1.5 }}>
               <div>
-                <p className="text-xl text-white">Hi there, i am</p>
+                <p className="text-sm text-low-text-black font-inter">
+                  Currently working at @C6Bank, São Paulo Brasil
+                </p>
               </div>
-              <p className="text-5xl text-white leading-tight">
-                Ivan Miranda, Software Enginner🤙
-              </p>
-              <Reveal position={{ x: 120 }} animation={{ delay: 1.5 }}>
-                <div>
-                  <p className="text-sm text-low-text-black font-inter">
-                    Currently working at @C6Bank, São Paulo Brasil
-                  </p>
-                </div>
-              </Reveal>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
+        </Reveal>
 
-          <SocialMediaList />
-          <Reveal position={{ y: -75 }} animation={{ duration: 0.2, delay: 2 }}>
-            <div className="gradient relative items-center content-center text-white text-md rounded-md py-2 px-4 z-0 flex-row inline-flex w-full justify-center cursor-pointer">
-              <p className="text-center font-inter font-bold text-base sm:text-lg">
-                My Posts
-              </p>
-              {/* TODO: Linkar para página dos meus posts */}
-              <ArrowForwardIcon />
-            </div>
-          </Reveal>
+        <SocialMediaList />
+        <Reveal position={{ y: -75 }} animation={{ duration: 0.2, delay: 2 }}>
+          <div className="gradient relative items-center content-center text-white text-md rounded-md py-2 px-4 z-0 flex-row inline-flex w-full justify-center cursor-pointer">
+            <p className="text-center font-inter font-bold text-base sm:text-lg">
+              My Posts
+            </p>
+            {/* TODO: Linkar para página dos meus posts */}
+            <ArrowForwardIcon />
+          </div>
+        </Reveal>
       </div>
       <img
         src={mypic}
@@ -155,7 +155,6 @@ export function He() {
           <Suggestions />
 
           <ContactMe />
-
           <Footer textColor="white" />
         </div>
       </main>

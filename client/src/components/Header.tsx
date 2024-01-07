@@ -63,7 +63,7 @@ const beforeStyle = (
   const location = useLocation();
   const isActive = location.pathname === path;
 
-  const isHe = location.pathname === "/about/he";
+  const isHe = location.pathname === "/about/he" || location.pathname === "/world";
 
   return (
     <Link to={path}>
