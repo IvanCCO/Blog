@@ -64,21 +64,16 @@
 #Me::before {
   background-color: rgb(126 34 206);
 }
-#Me:hover {
-  color: white;
-}
+
 #Posts::before {
-  background-color: rgb(253 186 116);
+  background-color: rgb(194 65 12);
 }
 #Taxco::before {
-  background-color: rgb(187 247 208);
+  background-color: rgb(22 101 52);
 }
 
 #World::before {
   background-color: rgb(14 116 144);
-}
-#World:hover {
-  color: white
 }
 
 p::selection,
@@ -272,7 +267,7 @@ h4::selection {
   border: 2px solid rgb(246, 255, 0);
   background-color: rgb(246, 255, 0);
   box-shadow: 0 0 10px 2px rgb(246, 255, 0);
-  animation: alert 2.6s infinite alternate;
+  animation: alert 2.7s infinite alternate;
 }
 
 @keyframes alert {

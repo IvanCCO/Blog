@@ -181,11 +181,88 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-81.390563, 28.524710]
+        "coordinates": [-81.390563, 28.52471]
       },
       "properties": {
         "title": "Mapbox",
         "description": "Miami, Florida"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.182156, -22.968441]
+      },
+      "properties": {
+        "title": "Mapbox",
+        "description": "Rio de Janeiro, Rio de Janeiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.202202, -22.805678]
+      },
+      "properties": {
+        "title": "Mapbox",
+        "description": "Ilha do Governador, Rio de Janeiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-44.32096, -23.010545]
+      },
+      "properties": {
+        "title": "Mapbox",
+        "description": "Angra dos Reis, Rio de Janeiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-48.187471, -7.180745]
+      },
+      "properties": {
+        "title": "Mapbox",
+        "description": "Araguaína, Tocantins"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-48.565007, -6.395772]
+      },
+      "properties": {
+        "title": "Mapbox",
+        "description": "São Geraldo do Araguáia, Pará"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-45.582697, -22.734275]
+      },
+      "properties": {
+        "title": "Mapbox",
+        "description": "Campos do Jordão, São Paulo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-40.290481, -20.280624]
+      },
+      "properties": {
+        "title": "Mapbox",
+        "description": "Vitória, Espírito Santo"
       }
     }
   ]
