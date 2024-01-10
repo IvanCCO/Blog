@@ -5,7 +5,6 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import { useEffect, useRef } from "react";
 import PLACES from "../../assets/JSON/places.json";
 import { Header } from "../../components/Header";
-import { PageType } from "../../data/constants";
 
 // FIXME: Criar arquivo no .gitignore para não mostrar a env
 mapboxgl.accessToken =
@@ -22,7 +21,7 @@ export default function Places() {
     "marker-purple",
     "marker-red",
     "marker-white",
-    "marker-yellow"
+    "marker-yellow",
   ];
 
   const mapContainer = useRef(null);
@@ -39,7 +38,7 @@ export default function Places() {
 
     geojson.features.map((value, index) => {
       const el = document.createElement("div");
-    
+
       el.className = `marker`;
       el.id = idStyle[index % idStyle.length];
 
@@ -52,7 +51,7 @@ export default function Places() {
 
   return (
     <main className="bg-he-background h-screen">
-      <Header type={PageType.HE} />
+      <Header />
       <div>
         <div className="top-0 left-0 z-10 absolute pt-20 text-white w-full text-center flex justify-center flex-col bg-transparent backdrop-blur-sm space-y-3">
           <p className="text-lg md:text-2xl font-semibold font-inter">World</p>

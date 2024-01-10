@@ -17,7 +17,7 @@ export function Home() {
 
   return (
     <>
-      <Header type={PageType.HE} />
+      <Header />
 
       <main className="main space-y-8 grid place-items-center sm:px-28 md:px-44 lg:px-72 justify-center bg-he-background">
         <div className="space-y-2 text-white">

@@ -126,7 +126,7 @@ export function He() {
   const [isLargerThan1024] = useMediaQuery("(min-width: 1024px)");
   return (
     <>
-      <Header type={PageType.HE} />
+      <Header />
 
       <main className="h-full py-24 bg-he-background px-default-width sm:px-28 md:px-44 lg:px-52 xl:px-72 2xl:px-96">
         <div className="font-jomolhari flex flex-col text-font-black-color space-y-16">

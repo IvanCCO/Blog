@@ -5,31 +5,17 @@ import { IoSearchOutline } from "react-icons/io5";
 ====== 
 Just if i need lol
 */
-interface IconInputProps {
-  backgroundColor: string;
-  foregroundColor: string;
-}
-export function SearchInput({
-  backgroundColor,
-  foregroundColor,
-}: IconInputProps) {
+export function SearchInput() {
   return (
-    <InputGroup
-      bg={backgroundColor}
-      border={"none"}
-      borderRadius="full"
-      size={"sm"}
-      maxW={"140px"}
-    >
+    <InputGroup border={"none"} borderRadius="full" size={"sm"} maxW={"140px"}>
       <InputLeftElement pointerEvents="none">
-        <IoSearchOutline color={foregroundColor} />
+        <IoSearchOutline />
       </InputLeftElement>
       <Input
         type="tel"
         colorScheme="blackAlpha"
         placeholder="Search"
         borderRadius="full"
-        color={foregroundColor}
         border={"none"}
         _placeholder={{ opacity: 0.4, color: "inherit" }}
       />

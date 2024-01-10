@@ -15,14 +15,13 @@ import {
 import { useNavigate } from "react-router-dom";
 import HORSE from "../../assets/Designer-no-background.png";
 import { Header } from "../../components/Header";
-import { PageType } from "../../data/constants";
 
 export function NotFound() {
   const navigate = useNavigate();
 
   return (
     <main className="main sm:px-28 md:px-44 lg:px-96">
-      <Header type={PageType.DEFAULT} />
+      <Header />
       <Center>
         <Image src={HORSE} boxSize={["200px", "300px"]} />
       </Center>

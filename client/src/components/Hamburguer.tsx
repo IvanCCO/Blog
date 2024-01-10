@@ -7,67 +7,32 @@ import {
   MenuItem,
   MenuList,
 } from "@chakra-ui/react";
-import { IoIosHeartEmpty, IoIosMale , IoMdGlobe} from "react-icons/io";
+import { IoIosMale, IoMdGlobe, IoMdHome } from "react-icons/io";
 
-interface MenuProps {
-  theme: string;
-  menuListBackground: string;
-  textColor: string;
-}
-
-export function Hamburguer({
-  theme,
-  menuListBackground,
-  textColor,
-}: MenuProps) {
+export function Hamburguer() {
   // TODO: Página de criar post
   return (
     <Menu>
       <MenuButton
         as={IconButton}
         aria-label="Options"
-        icon={<HamburgerIcon boxSize={6} color={textColor} />}
+        icon={<HamburgerIcon boxSize={6} />}
         variant="outline"
       />
-      <MenuList
-        bg={menuListBackground}
-        color={textColor}
-        bgColor={menuListBackground}
-        borderColor={"black"}
-      >
-        <MenuItem
-          as="a"
-          href="/"
-          icon={<IoIosHeartEmpty />}
-          bg={menuListBackground}
-        >
+      <MenuList>
+        <MenuItem as="a" href="/" icon={<IoMdHome />}>
           Home
         </MenuItem>
-        <MenuItem
-          as="a"
-          href="/about/he"
-          icon={<IoIosMale />}
-          bg={menuListBackground}
-        >
+        <MenuItem as="a" href="/about/me" icon={<IoIosMale />}>
           Me
         </MenuItem>
-        <MenuItem
-          as="a"
-          href="/world"
-          icon={< IoMdGlobe/>}
-          bg={menuListBackground}
-        >
-          World 
+        <MenuItem as="a" href="/world" icon={<IoMdGlobe />}>
+          World
         </MenuItem>
 
-        <MenuDivider color={menuListBackground} />
+        <MenuDivider />
 
-        <MenuItem
-          as="a"
-          href="/about/taxco"
-          icon={<InfoOutlineIcon />}
-          bg={menuListBackground}
-        >
+        <MenuItem as="a" href="/about/taxco" icon={<InfoOutlineIcon />}>
           Taxco
         </MenuItem>
       </MenuList>

@@ -2,7 +2,6 @@ import { Heading, Text } from "@chakra-ui/react";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import MarkdownFormatter from "../../components/MarkdownFormatter";
-import { PageType } from "../../data/constants";
 
 import EX from "../../assets/Markdown/ex.md";
 import ProgressBar from "../../components/ProgressBar";
@@ -44,7 +43,7 @@ export function Post() {
   return (
     <>
       <ProgressBar />
-      <Header type={PageType.HE} />
+      <Header />
       <main className="main space-y-2 sm:px-28 md:px-44 lg:px-52 xl:px-72 2xl:px-96  bg-he-background">
         <div className="space-y-4">
           <div className="w-fit">
@@ -75,7 +74,7 @@ export function Post() {
           <MarkdownFormatter text={content} />
         </div>
 
-        <Footer/>
+        <Footer />
       </main>
     </>
   );

@@ -1,59 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Logo } from "../components/Logo";
-import { PageType } from "../data/constants";
 import { Hamburguer } from "./Hamburguer";
 import { SearchInput } from "./SearchInput";
-
-type HeaderStyle = {
-  mainBackground: string;
-  logoColor: string;
-  hamburgerTheme: string;
-  menuListBackground: string;
-  menuListBorder: string;
-  inputBackground: string;
-  inputForeground: string;
-  colorText: string;
-};
-
-const chooseHeaderStyle = (type: PageType): HeaderStyle => {
-  switch (type) {
-    case "HE":
-      return {
-        mainBackground: "bg-he-background",
-        logoColor: "white",
-        hamburgerTheme: "whiteAlpha",
-        menuListBackground: "#3A3A3E",
-        inputBackground: "#5B5B5B",
-        menuListBorder: "white",
-        inputForeground: "white",
-        colorText: "white",
-      };
-    case "HOME":
-      return {
-        mainBackground: "bg-white",
-        logoColor: "black",
-        hamburgerTheme: "blackAlpha",
-        menuListBackground: "#F1F1F1",
-        inputBackground: "#F1F1F1",
-        menuListBorder: "black",
-        inputForeground: "black",
-        colorText: "low-text-black",
-      };
-    case "DEFAULT":
-      return {
-        mainBackground: "bg-white",
-        logoColor: "black",
-        hamburgerTheme: "blackAlpha",
-        menuListBackground: "#F1F1F1",
-        inputBackground: "#F1F1F1",
-        menuListBorder: "black",
-        inputForeground: "black",
-        colorText: "low-text-black",
-      };
-    default:
-      throw new Error(`Invalid page type: ${type}`);
-  }
-};
 
 const beforeStyle = (
   text: string,
@@ -63,7 +11,8 @@ const beforeStyle = (
   const location = useLocation();
   const isActive = location.pathname === path;
 
-  const isHe = location.pathname === "/about/he" || location.pathname === "/world";
+  const isHe =
+    location.pathname === "/about/he" || location.pathname === "/world";
 
   return (
     <Link to={path}>
@@ -92,30 +41,21 @@ const headerItens = () => {
   );
 };
 
-export function Header({ type }: { type: PageType }) {
-  const headerStyle = chooseHeaderStyle(type);
-
+export function Header() {
   return (
     <div
-      className={`fixed top-0 left-0 right-0 inline-flex justify-between px-default-width md:px-44 sm:px-28 lg:px-52 xl:px-72 2xl:px-96 place-items-center z-50 ${headerStyle.mainBackground}`}
+      className={`fixed top-0 left-0 right-0 inline-flex justify-between px-default-width md:px-44 sm:px-28 lg:px-52 xl:px-72 2xl:px-96 place-items-center z-50 bg-he-background`}
     >
-      <Logo color={headerStyle.logoColor} />
+      <Logo />
 
       {headerItens()}
 
       <div className="place-items-center hidden">
-        <SearchInput
-          backgroundColor={headerStyle.inputBackground}
-          foregroundColor={headerStyle.inputForeground}
-        />
+        <SearchInput />
       </div>
 
       <div className="sm:hidden">
-        <Hamburguer
-          theme={headerStyle.hamburgerTheme}
-          menuListBackground={headerStyle.menuListBackground}
-          textColor={headerStyle.colorText}
-        />
+        <Hamburguer />
       </div>
     </div>
   );
