@@ -14,7 +14,7 @@ export default function AboutMe() {
       <div>
         <p className="text-md font-light leading-relaxed text-justify">
           {" "}
-          Hello, my name is Ivan, Lorem ipsum dolor sit amet consectetur
+          Hello, my name is Ivan, i am a software developer inspired to conquer
           adipisicing elit. Voluptas maiores veniam voluptatem? Sequi debitis
           placeat doloremque quaerat! Repellendus, et nobis, illum maiores
           iusto, quasi rem cupiditate consectetur at ab expedita! Lorem ipsum

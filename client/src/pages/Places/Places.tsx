@@ -56,7 +56,7 @@ export default function Places() {
         <div className="top-0 left-0 z-10 absolute pt-20 text-white w-full text-center flex justify-center flex-col bg-transparent backdrop-blur-sm space-y-3">
           <p className="text-lg md:text-2xl font-semibold font-inter">World</p>
           <p className="text-sm md:text-base text-low-text-black ">
-            The places i've been - I will travel the world thats my dream
+            The places i've been - I will travel the world, that's my dream
           </p>
         </div>
         <div ref={mapContainer} className="w-screen h-screen" />

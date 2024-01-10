@@ -4,7 +4,6 @@ import mypic from "../../assets/digitando.jpeg";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { Reveal } from "../../components/Reveal";
-import { PageType } from "../../data/constants";
 import AboutMe from "./AboutMe";
 import ContactMe from "./ContactMe";
 import Experience from "./Experience";
@@ -151,9 +150,7 @@ export function He() {
               <Experience />
             </>
           </div>
-
           <Suggestions />
-
           <ContactMe />
           <Footer />
         </div>

@@ -55,6 +55,7 @@ export function Post() {
             Modern online and offline payments for Africa
           </h1>
           <p className="text-xs sm:text-sm font-light text-neutral-400">
+            {/* TODO: Arrumar esse cara para ficar dinamico */}
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
             delectus dignissimos doloremque aliquid ullam iure, tempora
             obcaecati nulla consequuntur accusamus nam!
