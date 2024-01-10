@@ -38,8 +38,6 @@ export function MainCard() {
               Orquestando conteiners com Kubernets
             </Heading>
             <Text
-              // bgGradient="linear(to-b, #1a1a1a 0%, rgba(118, 111, 154, 0.08) 100%)"
-              // backgroundClip="text"
               color={"white"}
               maxW={{ lg: "70%" }}
             >
@@ -50,12 +48,8 @@ export function MainCard() {
             </Text>
           </CardBody>
           <CardFooter justify="space-between">
-            <Text fontSize="sm" color="gray.500">
-              4 min read
-            </Text>
-            <Text fontSize="sm" color="gray.500">
-              writed by @ivan_miranda
-            </Text>
+            <p className="text-sm text-neutral-300">4 min read</p>
+            <p className="text-sm text-neutral-300">writed by @ivan_miranda</p>
           </CardFooter>
         </Stack>
       </Card>

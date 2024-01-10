@@ -83,22 +83,14 @@ export function SampleCard() {
                 variant="solid"
                 borderRadius="full"
               />
-              <div className="inline-flex space-x-1 place-items-center minW-fit">
-                <Text fontSize="sm" color="gray.600" mt={4} minW="fit-content">
-                  Dec 12
-                </Text>
-                <Text fontSize="sm" color="gray.600" mt={4} minW="fit-content">
-                  ·
-                </Text>
-                <Text fontSize="sm" color="gray.600" mt={4} minW="fit-content">
-                  4 min read
-                </Text>
+              <div className="inline-flex space-x-1 place-items-center minW-fit text-neutral-300">
+                <p className="text-sm mt-4 min-w-fit">Dec 12</p>
+                <p className="text-sm mt-4 min-w-fit">·</p>
+                <p className="text-sm mt-4 min-w-fit">4 min read</p>
               </div>
             </Flex>
-            <div className="flex flex-row-reverse w-full justify-between h-fit">
-              <Text fontSize="sm" color="gray.400" textAlign={"end"}>
-                ivan_miranda
-              </Text>
+            <div className="flex flex-row-reverse w-full justify-between h-fit text-neutral-400">
+              <p className="text-sm  mt-4 min-w-fit">Ivan Miranda</p>
             </div>
           </div>
         </CardFooter>

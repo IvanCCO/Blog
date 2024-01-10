@@ -13,7 +13,6 @@ import { ImageBlock } from "./ImageBlock";
 import { ProfileRow } from "./ProfileRow";
 
 export function Post() {
-
   const content = importLocalMarkdownFile(EX);
 
   const sampleCards: JSX.Element[] = [];

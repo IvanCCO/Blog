@@ -8,7 +8,7 @@ import { PageType } from "../../data/constants";
 export function Home() {
   const sampleCards: JSX.Element[] = [];
 
-  for (let index = 0; index < 2; index++) {
+  for (let index = 0; index < 1; index++) {
     sampleCards.push(<SampleCard key={index} />);
   }
 
