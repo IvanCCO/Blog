@@ -9,9 +9,9 @@ export function ActionRow() {
         variant={"outline"}
         boxShadow="md"
         rounded="full"
-        colorScheme="gray"
-        color={"white"}
-        size={"xs"}
+        bg={"white"}
+        color={"black"}
+        size={{base: "xs", sm: "sm",}}
         leftIcon={icon}
         fontWeight={"normal"}
         px={3}

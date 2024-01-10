@@ -4,13 +4,13 @@ import DEEU from "../../assets/he-pic.jpg";
 export function ProfileRow() {
   return (
     <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap" py={3} color={"white"}>
-      <Avatar name="Segun Adebayo" src={DEEU} size={"md"} />
+      <Avatar name="Segun Adebayo" src={DEEU} size={{base: "md", md: "lg"}} />
       <Box>
-        <Heading size="xs">Ivan Miranda</Heading>
-        <Text fontSize={"xs"} color={"#727272"}>
+        <h1 className="text-sm sm:text-base">Ivan Miranda</h1>
+        <p className="text-xs text-neutral-300 sm:text-sm">
           {/* TODO: Colocar dinamico esse dado */}
           Publicado 21 de dez de 2023 · 4 min read
-        </Text>
+        </p>
       </Box>
     </Flex>
   );

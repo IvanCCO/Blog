@@ -1,4 +1,3 @@
-import { Heading, Text } from "@chakra-ui/react";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import MarkdownFormatter from "../../components/MarkdownFormatter";
@@ -17,7 +16,7 @@ export function Post() {
 
   const sampleCards: JSX.Element[] = [];
 
-  for (let index = 0; index < 2; index++) {
+  for (let index = 0; index < 3; index++) {
     sampleCards.push(<SampleCard key={index} />);
   }
 
@@ -52,14 +51,15 @@ export function Post() {
             />
           </div>
 
-          <Heading size={"lg"} color={"white"}>
+          <h1 className="text-xl sm:text-2xl md:text-3xl text-white font-semibold">
             Modern online and offline payments for Africa
-          </Heading>
-          <Text fontSize={"sm"} fontWeight={"light"} color={"#727272"}>
+          </h1>
+          <p className="text-xs sm:text-sm font-light text-neutral-400">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
             delectus dignissimos doloremque aliquid ullam iure, tempora
             obcaecati nulla consequuntur accusamus nam!
-          </Text>
+          </p>
+
           <ProfileRow />
           <ActionRow />
         </div>
@@ -70,6 +70,7 @@ export function Post() {
         <div>
           <MarkdownFormatter text={content} />
         </div>
+        {/* TODO: Colocar carinha para mostrar os posts relacionados */}
 
         <Footer />
       </main>
