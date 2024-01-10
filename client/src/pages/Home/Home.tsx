@@ -18,7 +18,6 @@ export function Home() {
   return (
     <>
       <Header />
-
       <main className="main space-y-8 grid place-items-center sm:px-28 md:px-44 lg:px-72 justify-center bg-he-background">
         <div className="space-y-2 text-white">
           <Text fontSize={"3xl"} fontWeight={"semibold"}>
@@ -45,7 +44,4 @@ export function Home() {
       </main>
     </>
   );
-}
-{
-  /* <a target="_blank" href="https://icons8.com/icon/8rKdRqZFLurS/mongodb-a-cross-platform-document-oriented-database-program">MongoDB a cross-platform document-oriented database program</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */
 }
