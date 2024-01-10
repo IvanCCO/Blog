@@ -17,7 +17,6 @@ export function Hamburguer() {
         as={IconButton}
         aria-label="Options"
         icon={<HamburgerIcon boxSize={6} />}
-        variant="outline"
       />
       <MenuList>
         <MenuItem as="a" href="/" icon={<IoMdHome />}>
@@ -29,9 +28,7 @@ export function Hamburguer() {
         <MenuItem as="a" href="/world" icon={<IoMdGlobe />}>
           World
         </MenuItem>
-
         <MenuDivider />
-
         <MenuItem as="a" href="/about/taxco" icon={<InfoOutlineIcon />}>
           Taxco
         </MenuItem>

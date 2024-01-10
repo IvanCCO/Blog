@@ -103,6 +103,18 @@ h4::selection {
   }
 }
 
+/* Barra de progressão dos artigos */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: rgb(211, 27, 214);
+  transform-origin: 0%;
+  z-index: 999;
+}
+
 /* TODO: Ver se tira o before e after pq ta tendo um pequeno bug */
 .gradient::before,
 .gradient::after {

@@ -13,6 +13,7 @@ import { ImageBlock } from "./ImageBlock";
 import { ProfileRow } from "./ProfileRow";
 
 export function Post() {
+
   const content = importLocalMarkdownFile(EX);
 
   const sampleCards: JSX.Element[] = [];
@@ -20,9 +21,6 @@ export function Post() {
   for (let index = 0; index < 2; index++) {
     sampleCards.push(<SampleCard key={index} />);
   }
-
-  const justifyContent =
-    sampleCards?.length < 3 ? "flex-start" : "space-between";
 
   const color = (n: number): string => {
     switch (n) {
