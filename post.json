@@ -1,0 +1,57 @@
+{
+  "new-post": {
+    "id": 1,
+    "titulo": "string",
+    "descricao": "string",
+    "pictureId": "string(UUID)",
+    "contentId": "string(UUID)",
+    "tempo-leitura": "string",
+    "data-publicacao": "LocalDate",
+    "tag": {
+      "nome": "string",
+      "cor": "string"
+    }
+  },
+  "pagination": {
+    "currentPage": 1,
+    "totalPages": 3
+  },
+  "posts": [
+    {
+      "id": 1,
+      "titulo": "string",
+      "descricao": "string",
+      "pictureId": "string(UUID)",
+      "tempo-leitura": "string",
+      "data-publicacao": "LocalDate",
+      "tag": {
+        "nome": "string",
+        "cor": "string"
+      }
+    },
+    {
+      "id": 1,
+      "titulo": "string",
+      "descricao": "string",
+      "pictureId": "string(UUID)",
+      "tempo-leitura": "string",
+      "data-publicacao": "LocalDate",
+      "tag": {
+        "nome": "string",
+        "cor": "string"
+      }
+    },
+    {
+      "id": 1,
+      "titulo": "string",
+      "descricao": "string",
+      "pictureId": "string(UUID)",
+      "tempo-leitura": "string",
+      "data-publicacao": "LocalDate",
+      "tag": {
+        "nome": "string",
+        "cor": "string"
+      }
+    }
+  ]
+}

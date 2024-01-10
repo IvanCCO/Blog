@@ -89,9 +89,6 @@ export function SampleCard() {
                 <p className="text-sm mt-4 min-w-fit">4 min read</p>
               </div>
             </Flex>
-            <div className="flex flex-row-reverse w-full justify-between h-fit text-neutral-400">
-              <p className="text-sm  mt-4 min-w-fit">Ivan Miranda</p>
-            </div>
           </div>
         </CardFooter>
       </Card>

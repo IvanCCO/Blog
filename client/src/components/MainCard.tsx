@@ -48,8 +48,8 @@ export function MainCard() {
             </Text>
           </CardBody>
           <CardFooter justify="space-between">
+            <p className="text-sm text-neutral-300">Dec 12</p>
             <p className="text-sm text-neutral-300">4 min read</p>
-            <p className="text-sm text-neutral-300">writed by @ivan_miranda</p>
           </CardFooter>
         </Stack>
       </Card>
