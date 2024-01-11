@@ -10,9 +10,28 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import { formatDate } from "../utils/commom";
 import { TopicTag } from "./TopicTag";
 
-export function SampleCard() {
+interface Props {
+  title: string;
+  description: string;
+  readTime: number;
+  createdAt: string;
+  tag?: {
+    name: string;
+    color: string;
+  };
+}
+
+export function SampleCard({
+  title,
+  description,
+  readTime,
+  createdAt,
+  tag,
+}: Props) {
+  const date = formatDate(createdAt);
   const color = (n: number): string => {
     switch (n) {
       case 1:
@@ -33,13 +52,13 @@ export function SampleCard() {
   return (
     <>
       <Card
-        // variant={"outline"}
         cursor={"pointer"}
         boxShadow={"base"}
         minW="220px"
-        maxW={"300px"}
+        maxW={"330px"}
         bg={"whiteAlpha.200"}
         color={"white"}
+        alignSelf={["center", "center", "stretch"]}
       >
         <CardBody>
           <AspectRatio
@@ -55,15 +74,14 @@ export function SampleCard() {
             />
           </AspectRatio>
           <Stack spacing="3">
-            <Heading size="sm">Orquestando conteiners com Kubernets</Heading>
+            <Heading size="sm">{title}</Heading>
             <Text
               // bgGradient="linear(to-b, #1a1a1a 0%, rgba(118, 111, 154, 0.08) 100%)"
               // backgroundClip="text"
               color={"white"}
               fontSize={"sm"}
             >
-              eius blanditiis repudiandae, beatae cum temporibus autem,
-              molestias aperiam perferendis, ipsam voluptatum consequuntur
+              {description}
             </Text>
           </Stack>
         </CardBody>
@@ -84,9 +102,9 @@ export function SampleCard() {
                 borderRadius="full"
               />
               <div className="inline-flex space-x-1 place-items-center minW-fit text-neutral-300">
-                <p className="text-sm mt-4 min-w-fit">Dec 12</p>
+                <p className="text-sm mt-4 min-w-fit">{date}</p>
                 <p className="text-sm mt-4 min-w-fit">·</p>
-                <p className="text-sm mt-4 min-w-fit">4 min read</p>
+                <p className="text-sm mt-4 min-w-fit">{readTime} min read</p>
               </div>
             </Flex>
           </div>

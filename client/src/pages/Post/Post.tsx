@@ -10,15 +10,15 @@ import { importLocalMarkdownFile } from "../../hooks/useFileUtils";
 import { ActionRow } from "./ActionRow";
 import { ImageBlock } from "./ImageBlock";
 import { ProfileRow } from "./ProfileRow";
+import MOCK from "../../assets/JSON/Posts.json"
 
 export function Post() {
+
+  const newPost = MOCK["new-post"]
+  const pagination = MOCK.pagination
+  const posts = MOCK.posts
+
   const content = importLocalMarkdownFile(EX);
-
-  const sampleCards: JSX.Element[] = [];
-
-  for (let index = 0; index < 3; index++) {
-    sampleCards.push(<SampleCard key={index} />);
-  }
 
   const color = (n: number): string => {
     switch (n) {
@@ -27,13 +27,13 @@ export function Post() {
       case 2:
         return "cyan";
       case 3:
-        return "pink";
+        return "red";
       case 4:
-        return "linkedin";
+        return "red";
       case 5:
-        return "gray";
+        return "red";
       default:
-        return "linkedin";
+        return "red";
     }
   };
   return (

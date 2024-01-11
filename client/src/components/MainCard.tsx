@@ -10,9 +10,24 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import { formatDate } from "../utils/commom";
 
-export function MainCard() {
+interface Props {
+  title: string,
+  description: string,
+  readTime: number,
+  createdAt: string 
+  tag?: {
+    name: string,
+    color: string
+  }
+}
+
+export function MainCard({title, description, readTime, createdAt, tag} : Props) {
+
   const navigate = useNavigate();
+
+  const date = formatDate(createdAt)
 
   return (
     <Center>
@@ -24,7 +39,7 @@ export function MainCard() {
         bg="whiteAlpha.200"
         color={"white"}
       >
-        <AspectRatio ratio={16 / 9} w={"full"}>
+        <AspectRatio ratio={16 / 9} w={"full"} maxH={{base: "200px", sm: "200px", md: "none"}}>
           <Image
             src="https://th.bing.com/th/id/OIG.pM5yvYt8jXgKE4HyVvUx?pid=ImgGn"
             alt="A big octopus managing containers"
@@ -35,21 +50,18 @@ export function MainCard() {
         <Stack>
           <CardBody>
             <Heading size={["lg", "md"]} mb={2}>
-              Orquestando conteiners com Kubernets
+              {title}
             </Heading>
             <Text
               color={"white"}
               maxW={{ lg: "70%" }}
             >
-              Que o Kubernetes está ficando o tal tal tal todo mundo sabe mas
-              Que o Kubernetes está ficando o tal tal tal todo mundo sabe mas
-              agora como de fato orquestrar conteiners com ele e fazer a
-              diferenca é algo que pou...
+              {description}
             </Text>
           </CardBody>
           <CardFooter justify="space-between">
-            <p className="text-sm text-neutral-300">Dec 12</p>
-            <p className="text-sm text-neutral-300">4 min read</p>
+            <p className="text-sm text-neutral-300">{date}</p>
+            <p className="text-sm text-neutral-300">{readTime} min read</p>
           </CardFooter>
         </Stack>
       </Card>

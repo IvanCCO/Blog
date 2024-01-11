@@ -1,16 +1,16 @@
 import { Stack, Text } from "@chakra-ui/react";
+import MOCK from "../../assets/JSON/Posts.json";
 import { Header } from "../../components/Header";
 import { MainCard } from "../../components/MainCard";
 import { Pagination } from "../../components/Pagination";
 import { SampleCard } from "../../components/SampleCard";
-import { PageType } from "../../data/constants";
 
 export function Home() {
   const sampleCards: JSX.Element[] = [];
 
-  for (let index = 0; index < 1; index++) {
-    sampleCards.push(<SampleCard key={index} />);
-  }
+  const newPost = MOCK["new-post"];
+  const pagination = MOCK.pagination;
+  const posts = MOCK.posts;
 
   const justifyContent =
     sampleCards?.length < 3 ? "flex-start" : "space-between";
@@ -23,7 +23,12 @@ export function Home() {
           <Text fontSize={"3xl"} fontWeight={"semibold"}>
             News
           </Text>
-          <MainCard />
+          <MainCard
+            title={newPost.titulo}
+            createdAt={newPost["data-publicacao"]}
+            readTime={Number(newPost["tempo-leitura"]) || 0}
+            description={newPost.descricao}
+          />
         </div>
         <div className="space-y-3 w-full">
           <div className="flex justify-between place-items-center text-white">
@@ -36,10 +41,23 @@ export function Home() {
             placeItems={"center"}
             justifyContent={["center", "center", justifyContent]}
             w={"full"}
-          >
-            {sampleCards}
+            >
+           
+            {posts.map((value, index) => (
+              <SampleCard
+                key={index}
+                title={value.titulo}
+                description={value.descricao}
+                createdAt={value["data-publicacao"]}
+                readTime={
+                  isNaN(Number(value["tempo-leitura"]))
+                    ? 0
+                    : Number(value["tempo-leitura"])
+                }
+              />
+            ))}
           </Stack>
-          <Pagination />
+          <Pagination {...pagination} onPageChange={() => console.log("iha")}/>
         </div>
       </main>
     </>

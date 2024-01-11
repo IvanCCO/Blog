@@ -1,29 +1,29 @@
 {
   "new-post": {
     "id": 1,
-    "titulo": "string",
-    "descricao": "string",
+    "titulo": "Como Fazer seu próprio Gerenciamento de Containers",
+    "descricao": "Com o Gerenciamento de contentId nós fazemos muitas coisas, você sabe como gerenciar de maneiro correta",
     "pictureId": "string(UUID)",
     "contentId": "string(UUID)",
-    "tempo-leitura": "string",
-    "data-publicacao": "LocalDate",
+    "tempo-leitura": 4,
+    "data-publicacao": "2024-01-10",
     "tag": {
       "nome": "string",
       "cor": "string"
     }
   },
   "pagination": {
-    "currentPage": 1,
+    "currentPage": 2,
     "totalPages": 3
   },
   "posts": [
     {
       "id": 1,
-      "titulo": "string",
-      "descricao": "string",
+      "titulo": "Que gostoso o melhor jeito",
+      "descricao": "é muito gostoso ter uns olhinhos para ficar brincando",
       "pictureId": "string(UUID)",
-      "tempo-leitura": "string",
-      "data-publicacao": "LocalDate",
+      "tempo-leitura": 8,
+      "data-publicacao": "2024-02-10",
       "tag": {
         "nome": "string",
         "cor": "string"
@@ -31,11 +31,11 @@
     },
     {
       "id": 1,
-      "titulo": "string",
-      "descricao": "string",
+      "titulo": "To ouvindo alguém me chamar",
+      "descricao": "Vim pra sabotar seu sistema nervoso sanguíneo, e a profecia se fez como previsto",
       "pictureId": "string(UUID)",
-      "tempo-leitura": "string",
-      "data-publicacao": "LocalDate",
+      "tempo-leitura": 7,
+      "data-publicacao": "2024-08-01",
       "tag": {
         "nome": "string",
         "cor": "string"
@@ -43,11 +43,11 @@
     },
     {
       "id": 1,
-      "titulo": "string",
-      "descricao": "string",
+      "titulo": "To na rua de bombeta e moletom",
+      "descricao": "Chama o guilherme chamao gil, se os outros vem, pela ordem tudo bem melhor. Mas começeu colocar com os branquinho do shopping",
       "pictureId": "string(UUID)",
-      "tempo-leitura": "string",
-      "data-publicacao": "LocalDate",
+      "tempo-leitura": 17,
+      "data-publicacao": "2024-10-10",
       "tag": {
         "nome": "string",
         "cor": "string"
