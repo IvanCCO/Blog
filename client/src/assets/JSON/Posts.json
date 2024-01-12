@@ -1,8 +1,8 @@
 {
   "new-post": {
     "id": 1,
-    "titulo": "Como Fazer seu próprio Gerenciamento de Containers",
-    "descricao": "Com o Gerenciamento de contentId nós fazemos muitas coisas, você sabe como gerenciar de maneiro correta",
+    "titulo": "Como Fazer seu próprio Gerenciamento de Containers com Kubernetes",
+    "descricao": "Com o Gerenciamento de contentId nós fazemos muitas coisas, você sabe como gerenciar de maneiro correta Com o Gerenciamento de contentId nós fazemos muitas coisas, você sabe como gerenciar de maneiro correta",
     "pictureId": "string(UUID)",
     "contentId": "string(UUID)",
     "tempo-leitura": 4,
@@ -32,7 +32,7 @@
     {
       "id": 1,
       "titulo": "To ouvindo alguém me chamar",
-      "descricao": "Vim pra sabotar seu sistema nervoso sanguíneo, e a profecia se fez como previsto",
+      "descricao": "Vim pra sabotar seu sistema nervoso sanguíneo, e a profecia se fez como previsto, Vim pra sabotar seu sistema nervoso sanguíneo, e a profecia se fez como previstoVim pra sabotar seu sistema nervoso sanguíneo, e a profecia se fez como previsto",
       "pictureId": "string(UUID)",
       "tempo-leitura": 7,
       "data-publicacao": "2024-08-01",

@@ -49,6 +49,8 @@ export function SampleCard({
     }
   };
 
+  const maxCharacters = 125
+
   return (
     <>
       <Card
@@ -74,14 +76,13 @@ export function SampleCard({
             />
           </AspectRatio>
           <Stack spacing="3">
-            <Heading size="sm">{title}</Heading>
+            <Heading size={{base: "sm", sm: "md"}} as={"h1"}>{title}</Heading>
             <Text
-              // bgGradient="linear(to-b, #1a1a1a 0%, rgba(118, 111, 154, 0.08) 100%)"
-              // backgroundClip="text"
-              color={"white"}
-              fontSize={"sm"}
+              bgGradient="linear(to-b, #fff 80%, #3E3E42 100%)"
+              backgroundClip="text"
+              fontSize={{base: "md", xl: "lg"}}
             >
-              {description}
+              {description.length > maxCharacters ? description.substring(120) + "..." : description}
             </Text>
           </Stack>
         </CardBody>

@@ -38,6 +38,10 @@ export function MainCard({title, description, readTime, createdAt, tag} : Props)
         boxShadow={"lg"}
         bg="whiteAlpha.200"
         color={"white"}
+        maxW={{xl: "1000px"}}
+        w={
+        "full"
+        }
       >
         <AspectRatio ratio={16 / 9} w={"full"} maxH={{base: "200px", sm: "200px", md: "none"}}>
           <Image
@@ -49,12 +53,13 @@ export function MainCard({title, description, readTime, createdAt, tag} : Props)
         </AspectRatio>
         <Stack>
           <CardBody>
-            <Heading size={["lg", "md"]} mb={2}>
+            <Heading size={{base: "lg", sm: "md", xl: "lg"}} mb={2}>
               {title}
             </Heading>
             <Text
               color={"white"}
               maxW={{ lg: "70%" }}
+              fontSize={{base: "md", xl: "lg"}}
             >
               {description}
             </Text>
