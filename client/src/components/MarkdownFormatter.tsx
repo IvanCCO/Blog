@@ -32,7 +32,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
           const { children, className, node, ...rest } = props;
           const match = /language-(\w+)/.exec(className || "");
           return match ? (
-            <div className="my-12">
+            <div className="my-12 text-base lg:text-lg">
               <SyntaxHighlighter
                 PreTag="div"
                 children={String(children).replace(/\n$/, "")}
@@ -83,7 +83,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         p(props) {
           return (
-            <p className="text-sm leading-relaxed lg:text-base" {...props}>
+            <p className="text-base leading-relaxed lg:text-lg" {...props}>
               {props.children}
             </p>
           );
