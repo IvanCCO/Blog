@@ -110,11 +110,11 @@ export function He() {
       </h1>
       <SkillsCycle />
       <div>
-        <span className="text-xs">All those icons are from </span>
+        <span className="text-xs lg:text-base">All those icons are from </span>
         <a
           target="_blank"
           href="https://icons8.com"
-          className="link-color text-xs"
+          className="link-color text-xs lg:text-base"
         >
           Icons8 ❤
         </a>

@@ -36,7 +36,7 @@ export function SkillsCycle() {
     return (
       <div className="text-center cursor-pointer">
         <Image src={icon} boxSize={"60px"} mx={5} />
-        <p className="text-xs">{nome}</p>
+        <p className="text-xs lg:text-base">{nome}</p>
       </div>
     );
   };
