@@ -12,7 +12,7 @@ export default function AboutMe() {
       </h1>
       {/* TODO: Colocar um texto verdadeiro  */}
       <div>
-        <p className="text-md font-light leading-relaxed text-justify">
+        <p className="text-md font-light leading-relaxed text-justify xl:text-lg">
           {" "}
           Hello, my name is Ivan, i am a software developer inspired to conquer
           adipisicing elit. Voluptas maiores veniam voluptatem? Sequi debitis
@@ -31,7 +31,7 @@ export default function AboutMe() {
         <Link href={RESUME} isExternal>
           <Button
             leftIcon={<Icon as={IoMdPaper} />}
-            size={"md"}
+            size={{base: "md", xl: "lg"}}
             colorScheme="teal"
           >
             See my Resume

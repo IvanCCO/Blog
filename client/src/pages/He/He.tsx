@@ -18,14 +18,14 @@ export function He() {
         <Reveal position={{ y: 120 }} animation={{ delay: 0.8 }}>
           <div>
             <div>
-              <p className="text-xl text-white">Hi there, i am</p>
+              <p className="text-xl text-white 2xl:text-2xl">Hi there, i am</p>
             </div>
-            <p className="text-5xl text-white leading-tight">
+            <p className="text-5xl text-white leading-tight 2xl:text-7xl">
               Ivan Miranda, Software Enginner🤙
             </p>
             <Reveal position={{ x: 120 }} animation={{ delay: 1.5 }}>
               <div>
-                <p className="text-sm text-low-text-black font-inter">
+                <p className="text-sm text-low-text-black font-inter xl:text-lg mt-8">
                   Currently working at @C6Bank, São Paulo Brasil
                 </p>
               </div>
@@ -35,12 +35,12 @@ export function He() {
 
         <SocialMediaList />
         <Reveal position={{ y: -75 }} animation={{ duration: 0.2, delay: 2 }}>
-          <div className="gradient relative items-center content-center text-white text-md rounded-md py-2 px-4 z-0 flex-row inline-flex w-full justify-center cursor-pointer">
-            <p className="text-center font-inter font-bold text-base sm:text-lg">
+          <div className="gradient relative items-center content-center text-white text-md rounded-md py-2 px-4 z-0 flex-row inline-flex w-full justify-center cursor-pointer xl:py-5">
+            <p className="text-center font-inter font-bold text-base sm:text-lg xl:text-2xl">
               My Posts
             </p>
             {/* TODO: Linkar para página dos meus posts */}
-            <ArrowForwardIcon />
+            <ArrowForwardIcon boxSize={{base: "20px", xl: "30px"}}/>
           </div>
         </Reveal>
       </div>

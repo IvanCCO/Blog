@@ -3,6 +3,7 @@ import Marquee from "react-fast-marquee";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/modules";
+import { useBreakpoint } from "@chakra-ui/react";
 import APIGEE from "../../assets/SkillsIcons/apigee-seeklogo.com.svg";
 import AWS from "../../assets/SkillsIcons/aws.svg";
 import GRAFANA from "../../assets/SkillsIcons/grafana.svg";
@@ -17,8 +18,19 @@ import SPRING from "../../assets/SkillsIcons/spring.svg";
 import TF from "../../assets/SkillsIcons/terraform.svg";
 import JS from "../../assets/SkillsIcons/javascript.svg"
 import TAILWIND from "../../assets/SkillsIcons/tailwind.svg"
+import { useBreakpointValue } from "@chakra-ui/react";
 
 export function SkillsCycle() {
+
+  const gradientWidth = useBreakpointValue({
+    base: 100,
+    sm: 120,
+    md: 150,
+    lg: 200,
+    xl: 250,
+    "2xl": 300
+  })
+
   const image = (icon: string, nome: string) => {
     // TODO: Colocar para linkar para o ícone ou para a tecnologia
     return (
@@ -36,8 +48,8 @@ export function SkillsCycle() {
       autoFill={true}
       pauseOnHover={true}
       direction="right"
-      gradientColor="#2E2E32"
-      gradientWidth={100}
+      gradientColor="#16141C"
+      gradientWidth={gradientWidth}
     >
       {image(JAVA, "Java")}
       {image(KOTLIN, "Kotlin")}

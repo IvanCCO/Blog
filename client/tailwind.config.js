@@ -25,7 +25,7 @@ module.exports = {
       },
       colors: {
         "font-black-color": "#434343",
-        "he-background": "#2E2E32",
+        "he-background": "#16141C",
         "low-text-black": "#797979",
         "purple-soft": "#AB9ADD",
         "white-main": "#ffffff",

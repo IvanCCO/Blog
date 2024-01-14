@@ -12,7 +12,7 @@ export default function Experience() {
     return (
       <>
         <br />
-        <Link href={link.link} isExternal fontSize={"xs"}>
+        <Link href={link.link} isExternal fontSize={{base: "md", xl: "md"}}>
           {link.name} <ExternalLinkIcon mx="2px" />
         </Link>
       </>
@@ -33,10 +33,10 @@ export default function Experience() {
       <div className={`timeline-block timeline-block-${chooseNextSide}`}>
         <div className="marker"></div>
         <div className="timeline-content">
-          <h3>{year}</h3>
-          <span>{title}</span>
+          <h3 className="text-lg font-bold xl:text-xl">{year}</h3>
+          <span className="text-[#cacaca] text-base xl:text-lg">{title}</span>
           {external && link(external)}
-          <p>{content}</p>
+          <p className="mt-2 text-base leading-6 tracking-wide text-[#888]">{content}</p>
         </div>
       </div>
     );

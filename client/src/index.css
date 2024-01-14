@@ -194,24 +194,6 @@ h4::selection {
   color: #ffffff;
 }
 
-.timeline-content h3 {
-  font-size: 17px;
-  font-weight: 500;
-}
-
-.timeline-content span {
-  font-size: 14px;
-  color: #cacaca;
-}
-
-.timeline-content p {
-  margin-top: 10px;
-  font-size: 14px;
-  line-height: 1.5em;
-  word-spacing: 1px;
-  color: #888;
-}
-
 @media screen and (max-width: 767px) {
   .container:before {
     left: 8px;
