@@ -28,7 +28,6 @@ class CreatePostService(
             createdAt = LocalDate.now(),
             updatedAt = LocalDate.now()
         )
-
         repository.save(post)
     }
 }

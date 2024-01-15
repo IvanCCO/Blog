@@ -1,4 +1,4 @@
-package com.server.taxco
+package com.server.taxco.application
 
 import com.server.taxco.application.response.ApiError
 import com.server.taxco.common.ErrorType

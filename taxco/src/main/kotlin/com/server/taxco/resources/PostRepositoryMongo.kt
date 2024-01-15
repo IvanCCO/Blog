@@ -4,6 +4,8 @@ import com.server.taxco.application.mapper.PostMapper
 import com.server.taxco.domain.Post
 import com.server.taxco.domain.PostId
 import com.server.taxco.domain.PostRepository
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Repository
 
@@ -19,9 +21,12 @@ class PostRepositoryMongo(
     }
 
     override fun save(post: Post) {
-
         val document = mapper.toDocument(post)
-
         repository.save(document)
+    }
+
+    override fun findAll(pageable: Pageable): Page<PostDocument> {
+        val documents = repository.findAll(pageable)
+        return documents
     }
 }
