@@ -6,11 +6,16 @@ import java.time.LocalDate
 
 @Document("posts")
 data class PostDocument(
-    @Id val id : String,
-    val title : String,
+    @Id val id: String,
+    val title: String,
     val description: String,
-    val tag : String,
-    val readTime : Int,
-    val createdAt : LocalDate,
-    val updatedAt : LocalDate,
+    val tag: TagDocument,
+    val readTime: Int,
+    val isVisible: String,
+    val createdAt: LocalDate,
+    val updatedAt: LocalDate,
+)
+
+data class TagDocument(
+    val name: String
 )

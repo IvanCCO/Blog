@@ -5,4 +5,3 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface PostRepositorySpring : MongoRepository<PostDocument, String>
-

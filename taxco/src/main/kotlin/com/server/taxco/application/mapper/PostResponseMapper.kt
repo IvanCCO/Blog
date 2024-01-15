@@ -7,16 +7,15 @@ import com.server.taxco.domain.Post
 @Mapper
 class PostResponseMapper {
 
-    fun toResponse(post : Post?) = post?.let {
+    fun toResponse(post: Post?) = post?.let {
         PostResponse(
-            id = it.id,
+            id = it.postId.value,
             title = it.title,
             description = it.description,
             readTime = it.readTime,
-            tag = it.tag,
+            tag = it.tag.name,
             createdAt = post.createdAt,
             updatedAt = post.updatedAt
         )
     }
-
 }
