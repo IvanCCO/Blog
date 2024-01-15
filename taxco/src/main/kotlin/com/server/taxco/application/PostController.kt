@@ -1,6 +1,7 @@
 package com.server.taxco.application
 
-import com.server.taxco.application.request.createPostRequest
+import com.server.taxco.application.mapper.PostMapper
+import com.server.taxco.application.request.CreatePostRequest
 import com.server.taxco.application.response.PostResponse
 import com.server.taxco.resources.PostRepositoryMongo
 import org.springframework.http.ResponseEntity
@@ -16,26 +17,27 @@ import java.time.LocalDate
 @RestController
 @RequestMapping("post")
 class PostController(
-    private val repository: PostRepositoryMongo
+    private val repository: PostRepositoryMongo,
+    private val mapper : PostMapper
 ) {
 
 
     @GetMapping("{postId}")
     fun getPostById(
-        @PathVariable postId: Int
-    ) = ResponseEntity.ok(PostResponse(
-        id = 1,
-        title = "I am a very good title",
-        description = "I am a very good description and a iam trying to explain something",
-        readTime = 1,
-        createdAt = LocalDate.now(),
-        updatedAt = LocalDate.now()
-    ))
+        @PathVariable postId: String
+    ) : ResponseEntity<PostResponse> {
+
+        val post = repository.findById(postId)
+
+        val response = mapper.toResponse(post)
+
+        return ResponseEntity.ok(response)
+    }
 
 
     @PostMapping
     fun createPost(
-//        @RequestBody createPostRequest: createPostRequest
+        @RequestBody createPostRequest: CreatePostRequest
     ) = ResponseEntity.ok(repository.save())
 
 }
