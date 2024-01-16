@@ -9,5 +9,4 @@ data class PostResponse(
     val readTime: Int,
     val tag: String,
     val createdAt: LocalDate,
-    val updatedAt: LocalDate,
 )

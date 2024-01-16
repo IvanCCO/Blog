@@ -14,7 +14,6 @@ class PostResponseMapper {
             readTime = it.readTime,
             tag = it.tag.name,
             createdAt = post.createdAt,
-            updatedAt = post.updatedAt
         )
     }
 }
