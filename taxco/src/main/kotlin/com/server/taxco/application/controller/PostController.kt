@@ -28,9 +28,7 @@ class PostController(
     fun createPost(
         @RequestBody createPostRequest: CreatePostRequest
     ): ResponseEntity<Post> {
-
         createPost.execute(createPostRequest)
-
         return ResponseEntity.status(HttpStatus.CREATED).build()
     }
 

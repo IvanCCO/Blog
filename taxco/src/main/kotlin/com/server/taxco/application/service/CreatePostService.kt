@@ -4,8 +4,8 @@ import com.server.taxco.application.request.CreatePostRequest
 import com.server.taxco.domain.post.Post
 import com.server.taxco.domain.post.PostId
 import com.server.taxco.domain.post.PostRepository
-import com.server.taxco.domain.post.tag.Tag
 import com.server.taxco.domain.post.Visibility
+import com.server.taxco.domain.post.tag.Tag
 import org.springframework.stereotype.Service
 import java.time.LocalDate
 
