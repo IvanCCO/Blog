@@ -1,4 +1,4 @@
-package com.server.taxco.application.response
+package com.server.taxco.application.web.response
 
 import java.time.LocalDate
 

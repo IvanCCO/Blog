@@ -1,7 +1,7 @@
-package com.server.taxco.application.controller
+package com.server.taxco.application.web.controller
 
-import com.server.taxco.application.request.CreatePostRequest
-import com.server.taxco.application.response.PostResponse
+import com.server.taxco.application.web.request.CreatePostRequest
+import com.server.taxco.application.web.response.PostResponse
 import com.server.taxco.application.service.CreatePostService
 import com.server.taxco.application.service.FetchPostService
 import com.server.taxco.domain.post.Post

@@ -1,4 +1,4 @@
-package com.server.taxco.application.request
+package com.server.taxco.application.web.request
 
 data class CreatePostRequest(
     val title: String,

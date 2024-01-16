@@ -1,6 +1,6 @@
 package com.server.taxco.application.mapper
 
-import com.server.taxco.application.response.PostResponse
+import com.server.taxco.application.web.response.PostResponse
 import com.server.taxco.common.Mapper
 import com.server.taxco.domain.post.Post
 

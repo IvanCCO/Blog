@@ -1,6 +1,6 @@
-package com.server.taxco.application.controller
+package com.server.taxco.application.web.controller
 
-import com.server.taxco.application.response.ApiError
+import com.server.taxco.application.web.response.ApiError
 import com.server.taxco.common.ErrorType
 import com.server.taxco.common.httpStatusOf
 import com.server.taxco.domain.Exception.DomainException

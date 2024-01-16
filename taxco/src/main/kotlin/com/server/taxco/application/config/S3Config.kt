@@ -11,9 +11,12 @@ import software.amazon.awssdk.services.s3.S3Client
  */
 @Configuration
 class S3Config {
-    val s3: S3Client = S3Client.builder()
-        .region(Region.AP_EAST_1)
-        .build()
+    @Bean
+    fun s3client(): S3Client {
+        return S3Client.builder()
+            .region(Region.AP_EAST_1)
+            .build()
+    }
 }
 
 

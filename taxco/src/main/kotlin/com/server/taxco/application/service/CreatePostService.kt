@@ -1,6 +1,6 @@
 package com.server.taxco.application.service
 
-import com.server.taxco.application.request.CreatePostRequest
+import com.server.taxco.application.web.request.CreatePostRequest
 import com.server.taxco.domain.post.Post
 import com.server.taxco.domain.post.PostId
 import com.server.taxco.domain.post.PostRepository
