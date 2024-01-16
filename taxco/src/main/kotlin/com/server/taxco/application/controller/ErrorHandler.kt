@@ -1,9 +1,9 @@
-package com.server.taxco.application
+package com.server.taxco.application.controller
 
 import com.server.taxco.application.response.ApiError
 import com.server.taxco.common.ErrorType
 import com.server.taxco.common.httpStatusOf
-import com.server.taxco.domain.DomainException
+import com.server.taxco.domain.Exception.DomainException
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.ExceptionHandler

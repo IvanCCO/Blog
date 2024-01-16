@@ -1,9 +1,9 @@
-package com.server.taxco.resources
+package com.server.taxco.resources.database
 
 import com.server.taxco.application.mapper.PostMapper
-import com.server.taxco.domain.Post
-import com.server.taxco.domain.PostId
-import com.server.taxco.domain.PostRepository
+import com.server.taxco.domain.post.Post
+import com.server.taxco.domain.post.PostId
+import com.server.taxco.domain.post.PostRepository
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.data.repository.findByIdOrNull

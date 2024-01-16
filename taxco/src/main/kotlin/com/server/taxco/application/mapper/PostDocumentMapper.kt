@@ -1,9 +1,9 @@
 package com.server.taxco.application.mapper
 
 import com.server.taxco.common.Mapper
-import com.server.taxco.domain.Post
-import com.server.taxco.resources.PostDocument
-import com.server.taxco.resources.TagDocument
+import com.server.taxco.domain.post.Post
+import com.server.taxco.resources.database.PostDocument
+import com.server.taxco.resources.database.TagDocument
 
 @Mapper
 class PostDocumentMapper {

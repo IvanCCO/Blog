@@ -1,5 +1,6 @@
-package com.server.taxco.domain
+package com.server.taxco.domain.post
 
+import com.server.taxco.domain.post.tag.Tag
 import java.time.LocalDate
 
 class Post(

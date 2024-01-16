@@ -1,11 +1,11 @@
 package com.server.taxco.application.mapper
 
 import com.server.taxco.common.Mapper
-import com.server.taxco.domain.Post
-import com.server.taxco.domain.PostId
-import com.server.taxco.domain.Tag
-import com.server.taxco.domain.Visibility
-import com.server.taxco.resources.PostDocument
+import com.server.taxco.domain.post.Post
+import com.server.taxco.domain.post.PostId
+import com.server.taxco.domain.post.tag.Tag
+import com.server.taxco.domain.post.Visibility
+import com.server.taxco.resources.database.PostDocument
 
 @Mapper
 class PostDomainMapper {

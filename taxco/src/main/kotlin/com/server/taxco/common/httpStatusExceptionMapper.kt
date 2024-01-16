@@ -1,6 +1,6 @@
 package com.server.taxco.common
 
-import com.server.taxco.domain.DomainException
+import com.server.taxco.domain.Exception.DomainException
 import org.springframework.http.HttpStatus
 
 fun httpStatusOf(

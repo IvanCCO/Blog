@@ -1,4 +1,4 @@
-package com.server.taxco.resources
+package com.server.taxco.resources.database
 
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable

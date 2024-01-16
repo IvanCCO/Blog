@@ -1,6 +1,6 @@
-package com.server.taxco.domain
+package com.server.taxco.domain.post
 
-import com.server.taxco.resources.PostDocument
+import com.server.taxco.resources.database.PostDocument
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 

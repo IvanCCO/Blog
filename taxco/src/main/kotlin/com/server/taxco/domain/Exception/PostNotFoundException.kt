@@ -1,8 +1,7 @@
 package com.server.taxco.domain.Exception
 
 import com.server.taxco.common.ErrorType
-import com.server.taxco.domain.DomainException
-import com.server.taxco.domain.PostId
+import com.server.taxco.domain.post.PostId
 
 class PostNotFoundException(
     postId: PostId,

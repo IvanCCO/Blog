@@ -1,10 +1,11 @@
-package com.server.taxco.application
+package com.server.taxco.application.controller
 
 import com.server.taxco.application.request.CreatePostRequest
+import com.server.taxco.application.response.PostResponse
 import com.server.taxco.application.service.CreatePostService
 import com.server.taxco.application.service.FetchPostService
-import com.server.taxco.domain.Post
-import com.server.taxco.resources.PostDocument
+import com.server.taxco.domain.post.Post
+import com.server.taxco.resources.database.PostDocument
 import org.springframework.data.domain.Page
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -33,14 +34,11 @@ class PostController(
         return ResponseEntity.status(HttpStatus.CREATED).build()
     }
 
-    // TODO: Retornar o response e não o objeto de dominio
     @GetMapping("{postId}")
     fun getPostById(
         @PathVariable postId: String
-    ): ResponseEntity<Post> {
-
+    ): ResponseEntity<PostResponse> {
         val response = fetchPost.byId(postId)
-
         return ResponseEntity.ok(response)
     }
 

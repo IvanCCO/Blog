@@ -1,8 +1,8 @@
 package com.server.taxco.application.mapper
 
 import com.server.taxco.common.Mapper
-import com.server.taxco.domain.Post
-import com.server.taxco.resources.PostDocument
+import com.server.taxco.domain.post.Post
+import com.server.taxco.resources.database.PostDocument
 
 @Mapper
 class PostMapper(
@@ -11,6 +11,6 @@ class PostMapper(
     private val documentMapper: PostDocumentMapper
 ) {
     fun toDomain(document: PostDocument?) = domainMapper.toDomain(document)
-    fun toResponse(post: Post?) = responseMapper.toResponse(post)
+    fun toResponse(post: Post) = responseMapper.toResponse(post)
     fun toDocument(post: Post) = documentMapper.toDocument(post)
 }

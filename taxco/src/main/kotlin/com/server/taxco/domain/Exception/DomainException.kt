@@ -1,4 +1,4 @@
-package com.server.taxco.domain
+package com.server.taxco.domain.Exception
 
 import com.server.taxco.common.ErrorType
 

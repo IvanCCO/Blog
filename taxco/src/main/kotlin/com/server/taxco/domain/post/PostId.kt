@@ -1,4 +1,4 @@
-package com.server.taxco.domain
+package com.server.taxco.domain.post
 
 import com.server.taxco.common.ID
 
