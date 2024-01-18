@@ -46,7 +46,7 @@ class PostController(
         @RequestParam("size") size: Int
     ): ResponseEntity<Page<PostDocument>> {
 
-        val response = fetchPost.byPage(page, size)
+        val response = fetchPost.byPage(page, size, Post::createdAt)
 
         return ResponseEntity.ok(response)
     }
