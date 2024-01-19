@@ -4,8 +4,11 @@ import com.server.taxco.application.web.request.CreatePostRequest
 import com.server.taxco.application.web.response.PostResponse
 import com.server.taxco.application.service.CreatePostService
 import com.server.taxco.application.service.FetchPostService
+import com.server.taxco.common.LoggableClass
 import com.server.taxco.domain.post.Post
 import com.server.taxco.resources.database.PostDocument
+import lombok.extern.log4j.Log4j2
+import lombok.extern.slf4j.Slf4j
 import org.springframework.data.domain.Page
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -22,12 +25,13 @@ import org.springframework.web.bind.annotation.RestController
 class PostController(
     private val createPost: CreatePostService,
     private val fetchPost: FetchPostService,
-) {
+) : LoggableClass() {
 
     @PostMapping
     fun createPost(
         @RequestBody createPostRequest: CreatePostRequest
     ): ResponseEntity<Post> {
+        logInfo("Request to create Post received with title ${createPostRequest.title}")
         createPost.execute(createPostRequest)
         return ResponseEntity.status(HttpStatus.CREATED).build()
     }

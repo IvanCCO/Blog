@@ -25,11 +25,12 @@ class CreatePostService(
             CreatePostDTO(
                 title = request.title,
                 description = request.description,
-                readTime = request.title,
+                readTime = 10,
                 tagName = request.tag
             )
         )
 
+        repository.save(post)
     }
 
 }

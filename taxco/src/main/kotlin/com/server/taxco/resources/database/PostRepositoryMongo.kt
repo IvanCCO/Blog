@@ -29,4 +29,9 @@ class PostRepositoryMongo(
         val documents = repository.findAll(pageable)
         return documents
     }
+
+    override fun findByTitle(name: String): Post? {
+        val document = repository.findByTitle(name)
+        return document
+    }
 }
