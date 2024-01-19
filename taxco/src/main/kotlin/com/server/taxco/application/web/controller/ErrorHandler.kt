@@ -10,9 +10,16 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.RestControllerAdvice
 
+/**
+ * Application error handler where will capture the application error and return a mapped http status and
+ * a better error api message.
+ */
 @RestControllerAdvice
 class ErrorHandler : LoggableClass() {
 
+    /**
+     * Map all the generic exceptions of the application -> Not Mapped exceptions
+     */
     @ExceptionHandler(Exception::class)
     fun handleGenericException(exception: Exception): ResponseEntity<ApiError> {
         val response = ApiError(
@@ -23,6 +30,9 @@ class ErrorHandler : LoggableClass() {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response)
     }
 
+    /**
+     * Map all the domains exceptions of the application -> Mapped exceptions
+     */
     @ExceptionHandler(DomainException::class)
     fun handleDomainException(exception: DomainException): ResponseEntity<ApiError> {
         val response = ApiError.of(exception)
