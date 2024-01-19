@@ -10,13 +10,16 @@ import software.amazon.awssdk.services.s3.S3Client
     I have to make more configurations for s3 to work better
  */
 @Configuration
-class S3Config {
+class S3Config(
+    private val awsProperties: AwsProperties
+) {
     @Bean
     fun s3client(): S3Client {
         return S3Client.builder()
-            .region(Region.AP_EAST_1)
+            .region(Region.of(awsProperties.region))
             .build()
     }
+
 }
 
 

@@ -41,9 +41,8 @@ class S3Service(
         try {
             return response.readAllBytes();
         } catch (ex: IOException) {
-            // TODO: Colocar uma exeception melhor
-            throw ex;
-        }
+            throw ex
+       }
 
     }
 
