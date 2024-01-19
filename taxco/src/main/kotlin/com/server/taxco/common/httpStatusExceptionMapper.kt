@@ -9,4 +9,5 @@ fun httpStatusOf(
 
     ErrorType.UNKNOWN -> HttpStatus.INTERNAL_SERVER_ERROR
     ErrorType.POST_NOT_FOUND -> HttpStatus.NOT_FOUND
+    ErrorType.POST_ALREADY_EXISTS -> HttpStatus.BAD_REQUEST
 }

@@ -14,20 +14,16 @@ class ErrorHandler {
 
     @ExceptionHandler(Exception::class)
     fun handleGenericException(exception: Exception): ResponseEntity<ApiError> {
-
         val response = ApiError(
             type = ErrorType.UNKNOWN,
             message = exception.message
         )
-
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response)
     }
 
     @ExceptionHandler(DomainException::class)
     fun handleDomainException(exception: DomainException): ResponseEntity<ApiError> {
-
         val response = ApiError.of(exception)
-
         return ResponseEntity.status(httpStatusOf(exception)).body(response)
     }
 }

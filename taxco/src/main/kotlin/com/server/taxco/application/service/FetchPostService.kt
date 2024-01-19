@@ -24,8 +24,9 @@ class FetchPostService(
         return mapper.toResponse(post)
     }
 
-    fun byPage(page: Int, size: Int, sortedBy : KProperty<*>): Page<PostDocument> {
-        val pageable = PageRequest.of(page, size, Sort.by(sortedBy.name))
+    fun byPage(page: Int, size: Int): Page<PostDocument> {
+        val field = Post::createdAt
+        val pageable = PageRequest.of(page, size, Sort.by(field.name))
         val posts = repository.findAll(pageable)
         return posts
     }

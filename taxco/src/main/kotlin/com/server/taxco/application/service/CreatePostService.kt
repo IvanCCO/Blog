@@ -1,6 +1,8 @@
 package com.server.taxco.application.service
 
 import com.server.taxco.application.web.request.CreatePostRequest
+import com.server.taxco.domain.Exception.PostAlreadyExistsException
+import com.server.taxco.domain.dto.CreatePostDTO
 import com.server.taxco.domain.post.Post
 import com.server.taxco.domain.post.PostId
 import com.server.taxco.domain.post.PostRepository
@@ -15,19 +17,19 @@ class CreatePostService(
 ) {
     fun execute(request: CreatePostRequest) {
 
-        // TODO: Get the post with same title and throw if exists
-        val post = Post(
-            postId = PostId(),
-            title = request.title,
-            description = request.description,
-            readTime = 10,
-            tag = Tag(
-                name = request.tag
-            ),
-            isVisible = Visibility.PUBLIC,
-            createdAt = LocalDate.now(),
-            updatedAt = LocalDate.now()
+        if (repository.findByTitle(request.title) != null) {
+            throw PostAlreadyExistsException(request.title)
+        }
+
+        val post = Post.of(
+            CreatePostDTO(
+                title = request.title,
+                description = request.description,
+                readTime = request.title,
+                tagName = request.tag
+            )
         )
-        repository.save(post)
+
     }
+
 }

@@ -9,4 +9,5 @@ enum class ErrorType {
     UNKNOWN,
 
     POST_NOT_FOUND,
+    POST_ALREADY_EXISTS,
 }

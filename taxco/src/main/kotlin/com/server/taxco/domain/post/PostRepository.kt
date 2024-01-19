@@ -9,4 +9,5 @@ interface PostRepository {
     fun findById(postId: PostId): Post?
     fun save(post: Post)
     fun findAll(pageable: Pageable): Page<PostDocument>
+    fun findByTitle(name : String) : Post?
 }

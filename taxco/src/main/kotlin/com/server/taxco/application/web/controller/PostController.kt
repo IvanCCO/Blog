@@ -43,11 +43,9 @@ class PostController(
     @GetMapping
     fun getPostPages(
         @RequestParam("page") page: Int,
-        @RequestParam("size") size: Int
+        @RequestParam("size") size: Int,
     ): ResponseEntity<Page<PostDocument>> {
-
-        val response = fetchPost.byPage(page, size, Post::createdAt)
-
+        val response = fetchPost.byPage(page, size)
         return ResponseEntity.ok(response)
     }
 }
