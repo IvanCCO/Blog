@@ -15,7 +15,6 @@ class UpdatePostServiceImpl(
     private val repository: PostRepository,
 ) : LoggableClass(), UpdatePostService {
 
-
     override fun create(request: CreatePostRequest) {
         if (repository.findByTitle(request.title) != null) {
             throw PostAlreadyExistsException(request.title)
@@ -40,7 +39,6 @@ class UpdatePostServiceImpl(
         TODO("Not yet implemented")
     }
 
-
     override fun updateBasicInfo(postId: String, request: CreatePostRequest) {
         TODO("Not yet implemented")
     }
@@ -52,5 +50,4 @@ class UpdatePostServiceImpl(
     override fun updateContent(postId: String, byteArray: MultipartFile) {
         TODO("Not yet implemented")
     }
-
 }

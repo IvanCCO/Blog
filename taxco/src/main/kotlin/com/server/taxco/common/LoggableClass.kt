@@ -3,7 +3,7 @@ package com.server.taxco.common
 import org.slf4j.LoggerFactory
 import java.lang.Exception
 
-abstract class LoggableClass{
+abstract class LoggableClass {
 
     private val logger: org.slf4j.Logger = LoggerFactory.getLogger(javaClass)
     fun logInfo(message: String) {
@@ -15,5 +15,4 @@ abstract class LoggableClass{
     fun logError(message: String, exception: Exception) {
         logger.error(message, exception)
     }
-
 }

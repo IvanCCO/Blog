@@ -9,7 +9,6 @@ import software.amazon.awssdk.services.s3.model.GetObjectResponse
 import software.amazon.awssdk.services.s3.model.PutObjectRequest
 import java.io.IOException
 
-
 @Component
 class S3Service(
     private val s3Client: S3Client
@@ -39,12 +38,9 @@ class S3Service(
         val response: ResponseInputStream<GetObjectResponse> = s3Client.getObject(getObjectRequest)
 
         try {
-            return response.readAllBytes();
+            return response.readAllBytes()
         } catch (ex: IOException) {
             throw ex
-       }
-
+        }
     }
-
-
 }

@@ -2,8 +2,6 @@ package com.server.taxco.application.web.controller
 
 import com.server.taxco.application.web.request.CreatePostRequest
 import com.server.taxco.application.web.response.PostResponse
-import com.server.taxco.domain.service.impl.UpdatePostServiceImpl
-import com.server.taxco.domain.service.impl.FetchPostServiceImpl
 import com.server.taxco.common.LoggableClass
 import com.server.taxco.domain.post.Post
 import com.server.taxco.domain.service.FetchPostService
@@ -55,7 +53,6 @@ class PostController(
         return ResponseEntity.ok(response)
     }
 
-
     // TODO: Retornar um array talvez eu consigo retornar tudo em 1 só endpoint -> Na verdade não sei se isso é bom? kk
     @GetMapping(
         value = ["{postId}"],
@@ -79,5 +76,4 @@ class PostController(
         val response = createPost.insertImage(postId, file)
         return ResponseEntity.ok().build()
     }
-
 }

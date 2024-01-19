@@ -32,17 +32,14 @@ class Post(
                 updatedAt = now
             )
         }
-
     }
-
 
     var updatedAt: LocalDate = updatedAt
         private set
 
     override fun toString(): String {
         return "postId: ${this.postId}\ntitle: ${this.title}" +
-                "\ndescription: ${this.description}\ntag:${this.tag}\n" +
-                "isVisible: ${this.isVisible}"
+            "\ndescription: ${this.description}\ntag:${this.tag}\n" +
+            "isVisible: ${this.isVisible}"
     }
-
 }

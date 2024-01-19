@@ -27,5 +27,5 @@ interface PostRepository {
      * find a post by post title
      * @param name name of the post that's going to be search
      **/
-    fun findByTitle(name : String) : Post?
+    fun findByTitle(name: String): Post?
 }

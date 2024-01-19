@@ -19,8 +19,4 @@ class S3Config(
             .region(Region.of(awsProperties.region))
             .build()
     }
-
 }
-
-
-
