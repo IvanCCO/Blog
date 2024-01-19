@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice
 class ErrorHandler : LoggableClass() {
 
     /**
-     * Map all the generic exceptions of the application -> Not Mapped exceptions
+     * Map all the generic exceptions to the application -> Not Mapped exceptions
      */
     @ExceptionHandler(Exception::class)
     fun handleGenericException(exception: Exception): ResponseEntity<ApiError> {
@@ -31,7 +31,7 @@ class ErrorHandler : LoggableClass() {
     }
 
     /**
-     * Map all the domains exceptions of the application -> Mapped exceptions
+     * Map all the domains exceptions to the application -> Mapped exceptions
      */
     @ExceptionHandler(DomainException::class)
     fun handleDomainException(exception: DomainException): ResponseEntity<ApiError> {

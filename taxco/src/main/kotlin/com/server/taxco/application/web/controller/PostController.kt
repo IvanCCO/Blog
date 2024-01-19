@@ -9,6 +9,7 @@ import com.server.taxco.domain.post.Post
 import com.server.taxco.resources.database.PostDocument
 import lombok.extern.log4j.Log4j2
 import lombok.extern.slf4j.Slf4j
+import org.apache.coyote.Response
 import org.springframework.data.domain.Page
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -50,6 +51,14 @@ class PostController(
         @RequestParam("size") size: Int,
     ): ResponseEntity<Page<PostDocument>> {
         val response = fetchPost.byPage(page, size)
+        return ResponseEntity.ok(response)
+    }
+
+    @GetMapping("{postId}")
+    fun getPostImageById(
+        @PathVariable postId: String
+    ): ResponseEntity<ByteArray> {
+        val response = fetchPost.image(postId)
         return ResponseEntity.ok(response)
     }
 }
