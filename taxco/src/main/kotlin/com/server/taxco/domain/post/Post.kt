@@ -16,8 +16,7 @@ class Post(
     updatedAt: LocalDate,
 ) {
 
-    companion object{
-
+    companion object {
         fun of(createPostDTO: CreatePostDTO) = createPostDTO.let {
             val now = now()
             Post(
@@ -40,5 +39,10 @@ class Post(
     var updatedAt: LocalDate = updatedAt
         private set
 
+    override fun toString(): String {
+        return "postId: ${this.postId}\ntitle: ${this.title}" +
+                "\ndescription: ${this.description}\ntag:${this.tag}\n" +
+                "isVisible: ${this.isVisible}"
+    }
 
 }

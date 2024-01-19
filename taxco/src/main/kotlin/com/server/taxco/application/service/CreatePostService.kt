@@ -1,6 +1,7 @@
 package com.server.taxco.application.service
 
 import com.server.taxco.application.web.request.CreatePostRequest
+import com.server.taxco.common.LoggableClass
 import com.server.taxco.domain.Exception.PostAlreadyExistsException
 import com.server.taxco.domain.dto.CreatePostDTO
 import com.server.taxco.domain.post.Post
@@ -14,7 +15,7 @@ import java.time.LocalDate
 @Service
 class CreatePostService(
     private val repository: PostRepository,
-) {
+) : LoggableClass() {
     fun execute(request: CreatePostRequest) {
 
         if (repository.findByTitle(request.title) != null) {
@@ -29,6 +30,8 @@ class CreatePostService(
                 tagName = request.tag
             )
         )
+
+        logInfo("Saving post $post")
 
         repository.save(post)
     }
