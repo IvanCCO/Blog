@@ -7,12 +7,14 @@ import com.server.taxco.domain.dto.CreatePostDTO
 import com.server.taxco.domain.post.Post
 import com.server.taxco.domain.post.PostRepository
 import com.server.taxco.domain.service.UpdatePostService
+import com.server.taxco.resources.storage.S3Service
 import org.springframework.stereotype.Service
 import org.springframework.web.multipart.MultipartFile
 
 @Service
 class UpdatePostServiceImpl(
     private val repository: PostRepository,
+    private val s3Operation : S3Service
 ) : LoggableClass(), UpdatePostService {
 
     override fun create(request: CreatePostRequest) {
@@ -31,23 +33,25 @@ class UpdatePostServiceImpl(
         repository.save(post)
     }
 
+    // TODO: Arruamar para ter um contrato inves de ter direto o s3
     override fun insertImage(postId: String, file: MultipartFile) {
-        TODO("Not yet implemented")
+        s3Operation.putObject("bucket", "/post/$postId/imagem", "uifn".toByteArray())
     }
 
     override fun insertContent(postId: String, byteArray: MultipartFile) {
-        TODO("Not yet implemented")
+        s3Operation.putObject("bucket", "/post/$postId/content", "uifn".toByteArray())
     }
 
     override fun updateBasicInfo(postId: String, request: CreatePostRequest) {
-        TODO("Not yet implemented")
+        s3Operation.getObject("bucket", "post/$postId/content")
     }
 
     override fun updateImage(postId: String, byteArray: MultipartFile) {
-        TODO("Not yet implemented")
+        s3Operation.getObject("bucket", "post/$postId/content")
     }
 
+
     override fun updateContent(postId: String, byteArray: MultipartFile) {
-        TODO("Not yet implemented")
+        s3Operation.getObject("bucket", "post/$postId/content")
     }
 }
