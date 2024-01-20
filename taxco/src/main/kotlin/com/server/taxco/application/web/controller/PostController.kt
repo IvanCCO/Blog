@@ -40,6 +40,7 @@ class PostController(
     fun getPostById(
         @PathVariable postId: String
     ): ResponseEntity<PostResponse> {
+        logInfo("Request to fetch Post with id: $postId received")
         val response = fetchPost.byId(postId)
         return ResponseEntity.ok(response)
     }

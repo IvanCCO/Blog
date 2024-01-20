@@ -32,6 +32,6 @@ class PostRepositoryMongo(
 
     override fun findByTitle(name: String): Post? {
         val document = repository.findByTitle(name)
-        return document
+        return mapper.toDomain(document)
     }
 }

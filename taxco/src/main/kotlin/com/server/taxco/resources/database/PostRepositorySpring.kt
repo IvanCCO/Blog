@@ -12,5 +12,5 @@ interface PostRepositorySpring :
     MongoRepository<PostDocument, String>,
     PagingAndSortingRepository<PostDocument, String> {
     override fun findAll(pageable: Pageable): Page<PostDocument>
-    fun findByTitle(name: String): Post?
+    fun findByTitle(name: String): PostDocument?
 }

@@ -37,4 +37,4 @@ out/
 .vscode/
 
 ### ENV
-./variables.app.env
+variables.env
