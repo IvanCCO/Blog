@@ -1,9 +1,9 @@
-package com.server.taxco.domain.post
+package com.server.taxco.domain.article
 
 import com.server.taxco.common.ID
 
 @JvmInline
-value class PostId(val value: String = ID.generate()) : ID {
+value class ArticleId(val value: String = ID.generate()) : ID {
     init {
         if (value.isEmpty()) throw Exception()
     }

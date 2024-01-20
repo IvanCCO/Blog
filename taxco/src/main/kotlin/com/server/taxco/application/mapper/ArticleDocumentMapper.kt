@@ -1,16 +1,16 @@
 package com.server.taxco.application.mapper
 
 import com.server.taxco.common.Mapper
-import com.server.taxco.domain.post.Post
-import com.server.taxco.resources.database.PostDocument
+import com.server.taxco.domain.article.Article
+import com.server.taxco.resources.database.ArticleDocument
 import com.server.taxco.resources.database.TagDocument
 
 @Mapper
-class PostDocumentMapper {
+class ArticleDocumentMapper {
 
-    fun toDocument(post: Post) = post.let {
-        PostDocument(
-            id = it.postId.value,
+    fun toDocument(article: Article) = article.let {
+        ArticleDocument(
+            id = it.articleId.value,
             title = it.title,
             description = it.description,
             tag = TagDocument(it.tag.name),

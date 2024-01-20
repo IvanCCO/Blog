@@ -1,4 +1,4 @@
-package com.server.taxco.domain.post.tag
+package com.server.taxco.domain.article.tag
 
 class Tag(
     val name: String,

@@ -19,5 +19,5 @@ data class AwsProperties(
 
 @ConfigurationProperties(prefix = "aws.buckets")
 data class BucketsProperties(
-    val postBucket: String
+    val articleBucket: String
 )

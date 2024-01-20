@@ -2,7 +2,7 @@ package com.server.taxco.application.web.response
 
 import java.time.LocalDate
 
-data class PostResponse(
+data class ArticleResponse(
     val id: String,
     val title: String,
     val description: String,

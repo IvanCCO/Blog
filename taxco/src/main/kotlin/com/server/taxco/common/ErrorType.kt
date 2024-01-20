@@ -8,6 +8,6 @@ package com.server.taxco.common
 enum class ErrorType {
     UNKNOWN,
 
-    POST_NOT_FOUND,
-    POST_ALREADY_EXISTS,
+    ARTICLE_NOT_FOUND,
+    ARTICLE_ALREADY_EXISTS,
 }

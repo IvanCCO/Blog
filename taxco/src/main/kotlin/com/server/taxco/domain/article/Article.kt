@@ -1,12 +1,12 @@
-package com.server.taxco.domain.post
+package com.server.taxco.domain.article
 
-import com.server.taxco.domain.dto.CreatePostDTO
-import com.server.taxco.domain.post.tag.Tag
+import com.server.taxco.domain.dto.CreateArticleDTO
+import com.server.taxco.domain.article.tag.Tag
 import java.time.LocalDate
 import java.time.LocalDate.now
 
-class Post(
-    val postId: PostId,
+class Article(
+    val articleId: ArticleId,
     val title: String,
     val description: String,
     val readTime: Int,
@@ -17,10 +17,10 @@ class Post(
 ) {
 
     companion object {
-        fun of(createPostDTO: CreatePostDTO) = createPostDTO.let {
+        fun of(createArticleDTO: CreateArticleDTO) = createArticleDTO.let {
             val now = now()
-            Post(
-                postId = PostId(),
+            Article(
+                articleId = ArticleId(),
                 title = it.title,
                 description = it.description,
                 readTime = it.readTime,
@@ -38,7 +38,7 @@ class Post(
         private set
 
     override fun toString(): String {
-        return "postId: ${this.postId}\ntitle: ${this.title}" +
+        return "articleId: ${this.articleId}\ntitle: ${this.title}" +
             "\ndescription: ${this.description}\ntag:${this.tag}\n" +
             "isVisible: ${this.isVisible}"
     }
