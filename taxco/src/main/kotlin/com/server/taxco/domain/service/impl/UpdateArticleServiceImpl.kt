@@ -35,7 +35,7 @@ class UpdateArticleServiceImpl(
 
     // TODO: Arruamar para ter um contrato inves de ter direto o s3
     override fun insertImage(articleId: String, file: MultipartFile) {
-        s3Operation.putObject("bucket", "/article/$articleId/imagem", "uifn".toByteArray())
+        s3Operation.putObject("article-bucket-taxco", "/article/$articleId/imagem", "uifn".toByteArray())
     }
 
     override fun insertContent(articleId: String, file: MultipartFile) {

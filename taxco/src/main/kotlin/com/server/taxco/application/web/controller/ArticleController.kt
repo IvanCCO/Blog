@@ -56,7 +56,7 @@ class ArticleController(
 
     // TODO: Retornar um array talvez eu consigo retornar tudo em 1 só endpoint -> Na verdade não sei se isso é bom? kk
     @GetMapping(
-        value = ["{articleId}"],
+        value = ["{articleId}/image"],
         produces = [MediaType.IMAGE_JPEG_VALUE]
     )
     fun findArticleImage(
@@ -67,7 +67,7 @@ class ArticleController(
     }
 
     @PostMapping(
-        value = ["{articleId}"],
+        value = ["{articleId}/image"],
         consumes = [MediaType.MULTIPART_FORM_DATA_VALUE]
     )
     fun addArticleImage(

@@ -1,6 +1,7 @@
 package com.server.taxco.application.web.response
 
 import java.time.LocalDate
+import java.time.LocalDateTime
 
 data class ArticleResponse(
     val id: String,
@@ -8,5 +9,5 @@ data class ArticleResponse(
     val description: String,
     val readTime: Int,
     val tag: String,
-    val createdAt: LocalDate,
+    val createdAt: LocalDateTime,
 )

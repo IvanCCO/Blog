@@ -32,6 +32,6 @@ class FetchArticleServiceImpl(
         return articles
     }
     override fun image(articleId: String): ByteArray {
-        return s3Service.getObject("bucketName", "article/1")
+        return s3Service.getObject("article-bucket-taxco", "/article/$articleId/imagem")
     }
 }

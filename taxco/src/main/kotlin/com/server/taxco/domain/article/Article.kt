@@ -2,8 +2,8 @@ package com.server.taxco.domain.article
 
 import com.server.taxco.domain.dto.CreateArticleDTO
 import com.server.taxco.domain.article.tag.Tag
-import java.time.LocalDate
-import java.time.LocalDate.now
+import java.time.LocalDateTime.now
+import java.time.LocalDateTime
 
 class Article(
     val articleId: ArticleId,
@@ -12,8 +12,8 @@ class Article(
     val readTime: Int,
     val tag: Tag,
     val isVisible: Visibility,
-    val createdAt: LocalDate,
-    updatedAt: LocalDate,
+    val createdAt: LocalDateTime,
+    updatedAt: LocalDateTime
 ) {
 
     companion object {
@@ -34,7 +34,7 @@ class Article(
         }
     }
 
-    var updatedAt: LocalDate = updatedAt
+    var updatedAt: LocalDateTime = updatedAt
         private set
 
     override fun toString(): String {

@@ -1,24 +1,24 @@
 server:
-  port: {PORT}
+  port: ${PORT}
 spring:
   profiles:
-    active: {PROFILE}
+    active: ${PROFILE}
   security:
     user:
       name: taxco
-      password: {SHARED_SECRET}
+      password: ${SHARED_SECRET}
   data:
     mongodb:
-      uri: {DATABASE_URL}
+      uri: ${DATABASE_URL}
 app:
   auth:
     ignorePaths: /**,/article/**
 
 aws:
-  endpoint: {AWS_ENDPOINT}
-  region: {AWS_REGION}
+  endpoint: ${AWS_ENDPOINT}
+  region: ${AWS_REGION}
   buckets:
-    article-bucket: article-bucket-taxco
+    article-bucket: ${ARTICLE_BUCKET}
 
 logging:
   level:
