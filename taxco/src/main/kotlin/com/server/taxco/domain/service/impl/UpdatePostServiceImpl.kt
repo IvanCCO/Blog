@@ -38,20 +38,17 @@ class UpdatePostServiceImpl(
         s3Operation.putObject("bucket", "/post/$postId/imagem", "uifn".toByteArray())
     }
 
-    override fun insertContent(postId: String, byteArray: MultipartFile) {
-        s3Operation.putObject("bucket", "/post/$postId/content", "uifn".toByteArray())
+    override fun insertContent(postId: String, file: MultipartFile) {
+        s3Operation.putObject("bucket", "/post/$postId/content", file.bytes)
     }
 
     override fun updateBasicInfo(postId: String, request: CreatePostRequest) {
-        s3Operation.getObject("bucket", "post/$postId/content")
     }
 
-    override fun updateImage(postId: String, byteArray: MultipartFile) {
-        s3Operation.getObject("bucket", "post/$postId/content")
+    override fun updateImage(postId: String, file: MultipartFile) {
+        s3Operation.putObject("bucket", "post/$postId/content", file.bytes)
     }
-
-
-    override fun updateContent(postId: String, byteArray: MultipartFile) {
-        s3Operation.getObject("bucket", "post/$postId/content")
+    override fun updateContent(postId: String, file: MultipartFile) {
+        s3Operation.putObject("bucket", "post/$postId/content", file.bytes)
     }
 }

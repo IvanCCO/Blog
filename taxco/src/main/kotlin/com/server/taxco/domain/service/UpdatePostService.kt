@@ -9,8 +9,8 @@ import org.springframework.web.multipart.MultipartFile
 interface UpdatePostService {
     fun create(request: CreatePostRequest)
     fun insertImage(postId: String, file: MultipartFile)
-    fun insertContent(postId: String, byteArray: MultipartFile)
+    fun insertContent(postId: String, file: MultipartFile)
     fun updateBasicInfo(postId: String, request: CreatePostRequest)
-    fun updateImage(postId: String, byteArray: MultipartFile)
-    fun updateContent(postId: String, byteArray: MultipartFile)
+    fun updateImage(postId: String, file: MultipartFile)
+    fun updateContent(postId: String, file: MultipartFile)
 }
