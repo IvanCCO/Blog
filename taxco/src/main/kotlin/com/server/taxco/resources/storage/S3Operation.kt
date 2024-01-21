@@ -1,6 +1,8 @@
 package com.server.taxco.resources.storage
 
 import com.server.taxco.application.config.BucketsProperties
+import com.server.taxco.common.LoggableClass
+import com.server.taxco.domain.article.ArticleId
 import org.springframework.stereotype.Component
 import software.amazon.awssdk.core.ResponseInputStream
 import software.amazon.awssdk.core.sync.RequestBody
@@ -14,42 +16,44 @@ import java.io.IOException
 class S3Operation(
     private val s3Client: S3Client,
     private val bucketsProperties: BucketsProperties
-) {
+) : LoggableClass() {
     fun putObject(
-        articleId: String,
+        articleId: ArticleId,
         file: ByteArray,
         objectType: ObjectType
     ) {
+        val path = choosePath(articleId.value, objectType)
         val objectRequest: PutObjectRequest = PutObjectRequest.builder()
             .bucket(bucketsProperties.articleBucket)
-            .key(choosePath(articleId,objectType))
+            .key(path)
             .build()
+        logInfo("Send object to s3 storage with path $path")
         s3Client.putObject(objectRequest, RequestBody.fromBytes(file))
     }
-
     fun getObject(
-        articleId: String,
+        articleId: ArticleId,
         objectType: ObjectType
-    ): ByteArray {
-
+    ): ByteArray? {
+        val path = choosePath(articleId.value, objectType)
         val getObjectRequest: GetObjectRequest = GetObjectRequest.builder()
             .bucket(bucketsProperties.articleBucket)
-            .key(choosePath(articleId,objectType))
+            .key(path)
             .build()
-
+        logInfo("Get object to s3 storage with path $path")
         val response: ResponseInputStream<GetObjectResponse> = s3Client.getObject(getObjectRequest)
-
-        try {
-            return response.readAllBytes()
+        return try {
+            response.readAllBytes()
         } catch (ex: IOException) {
-            throw ex
+            logError("Was not possible to get image from s3 with path $path")
+            null
         }
     }
-    private fun choosePath(articleId : String, objectType: ObjectType) = when(objectType){
+
+    private fun choosePath(articleId: String, objectType: ObjectType) = when (objectType) {
         ObjectType.IMAGE -> "$PREFIX_PATH/$articleId/image"
         ObjectType.CONTENT -> "$PREFIX_PATH/$articleId/content"
     }
-    companion object{
+    companion object {
         const val PREFIX_PATH = "article"
     }
 }
