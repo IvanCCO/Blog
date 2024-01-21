@@ -8,7 +8,8 @@ import com.server.taxco.domain.article.ArticleId
 import com.server.taxco.domain.article.ArticleRepository
 import com.server.taxco.domain.service.FetchArticleService
 import com.server.taxco.resources.database.ArticleDocument
-import com.server.taxco.resources.storage.S3Service
+import com.server.taxco.resources.storage.ObjectType
+import com.server.taxco.resources.storage.S3Operation
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Sort
@@ -18,7 +19,7 @@ import org.springframework.stereotype.Service
 class FetchArticleServiceImpl(
     private val repository: ArticleRepository,
     private val mapper: ArticleMapper,
-    private val s3Service: S3Service
+    private val s3Operation: S3Operation
 ) : FetchArticleService {
     override fun byId(articleId: String): ArticleResponse {
         val id = ArticleId(articleId)
@@ -32,6 +33,9 @@ class FetchArticleServiceImpl(
         return articles
     }
     override fun image(articleId: String): ByteArray {
-        return s3Service.getObject("article-bucket-taxco", "/article/$articleId/imagem")
+        return s3Operation.getObject(articleId, ObjectType.IMAGE)
+    }
+    override fun content(articleId: String): ByteArray {
+        return s3Operation.getObject(articleId, ObjectType.CONTENT)
     }
 }

@@ -11,4 +11,5 @@ interface FetchArticleService {
     fun byId(articleId: String): ArticleResponse
     fun byPage(page: Int, size: Int): Page<ArticleDocument>
     fun image(articleId: String): ByteArray
+    fun content(articleId: String) : ByteArray
 }

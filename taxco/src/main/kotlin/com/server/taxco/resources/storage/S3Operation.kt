@@ -1,5 +1,6 @@
 package com.server.taxco.resources.storage
 
+import com.server.taxco.application.config.BucketsProperties
 import org.springframework.stereotype.Component
 import software.amazon.awssdk.core.ResponseInputStream
 import software.amazon.awssdk.core.sync.RequestBody
@@ -10,29 +11,30 @@ import software.amazon.awssdk.services.s3.model.PutObjectRequest
 import java.io.IOException
 
 @Component
-class S3Service(
-    private val s3Client: S3Client
+class S3Operation(
+    private val s3Client: S3Client,
+    private val bucketsProperties: BucketsProperties
 ) {
     fun putObject(
-        bucketName: String,
-        key: String,
-        file: ByteArray
+        articleId: String,
+        file: ByteArray,
+        objectType: ObjectType
     ) {
         val objectRequest: PutObjectRequest = PutObjectRequest.builder()
-            .bucket(bucketName)
-            .key(key)
+            .bucket(bucketsProperties.articleBucket)
+            .key(choosePath(articleId,objectType))
             .build()
         s3Client.putObject(objectRequest, RequestBody.fromBytes(file))
     }
 
     fun getObject(
-        bucketName: String,
-        key: String
+        articleId: String,
+        objectType: ObjectType
     ): ByteArray {
 
         val getObjectRequest: GetObjectRequest = GetObjectRequest.builder()
-            .bucket(bucketName)
-            .key(key)
+            .bucket(bucketsProperties.articleBucket)
+            .key(choosePath(articleId,objectType))
             .build()
 
         val response: ResponseInputStream<GetObjectResponse> = s3Client.getObject(getObjectRequest)
@@ -42,5 +44,12 @@ class S3Service(
         } catch (ex: IOException) {
             throw ex
         }
+    }
+    private fun choosePath(articleId : String, objectType: ObjectType) = when(objectType){
+        ObjectType.IMAGE -> "$PREFIX_PATH/$articleId/image"
+        ObjectType.CONTENT -> "$PREFIX_PATH/$articleId/content"
+    }
+    companion object{
+        const val PREFIX_PATH = "article"
     }
 }
