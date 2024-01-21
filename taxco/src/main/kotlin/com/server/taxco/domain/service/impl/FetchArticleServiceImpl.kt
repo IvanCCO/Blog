@@ -3,6 +3,8 @@ package com.server.taxco.domain.service.impl
 import com.server.taxco.application.mapper.ArticleMapper
 import com.server.taxco.application.web.response.ArticleResponse
 import com.server.taxco.domain.Exception.ArticleNotFoundException
+import com.server.taxco.domain.Exception.ContentNotFoundException
+import com.server.taxco.domain.Exception.ImageNotFoundException
 import com.server.taxco.domain.article.Article
 import com.server.taxco.domain.article.ArticleId
 import com.server.taxco.domain.article.ArticleRepository
@@ -33,9 +35,11 @@ class FetchArticleServiceImpl(
         return articles
     }
     override fun image(articleId: String): ByteArray {
-        return s3Operation.getObject(articleId, ObjectType.IMAGE)
+        val id = ArticleId(articleId)
+        return s3Operation.getObject(id, ObjectType.IMAGE) ?: throw ImageNotFoundException(id)
     }
     override fun content(articleId: String): ByteArray {
-        return s3Operation.getObject(articleId, ObjectType.CONTENT)
+        val id = ArticleId(articleId)
+        return s3Operation.getObject(id, ObjectType.IMAGE) ?: throw ContentNotFoundException(id)
     }
 }
