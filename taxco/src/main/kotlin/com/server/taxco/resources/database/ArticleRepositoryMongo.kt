@@ -34,4 +34,9 @@ class ArticleRepositoryMongo(
         val document = repository.findByTitle(name)
         return mapper.toDomain(document)
     }
+
+    override fun lastArticle(): Article? {
+        val document = repository.findFirstByOrderByCreatedAtDesc()
+        return mapper.toDomain(document)
+    }
 }

@@ -27,6 +27,13 @@ class ArticleController(
     private val fetchArticle: FetchArticleService,
 ) : LoggableClass() {
 
+    @GetMapping("last")
+    fun lastArticle() : ResponseEntity<ArticleResponse> {
+        logInfo("Request to fetch last posted article received")
+        val response = fetchArticle.last()
+        return ResponseEntity.ok(response)
+    }
+
     @PostMapping
     fun createArticle(
         @RequestBody createArticleRequest: CreateArticleRequest

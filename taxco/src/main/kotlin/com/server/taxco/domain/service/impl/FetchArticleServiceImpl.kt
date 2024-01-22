@@ -42,4 +42,9 @@ class FetchArticleServiceImpl(
         val id = ArticleId(articleId)
         return s3Operation.getObject(id, ObjectType.IMAGE) ?: throw ContentNotFoundException(id)
     }
+
+    override fun last(): ArticleResponse {
+        val article = repository.lastArticle() ?: throw ArticleNotFoundException(null)
+        return mapper.toResponse(article)
+    }
 }

@@ -28,4 +28,9 @@ interface ArticleRepository {
      * @param name name of the article that's going to be search
      **/
     fun findByTitle(name: String): Article?
+
+    /**
+     * Return the last posted article order by creation date
+     */
+    fun lastArticle() : Article?
 }
