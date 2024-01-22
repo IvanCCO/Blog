@@ -40,7 +40,7 @@ class FetchArticleServiceImpl(
     }
     override fun content(articleId: String): ByteArray {
         val id = ArticleId(articleId)
-        return s3Operation.getObject(id, ObjectType.IMAGE) ?: throw ContentNotFoundException(id)
+        return s3Operation.getObject(id, ObjectType.CONTENT) ?: throw ContentNotFoundException(id)
     }
 
     override fun last(): ArticleResponse {

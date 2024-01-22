@@ -61,7 +61,6 @@ class ArticleController(
         return ResponseEntity.ok(response)
     }
 
-    // TODO: Retornar um array talvez eu consigo retornar tudo em 1 só endpoint -> Na verdade não sei se isso é bom? kk
     @GetMapping(
         value = ["{articleId}/image"],
         produces = [MediaType.IMAGE_JPEG_VALUE]
@@ -83,5 +82,27 @@ class ArticleController(
     ): ResponseEntity<Unit> {
         val response = createArticle.insertImage(articleId, file)
         return ResponseEntity.ok().build()
+    }
+    @GetMapping(
+        value = ["{articleId}/content"],
+        produces = [MediaType.TEXT_MARKDOWN_VALUE]
+    )
+    fun findArticleContent(
+        @PathVariable articleId: String
+    ): ResponseEntity<ByteArray> {
+        val response = fetchArticle.content(articleId)
+        return ResponseEntity.ok(response)
+    }
+
+    @PostMapping(
+        value = ["{articleId}/content"],
+        consumes = [MediaType.MULTIPART_FORM_DATA_VALUE]
+    )
+    fun addArticleContent(
+        @PathVariable articleId: String,
+        @RequestParam("file", required = true) file: MultipartFile
+    ): ResponseEntity<Unit> {
+        createArticle.insertContent(articleId, file)
+        return ResponseEntity(HttpStatus.CREATED)
     }
 }

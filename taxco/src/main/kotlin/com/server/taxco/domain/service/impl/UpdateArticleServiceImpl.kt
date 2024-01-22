@@ -3,6 +3,7 @@ package com.server.taxco.domain.service.impl
 import com.server.taxco.application.web.request.CreateArticleRequest
 import com.server.taxco.common.LoggableClass
 import com.server.taxco.domain.Exception.ArticleAlreadyExistsException
+import com.server.taxco.domain.Exception.ArticleNotFoundException
 import com.server.taxco.domain.Exception.ContentAlreadyExistsException
 import com.server.taxco.domain.Exception.ImageAlreadyExistsException
 import com.server.taxco.domain.Exception.ImageNotFoundException
@@ -50,11 +51,13 @@ class UpdateArticleServiceImpl(
     }
 
     override fun insertContent(articleId: String, file: MultipartFile) {
+
         val id = ArticleId(articleId)
-        if (s3Operation.getObject(id, ObjectType.CONTENT) != null) {
-            throw ContentAlreadyExistsException(id)
-        }
+
+        repository.findById(id) ?: throw ArticleNotFoundException(id)
+
         s3Operation.putObject(id, file.bytes, ObjectType.CONTENT)
+
     }
 
     override fun updateImage(articleId: String, file: MultipartFile) {
