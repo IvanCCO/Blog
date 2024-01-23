@@ -7,7 +7,8 @@ import org.springframework.context.annotation.Configuration
 @Configuration
 @EnableConfigurationProperties(
     AwsProperties::class,
-    BucketsProperties::class
+    BucketsProperties::class,
+    ReadTimeProperties::class
 )
 class ApplicationConfiguration
 
@@ -20,4 +21,10 @@ data class AwsProperties(
 @ConfigurationProperties(prefix = "aws.buckets")
 data class BucketsProperties(
     val articleBucket: String
+)
+
+@ConfigurationProperties(prefix = "app.read-time.config")
+data class ReadTimeProperties(
+    val bytesByWord: Int,
+    val wordsByMinute: Int
 )

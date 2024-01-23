@@ -31,6 +31,7 @@ class ArticleController(
         val response = fetchArticle.last()
         return ResponseEntity.ok(response)
     }
+
     @PostMapping
     fun createArticle(
         @RequestBody createArticleRequest: CreateArticleRequest

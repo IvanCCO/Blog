@@ -1,5 +1,6 @@
 package com.server.taxco.domain.service.impl
 
+import com.server.taxco.application.config.ReadTimeProperties
 import com.server.taxco.application.web.request.CreateArticleRequest
 import com.server.taxco.common.LoggableClass
 import com.server.taxco.domain.Exception.ArticleAlreadyExistsException
@@ -21,7 +22,8 @@ import org.springframework.web.multipart.MultipartFile
 @Service
 class UpdateArticleServiceImpl(
     private val repository: ArticleRepository,
-    private val s3Operation: S3Operation
+    private val s3Operation: S3Operation,
+    private val readTimeProperties: ReadTimeProperties
 ) : LoggableClass(), UpdateArticleService {
 
     @Transactional
@@ -69,6 +71,7 @@ class UpdateArticleServiceImpl(
         this.repository.save(it)
         logInfo("Finish to update image on article with id: $articleId")
     }
+
     override fun updateContent(articleId: String, file: MultipartFile) = ArticleId(articleId).findByIdOrThrow().let {
         if (this.s3Operation.getObject(it.id, ObjectType.CONTENT) == null) {
             throw ContentNotFoundException(it.id)
@@ -78,13 +81,13 @@ class UpdateArticleServiceImpl(
         this.repository.save(it)
         logInfo("Finish to update content on article with id: $articleId")
     }
+
     private fun ArticleId.findByIdOrThrow(id: ArticleId = this) =
         repository.findById(id) ?: throw ArticleNotFoundException(id)
+
     private fun calculateReadTime(file: ByteArray): Int {
-        // TODO: Get those info from properties
-        val bytesByWord = 5
-        val wordsInBytes = file.size / bytesByWord
-        val time = wordsInBytes / 150
+        val wordsInBytes = file.size / readTimeProperties.bytesByWord
+        val time = wordsInBytes / readTimeProperties.wordsByMinute
         return if (time <= 0) 1 else time
     }
 }

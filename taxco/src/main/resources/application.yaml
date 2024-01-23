@@ -13,6 +13,10 @@ spring:
 app:
   auth:
     ignorePaths: /**,/article/**
+  read-time:
+    config:
+      bytes-by-word: ${BYTES_BY_WORD}
+      words-by-minute: ${WORD_BY_MINUTE}
 
 aws:
   endpoint: ${AWS_ENDPOINT}
