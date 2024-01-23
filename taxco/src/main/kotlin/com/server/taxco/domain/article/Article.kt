@@ -1,7 +1,6 @@
 package com.server.taxco.domain.article
 
 import com.server.taxco.application.web.request.CreateArticleRequest
-import com.server.taxco.domain.dto.CreateArticleDTO
 import com.server.taxco.domain.article.tag.Tag
 import java.time.LocalDateTime.now
 import java.time.LocalDateTime
