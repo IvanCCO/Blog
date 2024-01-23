@@ -17,7 +17,7 @@ interface ArticleRepository {
      *save a Article object into the database
      * @param article the article object that's going to be saved
      **/
-    fun save(article: Article)
+    fun save(article: Article) : Article
     /**
      * fetch all the articles per page
      * @param pageable the object to decide the size and which page return

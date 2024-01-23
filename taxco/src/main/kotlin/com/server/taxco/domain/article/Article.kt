@@ -1,5 +1,6 @@
 package com.server.taxco.domain.article
 
+import com.server.taxco.application.web.request.CreateArticleRequest
 import com.server.taxco.domain.dto.CreateArticleDTO
 import com.server.taxco.domain.article.tag.Tag
 import java.time.LocalDateTime.now
@@ -51,14 +52,14 @@ class Article(
     }
 
     companion object {
-        fun of(createArticleDTO: CreateArticleDTO) = createArticleDTO.let {
+        fun of(createArticleDTO: CreateArticleRequest) = createArticleDTO.let {
             val now = now()
             Article(
                 id = ArticleId(),
                 title = it.title,
                 description = it.description,
                 tag = Tag(
-                    name = it.tagName
+                    name = it.tag
                 ),
                 isVisible = Visibility.PUBLIC,
                 createdAt = now,

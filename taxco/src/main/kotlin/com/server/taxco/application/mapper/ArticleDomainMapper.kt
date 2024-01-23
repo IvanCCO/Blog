@@ -9,7 +9,6 @@ import com.server.taxco.resources.database.ArticleDocument
 
 @Mapper
 class ArticleDomainMapper {
-
     fun toDomain(document: ArticleDocument?) = document?.let {
         Article(
             id = ArticleId(it.id),

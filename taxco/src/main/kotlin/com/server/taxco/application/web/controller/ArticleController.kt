@@ -28,7 +28,7 @@ class ArticleController(
 ) : LoggableClass() {
 
     @GetMapping("last")
-    fun lastArticle() : ResponseEntity<ArticleResponse> {
+    fun lastArticle(): ResponseEntity<ArticleResponse> {
         logInfo("Request to fetch last posted article received")
         val response = fetchArticle.last()
         return ResponseEntity.ok(response)
@@ -37,10 +37,10 @@ class ArticleController(
     @PostMapping
     fun createArticle(
         @RequestBody createArticleRequest: CreateArticleRequest
-    ): ResponseEntity<Article> {
+    ): ResponseEntity<String> {
         logInfo("Request to create Article received with title ${createArticleRequest.title}")
-        createArticle.create(createArticleRequest)
-        return ResponseEntity.status(HttpStatus.CREATED).build()
+        val response = createArticle.create(createArticleRequest)
+        return ResponseEntity.status(HttpStatus.CREATED).body(response.value)
     }
 
     @GetMapping("{articleId}")
@@ -83,6 +83,7 @@ class ArticleController(
         val response = createArticle.insertImage(articleId, file)
         return ResponseEntity.ok().build()
     }
+
     @GetMapping(
         value = ["{articleId}/content"],
         produces = [MediaType.TEXT_MARKDOWN_VALUE]

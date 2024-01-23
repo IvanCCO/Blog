@@ -5,7 +5,7 @@ import com.server.taxco.resources.database.ArticleDocument
 import org.springframework.data.domain.Page
 
 /**
- * I know that's not a good convention to use verbs on class names but i just like that way
+ * I know that's not a good convention to use verbs on class names, but I just like that way
  */
 interface FetchArticleService {
     fun byId(articleId: String): ArticleResponse
