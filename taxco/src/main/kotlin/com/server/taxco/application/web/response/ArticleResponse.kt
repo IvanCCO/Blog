@@ -1,6 +1,5 @@
 package com.server.taxco.application.web.response
 
-import java.time.LocalDate
 import java.time.LocalDateTime
 
 data class ArticleResponse(

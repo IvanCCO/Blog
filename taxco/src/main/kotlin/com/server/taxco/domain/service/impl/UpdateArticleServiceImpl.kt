@@ -50,7 +50,7 @@ class UpdateArticleServiceImpl(
     }
 
     override fun insertContent(articleId: String, file: MultipartFile) = ArticleId(articleId).findByIdOrThrow().let {
-        if (it.image.isNotBlank()) {
+        if (it.content.isNotBlank()) {
             throw ContentAlreadyExistsException(it.id)
         }
         val path = this.s3Operation.putObject(it.id, file.bytes, ObjectType.CONTENT)

@@ -10,7 +10,7 @@ import org.springframework.data.domain.Page
 interface FetchArticleService {
     fun byId(articleId: String): ArticleResponse
     fun byPage(page: Int, size: Int): Page<ArticleDocument>
-    fun last() : ArticleResponse
+    fun last(): ArticleResponse
     fun image(articleId: String): ByteArray
-    fun content(articleId: String) : ByteArray
+    fun content(articleId: String): ByteArray
 }

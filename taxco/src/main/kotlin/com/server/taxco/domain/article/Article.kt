@@ -2,8 +2,8 @@ package com.server.taxco.domain.article
 
 import com.server.taxco.application.web.request.CreateArticleRequest
 import com.server.taxco.domain.article.tag.Tag
-import java.time.LocalDateTime.now
 import java.time.LocalDateTime
+import java.time.LocalDateTime.now
 
 class Article(
     val id: ArticleId,
@@ -46,8 +46,8 @@ class Article(
 
     override fun toString(): String {
         return "articleId: ${this.id}\ntitle: ${this.title}" +
-                "\ndescription: ${this.description}\ntag:${this.tag}\n" +
-                "isVisible: ${this.isVisible}"
+            "\ndescription: ${this.description}\ntag:${this.tag}\n" +
+            "isVisible: ${this.isVisible}"
     }
 
     companion object {
@@ -66,5 +66,4 @@ class Article(
             )
         }
     }
-
 }

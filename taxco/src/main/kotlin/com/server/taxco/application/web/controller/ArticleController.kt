@@ -3,7 +3,6 @@ package com.server.taxco.application.web.controller
 import com.server.taxco.application.web.request.CreateArticleRequest
 import com.server.taxco.application.web.response.ArticleResponse
 import com.server.taxco.common.LoggableClass
-import com.server.taxco.domain.article.Article
 import com.server.taxco.domain.service.FetchArticleService
 import com.server.taxco.domain.service.UpdateArticleService
 import com.server.taxco.resources.database.ArticleDocument
@@ -26,14 +25,12 @@ class ArticleController(
     private val createArticle: UpdateArticleService,
     private val fetchArticle: FetchArticleService,
 ) : LoggableClass() {
-
     @GetMapping("last")
     fun lastArticle(): ResponseEntity<ArticleResponse> {
         logInfo("Request to fetch last posted article received")
         val response = fetchArticle.last()
         return ResponseEntity.ok(response)
     }
-
     @PostMapping
     fun createArticle(
         @RequestBody createArticleRequest: CreateArticleRequest
@@ -80,8 +77,8 @@ class ArticleController(
         @PathVariable articleId: String,
         @RequestParam("file", required = true) file: MultipartFile
     ): ResponseEntity<Unit> {
-        val response = createArticle.insertImage(articleId, file)
-        return ResponseEntity.ok().build()
+        createArticle.insertImage(articleId, file)
+        return ResponseEntity(HttpStatus.CREATED)
     }
 
     @GetMapping(

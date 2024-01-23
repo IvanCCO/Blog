@@ -17,6 +17,8 @@ class ArticleDomainMapper {
             readTime = it.readTime,
             tag = Tag(it.tag.name),
             isVisible = Visibility.valueOf(it.isVisible),
+            image = document.imagePath,
+            content = document.contentPath,
             createdAt = it.createdAt,
             updatedAt = it.updatedAt
         )
