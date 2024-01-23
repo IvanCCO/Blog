@@ -12,10 +12,10 @@ class Article(
     readTime: Int = 5,
     val tag: Tag,
     val isVisible: Visibility,
-    val createdAt: LocalDateTime,
     // TODO: Colocar o caminho padrão da imagem default
     image: String = "",
     content: String = "",
+    val createdAt: LocalDateTime,
     updatedAt: LocalDateTime
 ) {
 
