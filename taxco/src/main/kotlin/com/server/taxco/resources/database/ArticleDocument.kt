@@ -13,6 +13,8 @@ data class ArticleDocument(
     val tag: TagDocument,
     val readTime: Int,
     val isVisible: String,
+    val imagePath : String,
+    val contentPath : String,
     val createdAt: LocalDateTime,
     val updatedAt: LocalDateTime
 )

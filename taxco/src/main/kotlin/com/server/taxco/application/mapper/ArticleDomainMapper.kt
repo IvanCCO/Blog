@@ -12,7 +12,7 @@ class ArticleDomainMapper {
 
     fun toDomain(document: ArticleDocument?) = document?.let {
         Article(
-            articleId = ArticleId(it.id),
+            id = ArticleId(it.id),
             title = it.title,
             description = it.description,
             readTime = it.readTime,

@@ -21,7 +21,7 @@ class S3Operation(
         articleId: ArticleId,
         file: ByteArray,
         objectType: ObjectType
-    ) {
+    ): String {
         val path = choosePath(articleId.value, objectType)
         val objectRequest: PutObjectRequest = PutObjectRequest.builder()
             .bucket(bucketsProperties.articleBucket)
@@ -29,7 +29,9 @@ class S3Operation(
             .build()
         logInfo("Send object to s3 storage with path $path")
         s3Client.putObject(objectRequest, RequestBody.fromBytes(file))
+        return path
     }
+
     fun getObject(
         articleId: ArticleId,
         objectType: ObjectType
@@ -40,10 +42,10 @@ class S3Operation(
             .key(path)
             .build()
         logInfo("Get object to s3 storage with path $path")
-        val response: ResponseInputStream<GetObjectResponse> = s3Client.getObject(getObjectRequest)
         return try {
+            val response: ResponseInputStream<GetObjectResponse> = s3Client.getObject(getObjectRequest)
             response.readAllBytes()
-        } catch (ex: IOException) {
+        } catch (ex: Exception) {
             logError("Was not possible to get image from s3 with path $path")
             null
         }
@@ -53,6 +55,7 @@ class S3Operation(
         ObjectType.IMAGE -> "$PREFIX_PATH/$articleId/image"
         ObjectType.CONTENT -> "$PREFIX_PATH/$articleId/content"
     }
+
     companion object {
         const val PREFIX_PATH = "article"
     }

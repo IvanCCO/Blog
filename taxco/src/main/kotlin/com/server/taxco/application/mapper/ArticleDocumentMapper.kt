@@ -10,7 +10,7 @@ class ArticleDocumentMapper {
 
     fun toDocument(article: Article) = article.let {
         ArticleDocument(
-            id = it.articleId.value,
+            id = it.id.value,
             title = it.title,
             description = it.description,
             tag = TagDocument(it.tag.name),

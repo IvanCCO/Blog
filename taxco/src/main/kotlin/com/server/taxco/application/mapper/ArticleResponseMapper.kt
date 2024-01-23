@@ -8,7 +8,7 @@ import com.server.taxco.domain.article.Article
 class ArticleResponseMapper {
     fun toResponse(article: Article) = article.let {
         ArticleResponse(
-            id = it.articleId.value,
+            id = it.id.value,
             title = it.title,
             description = it.description,
             readTime = it.readTime,
