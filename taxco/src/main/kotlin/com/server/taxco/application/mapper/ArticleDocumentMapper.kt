@@ -16,6 +16,8 @@ class ArticleDocumentMapper {
             tag = TagDocument(it.tag.name),
             readTime = it.readTime,
             isVisible = it.isVisible.name,
+            imagePath = it.image,
+            contentPath = it.content,
             createdAt = it.createdAt,
             updatedAt = it.updatedAt
         )
