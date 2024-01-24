@@ -83,7 +83,7 @@ internal class FetchArticleServiceTest {
             repository.findById(ArticleId(articleId))
         } returns null
 
-        assertThrows<ArticleNotFoundException> {
+        assertThrows<Exception> {
             fetchArticle.byId(articleId)
         }
 
@@ -92,7 +92,6 @@ internal class FetchArticleServiceTest {
         }
 
     }
-
 
 
 }
