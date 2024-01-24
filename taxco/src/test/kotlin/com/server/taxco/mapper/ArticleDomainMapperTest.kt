@@ -36,6 +36,5 @@ internal class ArticleDomainMapperTest {
             { assertEquals(document.updatedAt, result.updatedAt) },
             { assertEquals(document.createdAt, result.createdAt) },
         )
-
     }
 }

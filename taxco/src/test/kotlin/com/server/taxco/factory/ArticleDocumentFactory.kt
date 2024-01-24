@@ -1,9 +1,6 @@
 package com.server.taxco.factory
 
-import com.server.taxco.domain.article.Article
-import com.server.taxco.domain.article.ArticleId
 import com.server.taxco.domain.article.Visibility
-import com.server.taxco.domain.article.tag.Tag
 import com.server.taxco.resources.database.ArticleDocument
 import com.server.taxco.resources.database.TagDocument
 import java.time.LocalDateTime

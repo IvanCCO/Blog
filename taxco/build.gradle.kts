@@ -77,7 +77,6 @@ tasks.withType<org.springframework.boot.gradle.tasks.run.BootRun> {
     loadEnv(environment, file("variables.test.env"))
 }
 
-
 fun loadEnv(enviroment: MutableMap<String, Any>, file: File) {
     if (!file.exists()) throw IllegalArgumentException("failed to load envs from file, ${file.name} not found")
 
@@ -92,8 +91,6 @@ fun loadEnv(enviroment: MutableMap<String, Any>, file: File) {
             }
     }
 }
-
-
 
 tasks.check {
     dependsOn(
