@@ -8,13 +8,19 @@ import com.server.taxco.domain.Exception.ArticleNotFoundException
 import com.server.taxco.domain.article.ArticleId
 import com.server.taxco.domain.article.ArticleRepository
 import com.server.taxco.domain.service.impl.FetchArticleServiceImpl
+import com.server.taxco.factory.ArticleFactory
 import com.server.taxco.resources.storage.S3Operation
 import io.mockk.clearAllMocks
 import io.mockk.every
 import io.mockk.mockk
+import io.mockk.verify
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Assertions.assertAll
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
+import kotlin.test.DefaultAsserter.assertEquals
+import kotlin.test.assertEquals
 
 internal class FetchArticleServiceTest {
 
@@ -43,8 +49,36 @@ internal class FetchArticleServiceTest {
     }
 
     @Test
+    fun `test byId method with existing article`() {
+
+        val articleId = "123"
+
+        val article = ArticleFactory.sample()
+
+        every { repository.findById(ArticleId(articleId)) } returns article
+
+        val result = fetchArticle.byId(articleId)
+
+        verify(exactly = 1) {
+            repository.findById(ArticleId(articleId))
+            mapper.toResponse(article)
+        }
+
+        assertAll(
+            "Assert that all fields are equal",
+            { assertEquals(result.id, article.id.value) },
+            { assertEquals(result.title, article.title) },
+            { assertEquals(result.description, article.description) },
+            { assertEquals(result.tag, article.tag.name) },
+            { assertEquals(result.createdAt, result.createdAt) },
+        )
+    }
+
+    @Test
     fun `test byId method with non-existing article`() {
+
         val articleId = "456"
+
         every {
             repository.findById(ArticleId(articleId))
         } returns null
@@ -52,6 +86,13 @@ internal class FetchArticleServiceTest {
         assertThrows<ArticleNotFoundException> {
             fetchArticle.byId(articleId)
         }
+
+        verify(exactly = 1) {
+            repository.findById(ArticleId(articleId))
+        }
+
     }
+
+
 
 }
