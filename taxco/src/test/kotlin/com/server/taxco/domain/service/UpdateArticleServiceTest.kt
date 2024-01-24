@@ -11,10 +11,14 @@ import com.server.taxco.resources.storage.S3Operation
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.runs
+import io.mockk.verify
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertAll
 import org.junit.jupiter.api.assertThrows
 import org.mockito.ArgumentMatchers.any
+import org.springframework.mock.web.MockMultipartFile
+import org.springframework.web.multipart.MultipartFile
+import java.util.concurrent.TimeoutException
 import kotlin.test.assertEquals
 import kotlin.test.asserter
 
@@ -69,7 +73,37 @@ internal class UpdateArticleServiceTest {
             { assertEquals(request.title, article.title) },
             { assertEquals(request.description, article.description) },
             { assertEquals(request.tag, article.tag.name) },
+            { assertEquals("", article.content) },
+            { assertEquals("", article.image) },
         )
+
+    }
+
+    @Test
+    fun `If s3 does not save the content should not update content path`() {
+
+        val file = MockMultipartFile("file", "originalFileName.txt", "text/plain", "Conteúdo do arquivo".toByteArray())
+
+        val article: Article = ArticleFactory.sample(
+            content = ""
+        )
+        every {
+            repository.findById(article.id)
+        } returns article
+
+        every {
+            s3Operation.putObject(article.id, any(), any())
+        } throws TimeoutException()
+
+        assertThrows<TimeoutException> {
+            this.service.insertContent(article.id.value, file)
+        }
+
+        verify(exactly = 0) {
+            repository.save(any())
+        }
+
+        assertEquals(article.content, "")
 
     }
 }
