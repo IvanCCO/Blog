@@ -1,10 +1,12 @@
 import { Image, Text, VStack } from "@chakra-ui/react";
+import api from "../../http/api"
 
 export function ImageBlock({articleId} : {articleId : string}) {
+
   return (
     <VStack spacing={1} p={0}>
       <Image
-        src="http://localhost:7000/article/01HMSX6HFE9YR77QT7S2R53HER/image"
+        src={`${api.defaults.baseURL}/article/${articleId}/image`}
         alt={articleId}
         objectFit="cover"
         // maxH={"500px"}
