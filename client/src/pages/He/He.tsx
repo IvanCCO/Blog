@@ -48,6 +48,7 @@ export function He() {
         src={mypic}
         alt="Descrição da imagem"
         className="w-1/2 object-cover rounded-tl-full rounded-bl-full rounded-br-md rounded-tr-md max-h-[500px] max-w-[500px]"
+        loading="lazy"
       />
     </div>
   );

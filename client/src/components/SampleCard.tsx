@@ -73,6 +73,7 @@ export function SampleCard({
             <Image
               src="https://th.bing.com/th/id/OIG.wP.0xTjqyTThzWawHxaL?pid=ImgGn"
               alt="Green double couch with wooden legs"
+              loading="lazy"
             />
           </AspectRatio>
           <Stack spacing="3">

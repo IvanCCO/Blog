@@ -10,26 +10,32 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { formatDate } from "../utils/commom";
 import { imagePath } from "../http/operations";
+import { formatDate } from "../utils/commom";
 
 interface Props {
-  id : string,
-  title: string,
-  description: string,
-  readTime: number,
-  createdAt: Date | undefined,
+  id: string;
+  title: string;
+  description: string;
+  readTime: number;
+  createdAt: Date | undefined;
   tag?: {
-    name: string,
-    color: string
-  }
+    name: string;
+    color: string;
+  };
 }
 
-export function MainCard({id, title, description, readTime, createdAt, tag} : Props) {
-
+export function MainCard({
+  id,
+  title,
+  description,
+  readTime,
+  createdAt,
+  tag,
+}: Props) {
   const navigate = useNavigate();
 
-  const date = formatDate(createdAt)
+  const date = formatDate(createdAt);
 
   return (
     <Center>
@@ -40,28 +46,31 @@ export function MainCard({id, title, description, readTime, createdAt, tag} : Pr
         boxShadow={"lg"}
         bg="whiteAlpha.200"
         color={"white"}
-        maxW={{xl: "1000px"}}
-        w={
-        "full"
-        }
+        maxW={{ xl: "1000px" }}
+        w={"full"}
       >
-        <AspectRatio ratio={16 / 9} w={"full"} maxH={{base: "200px", sm: "200px", md: "none"}}>
+        <AspectRatio
+          ratio={16 / 9}
+          w={"full"}
+          maxH={{ base: "200px", sm: "200px", md: "none" }}
+        >
           <Image
             src={imagePath(id)}
             alt="A big octopus managing containers"
             borderRadius={"md"}
             objectFit="cover"
+            loading="lazy"
           />
         </AspectRatio>
         <Stack>
           <CardBody>
-            <Heading size={{base: "lg", sm: "md", xl: "lg"}} mb={2}>
+            <Heading size={{ base: "lg", sm: "md", xl: "lg" }} mb={2}>
               {title}
             </Heading>
             <Text
               color={"white"}
               maxW={{ lg: "70%" }}
-              fontSize={{base: "md", xl: "lg"}}
+              fontSize={{ base: "md", xl: "lg" }}
             >
               {description}
             </Text>
