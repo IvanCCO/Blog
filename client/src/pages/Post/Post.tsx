@@ -100,7 +100,7 @@ export function Post() {
           <ActionRow />
         </div>
         <div className="py-6">
-          <ImageBlock />
+          <ImageBlock articleId="01HMSX6HFE9YR77QT7S2R53HER" />
         </div>
 
         <div>
