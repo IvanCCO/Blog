@@ -6,17 +6,11 @@ import MarkdownFormatter from "../../components/MarkdownFormatter";
 import { useEffect } from "react";
 import ProgressBar from "../../components/ProgressBar";
 import { TopicTag } from "../../components/TopicTag";
-import api from "../../http/api";
+import { articlePath, contentPath, fetchData } from "../../http/operations";
 import { ActionRow } from "./ActionRow";
 import { ImageBlock } from "./ImageBlock";
 import { ProfileRow } from "./ProfileRow";
-
-const fetchData = async (request: string): Promise<Article> => {
-  return (await api.get(request)).data;
-};
-const fetchContentData = async (request: string): Promise<string> => {
-  return (await api.get(request)).data;
-};
+import { useParams } from "react-router-dom";
 
 type Article = {
   id: string;
@@ -28,14 +22,14 @@ type Article = {
 };
 export function Post() {
 
+  const { articleId = '' } = useParams();
   const [article, setArticle] = useState<Article | null>(null);
   const [content, setContent] = useState<string | null>(null);
 
   useEffect(() => {
-
     const fetchArticle = async () => {
       try {
-        const data = await fetchData("article/01HMSX6HFE9YR77QT7S2R53HER");
+        const data = await fetchData<Article>(articlePath(articleId))
         setArticle(data);
       } catch (error) {
         console.error("Erro ao buscar artigo:", error);
@@ -44,18 +38,14 @@ export function Post() {
 
     const fetchContent = async () => {
       try {
-        const data = await fetchContentData("article/01HMSX6HFE9YR77QT7S2R53HER/content");
+        const data = await fetchData<string>(contentPath(articleId));
         setContent(data);
       } catch (error) {
         console.error("Erro ao buscar artigo:", error);
       }
     };
-
-
-
     fetchArticle();
-    fetchContent()
-    
+    fetchContent();
   }, []);
 
   const color = (n: number): string => {
@@ -100,7 +90,7 @@ export function Post() {
           <ActionRow />
         </div>
         <div className="py-6">
-          <ImageBlock articleId="01HMSX6HFE9YR77QT7S2R53HER" />
+          <ImageBlock articleId={articleId} />
         </div>
 
         <div>
