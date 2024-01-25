@@ -12,7 +12,7 @@ const beforeStyle = (
   const isActive = location.pathname === path;
 
   const isHe =
-    location.pathname === "/about/he" || location.pathname === "/world";
+    location.pathname === "/about/me" || location.pathname === "/world";
 
   return (
     <Link to={path}>
@@ -33,7 +33,7 @@ const headerItens = () => {
   return (
     // TODO: adicionar campo para criar post -> como vai ser um botão que vai aparecer só pra mim acho que não faz tanto mal ficar feio de início.
     <div className="hidden sm:inline-flex w-1/2 justify-between text-lg">
-      {beforeStyle("Me", "bg-purple-700", "/about/he")}
+      {beforeStyle("Me", "bg-purple-700", "/about/me")}
       {beforeStyle("Posts", "bg-orange-700", "/")}
       {beforeStyle("World", "bg-cyan-700", "/world")}
       {beforeStyle("Taxco", "bg-green-800", "/about/taxco")}

@@ -109,6 +109,8 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
             <a
               href={props.href}
               className="link-color bg-transparent hover:text-white"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {props.children}
             </a>
@@ -139,7 +141,11 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
           return <Td className="text-left">{props.children}</Td>;
         },
         strong(props) {
-          return <strong className="font-bold text-[#D398EC]">{props.children}</strong>;
+          return (
+            <strong className="font-bold text-[#D398EC]">
+              {props.children}
+            </strong>
+          );
         },
         hr(props) {
           return (

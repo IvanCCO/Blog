@@ -6,8 +6,8 @@ export function ProfileRow({
   data,
   readTime,
 }: {
-  data: Date | undefined;
-  readTime: number | undefined;
+  data: Date;
+  readTime: number;
 }) {
 
   return (
