@@ -1,24 +1,62 @@
+import { useState } from "react";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import MarkdownFormatter from "../../components/MarkdownFormatter";
 
-import EX from "../../assets/Markdown/ex.md";
+import { useEffect } from "react";
 import ProgressBar from "../../components/ProgressBar";
-import { SampleCard } from "../../components/SampleCard";
 import { TopicTag } from "../../components/TopicTag";
-import { importLocalMarkdownFile } from "../../hooks/useFileUtils";
+import api from "../../http/api";
 import { ActionRow } from "./ActionRow";
 import { ImageBlock } from "./ImageBlock";
 import { ProfileRow } from "./ProfileRow";
-import MOCK from "../../assets/JSON/Posts.json"
 
+const fetchData = async (request: string): Promise<Article> => {
+  return (await api.get(request)).data;
+};
+const fetchContentData = async (request: string): Promise<string> => {
+  return (await api.get(request)).data;
+};
+
+type Article = {
+  id: string;
+  title: string;
+  description: string;
+  readTime: number;
+  tag: string;
+  createdAt: Date;
+};
 export function Post() {
 
-  const newPost = MOCK["new-post"]
-  const pagination = MOCK.pagination
-  const posts = MOCK.posts
+  const [article, setArticle] = useState<Article | null>(null);
+  const [content, setContent] = useState<string | null>(null);
 
-  const content = importLocalMarkdownFile(EX);
+  useEffect(() => {
+
+    const fetchArticle = async () => {
+      try {
+        const data = await fetchData("article/01HMSX6HFE9YR77QT7S2R53HER");
+        setArticle(data);
+      } catch (error) {
+        console.error("Erro ao buscar artigo:", error);
+      }
+    };
+
+    const fetchContent = async () => {
+      try {
+        const data = await fetchContentData("article/01HMSX6HFE9YR77QT7S2R53HER/content");
+        setContent(data);
+      } catch (error) {
+        console.error("Erro ao buscar artigo:", error);
+      }
+    };
+
+
+
+    fetchArticle();
+    fetchContent()
+    
+  }, []);
 
   const color = (n: number): string => {
     switch (n) {
@@ -40,28 +78,25 @@ export function Post() {
     <>
       <ProgressBar />
       <Header />
-      <main className="main space-y-2 sm:px-28 md:px-44 lg:px-52 xl:px-72 2xl:px-96  bg-he-background">
+      <main className="main space-y-2 sm:px-28 md:px-44 lg:px-52 xl:px-96 2xl:px-[30rem] 3xl:px-[36rem] bg-he-background">
         <div className="space-y-4">
           <div className="w-fit">
             <TopicTag
               color={color(Math.floor(Math.random() * (5 - 0 + 1) + 0))}
               variant="solid"
-              title="Tecnology"
+              title={article?.tag || "error"}
               borderRadius="full"
             />
           </div>
 
           <h1 className="text-xl sm:text-2xl md:text-3xl text-white font-semibold">
-            Modern online and offline payments for Africa
+            {article?.title || "error"}
           </h1>
-          <p className="text-xs sm:text-sm font-light text-neutral-400">
-            {/* TODO: Arrumar esse cara para ficar dinamico */}
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
-            delectus dignissimos doloremque aliquid ullam iure, tempora
-            obcaecati nulla consequuntur accusamus nam!
+          <p className="text-sm sm:text-lg font-light text-neutral-400">
+            {article?.description || "error"}
           </p>
 
-          <ProfileRow />
+          <ProfileRow data={article?.createdAt} readTime={article?.readTime} />
           <ActionRow />
         </div>
         <div className="py-6">
@@ -69,7 +104,7 @@ export function Post() {
         </div>
 
         <div>
-          <MarkdownFormatter text={content} />
+          <MarkdownFormatter text={content || "Not Possible"} />
         </div>
         {/* TODO: Colocar carinha para mostrar os posts relacionados */}
 

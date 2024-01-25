@@ -17,7 +17,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-            borderRadius: {
+      screens: {
+        "3xl": "1800px"
+      },
+      borderRadius: {
         default: "5px",
       },
       backgroundColor: {
