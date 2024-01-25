@@ -19,10 +19,6 @@ interface Props {
   description: string;
   readTime: number;
   createdAt: Date | undefined;
-  tag?: {
-    name: string;
-    color: string;
-  };
 }
 
 export function MainCard({
@@ -31,8 +27,8 @@ export function MainCard({
   description,
   readTime,
   createdAt,
-  tag,
 }: Props) {
+
   const navigate = useNavigate();
 
   const date = formatDate(createdAt);

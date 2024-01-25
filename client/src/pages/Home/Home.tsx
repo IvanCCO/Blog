@@ -19,14 +19,12 @@ type Article = {
 
 export function Home() {
   const [lastArticle, setLastArticle] = useState<Article | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchArticle = async () => {
       try {
         const data = await fetchData<Article>(lastArticlePath);
         setLastArticle(data);
-        setIsLoading(false);
       } catch (error) {
         console.error("Erro ao buscar artigo:", error);
       }
@@ -42,6 +40,21 @@ export function Home() {
   const justifyContent =
     sampleCards?.length < 3 ? "flex-start" : "space-between";
 
+  const MainCardRender: React.FC = () => {
+    if (lastArticle != null) {
+      return (
+        <MainCard
+          id={lastArticle.id}
+          title={lastArticle.title}
+          createdAt={lastArticle.createdAt}
+          readTime={lastArticle.readTime}
+          description={lastArticle.description}
+        />
+      );
+    }
+    return <MainCardSkeleton />;
+  };
+
   return (
     <>
       <Header />
@@ -50,18 +63,7 @@ export function Home() {
           <Text fontSize={"3xl"} fontWeight={"semibold"}>
             News
           </Text>
-
-          {isLoading ? (
-            <MainCardSkeleton />
-          ) : (
-            <MainCard
-              id={lastArticle?.id || "error"}
-              title={lastArticle?.title || "error"}
-              createdAt={lastArticle?.createdAt}
-              readTime={lastArticle?.readTime || 0}
-              description={lastArticle?.description || "error"}
-            />
-          )}
+          <MainCardRender />
         </div>
         <div className="space-y-3 w-full">
           <div className="flex justify-between place-items-center text-white">
