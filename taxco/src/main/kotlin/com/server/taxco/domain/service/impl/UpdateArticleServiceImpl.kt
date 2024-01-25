@@ -63,17 +63,18 @@ class UpdateArticleServiceImpl(
     }
 
     override fun updateImage(articleId: String, file: MultipartFile) = ArticleId(articleId).findByIdOrThrow().let {
-        if (this.s3Operation.getObject(it.id, ObjectType.CONTENT) == null) {
+        if (it.image.isBlank()) {
             throw ImageNotFoundException(it.id)
         }
         val path = this.s3Operation.putObject(it.id, file.bytes, ObjectType.IMAGE)
+    // U can argue that the path is always the same so that's no need to update again, u right, but I prefer this way
         it.updateImage(path)
         this.repository.save(it)
-        logInfo("Finish to update image on article with id: $articleId")
+        logInfo("Finish to update content on article with id: $articleId")
     }
 
     override fun updateContent(articleId: String, file: MultipartFile) = ArticleId(articleId).findByIdOrThrow().let {
-        if (this.s3Operation.getObject(it.id, ObjectType.CONTENT) == null) {
+        if (it.content.isBlank()) {
             throw ContentNotFoundException(it.id)
         }
         val path = this.s3Operation.putObject(it.id, file.bytes, ObjectType.CONTENT)

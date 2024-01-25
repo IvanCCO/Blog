@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
@@ -101,6 +102,29 @@ class ArticleController(
         @RequestParam("file", required = true) file: MultipartFile
     ): ResponseEntity<Unit> {
         createArticle.insertContent(articleId, file)
+        return ResponseEntity(HttpStatus.CREATED)
+    }
+
+    @PutMapping(
+        value = ["{articleId}/content"],
+        consumes = [MediaType.MULTIPART_FORM_DATA_VALUE]
+    )
+    fun updateArticleContent(
+        @PathVariable articleId: String,
+        @RequestParam("file", required = true) file: MultipartFile
+    ): ResponseEntity<Unit> {
+        createArticle.updateContent(articleId, file)
+        return ResponseEntity(HttpStatus.CREATED)
+    }
+    @PutMapping(
+        value = ["{articleId}/content"],
+        consumes = [MediaType.MULTIPART_FORM_DATA_VALUE]
+    )
+    fun updateArticleImage(
+        @PathVariable articleId: String,
+        @RequestParam("file", required = true) file: MultipartFile
+    ): ResponseEntity<Unit> {
+        createArticle.updateImage(articleId, file)
         return ResponseEntity(HttpStatus.CREATED)
     }
 }
