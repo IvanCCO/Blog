@@ -5,15 +5,18 @@ import MarkdownFormatter from "../../components/MarkdownFormatter";
 
 import { Box, Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ProgressBar from "../../components/ProgressBar";
 import { TopicTag } from "../../components/TopicTag";
+import ContentFetchError from "../../exceptions/ContentFetchError";
+import NotFoundError from "../../exceptions/NotFoundError";
+import { fallbackPostContent } from "../../hooks/useFileUtils";
 import { articlePath, contentPath, fetchData } from "../../http/operations";
+import { NotFound } from "../NotFound/NotFound";
 import { ActionRow } from "./ActionRow";
 import { ImageBlock } from "./ImageBlock";
 import { ProfileRow } from "./ProfileRow";
-import FALLBACK_ARTICLE from "../../assets/Markdown/articleFallback.md"
-import { importLocalMarkdownFile } from "../../hooks/useFileUtils";
+import { AxiosError } from "axios";
 
 type Article = {
   id: string;
@@ -27,6 +30,8 @@ export function Post() {
   const { articleId = "" } = useParams();
   const [article, setArticle] = useState<Article | null>(null);
   const [content, setContent] = useState<string | null>(null);
+  const [errors, setErrors] = useState<Error[]>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchArticle = async () => {
@@ -34,7 +39,9 @@ export function Post() {
         const data = await fetchData<Article>(articlePath(articleId));
         setArticle(data);
       } catch (error) {
-        console.error("Erro ao buscar artigo:", error);
+        if ((error as AxiosError).response?.status === 404) {
+          setErrors((prevErrors) => [...prevErrors, new NotFoundError()]);
+        }
       }
     };
 
@@ -43,29 +50,17 @@ export function Post() {
         const data = await fetchData<string>(contentPath(articleId));
         setContent(data);
       } catch (error) {
-        console.error("Erro ao buscar artigo:", error);
+        setContent(fallbackPostContent);
+        setErrors((prevErrors) => [...prevErrors, new ContentFetchError()]);
       }
     };
     fetchArticle();
     fetchContent();
+
+    console.log(content);
   }, []);
 
-  const color = (n: number): string => {
-    switch (n) {
-      case 1:
-        return "purple";
-      case 2:
-        return "cyan";
-      case 3:
-        return "red";
-      case 4:
-        return "red";
-      case 5:
-        return "red";
-      default:
-        return "red";
-    }
-  };
+  console.log(content);
 
   const ProfileRowSkeleton = (
     <Box boxShadow="lg" w={"50%"}>
@@ -74,63 +69,77 @@ export function Post() {
     </Box>
   );
 
-  return (
-    <>
-      <ProgressBar />
-      <Header />
-      <main className="main space-y-2 sm:px-28 md:px-44 lg:px-52 xl:px-96 2xl:px-[30rem] 3xl:px-[36rem] bg-he-background">
-        <div className="space-y-4">
-          <div className="w-fit">
+  const PostPage: React.FC = () => {
+    if (errors.some((error) => error instanceof NotFoundError)) {
+      return <NotFound />;
+    }
+    return (
+      <>
+        <ProgressBar />
+        <Header />
+        <main className="main space-y-2 sm:px-28 md:px-44 lg:px-52 xl:px-96 2xl:px-[30rem] 3xl:px-[36rem] bg-he-background">
+          <div className="space-y-4">
+            <div className="w-fit">
+              {article ? (
+                <TopicTag
+                  color={"purple"}
+                  variant="solid"
+                  title={article.tag}
+                  borderRadius="full"
+                />
+              ) : (
+                <Skeleton
+                  startColor="pink.500"
+                  endColor="orange.500"
+                  height={"20px"}
+                  w={"80px"}
+                  rounded={"full"}
+                />
+              )}
+            </div>
+
             {article ? (
-              <TopicTag
-                color={color(Math.floor(Math.random() * (5 - 0 + 1) + 0))}
-                variant="solid"
-                title={article.tag}
-                borderRadius="full"
+              <>
+                <h1 className="text-xl sm:text-2xl md:text-3xl text-white font-semibold">
+                  {article.title}
+                </h1>
+                <p className="text-sm sm:text-lg font-light text-neutral-400">
+                  {article.description}
+                </p>
+              </>
+            ) : (
+              <Skeleton height="30px" />
+            )}
+
+            {article ? (
+              <ProfileRow
+                data={article.createdAt}
+                readTime={article.readTime}
               />
             ) : (
-              <Skeleton
-                startColor="pink.500"
-                endColor="orange.500"
-                height={"20px"}
-                w={"80px"}
-                rounded={"full"}
-              />
+              ProfileRowSkeleton
             )}
+
+            {article && <ActionRow />}
+          </div>
+          <div className="py-6">
+            <ImageBlock articleId={articleId} />
           </div>
 
-          {article ? (
-            <>
-              <h1 className="text-xl sm:text-2xl md:text-3xl text-white font-semibold">
-                {article.title}
-              </h1>
-              <p className="text-sm sm:text-lg font-light text-neutral-400">
-                {article.description}
-              </p>
-            </>
-          ) : (
-            <Skeleton height="30px" />
-          )}
+          <div>
+            {content ? (
+              <MarkdownFormatter text={content} />
+            ) : (
+              <SkeletonText mt={3} noOfLines={4} />
+            )}
+          </div>
+          {/* TODO: Colocar carinha para mostrar os posts relacionados */}
 
-          {article ? (
-            <ProfileRow data={article.createdAt} readTime={article.readTime} />
-          ) : (
-            ProfileRowSkeleton
-          )}
+          <Footer />
+        </main>
+      </>
+    );
+  };
 
-          <ActionRow />
-        </div>
-        <div className="py-6">
-          <ImageBlock articleId={articleId} />
-        </div>
-
-        <div>
-          <MarkdownFormatter text={content ?? importLocalMarkdownFile(FALLBACK_ARTICLE)} />
-        </div>
-        {/* TODO: Colocar carinha para mostrar os posts relacionados */}
-
-        <Footer />
-      </main>
-    </>
-  );
+  return <PostPage />;
 }
