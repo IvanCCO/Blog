@@ -10,7 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { imagePath } from "../../http/operations";
+import { articlePath, imagePath } from "../../http/operations";
 import { formatDate } from "../../utils/commom";
 
 interface Props {
@@ -37,7 +37,7 @@ export function MainCard({
     <Center>
       <Card
         direction={{ base: "column", md: "row" }}
-        onClick={() => navigate("/post")}
+        onClick={() => navigate(articlePath(id))}
         cursor={"pointer"}
         boxShadow={"lg"}
         bg="whiteAlpha.200"
