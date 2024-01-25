@@ -10,8 +10,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { imagePath } from "../http/operations";
-import { formatDate } from "../utils/commom";
+import { imagePath } from "../../http/operations";
+import { formatDate } from "../../utils/commom";
 
 interface Props {
   id: string;

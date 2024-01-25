@@ -1,8 +1,9 @@
 import { Stack, Text } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import MOCK from "../../assets/JSON/Posts.json";
 import { Header } from "../../components/Header";
-import { MainCard } from "../../components/MainCard";
+import { MainCard } from "../../components/MainCard/MainCard";
+import MainCardSkeleton from "../../components/MainCard/MainCardSkeleton";
 import { Pagination } from "../../components/Pagination";
 import { SampleCard } from "../../components/SampleCard";
 import { fetchData, lastArticlePath } from "../../http/operations";
@@ -18,12 +19,14 @@ type Article = {
 
 export function Home() {
   const [lastArticle, setLastArticle] = useState<Article | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchArticle = async () => {
       try {
         const data = await fetchData<Article>(lastArticlePath);
         setLastArticle(data);
+        setIsLoading(false);
       } catch (error) {
         console.error("Erro ao buscar artigo:", error);
       }
@@ -47,13 +50,18 @@ export function Home() {
           <Text fontSize={"3xl"} fontWeight={"semibold"}>
             News
           </Text>
-          <MainCard
-            id={lastArticle?.id || "error"}
-            title={lastArticle?.title || "error"}
-            createdAt={lastArticle?.createdAt}
-            readTime={lastArticle?.readTime || 0}
-            description={lastArticle?.description || "error"}
-          />
+
+          {isLoading ? (
+            <MainCardSkeleton />
+          ) : (
+            <MainCard
+              id={lastArticle?.id || "error"}
+              title={lastArticle?.title || "error"}
+              createdAt={lastArticle?.createdAt}
+              readTime={lastArticle?.readTime || 0}
+              description={lastArticle?.description || "error"}
+            />
+          )}
         </div>
         <div className="space-y-3 w-full">
           <div className="flex justify-between place-items-center text-white">
