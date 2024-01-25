@@ -48,21 +48,30 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         h1(props) {
           return (
-            <h1 className="text-2xl font-medium !my-10 lg:text-3xl" {...props}>
+            <h1
+              className="text-2xl !my-10 lg:text-3xl font-bold text-[#D398EC]"
+              {...props}
+            >
               {props.children}
             </h1>
           );
         },
         h2(props) {
           return (
-            <h1 className="text-xl font-medium !my-8 lg:text-2xl" {...props}>
+            <h1
+              className="text-xl font-bold !my-8 lg:text-2xl text-[#D398EC]"
+              {...props}
+            >
               {props.children}
             </h1>
           );
         },
         h3(props) {
           return (
-            <h1 className="text-lg font-normal !my-6 lg:text-xl" {...props}>
+            <h1
+              className="text-lg font-bold !my-6 lg:text-xl text-[#D398EC]"
+              {...props}
+            >
               {props.children}
             </h1>
           );
@@ -128,6 +137,9 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         td(props) {
           return <Td className="text-left">{props.children}</Td>;
+        },
+        strong(props) {
+          return <strong className="font-bold text-[#D398EC]">{props.children}</strong>;
         },
         hr(props) {
           return (
