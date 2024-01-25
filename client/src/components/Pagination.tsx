@@ -34,7 +34,7 @@ export function Pagination({
     <div className="flex justify-between place-items-center pt-3 w-full">
       <Button
         colorScheme="gray"
-        size={{base: "md", lg: "lg"}}
+        size={{ base: "md", lg: "lg" }}
         variant={"link"}
         leftIcon={<ArrowBackIcon />}
         isDisabled={!hasPrev}
@@ -44,7 +44,7 @@ export function Pagination({
       </Button>
       <Button
         colorScheme="gray"
-        size={{base: "md", lg: "lg"}}
+        size={{ base: "md", lg: "lg" }}
         variant={"link"}
         rounded={"base"}
         isDisabled={!hasNext}

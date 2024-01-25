@@ -7,8 +7,7 @@ import PLACES from "../../assets/JSON/places.json";
 import { Header } from "../../components/Header";
 
 // FIXME: Criar arquivo no .gitignore para não mostrar a env
-mapboxgl.accessToken =
-  "";
+mapboxgl.accessToken = "";
 
 export default function Places() {
   // FIXME: Colocar os lugares que estive

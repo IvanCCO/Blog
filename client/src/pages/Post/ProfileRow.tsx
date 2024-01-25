@@ -9,7 +9,6 @@ export function ProfileRow({
   data: Date;
   readTime: number;
 }) {
-
   return (
     <Flex
       flex="1"
@@ -23,7 +22,8 @@ export function ProfileRow({
       <Box>
         <h1 className="text-sm sm:text-base lg:text-lg">Ivan Miranda</h1>
         <p className="text-xs text-neutral-300 sm:text-base">
-          Posted {data && formatDateWithYear(new Date(data))} · {readTime} min read
+          Posted {data && formatDateWithYear(new Date(data))} · {readTime} min
+          read
         </p>
       </Box>
     </Flex>

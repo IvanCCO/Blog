@@ -12,7 +12,7 @@ export default function Experience() {
     return (
       <>
         <br />
-        <Link href={link.link} isExternal fontSize={{base: "md", xl: "md"}}>
+        <Link href={link.link} isExternal fontSize={{ base: "md", xl: "md" }}>
           {link.name} <ExternalLinkIcon mx="2px" />
         </Link>
       </>
@@ -36,7 +36,9 @@ export default function Experience() {
           <h3 className="text-lg font-bold xl:text-xl">{year}</h3>
           <span className="text-[#cacaca] text-base xl:text-lg">{title}</span>
           {external && link(external)}
-          <p className="mt-2 text-base leading-6 tracking-wide text-[#888]">{content}</p>
+          <p className="mt-2 text-base leading-6 tracking-wide text-[#888]">
+            {content}
+          </p>
         </div>
       </div>
     );
@@ -52,10 +54,10 @@ export default function Experience() {
     link: "https://geekbus.com",
   };
 
-  const startTravel : LinkProps = {
-    name : "Start Travel",
-    link: "https://github.com/IvanCCO/StarTravel"
-  }
+  const startTravel: LinkProps = {
+    name: "Start Travel",
+    link: "https://github.com/IvanCCO/StarTravel",
+  };
 
   const pointLink: LinkProps = {
     name: "Point",
@@ -80,12 +82,12 @@ export default function Experience() {
       "I have designed and deployed a web and Java application on AWS and Azure for a monitoring system. This application renders a global heat map displaying the locations of machines basead on the IP Address, providing comprehensive monitoring capabilities.",
       pointLink,
     ),
-test(
+    test(
       2022,
       "Start Travel - College",
       "A social media platform crafted specifically for tech-savvy professionals seamlessly navigating the landscape of remote work, all while indulging their fervor for globetrotting",
       startTravel,
-    )
+    ),
   ];
 
   return (

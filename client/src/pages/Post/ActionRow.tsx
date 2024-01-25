@@ -1,4 +1,4 @@
-import { DownloadIcon, EditIcon, ExternalLinkIcon } from "@chakra-ui/icons";
+import { DownloadIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import { Button, HStack } from "@chakra-ui/react";
 import React from "react";
 
@@ -11,7 +11,7 @@ export function ActionRow() {
         rounded="full"
         bg={"white"}
         color={"black"}
-        size={{base: "xs", sm: "sm",}}
+        size={{ base: "xs", sm: "sm" }}
         leftIcon={icon}
         fontWeight={"normal"}
         px={3}

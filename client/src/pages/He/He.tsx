@@ -40,7 +40,7 @@ export function He() {
               My Posts
             </p>
             {/* TODO: Linkar para página dos meus posts */}
-            <ArrowForwardIcon boxSize={{base: "20px", xl: "30px"}}/>
+            <ArrowForwardIcon boxSize={{ base: "20px", xl: "30px" }} />
           </div>
         </Reveal>
       </div>

@@ -4,6 +4,7 @@ import { Header } from "../../components/Header";
 import MarkdownFormatter from "../../components/MarkdownFormatter";
 
 import { Box, Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
+import { AxiosError } from "axios";
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import ProgressBar from "../../components/ProgressBar";
@@ -16,7 +17,6 @@ import { NotFound } from "../NotFound/NotFound";
 import { ActionRow } from "./ActionRow";
 import { ImageBlock } from "./ImageBlock";
 import { ProfileRow } from "./ProfileRow";
-import { AxiosError } from "axios";
 
 type Article = {
   id: string;

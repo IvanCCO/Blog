@@ -1,10 +1,8 @@
-import { Button, Icon } from "@chakra-ui/react";
+import { Button, Icon, Link } from "@chakra-ui/react";
 import { IoMdPaper } from "react-icons/io";
-import RESUME from "../../assets/Resume.pdf"
-import { Link } from "@chakra-ui/react";
+import RESUME from "../../assets/Resume.pdf";
 
 export default function AboutMe() {
-
   return (
     <div className="text-white font-inter space-y-4">
       <h1 className="text-2xl border-b-4 border-purple-800 w-fit pr-4">
@@ -31,7 +29,7 @@ export default function AboutMe() {
         <Link href={RESUME} isExternal>
           <Button
             leftIcon={<Icon as={IoMdPaper} />}
-            size={{base: "md", xl: "lg"}}
+            size={{ base: "md", xl: "lg" }}
             colorScheme="teal"
           >
             See my Resume

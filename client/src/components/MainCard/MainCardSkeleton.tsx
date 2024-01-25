@@ -34,7 +34,7 @@ const MainCardSkeleton = () => {
           <CardBody>
             <Skeleton height="20px" width={"full"} />
             <Box mt={5}>
-              <SkeletonText noOfLines={4} spacing={4} skeletonHeight={'2'} />
+              <SkeletonText noOfLines={4} spacing={4} skeletonHeight={"2"} />
             </Box>
           </CardBody>
           <CardFooter justify="space-between">

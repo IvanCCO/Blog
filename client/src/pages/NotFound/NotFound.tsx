@@ -28,7 +28,11 @@ export function NotFound() {
 
       <VStack spacing={10}>
         <div className="text-center">
-          <Text fontSize={["3xl", "4xl"]} fontWeight={"semibold"} color={"white"}>
+          <Text
+            fontSize={["3xl", "4xl"]}
+            fontWeight={"semibold"}
+            color={"white"}
+          >
             Hmmm, we couldn't find that page.
           </Text>
           <Text fontSize={"lg"} color={"#727272"}>

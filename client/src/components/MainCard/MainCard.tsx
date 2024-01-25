@@ -28,7 +28,6 @@ export function MainCard({
   readTime,
   createdAt,
 }: Props) {
-
   const navigate = useNavigate();
 
   const date = formatDate(createdAt);

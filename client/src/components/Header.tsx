@@ -19,7 +19,9 @@ const beforeStyle = (
       <span
         className={`${
           !isActive && "header-item"
-        } relative  cursor-pointer p-1 ${isHe ? "text-white" : "text-white"} text-xl`}
+        } relative  cursor-pointer p-1 ${
+          isHe ? "text-white" : "text-white"
+        } text-xl`}
         id={text}
       >
         <span>{text}</span>

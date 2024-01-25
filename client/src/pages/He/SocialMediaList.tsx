@@ -40,10 +40,20 @@ export function SocialMediaList() {
     },
   ];
 
-  const iconSize = useBreakpointValue({ base: "10vw", sm: "60px", lg: "40px", xl: "50px", "2xl": "55px" });
+  const iconSize = useBreakpointValue({
+    base: "10vw",
+    sm: "60px",
+    lg: "40px",
+    xl: "50px",
+    "2xl": "55px",
+  });
 
   return (
-    <SimpleGrid columns={{base: 3, lg: 6}} spacingX={{ base: 2, sm: 2, md: 3, lg: 1 }} spacingY={{ base: 4, sm: 6, md: 7 }}>
+    <SimpleGrid
+      columns={{ base: 3, lg: 6 }}
+      spacingX={{ base: 2, sm: 2, md: 3, lg: 1 }}
+      spacingY={{ base: 4, sm: 6, md: 7 }}
+    >
       {socialMedias.map((value, index) => (
         <Reveal
           animation={{ delay: 1.0 + index / 3 }}
