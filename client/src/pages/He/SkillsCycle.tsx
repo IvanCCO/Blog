@@ -3,7 +3,6 @@ import Marquee from "react-fast-marquee";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/modules";
-import { useBreakpoint } from "@chakra-ui/react";
 import APIGEE from "../../assets/SkillsIcons/apigee-seeklogo.com.svg";
 import AWS from "../../assets/SkillsIcons/aws.svg";
 import GRAFANA from "../../assets/SkillsIcons/grafana.svg";
@@ -18,6 +17,8 @@ import SPRING from "../../assets/SkillsIcons/spring.svg";
 import TF from "../../assets/SkillsIcons/terraform.svg";
 import JS from "../../assets/SkillsIcons/javascript.svg"
 import TAILWIND from "../../assets/SkillsIcons/tailwind.svg"
+import KAFKA from "../../assets/SkillsIcons/kafka.svg"
+import VIM from "../../assets/SkillsIcons/vim.svg"
 import { useBreakpointValue } from "@chakra-ui/react";
 
 export function SkillsCycle() {
@@ -65,6 +66,8 @@ export function SkillsCycle() {
       {image(APIGEE, "Apigee")}
       {image(K8S, "Kubernetes")}
       {image(JS, "JavaScript")}
+      {image(KAFKA, "Kafka")}
+      {image(VIM, "Vim")}
     </Marquee>
   );
 }
