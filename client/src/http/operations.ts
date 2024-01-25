@@ -1,6 +1,6 @@
 import api from "./api";
 
-const baseUrl = api.defaults.baseURL;
+export const baseUrl = api.defaults.baseURL;
 
 export async function fetchData<T>(url: string): Promise<T> {
   return (await api.get(url)).data;

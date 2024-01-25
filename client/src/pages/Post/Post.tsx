@@ -120,7 +120,12 @@ export function Post() {
               ProfileRowSkeleton
             )}
 
-            {article && <ActionRow />}
+            {article && (
+              <ActionRow
+                title={article.title}
+                description={article.description}
+              />
+            )}
           </div>
           <div className="py-6">
             <ImageBlock articleId={articleId} />

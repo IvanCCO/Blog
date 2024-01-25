@@ -10,7 +10,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { articlePath, imagePath } from "../../http/operations";
+import { articlePath, imagePath} from "../../http/operations";
+import HERO from "../../assets/heroico.jpeg"
 import { formatDate } from "../../utils/commom";
 
 interface Props {
@@ -32,6 +33,8 @@ export function MainCard({
 
   const date = formatDate(createdAt);
 
+  const src = imagePath(id)
+
   return (
     <Center>
       <Card
@@ -50,11 +53,12 @@ export function MainCard({
           maxH={{ base: "200px", sm: "200px", md: "none" }}
         >
           <Image
-            src={imagePath(id)}
-            alt="A big octopus managing containers"
+            w={"full"}
+            src={src}
+            fallbackSrc={HERO}
             borderRadius={"md"}
             objectFit="cover"
-            loading="lazy"
+            fallbackStrategy="onError"
           />
         </AspectRatio>
         <Stack>
