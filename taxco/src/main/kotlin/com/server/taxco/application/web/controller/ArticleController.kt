@@ -117,7 +117,7 @@ class ArticleController(
         return ResponseEntity(HttpStatus.CREATED)
     }
     @PutMapping(
-        value = ["{articleId}/content"],
+        value = ["{articleId}/image"],
         consumes = [MediaType.MULTIPART_FORM_DATA_VALUE]
     )
     fun updateArticleImage(
