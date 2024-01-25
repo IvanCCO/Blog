@@ -1,14 +1,38 @@
 import { Stack, Text } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
 import MOCK from "../../assets/JSON/Posts.json";
 import { Header } from "../../components/Header";
 import { MainCard } from "../../components/MainCard";
 import { Pagination } from "../../components/Pagination";
 import { SampleCard } from "../../components/SampleCard";
+import { fetchData, lastArticlePath } from "../../http/operations";
+
+type Article = {
+  id: string;
+  title: string;
+  description: string;
+  readTime: number;
+  tag: string;
+  createdAt: Date;
+};
 
 export function Home() {
+  const [lastArticle, setLastArticle] = useState<Article | null>(null);
+
+  useEffect(() => {
+    const fetchArticle = async () => {
+      try {
+        const data = await fetchData<Article>(lastArticlePath);
+        setLastArticle(data);
+      } catch (error) {
+        console.error("Erro ao buscar artigo:", error);
+      }
+    };
+    fetchArticle();
+  }, []);
+
   const sampleCards: JSX.Element[] = [];
 
-  const newPost = MOCK["new-post"];
   const pagination = MOCK.pagination;
   const posts = MOCK.posts;
 
@@ -24,10 +48,11 @@ export function Home() {
             News
           </Text>
           <MainCard
-            title={newPost.titulo}
-            createdAt={newPost["data-publicacao"]}
-            readTime={Number(newPost["tempo-leitura"]) || 0}
-            description={newPost.descricao}
+            id={lastArticle?.id || "error"}
+            title={lastArticle?.title || "error"}
+            createdAt={lastArticle?.createdAt}
+            readTime={lastArticle?.readTime || 0}
+            description={lastArticle?.description || "error"}
           />
         </div>
         <div className="space-y-3 w-full">
@@ -41,8 +66,7 @@ export function Home() {
             placeItems={"center"}
             justifyContent={["center", "center", justifyContent]}
             w={"full"}
-            >
-           
+          >
             {posts.map((value, index) => (
               <SampleCard
                 key={index}
@@ -57,7 +81,7 @@ export function Home() {
               />
             ))}
           </Stack>
-          <Pagination {...pagination} onPageChange={() => console.log("iha")}/>
+          <Pagination {...pagination} onPageChange={() => console.log("iha")} />
         </div>
       </main>
     </>

@@ -11,19 +11,21 @@ import {
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { formatDate } from "../utils/commom";
+import { imagePath } from "../http/operations";
 
 interface Props {
+  id : string,
   title: string,
   description: string,
   readTime: number,
-  createdAt: string 
+  createdAt: Date | undefined,
   tag?: {
     name: string,
     color: string
   }
 }
 
-export function MainCard({title, description, readTime, createdAt, tag} : Props) {
+export function MainCard({id, title, description, readTime, createdAt, tag} : Props) {
 
   const navigate = useNavigate();
 
@@ -45,7 +47,7 @@ export function MainCard({title, description, readTime, createdAt, tag} : Props)
       >
         <AspectRatio ratio={16 / 9} w={"full"} maxH={{base: "200px", sm: "200px", md: "none"}}>
           <Image
-            src="https://th.bing.com/th/id/OIG.pM5yvYt8jXgKE4HyVvUx?pid=ImgGn"
+            src={imagePath(id)}
             alt="A big octopus managing containers"
             borderRadius={"md"}
             objectFit="cover"

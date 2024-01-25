@@ -31,7 +31,7 @@ export function SampleCard({
   createdAt,
   tag,
 }: Props) {
-  const date = formatDate(createdAt);
+  const date = formatDate(new Date());
   const color = (n: number): string => {
     switch (n) {
       case 1:

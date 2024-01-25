@@ -17,3 +17,4 @@ export const imagePath = (id: string) => {
 export const contentPath = (id: string) => {
   return `article/${id}/content`;
 };
+export const lastArticlePath = `article/last`;
