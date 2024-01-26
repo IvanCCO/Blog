@@ -10,8 +10,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { articlePath, imagePath} from "../../http/operations";
-import HERO from "../../assets/heroico.jpeg"
+import HERO from "../../assets/heroico.jpeg";
+import { articlePath, imagePath } from "../../http/operations";
 import { formatDate } from "../../utils/commom";
 
 interface Props {
@@ -33,7 +33,7 @@ export function MainCard({
 
   const date = formatDate(createdAt);
 
-  const src = imagePath(id)
+  const src = imagePath(id);
 
   return (
     <Center>
@@ -51,6 +51,7 @@ export function MainCard({
           ratio={16 / 9}
           w={"full"}
           maxH={{ base: "200px", sm: "200px", md: "none" }}
+          maxW={{ lg: "400px" }}
         >
           <Image
             w={"full"}
