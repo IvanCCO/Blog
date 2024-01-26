@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const http = axios.create({
-  baseURL: "https://taxco-backend.onrender.com",
+  baseURL: process.env.REACT_APP_BACKEND_URL,
 });
 
 export default http;

@@ -6,11 +6,9 @@ import { useEffect, useRef } from "react";
 import PLACES from "../../assets/JSON/places.json";
 import { Header } from "../../components/Header";
 
-// FIXME: Criar arquivo no .gitignore para não mostrar a env
-mapboxgl.accessToken = "";
+mapboxgl.accessToken = process.env.REACT_APP_MAP_TOKEN;
 
 export default function Places() {
-  // FIXME: Colocar os lugares que estive
   const geojson = PLACES;
 
   const idStyle = [

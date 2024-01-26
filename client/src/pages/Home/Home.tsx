@@ -18,6 +18,7 @@ type Article = {
 };
 
 export function Home() {
+
   const [lastArticle, setLastArticle] = useState<Article | null>(null);
 
   useEffect(() => {
