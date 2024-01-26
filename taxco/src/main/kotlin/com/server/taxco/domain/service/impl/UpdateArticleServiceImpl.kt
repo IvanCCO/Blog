@@ -67,7 +67,7 @@ class UpdateArticleServiceImpl(
             throw ImageNotFoundException(it.id)
         }
         val path = this.s3Operation.putObject(it.id, file.bytes, ObjectType.IMAGE)
-    // U can argue that the path is always the same so that's no need to update again, u right, but I prefer this way
+        // U can argue that the path is always the same so that's no need to update again, u right, but I prefer this way
         it.updateImage(path)
         this.repository.save(it)
         logInfo("Finish to update content on article with id: $articleId")

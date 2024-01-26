@@ -92,32 +92,7 @@ fun loadEnv(enviroment: MutableMap<String, Any>, file: File) {
     }
 }
 
-tasks.check {
-    dependsOn(
-        "test", "jacocoTestReport", "jacocoTestCoverageVerification", "ktlintCheck"
-    )
-}
-
-tasks.test {
-//    finalizedBy("check")
-}
-
 jacoco { toolVersion = "0.8.7" }
-
-tasks.jacocoTestReport {
-    tasks.jacocoTestReport {
-        dependsOn(tasks.test)
-    }
-    reports {
-        xml.required.set(true)
-        html.required.set(true)
-    }
-    classDirectories.setFrom(
-        sourceSets.main.get().output.asFileTree.matching {
-            exclude(excludedPackages)
-        }
-    )
-}
 
 tasks.jacocoTestCoverageVerification {
     violationRules {

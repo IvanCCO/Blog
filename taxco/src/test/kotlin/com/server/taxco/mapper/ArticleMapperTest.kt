@@ -8,7 +8,6 @@ import com.server.taxco.domain.article.Article
 import com.server.taxco.factory.ArticleDocumentFactory
 import com.server.taxco.factory.ArticleFactory
 import io.mockk.clearAllMocks
-import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertAll
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
@@ -88,6 +87,5 @@ internal class ArticleMapperTest {
             { assertEquals(article.tag.name, result.tag) },
             { assertEquals(article.createdAt, result.createdAt) },
         )
-
     }
 }

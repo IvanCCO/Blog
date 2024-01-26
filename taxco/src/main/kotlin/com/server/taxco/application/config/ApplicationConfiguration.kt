@@ -16,8 +16,8 @@ class ApplicationConfiguration
 data class AwsProperties(
     val endpoint: String? = null,
     val region: String,
-    val accessKey : String,
-    val accessKeySecret : String
+    val accessKey: String,
+    val accessKeySecret: String
 )
 
 @ConfigurationProperties(prefix = "aws.buckets")

@@ -33,6 +33,5 @@ internal class ArticleResponseMapperTest {
             { assertEquals(article.tag.name, result.tag) },
             { assertEquals(article.createdAt, result.createdAt) },
         )
-
     }
 }

@@ -10,17 +10,14 @@ import com.server.taxco.factory.CreateArticleRequestFactory
 import com.server.taxco.resources.storage.S3Operation
 import io.mockk.every
 import io.mockk.mockk
-import io.mockk.runs
 import io.mockk.verify
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertAll
 import org.junit.jupiter.api.assertThrows
 import org.mockito.ArgumentMatchers.any
 import org.springframework.mock.web.MockMultipartFile
-import org.springframework.web.multipart.MultipartFile
 import java.util.concurrent.TimeoutException
 import kotlin.test.assertEquals
-import kotlin.test.asserter
 
 internal class UpdateArticleServiceTest {
 
@@ -46,7 +43,6 @@ internal class UpdateArticleServiceTest {
         assertThrows<ArticleAlreadyExistsException> {
             this.service.create(request)
         }
-
     }
 
     @Test
@@ -67,7 +63,6 @@ internal class UpdateArticleServiceTest {
             repository.save(article)
         } returns article
 
-
         assertAll(
             "Mapping all fields of request to article",
             { assertEquals(request.title, article.title) },
@@ -76,7 +71,6 @@ internal class UpdateArticleServiceTest {
             { assertEquals("", article.content) },
             { assertEquals("", article.image) },
         )
-
     }
 
     @Test
@@ -104,8 +98,5 @@ internal class UpdateArticleServiceTest {
         }
 
         assertEquals(article.content, "")
-
     }
 }
-
-
