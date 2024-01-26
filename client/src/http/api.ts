@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const http = axios.create({
-  baseURL: "http://localhost:7000",
+  baseURL: "https://taxco-backend.onrender.com",
 });
 
 export default http;
