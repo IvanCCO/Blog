@@ -8,7 +8,8 @@ import org.springframework.context.annotation.Configuration
 @EnableConfigurationProperties(
     AwsProperties::class,
     BucketsProperties::class,
-    ReadTimeProperties::class
+    ReadTimeProperties::class,
+    SecurityProperties::class
 )
 class ApplicationConfiguration
 
@@ -29,4 +30,10 @@ data class BucketsProperties(
 data class ReadTimeProperties(
     val bytesByWord: Int,
     val wordsByMinute: Int
+)
+
+@ConfigurationProperties(prefix = "app.security")
+data class SecurityProperties(
+    val header: String,
+    val authorization: String
 )

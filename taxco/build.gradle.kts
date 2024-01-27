@@ -34,13 +34,11 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
-    // TODO: Active security
-// 	implementation("org.springframework.boot:spring-boot-starter-security")
-// 	implementation("org.springframework.boot:spring-boot-starter-validation")
+ 	implementation("org.springframework.boot:spring-boot-starter-security")
+ 	implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
-// 	testImplementation("org.springframework.security:spring-security-test")
 
     // ULID Generator
     implementation("com.github.f4b6a3:ulid-creator:5.2.3")

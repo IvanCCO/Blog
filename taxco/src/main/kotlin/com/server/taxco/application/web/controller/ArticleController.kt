@@ -6,6 +6,7 @@ import com.server.taxco.common.LoggableClass
 import com.server.taxco.domain.service.FetchArticleService
 import com.server.taxco.domain.service.UpdateArticleService
 import com.server.taxco.resources.database.ArticleDocument
+import org.springframework.context.annotation.Role
 import org.springframework.data.domain.Page
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType

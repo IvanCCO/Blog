@@ -3,10 +3,7 @@ server:
 spring:
   profiles:
     active: ${PROFILE}
-  security:
-    user:
-      name: taxco
-      password: ${SHARED_SECRET}
+
   data:
     mongodb:
       uri: ${DATABASE_URL}
@@ -17,6 +14,9 @@ app:
     config:
       bytes-by-word: ${BYTES_BY_WORD}
       words-by-minute: ${WORD_BY_MINUTE}
+  security:
+    header: ${HEADER_NAME}
+    authorization: ${SHARED_SECRET}
 
 aws:
   endpoint: ${AWS_ENDPOINT}
