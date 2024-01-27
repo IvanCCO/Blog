@@ -14,9 +14,9 @@ import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.web.filter.GenericFilterBean
 import java.io.IOException
 
-
 class AuthenticationFilter(
-    private val header: String, private val secret: String
+    private val header: String,
+    private val secret: String
 ) : GenericFilterBean() {
     @Throws(IOException::class, ServletException::class)
     override fun doFilter(request: ServletRequest, response: ServletResponse, filterChain: FilterChain) {
@@ -58,5 +58,4 @@ class AuthenticationFilter(
         const val IMAGE = "/image"
         const val GET = "GET"
     }
-
 }
