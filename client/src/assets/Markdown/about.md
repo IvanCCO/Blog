@@ -12,7 +12,7 @@ To run Taxco, you only need to have Node installed. ❤
 
 ```shell
 git clone https://github.com/IvanCCO/Taxco
-cd Taxo
+cd Taxco
 npm install
 npm start
 ```
