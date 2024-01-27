@@ -16,8 +16,7 @@ import java.io.IOException
 
 
 class AuthenticationFilter(
-    private val header: String,
-    private val secret: String
+    private val header: String, private val secret: String
 ) : GenericFilterBean() {
     @Throws(IOException::class, ServletException::class)
     override fun doFilter(request: ServletRequest, response: ServletResponse, filterChain: FilterChain) {
@@ -42,12 +41,22 @@ class AuthenticationFilter(
     private fun getAuth(request: HttpServletRequest): Authentication {
 
         val apiKey = request.getHeader(this.header)
+        val isAllowed = request.requestURI.endsWith(IMAGE) && request.method == GET
 
-        if (apiKey == null || apiKey != this.secret) {
+        if (isAllowed) {
+            return ApiKeyAuthentication(this.secret, AuthorityUtils.NO_AUTHORITIES)
+        }
+
+        if ((apiKey == null || apiKey != this.secret)) {
             throw BadCredentialsException("Invalid API Key")
         }
 
         return ApiKeyAuthentication(apiKey, AuthorityUtils.NO_AUTHORITIES)
+    }
+
+    companion object {
+        const val IMAGE = "/image"
+        const val GET = "GET"
     }
 
 }
