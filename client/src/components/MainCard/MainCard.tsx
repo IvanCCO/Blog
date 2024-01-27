@@ -56,7 +56,7 @@ export function MainCard({
           <Image
             w={"full"}
             src={src}
-            // fallbackSrc={HERO}
+            fallbackSrc={HERO}
             borderRadius={"md"}
             objectFit="cover"
             fallbackStrategy="onError"
