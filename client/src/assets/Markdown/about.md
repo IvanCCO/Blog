@@ -21,7 +21,7 @@ npm start
 
 If you wish to contribute, please provide **clear** and concise commit messages to help me understand the changes you made. Your contributions are greatly appreciated!
 
-___
+---
 
 ### Thanks
 

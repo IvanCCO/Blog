@@ -41,7 +41,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
               />
             </div>
           ) : (
-            <code {...rest} className={"bg-gray-200 px-1"}>
+            <code {...rest} className={"bg-gray-600 px-1 font-mono"}>
               {children}
             </code>
           );
