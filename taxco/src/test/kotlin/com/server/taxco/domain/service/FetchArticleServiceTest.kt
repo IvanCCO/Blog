@@ -4,7 +4,6 @@ import com.server.taxco.application.mapper.ArticleDocumentMapper
 import com.server.taxco.application.mapper.ArticleDomainMapper
 import com.server.taxco.application.mapper.ArticleMapper
 import com.server.taxco.application.mapper.ArticleResponseMapper
-import com.server.taxco.domain.Exception.ArticleNotFoundException
 import com.server.taxco.domain.article.ArticleId
 import com.server.taxco.domain.article.ArticleRepository
 import com.server.taxco.domain.service.impl.FetchArticleServiceImpl
@@ -14,7 +13,6 @@ import io.mockk.clearAllMocks
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
-import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertAll
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -90,8 +88,5 @@ internal class FetchArticleServiceTest {
         verify(exactly = 1) {
             repository.findById(ArticleId(articleId))
         }
-
     }
-
-
 }

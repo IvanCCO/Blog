@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
 
 interface Props {
@@ -7,7 +8,12 @@ interface Props {
 
 export default function ContactMe() {
   const SocialComponent = ({ url, name }: Props) => (
-    <div className="flex-1 inline-flex place-items-center py-2 px-4 sm:px-8 sm:py-3 md:px-10 space-x-6 bg-white rounded-full">
+    <Link
+      to={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex-1 inline-flex place-items-center py-2 px-4 sm:px-8 sm:py-3 md:px-10 space-x-6 bg-white rounded-full"
+    >
       <SocialIcon
         url={url}
         style={{ height: 25, width: 25 }}
@@ -15,7 +21,7 @@ export default function ContactMe() {
         fgColor="#ffffff"
       />
       <p className="text-xl">{name}</p>
-    </div>
+    </Link>
   );
 
   const socialMediasList = [
@@ -23,11 +29,11 @@ export default function ContactMe() {
       url="https://www.linkedin.com/in/ivan-f-m-medeiros"
       name="Linkedin"
     />,
+    <SocialComponent url="https://github.com/IvanCCO" name="GitHub" />,
     <SocialComponent
       url="https://www.instagram.com/ivan_oliverss/"
       name="Instagram"
     />,
-    <SocialComponent url="https://github.com/IvanCCO" name="GitHub" />,
   ];
 
   return (

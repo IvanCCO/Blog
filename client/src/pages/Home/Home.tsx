@@ -33,13 +33,13 @@ export function Home() {
     fetchArticle();
   }, []);
 
-  const sampleCards: JSX.Element[] = [];
+  // const sampleCards: JSX.Element[] = [];
 
-  const pagination = MOCK.pagination;
-  const posts = MOCK.posts;
+  // const pagination = MOCK.pagination;
+  // const posts = MOCK.posts;
 
-  const justifyContent =
-    sampleCards?.length < 3 ? "flex-start" : "space-between";
+  // const justifyContent =
+  //   sampleCards?.length < 3 ? "flex-start" : "space-between";
 
   const MainCardRender: React.FC = () => {
     if (lastArticle != null) {
@@ -68,11 +68,11 @@ export function Home() {
         </div>
         <div className="space-y-3 w-full">
           <div className="flex justify-between place-items-center text-white">
-            <Text fontSize={"3xl"} fontWeight={"semibold"}>
+            {/* <Text fontSize={"3xl"} fontWeight={"semibold"}>
               Posts
-            </Text>
+            </Text> */}
           </div>
-          <Stack
+          {/* <Stack
             direction={["column", "column", "row"]}
             placeItems={"center"}
             justifyContent={["center", "center", justifyContent]}
@@ -91,8 +91,8 @@ export function Home() {
                 }
               />
             ))}
-          </Stack>
-          <Pagination {...pagination} onPageChange={() => console.log("iha")} />
+          </Stack> */}
+          {/* <Pagination {...pagination} onPageChange={() => console.log("iha")} /> */}
         </div>
       </main>
     </>
