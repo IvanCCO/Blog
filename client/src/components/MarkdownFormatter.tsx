@@ -149,10 +149,8 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         hr(props) {
           return (
-            <div className="w-full space-x-3 flex justify-center my-3 place-items-baseline">
-              <p className="font-itim text-5xl ">.</p>
-              <p className="font-itim text-5xl ">.</p>
-              <p className="font-itim text-5xl ">.</p>
+            <div className="w-full flex justify-center my-3 place-items-baseline">
+              <p className="font-itim text-xl ">ههههه</p>
             </div>
           );
         },
