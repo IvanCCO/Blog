@@ -82,7 +82,6 @@ export function Post() {
       <>
         {article && (
           <Helmet>
-            <title>{article.title}</title>
             <meta
               name="description"
               property="og:description"
