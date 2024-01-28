@@ -32,12 +32,7 @@ export function SocialMediaList() {
       url: "https://wa.me/551192015034",
       useDefault: false,
       network: "whatsapp",
-    },
-    {
-      url: "ivanmedeiros0903@outlook.com",
-      useDefault: false,
-      network: "mailto",
-    },
+    }
   ];
 
   const iconSize = useBreakpointValue({

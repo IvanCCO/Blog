@@ -12,16 +12,20 @@ export default function AboutMe() {
       <div>
         <p className="text-md font-light leading-relaxed text-justify xl:text-lg">
           {" "}
-          Hello, my name is Ivan, i am a software developer inspired to conquer
-          adipisicing elit. Voluptas maiores veniam voluptatem? Sequi debitis
-          placeat doloremque quaerat! Repellendus, et nobis, illum maiores
-          iusto, quasi rem cupiditate consectetur at ab expedita! Lorem ipsum
-          dolor sit amet consectetur adipisicing elit. Ut saepe quidem magnam
-          totam modi rem accusantium corrupti vitae sunt dolore quas ea nemo,
-          nam sint repellendus maxime hic inventore ab. Lorem ipsum dolor sit
-          amet consectetur adipisicing elit. Amet iusto blanditiis magni
-          voluptates, alias pariatur est rerum explicabo, rem recusandae autem,
-          placeat aliquid architecto ab aperiam sed quod. Similique, suscipit.
+          I am addicted to technology, that's my burden. Ever since I started
+          delving into the world of technology, I felt captivated by the
+          possibility of creating whatever I want from wherever I want. What
+          excites me the most isn't just the end result but the entire
+          process—the decisions that need to be made to achieve the goal, the
+          limitations, and all the possibilities involved. Furthermore, what I
+          find most appealing is the impact on people with every line of code
+          written. A misplaced 'if' statement, and BOOM, thousands or even
+          millions of dollars lost, and someone left stranded. That's why, when
+          it comes to developing solutions, I always like to consider the
+          consequences I'm causing for the end user. Despite the seemingly
+          daunting responsibility, it's incredibly enjoyable! I'm not sure if
+          this text truly serves as an ABOUT ME, but the fact is, this is what I
+          think/who I am when it comes to technology.
         </p>
       </div>
 

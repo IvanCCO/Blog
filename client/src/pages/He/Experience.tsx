@@ -49,11 +49,6 @@ export default function Experience() {
     link: "https://c6bank.com",
   };
 
-  const geekbusLink: LinkProps = {
-    name: "Geekbus",
-    link: "https://geekbus.com",
-  };
-
   const startTravel: LinkProps = {
     name: "Start Travel",
     link: "https://github.com/IvanCCO/StarTravel",
@@ -68,13 +63,13 @@ export default function Experience() {
     test(
       2023,
       "Bankend Developer",
-      "Responsible for the backend development of limit, secure location management projects, and external integrations. Developed business logic to handle Brazilian monetary transactions such as TED, TEF, and PIX. Additionally, worked on Kubernetes cluster management, conducting migrations, overseeing pods, removing unnecessary resources, contributing to cloud cost reduction, and applying FinOps concepts. Developed solutions to enhance observability and monitoring by constructing dashboards with the necessary metrics. (AND A LOT MORE)",
+      "Responsible for the backend development of limit, secure location management projects, and external integrations. Developed business logic to handle Brazilian monetary transactions such as TED, TEF, and PIX. Additionally, worked on Kubernetes cluster management, conducting migrations, overseeing pods, removing unnecessary resources, contributing to cloud cost reduction, and applying FinOps concepts. Developed solutions to enhance observability and monitoring by constructing dashboards with the necessary metrics. See more on my resume...",
       c6Link,
     ),
     test(
       2023,
       "Geekbus - College",
-      "As part of a college project, I developed and deployed a web application on AWS aimed at connecting bus drivers with individuals interested in group travel. The application facilitates seamless matching for a more efficient and enjoyable group travel experience.",
+      "As part of a college project, I developed and deployed a web application on AWS aimed at connecting bus drivers with individuals interested in group travel. The application facilitates seamless matching for a more efficient and enjoyable group travel experience",
     ),
     test(
       2022,
