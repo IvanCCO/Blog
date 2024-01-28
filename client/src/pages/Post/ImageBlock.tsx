@@ -1,5 +1,4 @@
 import { Image, Text, VStack } from "@chakra-ui/react";
-import { Helmet } from "react-helmet";
 import TRANQUILAO from "../../assets/tranquilao.jpeg";
 import { imagePath } from "../../http/operations";
 
@@ -7,9 +6,6 @@ export function ImageBlock({ articleId }: { articleId: string }) {
   const image = imagePath(articleId);
   return (
     <>
-      <Helmet>
-        <meta name="image" property="og:image" content={image}></meta>
-      </Helmet>
       <VStack spacing={1} p={0}>
         <Image
           src={image}
