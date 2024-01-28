@@ -1,6 +1,7 @@
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { useMediaQuery } from "@chakra-ui/react";
-import mypic from "../../assets/digitando.jpeg";
+import { useNavigate } from "react-router-dom";
+import mypic from "../../assets/casual.jpeg";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { Reveal } from "../../components/Reveal";
@@ -12,6 +13,8 @@ import { SocialMediaList } from "./SocialMediaList";
 import Suggestions from "./Suggestions";
 
 export function He() {
+  const navigate = useNavigate();
+
   const desktopWorking = (
     <div className="font-jomolhari flex justify-between h-4/6">
       <div className="flex flex-col w-1/2 pr-7 space-y-7 xl:justify-evenly">
@@ -35,7 +38,10 @@ export function He() {
 
         <SocialMediaList />
         <Reveal position={{ y: -75 }} animation={{ duration: 0.2, delay: 2 }}>
-          <div className="gradient relative items-center content-center text-white text-md rounded-md py-2 px-4 z-0 flex-row inline-flex w-full justify-center cursor-pointer xl:py-5">
+          <div
+            className="gradient relative items-center content-center text-white text-md rounded-md py-2 px-4 z-0 flex-row inline-flex w-full justify-center cursor-pointer xl:py-5"
+            onClick={() => navigate("/")}
+          >
             <p className="text-center font-inter font-bold text-base sm:text-lg xl:text-2xl">
               My Posts
             </p>

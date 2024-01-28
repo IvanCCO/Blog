@@ -6,7 +6,7 @@ import MarkdownFormatter from "../../components/MarkdownFormatter";
 import { Box, Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
 import { AxiosError } from "axios";
 import { useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import ProgressBar from "../../components/ProgressBar";
 import { TopicTag } from "../../components/TopicTag";
 import ContentFetchError from "../../exceptions/ContentFetchError";
@@ -31,7 +31,6 @@ export function Post() {
   const [article, setArticle] = useState<Article | null>(null);
   const [content, setContent] = useState<string | null>(null);
   const [errors, setErrors] = useState<Error[]>([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchArticle = async () => {
@@ -73,6 +72,7 @@ export function Post() {
     if (errors.some((error) => error instanceof NotFoundError)) {
       return <NotFound />;
     }
+
     return (
       <>
         <ProgressBar />

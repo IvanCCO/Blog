@@ -14,6 +14,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
+import { Helmet } from "react-helmet";
 import {
   LinkedinIcon,
   LinkedinShareButton,
@@ -34,7 +35,6 @@ export function ActionRow({
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const shareUrl = window.location.href;
-  // const shareUrl = "https://github.com";
   const iconSize = useBreakpointValue({
     base: "15vw",
     sm: "60px",
@@ -46,6 +46,14 @@ export function ActionRow({
   const modal = () => {
     return (
       <>
+        <Helmet>
+          <title>{title}</title>
+          <meta
+            name="description"
+            property="og:description"
+            content={description}
+          ></meta>
+        </Helmet>
         <ButtonFormated
           msg="Share"
           icon={<ExternalLinkIcon />}

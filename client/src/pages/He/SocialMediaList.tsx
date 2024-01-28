@@ -33,11 +33,6 @@ export function SocialMediaList() {
       useDefault: false,
       network: "whatsapp",
     },
-    {
-      url: "ivanmedeiros0903@outlook.com",
-      useDefault: false,
-      network: "mailto",
-    },
   ];
 
   const iconSize = useBreakpointValue({
