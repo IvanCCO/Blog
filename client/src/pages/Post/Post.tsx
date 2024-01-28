@@ -6,13 +6,19 @@ import MarkdownFormatter from "../../components/MarkdownFormatter";
 import { Box, Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
 import { AxiosError } from "axios";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import ProgressBar from "../../components/ProgressBar";
 import { TopicTag } from "../../components/TopicTag";
 import ContentFetchError from "../../exceptions/ContentFetchError";
 import NotFoundError from "../../exceptions/NotFoundError";
 import { fallbackPostContent } from "../../hooks/useFileUtils";
-import { articlePath, contentPath, fetchData } from "../../http/operations";
+import {
+  articlePath,
+  contentPath,
+  fetchData,
+  imagePath,
+} from "../../http/operations";
 import { NotFound } from "../NotFound/NotFound";
 import { ActionRow } from "./ActionRow";
 import { ImageBlock } from "./ImageBlock";
@@ -72,9 +78,25 @@ export function Post() {
     if (errors.some((error) => error instanceof NotFoundError)) {
       return <NotFound />;
     }
-
     return (
       <>
+        {article && (
+          <Helmet>
+            <title>{article.title}</title>
+            <meta
+              name="description"
+              property="og:description"
+              content={article.description}
+            ></meta>
+            <meta
+              name="image"
+              property="og:image"
+              content={imagePath(article.id)}
+            ></meta>
+            <meta name="title" property="og:title" content={article.title} />
+          </Helmet>
+        )}
+
         <ProgressBar />
         <Header />
         <main className="main space-y-2 sm:px-28 md:px-44 lg:px-52 xl:px-96 2xl:px-[30rem] 3xl:px-[36rem] bg-he-background">
