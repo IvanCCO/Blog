@@ -1,6 +1,6 @@
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { useMediaQuery } from "@chakra-ui/react";
-import mypic from "../../assets/digitando.jpeg";
+import mypic from "../../assets/casual.jpeg";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { Reveal } from "../../components/Reveal";
@@ -11,6 +11,7 @@ import { SkillsCycle } from "./SkillsCycle";
 import { SocialMediaList } from "./SocialMediaList";
 import Suggestions from "./Suggestions";
 import { useNavigate } from "react-router-dom";
+
 
 export function He() {
 

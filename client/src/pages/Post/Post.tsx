@@ -31,7 +31,6 @@ export function Post() {
   const [article, setArticle] = useState<Article | null>(null);
   const [content, setContent] = useState<string | null>(null);
   const [errors, setErrors] = useState<Error[]>([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchArticle = async () => {
@@ -73,6 +72,7 @@ export function Post() {
     if (errors.some((error) => error instanceof NotFoundError)) {
       return <NotFound />;
     }
+
     return (
       <>
         <ProgressBar />
