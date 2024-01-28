@@ -32,7 +32,7 @@ export function SocialMediaList() {
       url: "https://wa.me/551192015034",
       useDefault: false,
       network: "whatsapp",
-    }
+    },
   ];
 
   const iconSize = useBreakpointValue({

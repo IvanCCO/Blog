@@ -6,7 +6,7 @@ import MarkdownFormatter from "../../components/MarkdownFormatter";
 import { Box, Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
 import { AxiosError } from "axios";
 import { useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import ProgressBar from "../../components/ProgressBar";
 import { TopicTag } from "../../components/TopicTag";
 import ContentFetchError from "../../exceptions/ContentFetchError";

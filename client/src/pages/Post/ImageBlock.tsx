@@ -1,6 +1,6 @@
 import { Image, Text, VStack } from "@chakra-ui/react";
-import TRANQUILAO from "../../assets/tranquilao.jpeg";
 import { Helmet } from "react-helmet";
+import TRANQUILAO from "../../assets/tranquilao.jpeg";
 import { imagePath } from "../../http/operations";
 
 export function ImageBlock({ articleId }: { articleId: string }) {

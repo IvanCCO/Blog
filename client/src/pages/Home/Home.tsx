@@ -1,11 +1,8 @@
-import { Stack, Text } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import MOCK from "../../assets/JSON/Posts.json";
 import { Header } from "../../components/Header";
 import { MainCard } from "../../components/MainCard/MainCard";
 import MainCardSkeleton from "../../components/MainCard/MainCardSkeleton";
-import { Pagination } from "../../components/Pagination";
-import { SampleCard } from "../../components/SampleCard";
 import { fetchData, lastArticlePath } from "../../http/operations";
 
 type Article = {
@@ -18,7 +15,6 @@ type Article = {
 };
 
 export function Home() {
-
   const [lastArticle, setLastArticle] = useState<Article | null>(null);
 
   useEffect(() => {
