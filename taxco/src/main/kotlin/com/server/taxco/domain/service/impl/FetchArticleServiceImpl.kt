@@ -12,8 +12,11 @@ import com.server.taxco.domain.service.FetchArticleService
 import com.server.taxco.resources.storage.ObjectType
 import com.server.taxco.resources.storage.S3Operation
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Propagation
+import org.springframework.transaction.annotation.Transactional
 
 @Service
+@Transactional(readOnly = true, propagation = Propagation.NOT_SUPPORTED)
 class FetchArticleServiceImpl(
     private val repository: ArticleRepository,
     private val mapper: ArticleMapper,
