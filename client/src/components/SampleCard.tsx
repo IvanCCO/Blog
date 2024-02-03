@@ -43,8 +43,6 @@ export function SampleCard({
         return "cyan";
       case 3:
         return "pink";
-      case 4:
-        return "linkedin";
       case 5:
         return "gray";
       default:
