@@ -1,9 +1,14 @@
-import { Text } from "@chakra-ui/react";
+import { Stack, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import { MainCard } from "../../components/MainCard/MainCard";
 import MainCardSkeleton from "../../components/MainCard/MainCardSkeleton";
-import { fetchData, lastArticlePath } from "../../http/operations";
+import { SampleCard } from "../../components/SampleCard";
+import {
+  articlePagePath,
+  fetchData,
+  lastArticlePath,
+} from "../../http/operations";
 
 type Article = {
   id: string;
@@ -14,8 +19,16 @@ type Article = {
   createdAt: Date;
 };
 
+type Page = {
+  first: boolean;
+  last: boolean;
+  content: Article[];
+};
+
 export function Home() {
   const [lastArticle, setLastArticle] = useState<Article | null>(null);
+  const [articlePage, setArticlePage] = useState<Page | null>(null);
+  const [currentPage, setCurrentPage] = useState<number>(0);
 
   useEffect(() => {
     const fetchArticle = async () => {
@@ -26,16 +39,24 @@ export function Home() {
         console.error("Erro ao buscar artigo:", error);
       }
     };
+
+    const fetchArticlePage = async () => {
+      try {
+        const data = await fetchData<Page>(articlePagePath(currentPage));
+        setArticlePage(data);
+      } catch (error) {
+        console.error("Erro ao buscar Página de artigo:", error);
+      }
+    };
+
     fetchArticle();
+    fetchArticlePage();
   }, []);
 
-  // const sampleCards: JSX.Element[] = [];
-
-  // const pagination = MOCK.pagination;
-  // const posts = MOCK.posts;
-
-  // const justifyContent =
-  //   sampleCards?.length < 3 ? "flex-start" : "space-between";
+  const justifyContent =
+    articlePage && articlePage?.content.length < 3
+      ? "flex-start"
+      : "space-between";
 
   const MainCardRender: React.FC = () => {
     if (lastArticle != null) {
@@ -52,6 +73,7 @@ export function Home() {
     return <MainCardSkeleton />;
   };
 
+
   return (
     <>
       <Header />
@@ -64,30 +86,30 @@ export function Home() {
         </div>
         <div className="space-y-3 w-full">
           <div className="flex justify-between place-items-center text-white">
-            {/* <Text fontSize={"3xl"} fontWeight={"semibold"}>
+            <Text fontSize={"3xl"} fontWeight={"semibold"}>
               Posts
-            </Text> */}
+            </Text>
           </div>
-          {/* <Stack
+          <Stack
             direction={["column", "column", "row"]}
             placeItems={"center"}
             justifyContent={["center", "center", justifyContent]}
             w={"full"}
           >
-            {posts.map((value, index) => (
-              <SampleCard
-                key={index}
-                title={value.titulo}
-                description={value.descricao}
-                createdAt={value["data-publicacao"]}
-                readTime={
-                  isNaN(Number(value["tempo-leitura"]))
-                    ? 0
-                    : Number(value["tempo-leitura"])
-                }
-              />
-            ))}
-          </Stack> */}
+            {articlePage ? (
+              articlePage.content.map((value, index) => (
+                <SampleCard
+                  key={index}
+                  title={value.title}
+                  description={value.description}
+                  createdAt={value.createdAt.toString()}
+                  readTime={value.readTime}
+                />
+              ))
+            ) : (
+              <MainCardSkeleton/>
+            )}
+          </Stack>
           {/* <Pagination {...pagination} onPageChange={() => console.log("iha")} /> */}
         </div>
       </main>
