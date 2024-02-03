@@ -30,7 +30,7 @@ class FetchArticleServiceImpl(
     }
     override fun byPage(page: Int, size: Int): Page<ArticleDocument> {
         val field = Article::createdAt
-        val pageable = PageRequest.of(page, size, Sort.by(field.name))
+        val pageable = PageRequest.of(page, size, Sort.by(field.name).descending())
         val articles = repository.findAll(pageable)
         return articles
     }
