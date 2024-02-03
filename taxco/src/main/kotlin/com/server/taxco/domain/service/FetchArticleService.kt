@@ -1,6 +1,8 @@
 package com.server.taxco.domain.service
 
+import com.server.taxco.application.web.response.ArticlePageResponse
 import com.server.taxco.application.web.response.ArticleResponse
+import com.server.taxco.domain.article.dto.ArticlePageDTO
 import com.server.taxco.resources.database.ArticleDocument
 import org.springframework.data.domain.Page
 
@@ -9,7 +11,7 @@ import org.springframework.data.domain.Page
  */
 interface FetchArticleService {
     fun byId(articleId: String): ArticleResponse
-    fun byPage(page: Int, size: Int): Page<ArticleDocument>
+    fun byPage(page: Int, size: Int): ArticlePageResponse
     fun last(): ArticleResponse
     fun image(articleId: String): ByteArray
     fun content(articleId: String): ByteArray

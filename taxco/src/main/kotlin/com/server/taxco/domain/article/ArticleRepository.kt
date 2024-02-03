@@ -1,7 +1,6 @@
 package com.server.taxco.domain.article
 
-import com.server.taxco.resources.database.ArticleDocument
-import org.springframework.data.domain.Page
+import com.server.taxco.domain.article.dto.ArticlePageDTO
 import org.springframework.data.domain.Pageable
 
 // TODO: Pensar em alguma solução melhor para fazer isso aqui sem importar o pageable direto no domain
@@ -22,7 +21,7 @@ interface ArticleRepository {
      * fetch all the articles per page
      * @param pageable the object to decide the size and which page return
      **/
-    fun findAll(pageable: Pageable): Page<ArticleDocument>
+    fun findAll(page: Int, size: Int): ArticlePageDTO
     /**
      * find a article by article title
      * @param name name of the article that's going to be search

@@ -21,9 +21,9 @@ type Article = {
 };
 
 type Page = {
-  first: boolean;
-  last: boolean;
-  content: Article[];
+  isFirst: boolean;
+  isLast: boolean;
+  articles: Article[];
 };
 
 export function Home() {
@@ -57,7 +57,7 @@ export function Home() {
   }, [currentPage]);
 
   const justifyContent =
-    articlePage && articlePage?.content.length < 3
+    articlePage && articlePage?.articles.length < 3
       ? "flex-start"
       : "space-between";
 
@@ -99,7 +99,7 @@ export function Home() {
             w={"full"}
           >
             {articlePage ? (
-              articlePage.content.map((value, index) => (
+              articlePage.articles.map((value, index) => (
                 <SampleCard
                   key={index}
                   id={value.id}
@@ -107,6 +107,7 @@ export function Home() {
                   description={value.description}
                   createdAt={value.createdAt.toString()}
                   readTime={value.readTime}
+                  tag={value.tag}
                 />
               ))
             ) : (
@@ -115,8 +116,8 @@ export function Home() {
           </Stack>
           {articlePage && (
             <Pagination
-              isFirstPage={articlePage.first}
-              isLastPage={articlePage.last}
+              isFirstPage={articlePage.isFirst}
+              isLastPage={articlePage.isLast}
               onPageIncrement={() => setCurrentPage(currentPage + 1)}
               onPageDecrement={() => setCurrentPage(currentPage - 1)}
             />

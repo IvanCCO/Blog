@@ -22,7 +22,7 @@ interface Props {
   description: string;
   readTime: number;
   createdAt: string;
-  tag?: string;
+  tag: string;
 }
 
 export function SampleCard({
@@ -104,7 +104,7 @@ export function SampleCard({
               alignItems={{ base: "baseline", md: "center", lg: "baseline" }}
             >
               <TopicTag
-                title={"fiewbu"}
+                title={tag}
                 color={color(Math.floor(Math.random() * (5 - 0 + 1) + 0))}
                 variant="solid"
                 borderRadius="full"

@@ -5,8 +5,11 @@ import com.server.taxco.common.LoggableClass
 import com.server.taxco.domain.article.Article
 import com.server.taxco.domain.article.ArticleId
 import com.server.taxco.domain.article.ArticleRepository
+import com.server.taxco.domain.article.dto.ArticlePageDTO
 import org.springframework.data.domain.Page
+import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Pageable
+import org.springframework.data.domain.Sort
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Repository
 
@@ -30,9 +33,21 @@ class ArticleRepositoryMongo(
         return mapper.toDomain(response)!!
     }
 
-    override fun findAll(pageable: Pageable): Page<ArticleDocument> {
+    override fun findAll(page: Int, size: Int): ArticlePageDTO {
+
+        val pageable = PageRequest.of(page, size, Sort.by(ArticleDocument::createdAt.name).descending())
+
         val documents = repository.findAll(pageable)
-        return documents
+
+        val domainArticles = documents.content.map { article ->
+            mapper.toDomain(article)
+        }
+
+        return ArticlePageDTO(
+            isLastPage = documents.isLast,
+            isFirstPage = documents.isFirst,
+            articles = domainArticles
+        )
     }
 
     override fun findByTitle(name: String): Article? {

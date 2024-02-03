@@ -6,13 +6,13 @@ import com.server.taxco.domain.article.Article
 
 @Mapper
 class ArticleResponseMapper {
-    fun toResponse(article: Article) = article.let {
+    fun toResponse(article: Article) = article.run {
         ArticleResponse(
-            id = it.id.value,
-            title = it.title,
-            description = it.description,
-            readTime = it.readTime,
-            tag = it.tag.name,
+            id = id.value,
+            title = title,
+            description = description,
+            readTime = readTime,
+            tag = tag.name,
             createdAt = article.createdAt,
         )
     }
