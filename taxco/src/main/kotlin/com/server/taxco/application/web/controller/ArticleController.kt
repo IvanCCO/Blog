@@ -53,9 +53,13 @@ class ArticleController(
     @GetMapping
     fun getArticleById(
         @RequestParam("page") page: Int,
-        @RequestParam("size") size: Int,
+        @RequestParam("size", required = false) size: Int = 3,
     ): ResponseEntity<Page<ArticleDocument>> {
         val response = fetchArticle.byPage(page, size)
+
+        if(response.isEmpty){
+            return ResponseEntity.noContent().build()
+        }
         return ResponseEntity.ok(response)
     }
 
