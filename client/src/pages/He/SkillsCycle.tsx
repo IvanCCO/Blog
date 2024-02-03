@@ -6,19 +6,24 @@ import "swiper/modules";
 import APIGEE from "../../assets/SkillsIcons/apigee-seeklogo.com.svg";
 import AWS from "../../assets/SkillsIcons/aws.svg";
 import GRAFANA from "../../assets/SkillsIcons/grafana.svg";
-import DOCKER from "../../assets/SkillsIcons/icons8-docker.svg";
-import KOTLIN from "../../assets/SkillsIcons/icons8-kotlin.svg";
-import K8S from "../../assets/SkillsIcons/icons8-kubernetes.svg";
+import DOCKER from "../../assets/SkillsIcons/docker.svg";
+import KOTLIN from "../../assets/SkillsIcons/kotlin.svg";
+import K8S from "../../assets/SkillsIcons/kubernetes.svg";
 import JAVA from "../../assets/SkillsIcons/java.svg";
 import JS from "../../assets/SkillsIcons/javascript.svg";
+import JENKINS from "../../assets/SkillsIcons/jenkins.svg";
 import KAFKA from "../../assets/SkillsIcons/kafka.svg";
 import MONGO from "../../assets/SkillsIcons/mongo.png";
+import NODE from "../../assets/SkillsIcons/node.svg";
+import POSTGRES from "../../assets/SkillsIcons/postgrees.svg";
+import PYTHON from "../../assets/SkillsIcons/python.svg";
 import REACT from "../../assets/SkillsIcons/react.svg";
 import REDIS from "../../assets/SkillsIcons/redis.svg";
 import SPRING from "../../assets/SkillsIcons/spring.svg";
 import TAILWIND from "../../assets/SkillsIcons/tailwind.svg";
 import TF from "../../assets/SkillsIcons/terraform.svg";
 import VIM from "../../assets/SkillsIcons/vim.svg";
+import { goToUrl } from "../../utils/commom";
 
 export function SkillsCycle() {
   const gradientWidth = useBreakpointValue({
@@ -30,10 +35,10 @@ export function SkillsCycle() {
     "2xl": 300,
   });
 
-  const image = (icon: string, nome: string) => {
+  const image = (icon: string, nome: string, url: string) => {
     // TODO: Colocar para linkar para o ícone ou para a tecnologia
     return (
-      <div className="text-center cursor-pointer">
+      <div className="text-center cursor-pointer" onClick={() => goToUrl(url)}>
         <Image src={icon} boxSize={"60px"} mx={5} />
         <p className="text-xs lg:text-base">{nome}</p>
       </div>
@@ -50,22 +55,26 @@ export function SkillsCycle() {
       gradientColor="#16141C"
       gradientWidth={gradientWidth}
     >
-      {image(JAVA, "Java")}
-      {image(KOTLIN, "Kotlin")}
-      {image(REACT, "React")}
-      {image(SPRING, "Spring")}
-      {image(AWS, "AWS")}
-      {image(MONGO, "MongoDB")}
-      {image(TAILWIND, "Tailwind")}
-      {image(REDIS, "Redis")}
-      {image(TF, "Terraform")}
-      {image(DOCKER, "Docker")}
-      {image(GRAFANA, "Grafana")}
-      {image(APIGEE, "Apigee")}
-      {image(K8S, "Kubernetes")}
-      {image(JS, "JavaScript")}
-      {image(KAFKA, "Kafka")}
-      {image(VIM, "Vim")}
+      {image(JAVA, "Java", "https://www.java.com/en/")}
+      {image(KOTLIN, "Kotlin", "https://kotlinlang.org/")}
+      {image(REACT, "React", "https://react.dev/")}
+      {image(SPRING, "Spring", "https://spring.io/")}
+      {image(AWS, "AWS", "https://aws.amazon.com/")}
+      {image(MONGO, "MongoDB", "https://www.mongodb.com/")}
+      {image(TAILWIND, "Tailwind", "https://tailwindcss.com/")}
+      {image(REDIS, "Redis", "https://redis.io/")}
+      {image(TF, "Terraform", "https://www.terraform.io/")}
+      {image(DOCKER, "Docker", "https://www.docker.com/")}
+      {image(GRAFANA, "Grafana", "https://grafana.com/")}
+      {image(APIGEE, "Apigee", "https://docs.apigee.com/")}
+      {image(K8S, "Kubernetes", "https://kubernetes.io/")}
+      {image(JS, "JavaScript", "https://nodejs.org/en")}
+      {image(KAFKA, "Kafka", "https://kafka.apache.org/")}
+      {image(VIM, "Vim", "https://www.vim.org/")}
+      {image(PYTHON, "Python", "https://www.python.org/")}
+      {image(NODE, "NodeJS", "https://nodejs.org/en")}
+      {image(POSTGRES, "Postgre", "https://www.postgresql.org/")}
+      {image(JENKINS, "Jenkins", "https://www.jenkins.io/")}
     </Marquee>
   );
 }

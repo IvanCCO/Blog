@@ -1,5 +1,6 @@
 import { Button, Image, SimpleGrid } from "@chakra-ui/react";
 import { Reveal } from "../../components/Reveal";
+import { goToUrl } from "../../utils/commom";
 
 interface Props {
   title: string;
@@ -17,13 +18,6 @@ export default function Suggestions() {
     xl: "1200px",
     "2xl": "1536px",
   };
-
-  function goToUrl(url: string) {
-    const newWindow = window.open(url, "_blank");
-    if (newWindow) {
-      newWindow.opener = null;
-    }
-  }
 
   const Recomendation = ({ title, author, url, buyUrl }: Props) => (
     <div className="flex flex-col justify-center place-items-center space-y-3 self-center lg:flex-row  lg:justify-start lg:space-x-4">

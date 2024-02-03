@@ -53,3 +53,10 @@ const formatMonth = (month: string): string => {
       return "--";
   }
 };
+
+export function goToUrl(url: string) {
+  const newWindow = window.open(url, "_blank");
+  if (newWindow) {
+    newWindow.opener = null;
+  }
+}
