@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import { MainCard } from "../../components/MainCard/MainCard";
 import MainCardSkeleton from "../../components/MainCard/MainCardSkeleton";
+import { Pagination } from "../../components/Pagination";
 import { SampleCard } from "../../components/SampleCard";
 import {
   articlePagePath,
@@ -40,6 +41,10 @@ export function Home() {
       }
     };
 
+    fetchArticle();
+  }, [currentPage]);
+
+  useEffect(() => {
     const fetchArticlePage = async () => {
       try {
         const data = await fetchData<Page>(articlePagePath(currentPage));
@@ -48,10 +53,8 @@ export function Home() {
         console.error("Erro ao buscar Página de artigo:", error);
       }
     };
-
-    fetchArticle();
     fetchArticlePage();
-  }, []);
+  }, [currentPage]);
 
   const justifyContent =
     articlePage && articlePage?.content.length < 3
@@ -72,7 +75,6 @@ export function Home() {
     }
     return <MainCardSkeleton />;
   };
-
 
   return (
     <>
@@ -100,6 +102,7 @@ export function Home() {
               articlePage.content.map((value, index) => (
                 <SampleCard
                   key={index}
+                  id={value.id}
                   title={value.title}
                   description={value.description}
                   createdAt={value.createdAt.toString()}
@@ -107,10 +110,17 @@ export function Home() {
                 />
               ))
             ) : (
-              <MainCardSkeleton/>
+              <MainCardSkeleton />
             )}
           </Stack>
-          {/* <Pagination {...pagination} onPageChange={() => console.log("iha")} /> */}
+          {articlePage && (
+            <Pagination
+              isFirstPage={articlePage.first}
+              isLastPage={articlePage.last}
+              onPageIncrement={() => setCurrentPage(currentPage + 1)}
+              onPageDecrement={() => setCurrentPage(currentPage - 1)}
+            />
+          )}
         </div>
       </main>
     </>

@@ -12,8 +12,10 @@ import {
 } from "@chakra-ui/react";
 import { formatDate } from "../utils/commom";
 import { TopicTag } from "./TopicTag";
+import { imagePath } from "../http/operations";
 
 interface Props {
+  id: string;
   title: string;
   description: string;
   readTime: number;
@@ -25,6 +27,7 @@ interface Props {
 }
 
 export function SampleCard({
+  id,
   title,
   description,
   readTime,
@@ -71,7 +74,7 @@ export function SampleCard({
             display={{ base: "none", sm: "none", md: "none", lg: "block" }}
           >
             <Image
-              src="https://th.bing.com/th/id/OIG.wP.0xTjqyTThzWawHxaL?pid=ImgGn"
+              src={imagePath(id)}
               alt="Green double couch with wooden legs"
               loading="lazy"
             />

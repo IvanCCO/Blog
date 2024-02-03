@@ -3,32 +3,23 @@ import { Button } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 export function Pagination({
-  currentPage,
-  totalPages,
-  onPageChange,
+  isFirstPage,
+  isLastPage,
+  onPageIncrement,
+  onPageDecrement,
 }: {
-  currentPage: number;
-  totalPages: number;
-  onPageChange: (page: number) => void;
+  isFirstPage: boolean;
+  isLastPage: boolean;
+  onPageIncrement: () => void;
+  onPageDecrement: () => void;
 }) {
-  const [hasNext, setHasNext] = useState<boolean>(currentPage < totalPages);
-  const [hasPrev, setHasPrev] = useState<boolean>(currentPage > 1);
+  const [hasNext, setHasNext] = useState<boolean>(!isLastPage);
+  const [hasPrev, setHasPrev] = useState<boolean>(!isFirstPage);
 
   useEffect(() => {
-    setHasNext(currentPage < totalPages);
-    setHasPrev(currentPage > 1);
-  }, [currentPage, totalPages]);
-
-  function handleNextPage() {
-    if (currentPage < totalPages) {
-      onPageChange(currentPage + 1);
-    }
-  }
-  function handlePrevPage() {
-    if (currentPage > 1) {
-      onPageChange(currentPage - 1);
-    }
-  }
+    setHasNext(!isLastPage);
+    setHasPrev(!isFirstPage);
+  }, [isFirstPage, isLastPage]);
 
   return (
     <div className="flex justify-between place-items-center pt-3 w-full">
@@ -38,7 +29,7 @@ export function Pagination({
         variant={"link"}
         leftIcon={<ArrowBackIcon />}
         isDisabled={!hasPrev}
-        onClick={() => handlePrevPage}
+        onClick={onPageDecrement}
       >
         Prev
       </Button>
@@ -49,7 +40,7 @@ export function Pagination({
         rounded={"base"}
         isDisabled={!hasNext}
         rightIcon={<ArrowForwardIcon />}
-        onClick={() => handleNextPage}
+        onClick={onPageIncrement}
       >
         Next
       </Button>
