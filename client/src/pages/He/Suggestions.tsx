@@ -69,10 +69,10 @@ export default function Suggestions() {
       buyUrl="https://a.co/d/9rdOTjt"
     />,
     <Recomendation
-      title="Brave new world"
-      author="Aldos Huxley"
-      url="https://1.bp.blogspot.com/-VKwWtOtDJ08/UGhCP917HrI/AAAAAAAAATM/7Hpd2RlO5-M/s1600/Brave+new+world.jpg"
-      buyUrl="https://a.co/d/7pkSXF1"
+      title="Design Patterns"
+      author="Erich Gamma"
+      url="https://prodimage.images-bn.com/pimages/9780201633610_p0_v5_s1200x630.jpg"
+      buyUrl="https://a.co/d/ftdT1S9"
     />,
     <Recomendation
       title="L'Étranger"
