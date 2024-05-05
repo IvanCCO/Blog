@@ -75,16 +75,16 @@ export default function Suggestions() {
       buyUrl="https://a.co/d/ftdT1S9"
     />,
     <Recomendation
-      title="L'Étranger"
-      author="Albert Camus"
-      url="https://i.pinimg.com/originals/6f/fa/4e/6ffa4ecd1931e36640110d801f4e8483.jpg"
-      buyUrl="https://a.co/d/b883Z8D"
+      title="Clean Code"
+      author="Robert C. Martin"
+      url="https://m.media-amazon.com/images/I/51E2055ZGUL._SL1000_.jpg"
+      buyUrl="https://a.co/d/3boinXs"
     />,
     <Recomendation
-      title="Sobrevivendo no Inferno"
-      author="Racionais"
-      url="https://img.travessa.com.br/livro/GR/61/61a2d994-da97-4ec5-89dc-1ef959d840cb.jpg"
-      buyUrl="https://a.co/d/2b2vOq9"
+      title="How to Take Smart Notes"
+      author="Sönke Ahrens"
+      url="https://m.media-amazon.com/images/I/71nRKaywvrL._SL1500_.jpg"
+      buyUrl="https://a.co/d/3REeCpz"
     />,
   ];
 
