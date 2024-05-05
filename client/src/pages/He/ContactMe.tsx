@@ -12,7 +12,7 @@ export default function ContactMe() {
       to={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex-1 inline-flex place-items-center py-2 px-4 sm:px-8 sm:py-3 md:px-10 space-x-6 bg-white rounded-full"
+      className="flex-1 inline-flex place-items-center py-2 px-4 sm:px-8 sm:py-3 md:px-10 space-x-6 bg-white rounded-lg"
     >
       <SocialIcon
         url={url}
