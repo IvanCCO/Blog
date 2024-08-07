@@ -9,15 +9,6 @@ interface Props {
 }
 
 export default function Suggestions() {
-  const breakpoints = {
-    base: "0px",
-    sm: "320px",
-    md: "768px",
-    lg: "1024px",
-    xl: "1200px",
-    "2xl": "1536px",
-  };
-
   function goToUrl(url: string) {
     const newWindow = window.open(url, "_blank");
     if (newWindow) {
@@ -51,22 +42,22 @@ export default function Suggestions() {
 
   const books = [
     <Recomendation
-      title="12 Rules for live"
-      author="Jordam Petterson"
-      url="https://images-na.ssl-images-amazon.com/images/I/71YYF%2B1ZGSL.jpg"
-      buyUrl="https://a.co/d/cpErzB2"
+      title="The Millionaire Fastlane"
+      author="M. J. DeMarco"
+      url="https://m.media-amazon.com/images/I/616BYPbOCyL._SL1500_.jpg"
+      buyUrl="https://a.co/d/i8CdLcd"
     />,
     <Recomendation
-      title="I, Robot"
-      author="Isac Asimov"
-      url="http://www.socialbookshelves.com/wp-content/uploads/2013/05/i-robot.jpg"
-      buyUrl="https://a.co/d/eAjBaLp"
+      title="The Hitchhiker's Guide to the Galaxy"
+      author="Douglas Adams"
+      url="https://m.media-amazon.com/images/I/81s2iRXDDSL._SL1500_.jpg"
+      buyUrl="https://a.co/d/hksYn7A"
     />,
     <Recomendation
-      title="Sapiens"
-      author="Yuval Harari"
-      url="https://media.s-bol.com/36zOVvQ41qzx/831x1200.jpg"
-      buyUrl="https://a.co/d/9rdOTjt"
+      title="The Pragmatic Programmer"
+      author="Andrew Hunt"
+      url="https://m.media-amazon.com/images/I/61ztlXgCmpL._SL1500_.jpg"
+      buyUrl="https://a.co/d/hkthTJ3"
     />,
     <Recomendation
       title="Design Patterns"
@@ -91,7 +82,7 @@ export default function Suggestions() {
   return (
     <div className="text-white font-inter flex flex-col items-center space-y-4 h-full lg:items-start ">
       <h1 className="text-2xl border-b-4 border-purple-800 w-fit text-start pr-2 text-white mb-5">
-        Books I recommend
+        Currently Reading
       </h1>
       <SimpleGrid columns={{ base: 1, sm: 2 }} spacingY={10} w={"full"}>
         {books.map((value, index) => (
