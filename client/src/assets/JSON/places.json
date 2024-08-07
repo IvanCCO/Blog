@@ -264,6 +264,94 @@
         "title": "Mapbox",
         "description": "Vitória, Espírito Santo"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-34.889414, -8.074846]
+      },
+      "properties": {
+        "title": "Mapbox",
+        "description": "Recife, Pernambuco"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-40.513457, -2.795719]
+      },
+      "properties": {
+        "title": "Mapbox",
+        "description": "Jericoacoara, Ceará"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-50.067883, -6.069691]
+      },
+      "properties": {
+        "title": "Mapbox",
+        "description": "Carajás, Pará"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-44.293879, -2.530783]
+      },
+      "properties": {
+        "title": "Mapbox",
+        "description": "São Luís, Maranhão"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.81435, -2.758592]
+      },
+      "properties": {
+        "title": "Mapbox",
+        "description": "Barrerinhas, Maranhão"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-45.378856, -3.662891]
+      },
+      "properties": {
+        "title": "Mapbox",
+        "description": "Santa Inês, Maranhão"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-49.672989, -5.90333]
+      },
+      "properties": {
+        "title": "Mapbox",
+        "description": "Serra Pelada, Pará"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-41.557363, -3.471038]
+      },
+      "properties": {
+        "title": "Mapbox",
+        "description": "Cocal, Piauí"
+      }
     }
   ]
 }
