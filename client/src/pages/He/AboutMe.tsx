@@ -8,7 +8,6 @@ export default function AboutMe() {
       <h1 className="text-2xl border-b-4 border-purple-800 w-fit pr-4">
         About me
       </h1>
-      {/* TODO: Colocar um texto verdadeiro  */}
       <div>
         <p className="text-md font-light leading-relaxed text-justify xl:text-lg">
           {" "}
