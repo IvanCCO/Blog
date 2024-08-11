@@ -27,12 +27,7 @@ export function SocialMediaList() {
     },
     {
       url: "https://www.youtube.com/channel/UCGl5UhjdrFYYPryKV5OIsiQ",
-    },
-    {
-      url: "https://wa.me/551192015034",
-      useDefault: false,
-      network: "whatsapp",
-    },
+    }
   ];
 
   const iconSize = useBreakpointValue({
