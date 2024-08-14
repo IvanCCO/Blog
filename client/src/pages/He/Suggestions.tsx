@@ -45,37 +45,37 @@ export default function Suggestions() {
       title="The Millionaire Fastlane"
       author="M. J. DeMarco"
       url="https://m.media-amazon.com/images/I/616BYPbOCyL._SL1500_.jpg"
-      buyUrl="https://a.co/d/i8CdLcd"
+      buyUrl="https://amzn.to/3YEnpvW"
     />,
     <Recomendation
       title="The Hitchhiker's Guide to the Galaxy"
       author="Douglas Adams"
       url="https://m.media-amazon.com/images/I/81s2iRXDDSL._SL1500_.jpg"
-      buyUrl="https://a.co/d/hksYn7A"
+      buyUrl="https://amzn.to/3M3ipt9"
     />,
     <Recomendation
       title="The Pragmatic Programmer"
       author="Andrew Hunt"
       url="https://m.media-amazon.com/images/I/61ztlXgCmpL._SL1500_.jpg"
-      buyUrl="https://a.co/d/hkthTJ3"
+      buyUrl="https://amzn.to/3M3XupT"
     />,
     <Recomendation
       title="Design Patterns"
       author="Erich Gamma"
       url="https://prodimage.images-bn.com/pimages/9780201633610_p0_v5_s1200x630.jpg"
-      buyUrl="https://a.co/d/ftdT1S9"
+      buyUrl="https://amzn.to/3X4ZggZ"
     />,
     <Recomendation
       title="Clean Code"
       author="Robert C. Martin"
       url="https://m.media-amazon.com/images/I/51E2055ZGUL._SL1000_.jpg"
-      buyUrl="https://a.co/d/3boinXs"
+      buyUrl="https://amzn.to/4dkt3bb"
     />,
     <Recomendation
       title="How to Take Smart Notes"
       author="Sönke Ahrens"
       url="https://m.media-amazon.com/images/I/71nRKaywvrL._SL1500_.jpg"
-      buyUrl="https://a.co/d/3REeCpz"
+      buyUrl="https://amzn.to/3SLvw5W"
     />,
   ];
 

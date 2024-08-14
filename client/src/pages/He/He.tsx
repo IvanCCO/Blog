@@ -16,7 +16,7 @@ export function He() {
   const navigate = useNavigate();
 
   const desktopWorking = (
-    <div className="font-jomolhari flex justify-between h-4/6">
+    <div className="flex justify-between h-4/6">
       <div className="flex flex-col w-1/2 pr-7 space-y-7 xl:justify-evenly">
         <Reveal position={{ y: 120 }} animation={{ delay: 0.8 }}>
           <div>
@@ -103,7 +103,6 @@ export function He() {
           <p className="text-center font-inter font-bold text-base sm:text-lg">
             My Posts
           </p>
-          {/* TODO: Linkar para página dos meus posts */}
           <ArrowForwardIcon />
         </div>
       </div>

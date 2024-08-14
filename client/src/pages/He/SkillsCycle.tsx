@@ -31,7 +31,6 @@ export function SkillsCycle() {
   });
 
   const image = (icon: string, nome: string) => {
-    // TODO: Colocar para linkar para o ícone ou para a tecnologia
     return (
       <div className="text-center cursor-pointer">
         <Image src={icon} boxSize={"60px"} mx={5} />

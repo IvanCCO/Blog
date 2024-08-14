@@ -85,13 +85,13 @@ export default function Experience() {
     ExpecienceBlock(
       "2022",
       "Point - College",
-      "I have designed and deployed a web and Java application on AWS and Azure for a monitoring system. This application renders a global heat map displaying the locations of machines basead on the IP Address, providing comprehensive monitoring capabilities.",
+      "I have designed and deployed a web and Java application on AWS and Azure for a machine monitoring system. This application renders a global heat map displaying the locations of machines basead on the IP Address, providing comprehensive monitoring capabilities.",
       pointLink,
     ),
     ExpecienceBlock(
       "2022",
       "Start Travel - College",
-      "A social media platform crafted specifically for tech-savvy professionals seamlessly navigating the landscape of remote work, all while indulging their fervor for globetrotting",
+      "A social media platform tailored for remote workers and digital nomads, combining work and travel seamlessly.",
       startTravel,
     ),
   ];
