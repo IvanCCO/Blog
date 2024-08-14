@@ -19,7 +19,7 @@ interface Props {
   title: string;
   description: string;
   readTime: number;
-  createdAt: Date | undefined;
+  createdAt: Date | string | undefined;
 }
 
 export function MainCard({

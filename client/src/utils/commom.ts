@@ -1,4 +1,4 @@
-export function formatDate(date: Date | undefined): string {
+export function formatDate(date: Date | string | undefined): string {
   if (date == undefined) {
     return "";
   }

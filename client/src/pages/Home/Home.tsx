@@ -1,94 +1,109 @@
-import { Text } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { Select, Stack, Text } from "@chakra-ui/react";
+import { useState } from "react";
+import ARTICLES from "../../assets/JSON/Home-Posts.json";
 import { Header } from "../../components/Header";
 import { MainCard } from "../../components/MainCard/MainCard";
-import MainCardSkeleton from "../../components/MainCard/MainCardSkeleton";
-import { fetchData, lastArticlePath } from "../../http/operations";
+import { Pagination } from "../../components/Pagination";
+import { SampleCard } from "../../components/SampleCard";
+import { useEffect } from "react";
 
-type Article = {
-  id: string;
-  title: string;
-  description: string;
-  readTime: number;
-  tag: string;
-  createdAt: Date;
-};
+function getUniqueTags(posts: any[]): string[] {
+  const tags = posts.map((post) => post.tag.name);
+  return Array.from(new Set(tags));
+}
 
 export function Home() {
-  const [lastArticle, setLastArticle] = useState<Article | null>(null);
+  const sampleCards: JSX.Element[] = [];
 
-  useEffect(() => {
-    const fetchArticle = async () => {
-      try {
-        const data = await fetchData<Article>(lastArticlePath);
-        setLastArticle(data);
-      } catch (error) {
-        console.error("Erro ao buscar artigo:", error);
-      }
-    };
-    fetchArticle();
-  }, []);
+  const posts = ARTICLES.posts;
+  const lastArticle = ARTICLES.new_post;
 
-  // const sampleCards: JSX.Element[] = [];
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 3;
 
-  // const pagination = MOCK.pagination;
-  // const posts = MOCK.posts;
+  const startIndex = (currentPage - 1) * postsPerPage;
+  const [currentPosts, setCurrentPosts] = useState<any[]>([]);
 
-  // const justifyContent =
-  //   sampleCards?.length < 3 ? "flex-start" : "space-between";
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+
+  const uniqueTags = getUniqueTags(posts);
+
+  const totalPages = Math.ceil(posts.length / postsPerPage);
+
+  const onPageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  const justifyContent =
+    sampleCards?.length < 3 ? "flex-start" : "space-between";
 
   const MainCardRender: React.FC = () => {
-    if (lastArticle != null) {
-      return (
-        <MainCard
-          id={lastArticle.id}
-          title={lastArticle.title}
-          createdAt={lastArticle.createdAt}
-          readTime={lastArticle.readTime}
-          description={lastArticle.description}
-        />
-      );
-    }
-    return <MainCardSkeleton />;
+    return (
+      <MainCard
+        id={lastArticle.id.toString()}
+        title={lastArticle.title}
+        createdAt={lastArticle.createdAt}
+        readTime={lastArticle.readTime}
+        description={lastArticle.description}
+      />
+    );
   };
+
+  useEffect(() => {
+      const filteredPosts = selectedTag
+        ? posts.filter((post) => post.tag.name === selectedTag)
+        : posts;
+
+      const startIndex = (currentPage - 1) * postsPerPage;
+      setCurrentPosts(filteredPosts.slice(startIndex, startIndex + postsPerPage));
+    }, [selectedTag, currentPage, posts]);
 
   return (
     <>
       <Header />
       <main className="main space-y-8 grid place-items-center px-default-width md:px-44 sm:px-28 lg:px-52 xl:px-72 2xl:px-96 justify-center bg-he-background">
         <div className="space-y-2 text-white w-full">
-          <Text fontSize={"3xl"} fontWeight={"semibold"}>
-            Newest
-          </Text>
+          <Text fontSize={"3xl"} fontWeight={"semibold"}></Text>
           <MainCardRender />
         </div>
         <div className="space-y-3 w-full">
           <div className="flex justify-between place-items-center text-white">
-            {/* <Text fontSize={"3xl"} fontWeight={"semibold"}>
+            <Text fontSize={"3xl"} fontWeight={"semibold"}>
               Posts
-            </Text> */}
+            </Text>
+            <Select variant="flushed" placeholder="All" w={1/3}>
+              {uniqueTags.map((tag, index) => (
+                <option value={index} onClick={() => {
+                  setSelectedTag(tag);
+                  setCurrentPage(1);
+                }
+                }>{tag}</option>
+              ))}
+            </Select>
           </div>
-          {/* <Stack
+          <Stack
             direction={["column", "column", "row"]}
             placeItems={"center"}
             justifyContent={["center", "center", justifyContent]}
             w={"full"}
           >
-            {posts.map((value, index) => (
+            {currentPosts.map((value, index) => (
               <SampleCard
                 key={index}
-                title={value.titulo}
-                description={value.descricao}
-                createdAt={value["data-publicacao"]}
-                readTime={
-                  isNaN(Number(value["tempo-leitura"]))
-                    ? 0
-                    : Number(value["tempo-leitura"])
-                }
+                title={value.title}
+                description={value.description}
+                createdAt={value.createdAt}
+                readTime={value.readTime}
+                imageUrl={value.imageUrl}
+                tag={value.tag}
               />
             ))}
-          </Stack> */}
-          {/* <Pagination {...pagination} onPageChange={() => console.log("iha")} /> */}
+          </Stack>
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={onPageChange}
+          />
         </div>
       </main>
     </>

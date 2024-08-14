@@ -14,11 +14,12 @@ import { formatDate } from "../utils/commom";
 import { TopicTag } from "./TopicTag";
 
 interface Props {
-  title: string;
-  description: string;
-  readTime: number;
-  createdAt: string;
-  tag?: {
+  title: string | undefined;
+  description: string | undefined;
+  readTime: number | undefined;
+  createdAt: string | undefined;
+  imageUrl: string | undefined
+  tag: {
     name: string;
     color: string;
   };
@@ -29,25 +30,10 @@ export function SampleCard({
   description,
   readTime,
   createdAt,
+  imageUrl,
   tag,
 }: Props) {
-  const date = formatDate(new Date());
-  const color = (n: number): string => {
-    switch (n) {
-      case 1:
-        return "purple";
-      case 2:
-        return "cyan";
-      case 3:
-        return "pink";
-      case 4:
-        return "linkedin";
-      case 5:
-        return "gray";
-      default:
-        return "linkedin";
-    }
-  };
+  const date = formatDate(createdAt);
 
   const maxCharacters = 125;
 
@@ -71,7 +57,7 @@ export function SampleCard({
             display={{ base: "none", sm: "none", md: "none", lg: "block" }}
           >
             <Image
-              src="https://th.bing.com/th/id/OIG.wP.0xTjqyTThzWawHxaL?pid=ImgGn"
+              src={imageUrl}
               alt="Green double couch with wooden legs"
               loading="lazy"
             />
@@ -81,11 +67,9 @@ export function SampleCard({
               {title}
             </Heading>
             <Text
-              bgGradient="linear(to-b, #fff 80%, #3E3E42 100%)"
-              backgroundClip="text"
               fontSize={{ base: "md", xl: "lg" }}
             >
-              {description.length > maxCharacters
+              {description != undefined && description.length > maxCharacters
                 ? description.substring(120) + "..."
                 : description}
             </Text>
@@ -102,8 +86,8 @@ export function SampleCard({
               alignItems={{ base: "baseline", md: "center", lg: "baseline" }}
             >
               <TopicTag
-                title="Política"
-                color={color(Math.floor(Math.random() * (5 - 0 + 1) + 0))}
+                title={tag.name}
+                color={tag.color}
                 variant="solid"
                 borderRadius="full"
               />
