@@ -11,7 +11,7 @@ import ARTICLES from "../../assets/JSON/Home-Posts.json";
 import ProgressBar from "../../components/ProgressBar";
 import { TopicTag } from "../../components/TopicTag";
 import NotFoundError from "../../exceptions/NotFoundError";
-import { contentPath, fetchData, imagePath } from "../../http/operations";
+import { imagePath } from "../../http/operations";
 import { NotFound } from "../NotFound/NotFound";
 import { ActionRow } from "./ActionRow";
 import { ImageBlock } from "./ImageBlock";
@@ -35,7 +35,7 @@ export function Post() {
   useEffect(() => {
     const fetchArticle = () => {
       const foundArticle = posts.find((post) => post.id === articleId);
-      if(!foundArticle){
+      if (!foundArticle) {
         setErrors((prevErrors) => [...prevErrors, new NotFoundError()]);
       }
       setArticle(foundArticle);
@@ -43,8 +43,13 @@ export function Post() {
 
     const fetchContent = async () => {
       try {
-        const data = await fetchData<string>(contentPath(articleId));
-        setContent(data);
+        const response = await fetch(
+          // s3api + /articleId
+          "",
+        );
+        const text : string = await response.text();
+        console.log(text);
+        setContent(text);
       } catch (error) {
         setErrors((prevErrors) => [...prevErrors, new NotFoundError()]);
       }
