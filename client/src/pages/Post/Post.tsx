@@ -4,21 +4,14 @@ import { Header } from "../../components/Header";
 import MarkdownFormatter from "../../components/MarkdownFormatter";
 
 import { Box, Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
-import { AxiosError } from "axios";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
+import ARTICLES from "../../assets/JSON/Home-Posts.json";
 import ProgressBar from "../../components/ProgressBar";
 import { TopicTag } from "../../components/TopicTag";
-import ContentFetchError from "../../exceptions/ContentFetchError";
 import NotFoundError from "../../exceptions/NotFoundError";
-import { fallbackPostContent } from "../../hooks/useFileUtils";
-import {
-  articlePath,
-  contentPath,
-  fetchData,
-  imagePath,
-} from "../../http/operations";
+import { contentPath, fetchData, imagePath } from "../../http/operations";
 import { NotFound } from "../NotFound/NotFound";
 import { ActionRow } from "./ActionRow";
 import { ImageBlock } from "./ImageBlock";
@@ -34,20 +27,18 @@ type Article = {
 };
 export function Post() {
   const { articleId = "" } = useParams();
-  const [article, setArticle] = useState<Article | null>(null);
+  const [article, setArticle] = useState<any | null>(null);
   const [content, setContent] = useState<string | null>(null);
   const [errors, setErrors] = useState<Error[]>([]);
+  const posts = ARTICLES.posts;
 
   useEffect(() => {
-    const fetchArticle = async () => {
-      try {
-        const data = await fetchData<Article>(articlePath(articleId));
-        setArticle(data);
-      } catch (error) {
-        if ((error as AxiosError).response?.status === 404) {
-          setErrors((prevErrors) => [...prevErrors, new NotFoundError()]);
-        }
+    const fetchArticle = () => {
+      const foundArticle = posts.find((post) => post.id === articleId);
+      if(!foundArticle){
+        setErrors((prevErrors) => [...prevErrors, new NotFoundError()]);
       }
+      setArticle(foundArticle);
     };
 
     const fetchContent = async () => {
@@ -55,8 +46,7 @@ export function Post() {
         const data = await fetchData<string>(contentPath(articleId));
         setContent(data);
       } catch (error) {
-        setContent(fallbackPostContent);
-        setErrors((prevErrors) => [...prevErrors, new ContentFetchError()]);
+        setErrors((prevErrors) => [...prevErrors, new NotFoundError()]);
       }
     };
     fetchArticle();
@@ -64,8 +54,6 @@ export function Post() {
 
     console.log(content);
   }, []);
-
-  console.log(content);
 
   const ProfileRowSkeleton = (
     <Box boxShadow="lg" w={"50%"}>
@@ -103,9 +91,9 @@ export function Post() {
             <div className="w-fit">
               {article ? (
                 <TopicTag
-                  color={"purple"}
+                  color={article.tag.color}
                   variant="solid"
-                  title={article.tag}
+                  title={article.tag.name}
                   borderRadius="full"
                 />
               ) : (
@@ -160,6 +148,7 @@ export function Post() {
             )}
           </div>
           {/* TODO: Colocar carinha para mostrar os posts relacionados */}
+          {/* TODO: Colocar carinha para mostrar os produtos relacionados */}
 
           <Footer />
         </main>

@@ -1,11 +1,10 @@
 import { Select, Stack, Text } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ARTICLES from "../../assets/JSON/Home-Posts.json";
 import { Header } from "../../components/Header";
 import { MainCard } from "../../components/MainCard/MainCard";
 import { Pagination } from "../../components/Pagination";
 import { SampleCard } from "../../components/SampleCard";
-import { useEffect } from "react";
 
 function getUniqueTags(posts: any[]): string[] {
   const tags = posts.map((post) => post.tag.name);
@@ -16,19 +15,17 @@ export function Home() {
   const sampleCards: JSX.Element[] = [];
 
   const posts = ARTICLES.posts;
-  const lastArticle = ARTICLES.new_post;
 
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 3;
 
-  const startIndex = (currentPage - 1) * postsPerPage;
   const [currentPosts, setCurrentPosts] = useState<any[]>([]);
 
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
-  const uniqueTags = getUniqueTags(posts);
+  const [totalPages, setTotalPages] = useState(1);
 
-  const totalPages = Math.ceil(posts.length / postsPerPage);
+  const uniqueTags = getUniqueTags(posts);
 
   const onPageChange = (page: number) => {
     setCurrentPage(page);
@@ -40,23 +37,25 @@ export function Home() {
   const MainCardRender: React.FC = () => {
     return (
       <MainCard
-        id={lastArticle.id.toString()}
-        title={lastArticle.title}
-        createdAt={lastArticle.createdAt}
-        readTime={lastArticle.readTime}
-        description={lastArticle.description}
+        id={posts[0].id.toString()}
+        title={posts[0].title}
+        createdAt={posts[0].createdAt}
+        readTime={posts[0].readTime}
+        description={posts[0].description}
+        imageUrl={posts[0].imageUrl}
       />
     );
   };
 
   useEffect(() => {
-      const filteredPosts = selectedTag
-        ? posts.filter((post) => post.tag.name === selectedTag)
-        : posts;
+    const filteredPosts = selectedTag
+      ? posts.filter((post) => post.tag.name === selectedTag)
+      : posts;
 
-      const startIndex = (currentPage - 1) * postsPerPage;
-      setCurrentPosts(filteredPosts.slice(startIndex, startIndex + postsPerPage));
-    }, [selectedTag, currentPage, posts]);
+    const startIndex = (currentPage - 1) * postsPerPage;
+    setCurrentPosts(filteredPosts.slice(startIndex, startIndex + postsPerPage));
+    setTotalPages(Math.ceil(filteredPosts.length / postsPerPage));
+  }, [selectedTag, currentPage, posts]);
 
   return (
     <>
@@ -71,13 +70,24 @@ export function Home() {
             <Text fontSize={"3xl"} fontWeight={"semibold"}>
               Posts
             </Text>
-            <Select variant="flushed" placeholder="All" w={1/3}>
-              {uniqueTags.map((tag, index) => (
-                <option value={index} onClick={() => {
-                  setSelectedTag(tag);
-                  setCurrentPage(1);
+            <Select
+              variant="flushed"
+              w={1 / 3}
+              onChange={(e) => {
+                const selectedValue = e.target.value;
+                if (selectedValue === "all") {
+                  setSelectedTag(null);
+                } else {
+                  setSelectedTag(uniqueTags[parseInt(selectedValue)]);
                 }
-                }>{tag}</option>
+                setCurrentPage(1);
+              }}
+            >
+              <option value="all">All</option>
+              {uniqueTags.map((tag, index) => (
+                <option key={index} value={index}>
+                  {tag}
+                </option>
               ))}
             </Select>
           </div>
@@ -90,11 +100,13 @@ export function Home() {
             {currentPosts.map((value, index) => (
               <SampleCard
                 key={index}
+                id={value.id}
                 title={value.title}
                 description={value.description}
                 createdAt={value.createdAt}
                 readTime={value.readTime}
                 imageUrl={value.imageUrl}
+                imageAlt={value.imageAlt}
                 tag={value.tag}
               />
             ))}

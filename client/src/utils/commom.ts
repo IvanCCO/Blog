@@ -23,7 +23,6 @@ export function formatDateWithYear(date: Date | undefined): string {
 }
 
 const formatMonth = (month: string): string => {
-  console.log(month);
   switch (month) {
     case "1":
       return "Jan";

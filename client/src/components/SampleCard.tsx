@@ -10,15 +10,19 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import { articlePath } from "../http/operations";
 import { formatDate } from "../utils/commom";
 import { TopicTag } from "./TopicTag";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
+  id: string;
   title: string | undefined;
   description: string | undefined;
   readTime: number | undefined;
   createdAt: string | undefined;
   imageUrl: string | undefined
+  imageAlt: string | undefined;
   tag: {
     name: string;
     color: string;
@@ -26,15 +30,17 @@ interface Props {
 }
 
 export function SampleCard({
+  id,
   title,
   description,
   readTime,
   createdAt,
   imageUrl,
+  imageAlt,
   tag,
 }: Props) {
   const date = formatDate(createdAt);
-
+  const navigate = useNavigate();
   const maxCharacters = 125;
 
   return (
@@ -47,6 +53,7 @@ export function SampleCard({
         bg={"whiteAlpha.200"}
         color={"white"}
         alignSelf={["center", "center", "stretch"]}
+        onClick={() => navigate(articlePath(id))}
       >
         <CardBody>
           <AspectRatio
@@ -58,7 +65,7 @@ export function SampleCard({
           >
             <Image
               src={imageUrl}
-              alt="Green double couch with wooden legs"
+              alt={imageAlt}
               loading="lazy"
             />
           </AspectRatio>
