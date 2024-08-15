@@ -11,7 +11,7 @@ import ARTICLES from "../../assets/JSON/Home-Posts.json";
 import ProgressBar from "../../components/ProgressBar";
 import { TopicTag } from "../../components/TopicTag";
 import NotFoundError from "../../exceptions/NotFoundError";
-import { imagePath } from "../../http/operations";
+import { formatUrl, imagePath } from "../../http/operations";
 import { NotFound } from "../NotFound/NotFound";
 import { ActionRow } from "./ActionRow";
 import { ImageBlock } from "./ImageBlock";
@@ -43,9 +43,9 @@ export function Post() {
 
     const fetchContent = async () => {
       try {
+        const path = `${articleId}/content.txt`
         const response = await fetch(
-          // s3api + /articleId
-          "",
+          `${formatUrl(path)}`,
         );
         const text : string = await response.text();
         console.log(text);

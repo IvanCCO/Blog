@@ -19,3 +19,9 @@ export const contentPath = (id: string) => {
 };
 export const lastArticlePath = `article/last`;
 
+export const storageUrl = "https://taxco-bucket.s3.us-east-2.amazonaws.com/local-articles"
+
+export const formatUrl = (uri : string) => {
+  console.log(`${storageUrl}/${uri}`)
+  return `${storageUrl}/${uri}`
+}
