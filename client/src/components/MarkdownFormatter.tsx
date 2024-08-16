@@ -85,7 +85,10 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         li(props) {
           return (
-            <li className="my-6" {...props}>
+            <li
+              className="text-base leading-relaxed lg:text-lg my-6"
+              {...props}
+            >
               {props.children}
             </li>
           );

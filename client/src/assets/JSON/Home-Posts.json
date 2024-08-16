@@ -1,29 +1,29 @@
 {
   "posts": [
     {
-      "id": "how-make-kubernetes-containers",
-      "title": "Como Fazer seu próprio Gerenciamento de Containers com Kubernetes",
-      "description": "Com o Gerenciamento de contentId nós fazemos muitas coisas, você sabe como gerenciar de maneiro correta Com o Gerenciamento de contentId nós fazemos muitas coisas, você sabe como gerenciar de maneiro correta",
+      "id": "how-i-made-taxco",
+      "title": "How I made Taxco",
+      "description": "This is How I deployed this website, with a fullstack architecture using a NoSQL database, Spring Backend application, and React app for front-end.",
       "readTime": 4,
-      "createdAt": "2024-01-10",
+      "createdAt": "2024-08-15",
       "imageUrl": "pic.jpeg",
-      "imageAlt": "fooif",
+      "imageAlt": "A man writing on a keyboard on the top of a building",
       "tag": {
-        "name": "Política",
+        "name": "Tecnology",
         "color": "purple"
       }
     },
     {
       "id": "the-millionarie-fastlane-review",
-      "title": "Que gostoso o melhor jeito",
-      "description": "é muito gostoso ter uns olhinhos para ficar brincando",
-      "readTime": 8,
-      "createdAt": "2024-02-10",
+      "title": "The book that changed the way that I see the world",
+      "description": "The millionarie fastlane is a book that changed the way I see the world. After reading this book I trully understand how people really get rich, and how can I be one of them.",
+      "readTime": 10,
+      "createdAt": "2024-08-15",
       "imageUrl": "pic.jpeg",
-      "imageAlt": "fooif",
+      "imageAlt": "alt texto",
       "tag": {
-        "name": "Futebol",
-        "color": "green"
+        "name": "Books",
+        "color": "linkedin"
       }
     }
   ]
