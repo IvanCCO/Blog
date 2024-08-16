@@ -1,9 +1,9 @@
 import { Image, Text, VStack } from "@chakra-ui/react";
 import TRANQUILAO from "../../assets/tranquilao.jpeg";
-import { imagePath } from "../../http/operations";
+import { formatUrl, imagePath } from "../../http/operations";
 
 export function ImageBlock({ articleId }: { articleId: string }) {
-  const image = imagePath(articleId);
+  const image = formatUrl(`${articleId}/pic.jpeg`);
   return (
     <>
       <VStack spacing={1} p={0}>
