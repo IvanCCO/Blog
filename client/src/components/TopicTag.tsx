@@ -1,7 +1,7 @@
 import { Tag, TagLabel } from "@chakra-ui/react";
 
 interface TagProps {
-  title: string;
+  title: string | undefined;
   color: string;
   variant: string;
   borderRadius?: string;

@@ -38,7 +38,7 @@ export function Pagination({
         variant={"link"}
         leftIcon={<ArrowBackIcon />}
         isDisabled={!hasPrev}
-        onClick={() => handlePrevPage}
+        onClick={handlePrevPage}
       >
         Prev
       </Button>
@@ -49,10 +49,11 @@ export function Pagination({
         rounded={"base"}
         isDisabled={!hasNext}
         rightIcon={<ArrowForwardIcon />}
-        onClick={() => handleNextPage}
+        onClick={handleNextPage}
       >
         Next
       </Button>
     </div>
   );
 }
+
