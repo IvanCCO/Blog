@@ -94,6 +94,25 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
           );
         },
         p(props) {
+          const childContent =
+            typeof props.children === "string" ? props.children : "";
+
+          if (childContent.startsWith("$$") && childContent.endsWith("$$")) {
+            const strippedContent = childContent.slice(2, -2);
+            return (
+              <>
+                <br />
+                <p
+                  className="text-base font-bold leading-relaxed lg:text-lg italic"
+                  {...props}
+                >
+                  {strippedContent}
+                </p>
+                <br />
+              </>
+            );
+          }
+
           return (
             <p className="text-base leading-relaxed lg:text-lg" {...props}>
               {props.children}
@@ -102,7 +121,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         blockquote(props) {
           return (
-            <blockquote className="border-l-4 border-[#EEEEEE] pl-4  bg-neutral-800 my-5 p-2 italic font-serif ">
+            <blockquote className="border-l-4 border-[#EEEEEE] pl-4  bg-[#231e24] my-5 p-2 italic font-serif ">
               {props.children}
             </blockquote>
           );
