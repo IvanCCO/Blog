@@ -10,10 +10,10 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 import { articlePath } from "../http/operations";
 import { formatDate } from "../utils/commom";
 import { TopicTag } from "./TopicTag";
-import { useNavigate } from "react-router-dom";
 
 interface Props {
   id: string;
@@ -21,7 +21,7 @@ interface Props {
   description: string | undefined;
   readTime: number | undefined;
   createdAt: string | undefined;
-  imageUrl: string | undefined
+  imageUrl: string | undefined;
   imageAlt: string | undefined;
   tag: {
     name: string;
@@ -63,21 +63,15 @@ export function SampleCard({
             mb={3}
             display={{ base: "none", sm: "none", md: "none", lg: "block" }}
           >
-            <Image
-              src={imageUrl}
-              alt={imageAlt}
-              loading="lazy"
-            />
+            <Image src={imageUrl} alt={imageAlt} loading="lazy" />
           </AspectRatio>
           <Stack spacing="3">
             <Heading size={{ base: "sm", sm: "md" }} as={"h1"}>
               {title}
             </Heading>
-            <Text
-              fontSize={{ base: "md", xl: "lg" }}
-            >
+            <Text fontSize={{ base: "md", xl: "lg" }}>
               {description != undefined && description.length > maxCharacters
-                ? description.substring(120) + "..."
+                ? description.substring(0, 120) + "..."
                 : description}
             </Text>
           </Stack>
