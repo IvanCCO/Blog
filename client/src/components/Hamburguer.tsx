@@ -10,7 +10,6 @@ import {
 import { IoIosMale, IoMdGlobe, IoMdHome } from "react-icons/io";
 
 export function Hamburguer() {
-  // TODO: Página de criar post
   return (
     <Menu>
       <MenuButton

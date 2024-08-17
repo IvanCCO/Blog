@@ -43,9 +43,8 @@ export function Post() {
 
     const fetchContent = async () => {
       try {
-        const path = `${articleId}/content.txt`
         const response = await fetch(
-          `${formatUrl(path)}`,
+          `${formatUrl(articleId, "content.txt")}`,
         );
         const text : string = await response.text();
         console.log(text);
@@ -142,7 +141,7 @@ export function Post() {
             )}
           </div>
           <div className="py-6">
-            <ImageBlock articleId={articleId} />
+            {article && <ImageBlock articleId={articleId} imagePath={article.imageUrl} imageAlt={article.imageAlt}/>}
           </div>
 
           <div>

@@ -116,15 +116,7 @@ export function ActionRow({
   };
   return (
     <HStack spacing={4} align="center">
-      {/* TODO: Criar um popup para mostrar onde compartilhar -> e copiar o link */}
-      {/* {button("Share", <ExternalLinkIcon />)} */}
       {modal()}
-      {/* TODO: Abrir um popup para saber se quer baixar a página como pdf ou se quer baixar como markdown */}
-      <ButtonFormated
-        msg="Download"
-        icon={<DownloadIcon />}
-        onClick={() => console.log("fujiwnei")}
-      />
     </HStack>
   );
 }

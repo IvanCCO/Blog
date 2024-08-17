@@ -26,7 +26,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
     <Markdown
       children={text}
       remarkPlugins={[remarkGfm, remarkToc]}
-      className={"text-white"}
+      className={"text-white pb-24"}
       components={{
         code(props) {
           const { children, className, node, ...rest } = props;
@@ -121,8 +121,14 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         blockquote(props) {
           return (
-            <blockquote className="border-l-4 border-[#EEEEEE] pl-4  bg-[#231e24] my-5 p-2 italic font-serif ">
+            <blockquote className="relative w-5/5 mx-auto my-12 p-8 pl-12 italic font-sans text-lg text-white border-l-8 border-[#D398EC] leading-7">
+              <span className="absolute left-2 top-[-10px] text-4xl text-[#D398EC] font-sans">
+                &ldquo;
+              </span>
               {props.children}
+              <span className="absolute right-2 bottom-[-10px] text-4xl text-[#D398EC] font-sans">
+                &ldquo;
+              </span>
             </blockquote>
           );
         },
@@ -169,7 +175,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
             </strong>
           );
         },
-        hr(props) {
+        hr() {
           return (
             <div className="w-full flex justify-center my-3 place-items-baseline">
               <p className="font-itim text-xl ">ههههه</p>
