@@ -49,7 +49,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         h1(props) {
           return (
             <h1
-              className="text-2xl !my-10 lg:text-3xl font-bold text-[#D398EC]"
+              className="text-2xl !my-10 lg:text-3xl font-bold text-[#AE9DFF]"
               {...props}
             >
               {props.children}
@@ -59,7 +59,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         h2(props) {
           return (
             <h1
-              className="text-xl font-bold !my-8 lg:text-2xl text-[#D398EC]"
+              className="text-xl font-bold !my-8 lg:text-2xl text-[#AE9DFF]"
               {...props}
             >
               {props.children}
@@ -69,7 +69,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         h3(props) {
           return (
             <h1
-              className="text-lg font-bold !my-6 lg:text-xl text-[#D398EC]"
+              className="text-lg font-bold !my-6 lg:text-xl text-[#AE9DFF]"
               {...props}
             >
               {props.children}
@@ -113,6 +113,12 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
             );
           }
 
+          if(childContent == "/"){
+            return (
+              <br></br>
+            )
+          }
+
           return (
             <p className="text-base leading-relaxed lg:text-lg" {...props}>
               {props.children}
@@ -121,12 +127,12 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         blockquote(props) {
           return (
-            <blockquote className="relative w-5/5 mx-auto my-12 p-8 pl-12 italic font-sans text-lg text-white border-l-8 border-[#D398EC] leading-7">
-              <span className="absolute left-2 top-[-10px] text-4xl text-[#D398EC] font-sans">
+            <blockquote className="relative w-5/5 mx-auto my-12 p-8 pl-12 italic font-sans text-lg text-white border-l-8 border-[#AE9DFF] leading-7">
+              <span className="absolute left-2 top-[-10px] text-4xl text-[#AE9DFF] font-sans">
                 &ldquo;
               </span>
               {props.children}
-              <span className="absolute right-2 bottom-[-10px] text-4xl text-[#D398EC] font-sans">
+              <span className="absolute right-2 bottom-[-10px] text-4xl text-[#AE9DFF] font-sans">
                 &ldquo;
               </span>
             </blockquote>
@@ -170,7 +176,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         strong(props) {
           return (
-            <strong className="font-bold text-[#D398EC]">
+            <strong className="font-bold text-[#AE9DFF]">
               {props.children}
             </strong>
           );
