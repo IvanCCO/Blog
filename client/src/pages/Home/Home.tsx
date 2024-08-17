@@ -43,7 +43,7 @@ export function Home() {
         createdAt={posts[0].createdAt}
         readTime={posts[0].readTime}
         description={posts[0].description}
-        imageUrl={formatUrl(`${posts[0].id.toString()}/${posts[0].imageUrl}`)}
+        imageUrl={formatUrl(posts[0].id.toString(), posts[0].imageUrl)}
       />
     );
   };
@@ -52,7 +52,7 @@ export function Home() {
     const filteredPosts = selectedTag
       ? posts.filter((post) => post.tag.name === selectedTag)
       : posts;
-    
+
     const startIndex = (currentPage - 1) * postsPerPage;
     setCurrentPosts(filteredPosts.slice(startIndex, startIndex + postsPerPage));
     setTotalPages(Math.ceil(filteredPosts.length / postsPerPage));
@@ -72,6 +72,10 @@ export function Home() {
               Posts
             </Text>
             <Select
+              sx={{
+                "--select-bg": "#16141C",
+              }}
+              bg={"#16141C"}
               variant="flushed"
               w={1 / 3}
               onChange={(e) => {
@@ -106,7 +110,7 @@ export function Home() {
                 description={value.description}
                 createdAt={value.createdAt}
                 readTime={value.readTime}
-                imageUrl={formatUrl(`${value.id}/${posts[0].imageUrl}`)}
+                imageUrl={formatUrl(value.id, posts[0].imageUrl)}
                 imageAlt={value.imageAlt}
                 tag={value.tag}
               />

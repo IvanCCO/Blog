@@ -1,4 +1,5 @@
 import ABOUTMD from "../../assets/Markdown/about.md";
+import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import MarkdownFormatter from "../../components/MarkdownFormatter";
 import ProgressBar from "../../components/ProgressBar";
@@ -14,6 +15,7 @@ export default function About() {
       <main className="main sm:px-28 md:px-44 lg:px-52 xl:px-96 2xl:px-[30rem] 3xl:px-[36rem] bg-he-background">
         <MarkdownFormatter text={String(file)} />
       </main>
+      <Footer/>
     </>
   );
 }

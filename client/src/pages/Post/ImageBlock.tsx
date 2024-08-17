@@ -2,8 +2,8 @@ import { Image, Text, VStack } from "@chakra-ui/react";
 import TRANQUILAO from "../../assets/tranquilao.jpeg";
 import { formatUrl, imagePath } from "../../http/operations";
 
-export function ImageBlock({ articleId }: { articleId: string }) {
-  const image = formatUrl(`${articleId}/pic.jpeg`);
+export function ImageBlock({ articleId, imagePath, imageAlt}: { articleId: string, imagePath: string, imageAlt: string}) {
+  const image = formatUrl(articleId, imagePath);
   return (
     <>
       <VStack spacing={1} p={0}>
@@ -15,7 +15,7 @@ export function ImageBlock({ articleId }: { articleId: string }) {
           fallbackStrategy={"onError"}
         />
         <Text fontSize={"xs"} color={"GrayText"}>
-          @Bing
+          @Bing: {imageAlt}
         </Text>
       </VStack>
     </>
