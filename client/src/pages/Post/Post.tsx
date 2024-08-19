@@ -63,48 +63,6 @@ export function Post() {
       <SkeletonText mt="4" noOfLines={2} spacing="4" skeletonHeight="2" />
     </Box>
   );
-  const meta = [
-    {
-      name: "description",
-      content: article.description,
-    },
-    {
-      property: "og:description",
-      content: article.description,
-    },
-    {
-      property: "og:image",
-      content: formatUrl(article.id, article.imageUrl),
-    },
-    {
-      property: "og:title",
-      content: article.title,
-    },
-    {
-      property: "og:type",
-      content: "article",
-    },
-    {
-      name: "twitter:creator",
-      content: "Ivan Miranda",
-    },
-    {
-      name: "twitter:card",
-      content: "summary_large_image",
-    },
-    {
-      name: "twitter:title",
-      content: article.title,
-    },
-    {
-      name: "twitter:description",
-      content: article.description,
-    },
-    {
-      name: "twitter:image",
-      content: formatUrl(article.id, article.imageUrl),
-    },
-  ];
 
   const PostPage: React.FC = () => {
     if (errors.some((error) => error instanceof NotFoundError)) {
@@ -116,7 +74,48 @@ export function Post() {
           <SEO
             title={article.title}
             description={article.description}
-            meta={meta}
+            meta={[
+              {
+                name: "description",
+                content: article.description,
+              },
+              {
+                property: "og:description",
+                content: article.description,
+              },
+              {
+                property: "og:image",
+                content: formatUrl(article.id, article.imageUrl),
+              },
+              {
+                property: "og:title",
+                content: article.title,
+              },
+              {
+                property: "og:type",
+                content: "article",
+              },
+              {
+                name: "twitter:creator",
+                content: "Ivan Miranda",
+              },
+              {
+                name: "twitter:card",
+                content: "summary_large_image",
+              },
+              {
+                name: "twitter:title",
+                content: article.title,
+              },
+              {
+                name: "twitter:description",
+                content: article.description,
+              },
+              {
+                name: "twitter:image",
+                content: formatUrl(article.id, article.imageUrl),
+              },
+            ]}
           ></SEO>
         )}
 

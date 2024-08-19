@@ -14,8 +14,8 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <SpeedInsights/>
-      <Analytics/>
+      {/* <SpeedInsights/>
+      <Analytics/> */}
       <App />
     </BrowserRouter>
   </React.StrictMode>,
