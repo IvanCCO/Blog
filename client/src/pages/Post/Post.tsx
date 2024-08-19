@@ -72,25 +72,25 @@ export function Post() {
       <>
         {article && (
           <Helmet>
-            <meta name="description" property="og:description" content={article.description} />
             <meta name="description" content={article.description} />
+            <meta property="og:description" content={article.description} />
             <meta
-              name="image"
               property="og:image"
               content={formatUrl(article.id, article.imageUrl)}
-            ></meta>
-            <meta name="title" property="og:title" content={article.title} />
+            />
+            <meta property="og:title" content={article.title} />
             <meta property="og:type" content="article" />
             <title itemProp="name" lang="en">
               {article.title}
             </title>
             <meta name="twitter:creator" content="Ivan Miranda" />
-            <meta
-              name="twitter:card"
-              content={formatUrl(article.id, article.imageUrl)}
-            />
+            <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content={article.title} />
             <meta name="twitter:description" content={article.description} />
+            <meta
+              name="twitter:image"
+              content={formatUrl(article.id, article.imageUrl)}
+            />
           </Helmet>
         )}
 
