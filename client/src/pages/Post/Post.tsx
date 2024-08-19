@@ -11,7 +11,7 @@ import ARTICLES from "../../assets/JSON/Home-Posts.json";
 import ProgressBar from "../../components/ProgressBar";
 import { TopicTag } from "../../components/TopicTag";
 import NotFoundError from "../../exceptions/NotFoundError";
-import { formatUrl, imagePath } from "../../http/operations";
+import { formatUrl } from "../../http/operations";
 import { NotFound } from "../NotFound/NotFound";
 import { ActionRow } from "./ActionRow";
 import { ImageBlock } from "./ImageBlock";
@@ -43,10 +43,8 @@ export function Post() {
 
     const fetchContent = async () => {
       try {
-        const response = await fetch(
-          `${formatUrl(articleId, "content.txt")}`,
-        );
-        const text : string = await response.text();
+        const response = await fetch(`${formatUrl(articleId, "content.txt")}`);
+        const text: string = await response.text();
         console.log(text);
         setContent(text);
       } catch (error) {
@@ -74,17 +72,25 @@ export function Post() {
       <>
         {article && (
           <Helmet>
-            <meta
-              name="description"
-              property="og:description"
-              content={article.description}
-            ></meta>
+            <meta name="description" property="og:description" content={article.description} />
+            <meta name="description" content={article.description} />
             <meta
               name="image"
               property="og:image"
-              content={imagePath(article.id)}
+              content={formatUrl(article.id, article.imageUrl)}
             ></meta>
             <meta name="title" property="og:title" content={article.title} />
+            <meta property="og:type" content="article" />
+            <title itemProp="name" lang="en">
+              {article.title}
+            </title>
+            <meta name="twitter:creator" content="Ivan Miranda" />
+            <meta
+              name="twitter:card"
+              content={formatUrl(article.id, article.imageUrl)}
+            />
+            <meta name="twitter:title" content={article.title} />
+            <meta name="twitter:description" content={article.description} />
           </Helmet>
         )}
 
@@ -141,7 +147,13 @@ export function Post() {
             )}
           </div>
           <div className="py-6">
-            {article && <ImageBlock articleId={articleId} imagePath={article.imageUrl} imageAlt={article.imageAlt}/>}
+            {article && (
+              <ImageBlock
+                articleId={articleId}
+                imagePath={article.imageUrl}
+                imageAlt={article.imageAlt}
+              />
+            )}
           </div>
 
           <div>
