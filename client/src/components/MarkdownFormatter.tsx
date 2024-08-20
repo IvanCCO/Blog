@@ -113,10 +113,8 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
             );
           }
 
-          if(childContent == "/"){
-            return (
-              <br></br>
-            )
+          if (childContent == "/") {
+            return <br></br>;
           }
 
           return (
@@ -194,9 +192,6 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
             <Center my={6}>
               <VStack>
                 <Image src={props.src} boxSize="250px" />
-                <Text fontSize={"xs"} color={"GrayText"}>
-                  {props.alt}
-                </Text>
               </VStack>
             </Center>
           );

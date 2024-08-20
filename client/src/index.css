@@ -9,8 +9,8 @@
   background-image: linear-gradient(
     transparent 0,
     transparent calc(50% - 9px),
-    rgba(85, 0, 255, 0.45) calc(50% - 9px),
-    rgba(86, 8, 255, 0.445) 100%
+    rgba(224, 1, 233, 0.45) calc(50% - 9px),
+    rgba(224, 9, 233, 0.445) 100%
   );
   transition: all 230ms ease-in-out 0s;
   background-size: 100% 230%;
@@ -22,8 +22,8 @@
   background-image: linear-gradient(
     transparent 0,
     transparent calc(50% - 9px),
-    rgba(85, 0, 255, 0.771) calc(50% - 9px),
-    rgba(85, 0, 255, 0.741) 100%
+    rgba(224, 0, 233, 0.771) calc(50% - 9px),
+    rgba(224, 0, 233, 0.741) 100%
   );
   background-position: 0 100%;
 }
