@@ -74,7 +74,7 @@ export function ActionRow({
                 <WhatsappShareButton
                   url={shareUrl}
                   title={title}
-                  separator="=> "
+                  separator={"\n".repeat(2)}
                 >
                   <WhatsappIcon size={iconSize} round />
                 </WhatsappShareButton>
