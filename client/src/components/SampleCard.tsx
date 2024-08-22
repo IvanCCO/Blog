@@ -90,7 +90,6 @@ export function SampleCard({
                 title={tag.name}
                 color={tag.color}
                 variant="solid"
-                borderRadius="full"
               />
               <div className="inline-flex space-x-1 place-items-center minW-fit text-neutral-300">
                 <p className="text-sm mt-4 min-w-fit">{date}</p>

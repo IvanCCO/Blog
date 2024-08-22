@@ -2,6 +2,7 @@
   "posts": [
     {
       "id": "the-millionarie-fastlane-review",
+      "enabled": false,
       "title": "The book that changed the way that I see the world",
       "description": "The millionarie fastlane is a book that changed the way I see the world. After reading this book I trully understand how people really get rich, and how can I be one of them.",
       "readTime": 10,
@@ -15,6 +16,7 @@
     },
     {
       "id": "how-i-made-taxco",
+      "enabled": true,
       "title": "How I made Taxco",
       "description": "This is How I deployed this website, with a fullstack architecture using a NoSQL database, Spring Backend application, and React app for front-end.",
       "readTime": 4,

@@ -100,7 +100,7 @@ export function ActionRow({
       <Button
         variant={"outline"}
         boxShadow="md"
-        rounded="full"
+        rounded="md"
         bg={"white"}
         color={"black"}
         size={{ base: "xs", sm: "sm" }}

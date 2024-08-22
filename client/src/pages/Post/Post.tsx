@@ -129,7 +129,6 @@ export function Post() {
                   color={article.tag.color}
                   variant="solid"
                   title={article.tag.name}
-                  borderRadius="full"
                 />
               ) : (
                 <Skeleton
