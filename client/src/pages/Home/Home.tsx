@@ -15,7 +15,7 @@ function getUniqueTags(posts: any[]): string[] {
 export function Home() {
   const sampleCards: JSX.Element[] = [];
 
-  const posts = ARTICLES.posts;
+  const [posts, setPosts] = useState(ARTICLES.posts.filter((p) => p.enabled));
 
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 3;
@@ -44,6 +44,7 @@ export function Home() {
         readTime={posts[0].readTime}
         description={posts[0].description}
         imageUrl={formatUrl(posts[0].id.toString(), posts[0].imageUrl)}
+        imageAlt={posts[0].imageAlt}
       />
     );
   };
@@ -53,6 +54,7 @@ export function Home() {
       ? posts.filter((post) => post.tag.name === selectedTag)
       : posts;
 
+    setPosts(filteredPosts);
     const startIndex = (currentPage - 1) * postsPerPage;
     setCurrentPosts(filteredPosts.slice(startIndex, startIndex + postsPerPage));
     setTotalPages(Math.ceil(filteredPosts.length / postsPerPage));
@@ -72,6 +74,7 @@ export function Home() {
               Posts
             </Text>
             <Select
+              aria-label="Select a topic"
               sx={{
                 "--select-bg": "transparent !important",
               }}
@@ -110,7 +113,7 @@ export function Home() {
                 description={value.description}
                 createdAt={value.createdAt}
                 readTime={value.readTime}
-                imageUrl={formatUrl(value.id, posts[0].imageUrl)}
+                imageUrl={formatUrl(value.id, value.imageUrl)}
                 imageAlt={value.imageAlt}
                 tag={value.tag}
               />

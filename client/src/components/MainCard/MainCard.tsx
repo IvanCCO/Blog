@@ -21,6 +21,7 @@ interface Props {
   readTime: number;
   createdAt: Date | string | undefined;
   imageUrl : string | undefined
+  imageAlt : string | undefined
 }
 
 export function MainCard({
@@ -29,7 +30,8 @@ export function MainCard({
   description,
   readTime,
   createdAt,
-  imageUrl
+  imageUrl,
+  imageAlt
 }: Props) {
   const navigate = useNavigate();
 
@@ -56,6 +58,7 @@ export function MainCard({
           <Image
             w={"full"}
             src={imageUrl}
+            alt={imageAlt}
             borderRadius={"md"}
             objectFit="cover"
             fallbackStrategy="onError"

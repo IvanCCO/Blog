@@ -54,7 +54,6 @@ export function Post() {
     fetchArticle();
     fetchContent();
 
-    console.log(content);
   }, []);
 
   const ProfileRowSkeleton = (

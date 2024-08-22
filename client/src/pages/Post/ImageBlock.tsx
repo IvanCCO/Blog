@@ -9,7 +9,7 @@ export function ImageBlock({ articleId, imagePath, imageAlt}: { articleId: strin
       <VStack spacing={1} p={0}>
         <Image
           src={image}
-          alt={articleId}
+          alt={imageAlt}
           objectFit="cover"
           fallbackSrc={TRANQUILAO}
           fallbackStrategy={"onError"}
