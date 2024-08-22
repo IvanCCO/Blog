@@ -15,7 +15,7 @@ function getUniqueTags(posts: any[]): string[] {
 export function Home() {
   const sampleCards: JSX.Element[] = [];
 
-  const posts = ARTICLES.posts.filter((post) => post.enabled);
+  const posts = ARTICLES.posts;
 
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 3;
