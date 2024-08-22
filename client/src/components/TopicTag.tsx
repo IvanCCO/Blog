@@ -4,10 +4,9 @@ interface TagProps {
   title: string | undefined;
   color: string;
   variant: string;
-  borderRadius?: string;
 }
 
-export function TopicTag({ title, color, variant, borderRadius }: TagProps) {
+export function TopicTag({ title, color, variant }: TagProps) {
   return (
     <Tag
       size={"md"}

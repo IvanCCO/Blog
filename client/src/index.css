@@ -269,3 +269,24 @@ h4::selection {
     box-shadow: none;
   }
 }
+
+html {
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    width: 4px; 
+}
+
+::-webkit-scrollbar-track {
+    background: #16141C; 
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #C2410C; 
+    border-radius: 10px; 
+}
+
+body {
+    scrollbar-width: thin; 
+    scrollbar-color: #C2410C #16141C; 
+}

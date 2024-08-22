@@ -73,7 +73,7 @@ export function Home() {
             </Text>
             <Select
               sx={{
-                "--select-bg": "#16141C",
+                "--select-bg": "transparent !important",
               }}
               bg={"#16141C"}
               variant="flushed"
