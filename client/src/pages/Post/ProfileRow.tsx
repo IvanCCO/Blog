@@ -18,7 +18,7 @@ export function ProfileRow({
       py={3}
       color={"white"}
     >
-      <Avatar name="Segun Adebayo" src={DEEU} size={{ base: "md", md: "lg" }} />
+      <Avatar name="Ivan Miranda" src={DEEU} size={{ base: "md", md: "lg" }} />
       <Box>
         <h1 className="text-sm sm:text-base lg:text-lg">Ivan Miranda</h1>
         <p className="text-xs text-neutral-300 sm:text-base">

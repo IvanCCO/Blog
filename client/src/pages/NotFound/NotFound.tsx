@@ -39,7 +39,11 @@ export function NotFound() {
             Go to our home page, that definitely does exists.
             <br></br>
             If you think that's a bug,{" "}
-            <a href="#" className="text-purple-400 font-semibold">
+            <a
+              href="https://www.linkedin.com/in/ivan-medeiros-024133241"
+              target="_blank"
+              className="text-purple-400 font-semibold"
+            >
               contact me
             </a>
           </Text>

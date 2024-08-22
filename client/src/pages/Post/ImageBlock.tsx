@@ -1,8 +1,16 @@
 import { Image, Text, VStack } from "@chakra-ui/react";
 import TRANQUILAO from "../../assets/tranquilao.jpeg";
-import { formatUrl, imagePath } from "../../http/operations";
+import { formatUrl } from "../../http/operations";
 
-export function ImageBlock({ articleId, imagePath, imageAlt}: { articleId: string, imagePath: string, imageAlt: string}) {
+export function ImageBlock({
+  articleId,
+  imagePath,
+  imageAlt,
+}: {
+  articleId: string;
+  imagePath: string;
+  imageAlt: string;
+}) {
   const image = formatUrl(articleId, imagePath);
   return (
     <>

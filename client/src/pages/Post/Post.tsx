@@ -17,14 +17,6 @@ import { ActionRow } from "./ActionRow";
 import { ImageBlock } from "./ImageBlock";
 import { ProfileRow } from "./ProfileRow";
 
-type Article = {
-  id: string;
-  title: string;
-  description: string;
-  readTime: number;
-  tag: string;
-  createdAt: Date;
-};
 export function Post() {
   const { articleId = "" } = useParams();
   const [article, setArticle] = useState<any | null>(null);
@@ -53,7 +45,6 @@ export function Post() {
     };
     fetchArticle();
     fetchContent();
-
   }, []);
 
   const ProfileRowSkeleton = (

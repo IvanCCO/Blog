@@ -27,7 +27,7 @@ export function SocialMediaList() {
     },
     {
       url: "https://www.youtube.com/channel/UCGl5UhjdrFYYPryKV5OIsiQ",
-    }
+    },
   ];
 
   const iconSize = useBreakpointValue({

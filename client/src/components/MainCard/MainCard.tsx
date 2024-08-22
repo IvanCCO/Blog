@@ -10,8 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import HERO from "../../assets/heroico.jpeg";
-import { articlePath, imagePath } from "../../http/operations";
+import { articlePath } from "../../http/operations";
 import { formatDate } from "../../utils/commom";
 
 interface Props {
@@ -20,8 +19,8 @@ interface Props {
   description: string;
   readTime: number;
   createdAt: Date | string | undefined;
-  imageUrl : string | undefined
-  imageAlt : string | undefined
+  imageUrl: string | undefined;
+  imageAlt: string | undefined;
 }
 
 export function MainCard({
@@ -31,7 +30,7 @@ export function MainCard({
   readTime,
   createdAt,
   imageUrl,
-  imageAlt
+  imageAlt,
 }: Props) {
   const navigate = useNavigate();
 

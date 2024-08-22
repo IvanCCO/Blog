@@ -15,7 +15,7 @@ export default function About() {
       <main className="main sm:px-28 md:px-44 lg:px-52 xl:px-96 2xl:px-[30rem] 3xl:px-[36rem] bg-he-background">
         <MarkdownFormatter text={String(file)} />
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }

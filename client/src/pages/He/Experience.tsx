@@ -72,7 +72,7 @@ export default function Experience() {
       southsEagle,
     ),
     ExpecienceBlock(
-      "2023 - Current" ,
+      "2023 - Current",
       "Bankend Developer",
       "Responsible for the backend development of limit, secure location management projects, and external integrations. Developed business logic to handle Brazilian monetary transactions such as TED, TEF, and PIX. Additionally, worked on Kubernetes cluster management, conducting migrations, overseeing pods, removing unnecessary resources, contributing to cloud cost reduction, and applying FinOps concepts. Developed solutions to enhance observability and monitoring by constructing dashboards with the necessary metrics. See more on my resume...",
       c6Link,
