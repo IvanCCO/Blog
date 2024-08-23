@@ -49,7 +49,7 @@ export function SampleCard({
         cursor={"pointer"}
         boxShadow={"base"}
         minW="220px"
-        maxW={"330px"}
+        maxW={["full", "full", "330px"]}
         bg={"whiteAlpha.200"}
         color={"white"}
         alignSelf={["center", "center", "stretch"]}
@@ -61,7 +61,7 @@ export function SampleCard({
             maxW={"full"}
             maxH={"150px"}
             mb={3}
-            display={{ base: "none", sm: "none", md: "none", lg: "block" }}
+            display={"block"}
           >
             <Image src={imageUrl} alt={imageAlt} loading="lazy" />
           </AspectRatio>

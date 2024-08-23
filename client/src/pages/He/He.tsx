@@ -45,7 +45,6 @@ export function He() {
             <p className="text-center font-inter font-bold text-base sm:text-lg xl:text-2xl">
               My Posts
             </p>
-            {/* TODO: Linkar para página dos meus posts */}
             <ArrowForwardIcon boxSize={{ base: "20px", xl: "30px" }} />
           </div>
         </Reveal>
