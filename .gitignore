@@ -27,3 +27,6 @@ yarn-error.log*
 # others
 /client/.vscode
 /.idea
+
+.next
+next-env.d.ts
