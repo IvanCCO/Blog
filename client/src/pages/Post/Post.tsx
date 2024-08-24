@@ -60,55 +60,6 @@ export function Post() {
     }
     return (
       <>
-        {article && (
-          <SEO
-            title={article.title}
-            description={article.description}
-            meta={[
-              {
-                name: "description",
-                content: article.description,
-              },
-              {
-                property: "og:description",
-                content: article.description,
-              },
-              {
-                property: "og:image",
-                content: formatUrl(article.id, article.imageUrl),
-              },
-              {
-                property: "og:title",
-                content: article.title,
-              },
-              {
-                property: "og:type",
-                content: "article",
-              },
-              {
-                name: "twitter:creator",
-                content: "Ivan Miranda",
-              },
-              {
-                name: "twitter:card",
-                content: "summary_large_image",
-              },
-              {
-                name: "twitter:title",
-                content: article.title,
-              },
-              {
-                name: "twitter:description",
-                content: article.description,
-              },
-              {
-                name: "twitter:image",
-                content: formatUrl(article.id, article.imageUrl),
-              },
-            ]}
-          ></SEO>
-        )}
-
         <ProgressBar />
         <Header />
         <main className="main space-y-2 sm:px-28 md:px-44 lg:px-52 xl:px-96 2xl:px-[30rem] 3xl:px-[36rem] bg-he-background">
