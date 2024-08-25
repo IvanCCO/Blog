@@ -1,4 +1,4 @@
-const IMAGE_STORE_URL="https://taxco-bucket.s3.us-east-2.amazonaws.com"
+const IMAGE_STORE_URL = process.env.NEXT_PUBLIC_IMAGE_STORE_URL;
 export const formatUrlArticle = (articleId: string, path: string) => {
   return `${IMAGE_STORE_URL}/local-articles/${articleId}/${path}`;
 };
