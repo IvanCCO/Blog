@@ -1,3 +1,4 @@
+import { formatUrlDefault } from "@/app/_lib/formatUrl";
 import { Button, Icon, Link } from "@chakra-ui/react";
 import { IoMdPaper } from "react-icons/io";
 
@@ -30,7 +31,7 @@ export default function About() {
       </div>
 
       <div className="w-full grid place-items-center pt-5">
-        <Link href={"https://taxco-bucket.s3.us-east-2.amazonaws.com/default/Resume.pdf"} isExternal>
+        <Link href={formatUrlDefault("Resume.pdf")} isExternal>
           <Button
             leftIcon={<Icon as={IoMdPaper} />}
             size={{ base: "md", xl: "lg" }}

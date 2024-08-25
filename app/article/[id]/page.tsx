@@ -14,7 +14,7 @@ import { ActionRow } from "./ActionRow";
 import { ImageBlock } from "./ImageBlock";
 import { ProfileRow } from "./ProfileRow";
 import { useParams } from "next/navigation";
-import { formatUrl } from "@/app/_lib/formatUrl";
+import { formatUrlArticle } from "@/app/_lib/formatUrl";
 
 export default function Post() {
   const { id } = useParams();
@@ -48,7 +48,7 @@ export default function Post() {
     };
     const fetchContent = async () => {
       try {
-        const response = await fetch(`${formatUrl(String(id), "content.txt")}`);
+        const response = await fetch(`${formatUrlArticle(String(id), "content.txt")}`);
         const text: string = await response.text();
         console.log(text);
         setContent(text);

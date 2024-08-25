@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import { MainCard } from "../components/MainCard";
 import { Pagination } from "../components/Pagination";
 import { SampleCard } from "../components/SampleCard";
-import { formatUrl } from "./_lib/formatUrl";
+import { formatUrlArticle } from "./_lib/formatUrl";
 import { useRouter } from "next/navigation";
 
 interface Post {
@@ -81,7 +81,7 @@ export default function Home() {
         createdAt={posts[0].createdAt}
         readTime={posts[0].readTime}
         description={posts[0].description}
-        imageUrl={formatUrl(posts[0].id.toString(), posts[0].imageUrl)}
+        imageUrl={formatUrlArticle(posts[0].id.toString(), posts[0].imageUrl)}
         imageAlt={posts[0].imageAlt}
         onClick={() => router.push(`article/${posts[0].id}`)}
       />
@@ -143,7 +143,7 @@ export default function Home() {
                 description={value.description}
                 createdAt={value.createdAt}
                 readTime={value.readTime}
-                imageUrl={formatUrl(value.id, value.imageUrl)}
+                imageUrl={formatUrlArticle(value.id, value.imageUrl)}
                 imageAlt={value.imageAlt}
                 tag={value.tag}
                 onClick={() => router.push(`article/${value.id}`)}

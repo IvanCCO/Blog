@@ -1,4 +1,4 @@
-import { formatUrl } from "@/app/_lib/formatUrl";
+import { formatUrlArticle } from "@/app/_lib/formatUrl";
 import { Image, Text, VStack } from "@chakra-ui/react";
 
 export function ImageBlock({
@@ -14,7 +14,7 @@ export function ImageBlock({
     <>
       <VStack spacing={1} p={0}>
         <Image
-          src={formatUrl(articleId, imagePath)}
+          src={formatUrlArticle(articleId, imagePath)}
           alt={imageAlt}
           objectFit="cover"
           fallbackStrategy={"onError"}
