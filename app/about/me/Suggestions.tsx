@@ -18,7 +18,13 @@ export default function Suggestions() {
 
   const Recomendation = ({ title, author, url, buyUrl }: Props) => (
     <div className="flex flex-col justify-center place-items-center space-y-3 self-center lg:flex-row  lg:justify-start lg:space-x-4">
-      <Image src={url} boxSize={"180px"} objectFit={"contain"} maxW={"150px"} />
+      <Image
+        src={url}
+        boxSize={"180px"}
+        objectFit={"contain"}
+        maxW={"150px"}
+        alt={`Book: ${title}`}
+      />
       <div className="flex justify-between flex-col space-y-5">
         <div className="text-center lg:text-start">
           <p className="text-xl font-semibold">{title}</p>

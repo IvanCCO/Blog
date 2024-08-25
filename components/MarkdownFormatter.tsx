@@ -33,10 +33,11 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
             <div className="my-12 text-xs lg:text-sm">
               <SyntaxHighlighter
                 PreTag="div"
-                children={String(children).replace(/\n$/, "")}
                 language={match[1]}
                 style={gruvboxDark}
-              />
+              >
+                {String(children).replace(/\n$/, "")}
+              </SyntaxHighlighter>
             </div>
           ) : (
             <code {...rest} className={"bg-gray-600 px-1 font-mono"}>
