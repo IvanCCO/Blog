@@ -1,36 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Taxco is my personal portfolio where I will share articles about technology and other topics that interest me. It marks my first complete personal project.
 
-## Getting Started
+Taxco bears some resemblance to Medium, but it's exclusively for my use. Currently, I am in the process of learning TypeScript, React, and frontend development in general. While I am more accustomed to backend development, Taxco is designed to be a full-stack project. I am committed to adhering to best practices for frontend development as I continue to explore and learn.
 
-First, run the development server:
+    For some components, I am utilizing Chakra UI.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Requirements
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To run Taxco, you only need to have Node installed. ❤
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+git clone https://github.com/IvanCCO/Taxco
+cd Taxo
+npm install
+npm start
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Contribute
+If you wish to contribute, please provide clear and concise commit messages to help me understand the changes you made. Your contributions are greatly appreciated!
