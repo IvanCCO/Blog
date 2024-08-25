@@ -7,6 +7,7 @@ import { Pagination } from "../components/Pagination";
 import { SampleCard } from "../components/SampleCard";
 import { formatUrlArticle } from "./_lib/formatUrl";
 import { useRouter } from "next/navigation";
+import { itim } from "./fonts";
 
 interface Post {
   id: string;

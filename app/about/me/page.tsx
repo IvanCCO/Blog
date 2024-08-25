@@ -1,5 +1,5 @@
 "use client";
-import Router, { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Image, useMediaQuery } from "@chakra-ui/react";
 import MY_PIC from "../../../public/myself.jpg";
@@ -11,8 +11,10 @@ import Experience from "./Experience";
 import SocialMediaList from "./SocialMediaList";
 import Suggestions from "./Suggestions";
 import Skills from "./Skills";
+import Footer from "@/components/Footer";
 
 export default function He() {
+  const router = useRouter();
   const desktopWorking = (
     <div className="flex justify-between h-4/6">
       <div className="flex flex-col w-1/2 pr-7 space-y-7 xl:justify-evenly">
@@ -38,7 +40,7 @@ export default function He() {
         <Reveal position={{ y: -75 }} animation={{ duration: 0.2, delay: 2 }}>
           <div
             className="gradient relative items-center content-center text-white text-md rounded-md py-2 px-4 z-0 flex-row inline-flex w-full justify-center cursor-pointer xl:py-5"
-            onClick={() => console.log("")}
+            onClick={() => router.push("/")}
           >
             <p className="text-center font-inter font-bold text-base sm:text-lg xl:text-2xl">
               My Posts
@@ -96,7 +98,10 @@ export default function He() {
       />
       <div className="w-1/2 flex flex-col space-y-3 justify-center place-items-center">
         <SocialMediaList />
-        <div className="gradient relative items-center content-center text-white text-md rounded-md py-2 px-4 z-0 flex-row inline-flex w-full justify-center cursor-pointer">
+        <div
+          className="gradient relative items-center content-center text-white text-md rounded-md py-2 px-4 z-0 flex-row inline-flex w-full justify-center cursor-pointer"
+          onClick={() => router.push("/")}
+        >
           <p className="text-center font-inter font-bold text-base sm:text-lg">
             My Posts
           </p>
@@ -155,7 +160,7 @@ export default function He() {
           </div>
           <Suggestions />
           <Contact />
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </main>
     </>
