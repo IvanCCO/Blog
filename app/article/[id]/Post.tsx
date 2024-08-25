@@ -93,12 +93,12 @@ export default function Post({ postData }: PostProps) {
               ProfileRowSkeleton
             )}
 
-            {article && (
+            {/* {article && (
               <ActionRow
                 title={article.title}
                 description={article.description}
               />
-            )}
+            )} */}
           </div>
           <div className="py-6">
             {article && (
