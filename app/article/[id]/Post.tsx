@@ -11,7 +11,7 @@ import { TopicTag } from "../../../components/TopicTag";
 import { ActionRow } from "./ActionRow";
 import { ImageBlock } from "./ImageBlock";
 import { ProfileRow } from "./ProfileRow";
-import { useParams, useRouter } from "next/navigation";
+import {  useRouter } from "next/navigation";
 import { formatUrlArticle } from "@/app/_lib/formatUrl";
 
 type PostProps = {

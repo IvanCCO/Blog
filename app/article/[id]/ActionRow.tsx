@@ -24,6 +24,7 @@ import {
 } from "react-share";
 
 
+
 export function ActionRow({
   title,
   description,
@@ -31,9 +32,10 @@ export function ActionRow({
   title: string;
   description: string;
 }) {
+
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const shareUrl = window.location.href;
+  const shareUrl = "taxco.vercel.app"
   const iconSize = useBreakpointValue({
     base: "15vw",
     sm: "60px",
