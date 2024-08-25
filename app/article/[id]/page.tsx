@@ -30,7 +30,14 @@ export async function generateMetadata(
     title: post.title,
     description: post.description,
     openGraph: {
-      images: [formatUrlArticle(id, post.imageUrl), ...previousImages],
+      images: [
+        {
+          url: formatUrlArticle(id, post.imageUrl),
+          width: 800,
+          height: 600,
+        },
+      ],
+      type: "article",
       title: post.title,
       description: post.description,
     },
@@ -38,8 +45,8 @@ export async function generateMetadata(
       card: "summary_large_image",
       images: formatUrlArticle(id, post.imageUrl),
       title: post.title,
-      description: post.description
-    }
+      description: post,
+    },
   };
 }
 
