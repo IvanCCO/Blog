@@ -1,28 +1,10 @@
 import { Metadata, ResolvingMetadata } from "next";
+import { getPostData } from "./cache";
 import { formatUrlArticle } from "@/app/_lib/formatUrl";
-import Post from "./Post"; // Importa o componente separado
-
-const postCache: { [id: string]: any } = {};
-
-export async function getPostData(id: string): Promise<any> {
-  if (postCache[id]) {
-    return postCache[id];
-  }
-
-  const post = await fetch(`http://localhost:3000/api/posts`)
-    .then((res) => res.json())
-    .then((posts) => posts.find((post: any) => post.id === id));
-
-  if (post) {
-    postCache[id] = post;
-  }
-
-  return post;
-}
+import Post from "./Post";
 
 type Props = {
   params: { id: string };
-  searchParams: { [key: string]: string | string[] | undefined };
 };
 
 export async function generateMetadata(
@@ -35,6 +17,7 @@ export async function generateMetadata(
   if (!post) {
     return {
       title: "Post not found",
+      description: "The post you are looking for does not exist.",
       openGraph: {
         images: [],
       },
@@ -47,9 +30,9 @@ export async function generateMetadata(
     title: post.title,
     description: post.description,
     openGraph: {
+      images: [formatUrlArticle(id, post.imageUrl), ...previousImages],
       title: post.title,
       description: post.description,
-      images: [formatUrlArticle(id, post.imageUrl), ...previousImages],
     },
   };
 }
