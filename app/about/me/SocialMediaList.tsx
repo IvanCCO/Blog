@@ -46,6 +46,7 @@ export default function SocialMediaList() {
     >
       {socialMedias.map((value, index) => (
         <Reveal
+          key={index}
           animation={{ delay: 1.0 + index / 3 }}
           position={{ y: -75, x: -30 }}
         >

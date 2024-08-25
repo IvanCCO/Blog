@@ -6,15 +6,15 @@ import MarkdownFormatter from "../../../components/MarkdownFormatter";
 
 import { Box, Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
 import { useEffect } from "react";
-// import ARTICLES from "../../assets/JSON/Home-Posts.json";
 import ProgressBar from "../../../components/ProgressBar";
 import { TopicTag } from "../../../components/TopicTag";
-// import { NotFound } from "../NotFound/NotFound";
+import { Helmet } from "react-helmet";
 import { ActionRow } from "./ActionRow";
 import { ImageBlock } from "./ImageBlock";
 import { ProfileRow } from "./ProfileRow";
 import { useParams } from "next/navigation";
 import { formatUrlArticle } from "@/app/_lib/formatUrl";
+import Head from "next/head";
 
 export default function Post() {
   const { id } = useParams();
@@ -48,7 +48,9 @@ export default function Post() {
     };
     const fetchContent = async () => {
       try {
-        const response = await fetch(`${formatUrlArticle(String(id), "content.txt")}`);
+        const response = await fetch(
+          `${formatUrlArticle(String(id), "content.txt")}`
+        );
         const text: string = await response.text();
         console.log(text);
         setContent(text);
@@ -58,7 +60,7 @@ export default function Post() {
     };
 
     fetchArticle();
-    fetchContent()
+    fetchContent();
   }, [id]);
 
   const ProfileRowSkeleton = (
@@ -68,12 +70,23 @@ export default function Post() {
     </Box>
   );
 
+
   const PostPage: React.FC = () => {
     // if (errors.some((error) => error instanceof NotFoundError)) {
     //   return <NotFound />;
     // }
     return (
       <>
+        <Head>
+          <title>{"xuxu"}</title>
+          <meta name="description" content={"ifuebf"} />
+          <meta property="og:title" content={"feriub"} />
+          <meta property="og:description" content={"feiubj"} />
+          <meta
+            property="og:image"
+            content={article?.imageUrl || "/default-image.jpg"}
+          />
+        </Head>
         <ProgressBar />
         <Header />
         <main className="main space-y-2 sm:px-28 md:px-44 lg:px-52 xl:px-96 2xl:px-[30rem] 3xl:px-[36rem] bg-he-background">

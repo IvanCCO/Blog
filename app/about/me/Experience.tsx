@@ -99,7 +99,7 @@ export default function Experience() {
   return (
     <div className="container">
       {experiences.map((value, index) => (
-        <Reveal position={{ y: 75 }} animation={{ delay: 1.0 + index / 8 }}>
+        <Reveal key={index} position={{ y: 75 }} animation={{ delay: 1.0 + index / 8 }}>
           {value}
         </Reveal>
       ))}

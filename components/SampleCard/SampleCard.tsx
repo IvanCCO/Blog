@@ -10,7 +10,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { TopicTag } from "./TopicTag";
+import { TopicTag } from "../TopicTag";
 import { formatDate } from "@/app/_lib/formatDate";
 
 interface Props {

@@ -2,12 +2,13 @@
 import { Select, Stack, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
-import { MainCard } from "../components/MainCard";
+import { MainCard } from "../components/MainCard/MainCard";
 import { Pagination } from "../components/Pagination";
-import { SampleCard } from "../components/SampleCard";
+import { SampleCard } from "../components/SampleCard/SampleCard";
 import { formatUrlArticle } from "./_lib/formatUrl";
 import { useRouter } from "next/navigation";
-import { itim } from "./fonts";
+import MainCardSkeleton from "@/components/MainCard/MainCardSkeleton";
+import SampleCardSkeleton from "@/components/SampleCard/SampleCardComponent";
 
 interface Post {
   id: string;
@@ -29,8 +30,7 @@ function getUniqueTags(posts: any[]): string[] {
 }
 
 export default function Home() {
-
-  const router = useRouter()
+  const router = useRouter();
 
   const [posts, setPosts] = useState<Post[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -89,6 +89,12 @@ export default function Home() {
     );
   };
 
+  const sampleSk = [
+    <SampleCardSkeleton />,
+    <SampleCardSkeleton />,
+    <SampleCardSkeleton />,
+  ];
+
   return (
     <>
       <Header />
@@ -97,7 +103,7 @@ export default function Home() {
           <Text fontSize={"3xl"} fontWeight={"semibold"}>
             Latest
           </Text>
-          {posts[0] && <MainCardRender />}
+          {posts[0] ? <MainCardRender /> : <MainCardSkeleton />}
         </div>
         <div className="space-y-3 w-full">
           <div className="flex justify-between place-items-center text-white">
@@ -136,20 +142,22 @@ export default function Home() {
             justifyContent={["center", "center", justifyContent]}
             w={"full"}
           >
-            {currentPosts.map((value, index) => (
-              <SampleCard
-                key={index}
-                id={value.id}
-                title={value.title}
-                description={value.description}
-                createdAt={value.createdAt}
-                readTime={value.readTime}
-                imageUrl={formatUrlArticle(value.id, value.imageUrl)}
-                imageAlt={value.imageAlt}
-                tag={value.tag}
-                onClick={() => router.push(`article/${value.id}`)}
-              />
-            ))}
+            {currentPosts.length > 0
+              ? currentPosts.map((value, index) => (
+                  <SampleCard
+                    key={index}
+                    id={value.id}
+                    title={value.title}
+                    description={value.description}
+                    createdAt={value.createdAt}
+                    readTime={value.readTime}
+                    imageUrl={formatUrlArticle(value.id, value.imageUrl)}
+                    imageAlt={value.imageAlt}
+                    tag={value.tag}
+                    onClick={() => router.push(`article/${value.id}`)}
+                  />
+                ))
+              : sampleSk}
           </Stack>
           <Pagination
             currentPage={currentPage}

@@ -8,10 +8,7 @@ interface Props {
 
 export default function Contact() {
   const SocialComponent = ({ url, name }: Props) => (
-    <Link
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
+    <div
       className="flex-1 inline-flex place-items-center py-2 px-4 sm:px-8 sm:py-3 md:px-10 space-x-6 bg-white rounded-lg"
     >
       <SocialIcon
@@ -21,16 +18,18 @@ export default function Contact() {
         fgColor="#ffffff"
       />
       <p className="text-xl">{name}</p>
-    </Link>
+    </div>
   );
 
   const socialMediasList = [
     <SocialComponent
+      key={0}
       url="https://www.linkedin.com/in/ivan-f-m-medeiros"
       name="Linkedin"
     />,
-    <SocialComponent url="https://github.com/IvanCCO" name="GitHub" />,
+    <SocialComponent key={1} url="https://github.com/IvanCCO" name="GitHub" />,
     <SocialComponent
+      key={2}
       url="https://www.instagram.com/ivan_oliverss/"
       name="Instagram"
     />,
