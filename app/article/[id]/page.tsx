@@ -8,15 +8,15 @@ import { Box, Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
 import { useEffect } from "react";
 import ProgressBar from "../../../components/ProgressBar";
 import { TopicTag } from "../../../components/TopicTag";
-import { Helmet } from "react-helmet";
 import { ActionRow } from "./ActionRow";
 import { ImageBlock } from "./ImageBlock";
 import { ProfileRow } from "./ProfileRow";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { formatUrlArticle } from "@/app/_lib/formatUrl";
 import Head from "next/head";
 
 export default function Post() {
+  const router = useRouter()
   const { id } = useParams();
   const [article, setArticle] = useState<any | null>(null);
   const [content, setContent] = useState<string | null>(null);
@@ -35,15 +35,12 @@ export default function Post() {
         const foundArticle = data.filter((p: any) => p.id === id);
 
         if (foundArticle.length === 0) {
-          setErrors((prevErrors) => [
-            ...prevErrors,
-            new Error("Article not found"),
-          ]);
+          router.replace('/404');
         }
 
         setArticle(foundArticle.length > 0 ? foundArticle[0] : null);
       } catch (error) {
-        console.error("Error fetching article:", error);
+        router.replace('/404');
       }
     };
     const fetchContent = async () => {
@@ -54,7 +51,7 @@ export default function Post() {
         const text: string = await response.text();
         setContent(text);
       } catch (error) {
-        // setErrors((prevErrors) => [...prevErrors, new NotFoundError()]);
+        router.replace('/404');
       }
     };
 
@@ -70,9 +67,6 @@ export default function Post() {
   );
 
   const PostPage: React.FC = () => {
-    // if (errors.some((error) => error instanceof NotFoundError)) {
-    //   return <NotFound />;
-    // }
     return (
       <>
         <Head>
