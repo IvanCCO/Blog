@@ -185,7 +185,6 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
           );
         },
         img(props) {
-          console.log(props.src);
           return (
             <Center my={6}>
               <VStack>

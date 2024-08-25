@@ -57,4 +57,12 @@ export function SampleCardSkeleton() {
   );
 }
 
+export const renderSkeletons = (count: number) => {
+  return Array.from({ length: count }, (_, index) => (
+    <SampleCardSkeleton key={index} />
+  ));
+};
+
+
 export default SampleCardSkeleton;
+

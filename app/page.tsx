@@ -8,7 +8,9 @@ import { SampleCard } from "../components/SampleCard/SampleCard";
 import { formatUrlArticle } from "./_lib/formatUrl";
 import { useRouter } from "next/navigation";
 import MainCardSkeleton from "@/components/MainCard/MainCardSkeleton";
-import SampleCardSkeleton from "@/components/SampleCard/SampleCardComponent";
+import SampleCardSkeleton, {
+  renderSkeletons,
+} from "@/components/SampleCard/SampleCardSkeleton";
 
 interface Post {
   id: string;
@@ -89,11 +91,26 @@ export default function Home() {
     );
   };
 
-  const sampleSk = [
-    <SampleCardSkeleton />,
-    <SampleCardSkeleton />,
-    <SampleCardSkeleton />,
-  ];
+  const renderPosts = (posts: Post[]) => {
+    if (posts.length > 0) {
+      return posts.map((value, index) => (
+        <SampleCard
+          key={index}
+          id={value.id}
+          title={value.title}
+          description={value.description}
+          createdAt={value.createdAt}
+          readTime={value.readTime}
+          imageUrl={formatUrlArticle(value.id, value.imageUrl)}
+          imageAlt={value.imageAlt}
+          tag={value.tag}
+          onClick={() => router.push(`article/${value.id}`)}
+        />
+      ));
+    } else {
+      return renderSkeletons(3);
+    }
+  };
 
   return (
     <>
@@ -142,22 +159,7 @@ export default function Home() {
             justifyContent={["center", "center", justifyContent]}
             w={"full"}
           >
-            {currentPosts.length > 0
-              ? currentPosts.map((value, index) => (
-                  <SampleCard
-                    key={index}
-                    id={value.id}
-                    title={value.title}
-                    description={value.description}
-                    createdAt={value.createdAt}
-                    readTime={value.readTime}
-                    imageUrl={formatUrlArticle(value.id, value.imageUrl)}
-                    imageAlt={value.imageAlt}
-                    tag={value.tag}
-                    onClick={() => router.push(`article/${value.id}`)}
-                  />
-                ))
-              : sampleSk}
+            {renderPosts(currentPosts)}
           </Stack>
           <Pagination
             currentPage={currentPage}

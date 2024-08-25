@@ -1,12 +1,13 @@
 "use client";
 /* eslint-disable */
+// @ts-ignore
 import mapboxgl from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
 import { useEffect, useRef } from "react";
 import Header from "../../components/Header";
 import Head from "next/head";
 
-mapboxgl.accessToken =
-  "";
+mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAP_TOKEN;
 
 export default function World() {
   const idStyle = [
@@ -23,23 +24,36 @@ export default function World() {
   const map = useRef(null);
 
   useEffect(() => {
-    if (map.current) return;
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: "mapbox://styles/ivanmedeiros/clr2ygbsu00vh01p5gftw3j4j",
-      center: [-56.9, -13.35],
-      zoom: 1,
-    });
+    const initializeMap = async () => {
+      if (map.current) return;
 
-    const el = document.createElement("div");
+      map.current = new mapboxgl.Map({
+        container: mapContainer.current,
+        style: "mapbox://styles/ivanmedeiros/clr2ygbsu00vh01p5gftw3j4j",
+        center: [-56.9, -13.35],
+        zoom: 1,
+      });
 
-    el.className = `marker`;
-    el.id = "marker-red";
+      try {
+        const res = await fetch(`/api/world`);
+        const data = await res.json();
 
-    new mapboxgl.Marker(el)
-      .setLngLat([-56.9, -13.33])
-      .addTo(map.current);
-  });
+        data.features.forEach((value, index) => {
+          const el = document.createElement("div");
+          el.className = `marker`;
+          el.id = idStyle[index % idStyle.length];
+
+          new mapboxgl.Marker(el)
+            .setLngLat(value.geometry.coordinates)
+            .addTo(map.current);
+        });
+      } catch (error) {
+        console.error("Error fetching map points:", error);
+      }
+    };
+
+    initializeMap();
+  }, []);
 
   return (
     <>
@@ -48,7 +62,6 @@ export default function World() {
           href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css"
           rel="stylesheet"
         />
-        <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
       </Head>
       <main className="bg-he-background h-screen">
         <Header />

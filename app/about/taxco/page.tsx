@@ -12,7 +12,6 @@ export default function About() {
       try {
         const response = await fetch(`${formatUrlDefault("about.txt")}`);
         const text: string = await response.text();
-        console.log(text);
         setContent(text);
       } catch (error) {
         // setErrors((prevErrors) => [...prevErrors, new NotFoundError()]);
@@ -25,7 +24,8 @@ export default function About() {
   return (
     <>
       <Header />
-      <main className="main sm:px-28 md:px-44 lg:px-52 xl:px-96 2xl:px-[30rem] 3xl:px-[36rem] bg-he-background">
+
+      <main className="main px-default-width md:px-44 sm:px-28 lg:px-52 xl:px-72 2xl:px-[30rem] 3xl:px-[36rem] bg-he-background">
         <MarkdownFormatter text={content} />
       </main>
     </>

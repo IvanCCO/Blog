@@ -10,13 +10,11 @@ export async function middleware(req : NextRequest) {
 
   if (url === '/api/posts') {
     const posts = await get('posts');
-    console.log(posts);
     return NextResponse.json(posts);
   }
 
   if (url === '/api/world') {
     const world = await get('world');
-    console.log(world);
     return NextResponse.json(world);
   }
 

@@ -285,8 +285,3 @@ html {
   background-color: #c2410c;
   border-radius: 10px;
 }
-
-body {
-  scrollbar-width: thin;
-  scrollbar-color: #c2410c #16141c;
-}

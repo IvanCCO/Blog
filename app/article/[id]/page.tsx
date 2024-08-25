@@ -52,7 +52,6 @@ export default function Post() {
           `${formatUrlArticle(String(id), "content.txt")}`
         );
         const text: string = await response.text();
-        console.log(text);
         setContent(text);
       } catch (error) {
         // setErrors((prevErrors) => [...prevErrors, new NotFoundError()]);
@@ -69,7 +68,6 @@ export default function Post() {
       <SkeletonText mt="4" noOfLines={2} spacing="4" skeletonHeight="2" />
     </Box>
   );
-
 
   const PostPage: React.FC = () => {
     // if (errors.some((error) => error instanceof NotFoundError)) {
@@ -89,7 +87,7 @@ export default function Post() {
         </Head>
         <ProgressBar />
         <Header />
-        <main className="main space-y-2 sm:px-28 md:px-44 lg:px-52 xl:px-96 2xl:px-[30rem] 3xl:px-[36rem] bg-he-background">
+        <main className="main space-y-2 px-default-width md:px-44 sm:px-28 lg:px-52 xl:px-72 2xl:px-[30rem] 3xl:px-[36rem] bg-he-background">
           <div className="space-y-4">
             <div className="w-fit">
               {article ? (
