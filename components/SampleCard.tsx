@@ -11,6 +11,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { TopicTag } from "./TopicTag";
+import { formatDate } from "@/app/_lib/formatDate";
 
 interface Props {
   id: string;
@@ -24,6 +25,7 @@ interface Props {
     name: string;
     color: string;
   };
+  onClick: () => void;
 }
 
 export function SampleCard({
@@ -35,8 +37,11 @@ export function SampleCard({
   imageUrl,
   imageAlt,
   tag,
+  onClick
 }: Props) {
+
   const maxCharacters = 125;
+  const date = formatDate(createdAt);
 
   return (
     <>
@@ -48,7 +53,7 @@ export function SampleCard({
         bg={"whiteAlpha.200"}
         color={"white"}
         alignSelf={["center", "center", "stretch"]}
-        onClick={() => console.log("")}
+        onClick={onClick}
       >
         <CardBody>
           <AspectRatio
@@ -83,7 +88,7 @@ export function SampleCard({
             >
               <TopicTag title={tag.name} color={tag.color} variant="solid" />
               <div className="inline-flex space-x-1 place-items-center minW-fit text-neutral-300">
-                <p className="text-sm mt-4 min-w-fit">{"9023"}</p>
+                <p className="text-sm mt-4 min-w-fit">{date}</p>
                 <p className="text-sm mt-4 min-w-fit">·</p>
                 <p className="text-sm mt-4 min-w-fit">{readTime} min read</p>
               </div>

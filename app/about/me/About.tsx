@@ -30,8 +30,7 @@ export default function About() {
       </div>
 
       <div className="w-full grid place-items-center pt-5">
-        {/* TODO  */}
-        <Link href={""} isExternal>
+        <Link href={"https://taxco-bucket.s3.us-east-2.amazonaws.com/default/Resume.pdf"} isExternal>
           <Button
             leftIcon={<Icon as={IoMdPaper} />}
             size={{ base: "md", xl: "lg" }}

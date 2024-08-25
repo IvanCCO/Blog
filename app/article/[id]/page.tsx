@@ -1,47 +1,65 @@
+"use client";
 import { useState } from "react";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
-import MarkdownFormatter from "../../components/MarkdownFormatter";
+import Footer from "../../../components/Footer";
+import Header from "../../../components/Header";
+import MarkdownFormatter from "../../../components/MarkdownFormatter";
 
 import { Box, Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
 import { useEffect } from "react";
 // import ARTICLES from "../../assets/JSON/Home-Posts.json";
-import ProgressBar from "../../components/ProgressBar";
-import { TopicTag } from "../../components/TopicTag";
+import ProgressBar from "../../../components/ProgressBar";
+import { TopicTag } from "../../../components/TopicTag";
 // import { NotFound } from "../NotFound/NotFound";
 import { ActionRow } from "./ActionRow";
 import { ImageBlock } from "./ImageBlock";
 import { ProfileRow } from "./ProfileRow";
+import { useParams } from "next/navigation";
+import { formatUrl } from "@/app/_lib/formatUrl";
 
 export default function Post() {
-//   const { articleId = "" } = useParams();
+  const { id } = useParams();
   const [article, setArticle] = useState<any | null>(null);
   const [content, setContent] = useState<string | null>(null);
   const [errors, setErrors] = useState<Error[]>([]);
-//   const posts = ARTICLES.posts;
 
-//   useEffect(() => {
-//     const fetchArticle = () => {
-//       const foundArticle = posts.find((post) => post.id === articleId);
-//       if (!foundArticle) {
-//         setErrors((prevErrors) => [...prevErrors, new NotFoundError()]);
-//       }
-//       setArticle(foundArticle);
-//     };
+  useEffect(() => {
+    const fetchArticle = async () => {
+      try {
+        const res = await fetch("/api/posts");
 
-//     const fetchContent = async () => {
-//       try {
-//         const response = await fetch(`${formatUrl(articleId, "content.txt")}`);
-//         const text: string = await response.text();
-//         console.log(text);
-//         setContent(text);
-//       } catch (error) {
-//         setErrors((prevErrors) => [...prevErrors, new NotFoundError()]);
-//       }
-//     };
-//     fetchArticle();
-//     fetchContent();
-//   }, []);
+        if (!res.ok) {
+          throw new Error("Failed to fetch");
+        }
+
+        const data = await res.json();
+        const foundArticle = data.filter((p: any) => p.id === id);
+
+        if (foundArticle.length === 0) {
+          setErrors((prevErrors) => [
+            ...prevErrors,
+            new Error("Article not found"),
+          ]);
+        }
+
+        setArticle(foundArticle.length > 0 ? foundArticle[0] : null);
+      } catch (error) {
+        console.error("Error fetching article:", error);
+      }
+    };
+    const fetchContent = async () => {
+      try {
+        const response = await fetch(`${formatUrl(String(id), "content.txt")}`);
+        const text: string = await response.text();
+        console.log(text);
+        setContent(text);
+      } catch (error) {
+        // setErrors((prevErrors) => [...prevErrors, new NotFoundError()]);
+      }
+    };
+
+    fetchArticle();
+    fetchContent()
+  }, [id]);
 
   const ProfileRowSkeleton = (
     <Box boxShadow="lg" w={"50%"}>
@@ -110,7 +128,7 @@ export default function Post() {
           <div className="py-6">
             {article && (
               <ImageBlock
-                articleId={""}
+                articleId={article.id}
                 imagePath={article.imageUrl}
                 imageAlt={article.imageAlt}
               />

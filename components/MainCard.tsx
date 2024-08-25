@@ -1,3 +1,4 @@
+import { formatDate } from "@/app/_lib/formatDate";
 import {
   AspectRatio,
   Card,
@@ -18,6 +19,7 @@ interface Props {
   createdAt: Date | string | undefined;
   imageUrl: string | undefined;
   imageAlt: string | undefined;
+  onClick: () => void;
 }
 
 export function MainCard({
@@ -28,15 +30,15 @@ export function MainCard({
   createdAt,
   imageUrl,
   imageAlt,
+  onClick
 }: Props) {
-
-  // const date = formatDate(createdAt);
+  const date = formatDate(createdAt);
 
   return (
     <Center>
       <Card
         direction={{ base: "column", md: "row" }}
-        onClick={() => console.log("x")}
+        onClick={onClick}
         cursor={"pointer"}
         boxShadow={"lg"}
         bg="whiteAlpha.200"
@@ -73,7 +75,7 @@ export function MainCard({
             </Text>
           </CardBody>
           <CardFooter justify="space-between">
-            <p className="text-sm text-neutral-300">{"90"}</p>
+            <p className="text-sm text-neutral-300">{date}</p>
             <p className="text-sm text-neutral-300">{readTime} min read</p>
           </CardFooter>
         </Stack>

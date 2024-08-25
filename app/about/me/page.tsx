@@ -2,7 +2,7 @@
 import Router, { useRouter } from "next/router";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Image, useMediaQuery } from "@chakra-ui/react";
-import mypic from "../../assets/myself.jpg";
+import MY_PIC from "../../../public/myself.jpg";
 import Header from "../../../components/Header";
 import { Reveal } from "../../../components/Reveal";
 import About from "./About";
@@ -10,6 +10,7 @@ import Contact from "./Contact";
 import Experience from "./Experience";
 import SocialMediaList from "./SocialMediaList";
 import Suggestions from "./Suggestions";
+import Skills from "./Skills";
 
 export default function He() {
   const desktopWorking = (
@@ -46,12 +47,12 @@ export default function He() {
           </div>
         </Reveal>
       </div>
-      {/* <Image
-        src={mypic}
-        alt="Descrição da imagem"
+      <Image
+        src={MY_PIC.src}
+        alt="Ivan Miranda climbing a dune"
         className="w-1/2 object-cover rounded-tl-full rounded-bl-full rounded-br-md rounded-tr-md max-h-[500px] max-w-[500px]"
         loading="lazy"
-      /> */}
+      />
     </div>
   );
   const introdution = (
@@ -88,11 +89,11 @@ export default function He() {
 
   const contact = (
     <div className="flex flex-row">
-      {/* <img
-        src={mypic}
+      <img
+        src={MY_PIC.src}
         alt="Descrição da imagem"
         className="w-1/2 object-cover rounded-tl-sm rounded-bl-sm rounded-br-full rounded-tr-full"
-      /> */}
+      />
       <div className="w-1/2 flex flex-col space-y-3 justify-center place-items-center">
         <SocialMediaList />
         <div className="gradient relative items-center content-center text-white text-md rounded-md py-2 px-4 z-0 flex-row inline-flex w-full justify-center cursor-pointer">
@@ -110,7 +111,7 @@ export default function He() {
       <h1 className="text-2xl border-b-4 border-purple-800 w-fit text-center px-4">
         Skills
       </h1>
-      {/* <SkillsCycle /> */}
+      <Skills />
       <div>
         <span className="text-xs lg:text-base">All those icons are from </span>
         <a

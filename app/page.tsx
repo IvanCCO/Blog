@@ -5,61 +5,37 @@ import Header from "../components/Header";
 import { MainCard } from "../components/MainCard";
 import { Pagination } from "../components/Pagination";
 import { SampleCard } from "../components/SampleCard";
+import { formatUrl } from "./_lib/formatUrl";
+import { useRouter } from "next/navigation";
+
+interface Post {
+  id: string;
+  title: string;
+  description: string;
+  readTime: number;
+  createdAt: string;
+  imageUrl: string;
+  imageAlt: string;
+  tag: {
+    name: string;
+    color: string;
+  };
+}
 
 function getUniqueTags(posts: any[]): string[] {
   const tags = posts.map((post) => post.tag.name);
   return Array.from(new Set(tags));
 }
 
-const ARTICLES = {
-  posts: [
-    {
-      id: "the-millionarie-fastlane-review",
-      enabled: true,
-      title: "The book that changed the way that I see the world",
-      description:
-        "The millionarie fastlane is a book that changed the way I see the world. After reading this book I trully understand how people really get rich, and how can I be one of them.",
-      readTime: 10,
-      createdAt: "2024-08-15",
-      imageUrl: "pic.jpeg",
-      imageAlt:
-        "3 lanes of a street, beeing the sidewalk, fastlane and slowlane",
-      tag: {
-        name: "Books",
-        color: "black",
-      },
-    },
-    {
-      id: "the-millionarie-fastlane-review",
-      enabled: true,
-      title: "The book that changed the way that I see the world",
-      description:
-        "The millionarie fastlane is a book that changed the way I see the world. After reading this book I trully understand how people really get rich, and how can I be one of them.",
-      readTime: 10,
-      createdAt: "2024-08-15",
-      imageUrl: "pic.jpeg",
-      imageAlt:
-        "3 lanes of a street, beeing the sidewalk, fastlane and slowlane",
-      tag: {
-        name: "Books",
-        color: "black",
-      },
-    },
-  ],
-};
-
 export default function Home() {
-  const sampleCards: JSX.Element[] = [];
 
-  const [posts, setPosts] = useState(ARTICLES.posts.filter((p) => p.enabled));
+  const router = useRouter()
 
+  const [posts, setPosts] = useState<Post[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 3;
-
-  const [currentPosts, setCurrentPosts] = useState<any[]>([]);
-
+  const [currentPosts, setCurrentPosts] = useState<Post[]>([]);
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-
   const [totalPages, setTotalPages] = useState(1);
 
   const uniqueTags = getUniqueTags(posts);
@@ -69,7 +45,33 @@ export default function Home() {
   };
 
   const justifyContent =
-    sampleCards?.length < 3 ? "flex-start" : "space-between";
+    currentPosts?.length < 3 ? "flex-start" : "space-between";
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const res = await fetch(`/api/posts`);
+      const data = await res.json();
+      setPosts(data);
+    };
+
+    fetchPosts();
+  }, []);
+
+  useEffect(() => {
+    if (posts.length > 0) {
+      const filteredPosts = selectedTag
+        ? posts.filter((post) => post.tag.name === selectedTag)
+        : posts;
+
+      setCurrentPosts(
+        filteredPosts.slice(
+          (currentPage - 1) * postsPerPage,
+          currentPage * postsPerPage
+        )
+      );
+      setTotalPages(Math.ceil(filteredPosts.length / postsPerPage));
+    }
+  }, [selectedTag, currentPage, posts]);
 
   const MainCardRender: React.FC = () => {
     return (
@@ -79,22 +81,12 @@ export default function Home() {
         createdAt={posts[0].createdAt}
         readTime={posts[0].readTime}
         description={posts[0].description}
-        imageUrl={"fierub"}
+        imageUrl={formatUrl(posts[0].id.toString(), posts[0].imageUrl)}
         imageAlt={posts[0].imageAlt}
+        onClick={() => router.push(`article/${posts[0].id}`)}
       />
     );
   };
-
-  useEffect(() => {
-    const filteredPosts = selectedTag
-      ? posts.filter((post) => post.tag.name === selectedTag)
-      : posts;
-
-    setPosts(filteredPosts);
-    const startIndex = (currentPage - 1) * postsPerPage;
-    setCurrentPosts(filteredPosts.slice(startIndex, startIndex + postsPerPage));
-    setTotalPages(Math.ceil(filteredPosts.length / postsPerPage));
-  }, [selectedTag, currentPage, posts]);
 
   return (
     <>
@@ -104,7 +96,7 @@ export default function Home() {
           <Text fontSize={"3xl"} fontWeight={"semibold"}>
             Latest
           </Text>
-          <MainCardRender />
+          {posts[0] && <MainCardRender />}
         </div>
         <div className="space-y-3 w-full">
           <div className="flex justify-between place-items-center text-white">
@@ -151,9 +143,10 @@ export default function Home() {
                 description={value.description}
                 createdAt={value.createdAt}
                 readTime={value.readTime}
-                imageUrl={"feiub"}
+                imageUrl={formatUrl(value.id, value.imageUrl)}
                 imageAlt={value.imageAlt}
                 tag={value.tag}
+                onClick={() => router.push(`article/${value.id}`)}
               />
             ))}
           </Stack>
