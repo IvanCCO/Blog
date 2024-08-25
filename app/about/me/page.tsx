@@ -91,7 +91,7 @@ export default function He() {
 
   const contact = (
     <div className="flex flex-row">
-      <img
+      <Image
         src={MY_PIC.src}
         alt="Descrição da imagem"
         className="w-1/2 object-cover rounded-tl-sm rounded-bl-sm rounded-br-full rounded-tr-full"

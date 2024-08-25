@@ -53,7 +53,7 @@ export function ActionRow({
           <ModalOverlay />
           <ModalContent>
             <ModalHeader fontSize={{ base: "2xl", lg: "3xl" }}>
-              Thank's for sharing
+              Thank&apos;s for sharing
             </ModalHeader>
             <ModalCloseButton />
 

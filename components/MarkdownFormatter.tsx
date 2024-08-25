@@ -23,7 +23,6 @@ interface MarkdownText {
 export default function MarkdownFormatter({ text }: MarkdownText) {
   return (
     <Markdown
-      children={text}
       remarkPlugins={[remarkGfm, remarkToc]}
       className={"text-white pb-24"}
       components={{
@@ -190,12 +189,14 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
           return (
             <Center my={6}>
               <VStack>
-                <Image src={props.src} boxSize="250px" />
+                <Image src={props.src} boxSize="250px" alt={props.alt} />
               </VStack>
             </Center>
           );
         },
       }}
-    />
+    >
+      {text}
+    </Markdown>
   );
 }

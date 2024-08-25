@@ -3,7 +3,7 @@ import { Logo } from "./Logo";
 import { Hamburguer } from "./Hamburguer";
 import { useRouter, usePathname  } from "next/navigation";
 
-const beforeStyle = (
+const BeforeStyle = (
   text: string,
   color: string,
   path: string,
@@ -35,10 +35,10 @@ const headerItens = ({ onClick }: { onClick: (path: string) => void }) => {
   }
   return (
     <div className="hidden sm:inline-flex w-1/2 justify-between text-lg">
-      {beforeStyle("Me", "bg-purple-700", PATHS.ABOUT, () => onClick(PATHS.ABOUT))}
-      {beforeStyle("Posts", "bg-orange-700", PATHS.ROOT, () => onClick(PATHS.ROOT))}
-      {beforeStyle("World", "bg-cyan-700", PATHS.WORLD, () => onClick(PATHS.WORLD))}
-      {beforeStyle("Taxco", "bg-green-800", PATHS.TAXCO, () => onClick(PATHS.TAXCO))}
+      {BeforeStyle("Me", "bg-purple-700", PATHS.ABOUT, () => onClick(PATHS.ABOUT))}
+      {BeforeStyle("Posts", "bg-orange-700", PATHS.ROOT, () => onClick(PATHS.ROOT))}
+      {BeforeStyle("World", "bg-cyan-700", PATHS.WORLD, () => onClick(PATHS.WORLD))}
+      {BeforeStyle("Taxco", "bg-green-800", PATHS.TAXCO, () => onClick(PATHS.TAXCO))}
     </div>
   );
 };

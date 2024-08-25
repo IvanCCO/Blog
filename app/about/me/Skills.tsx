@@ -30,11 +30,11 @@ export default function Skills() {
     "2xl": 300,
   });
 
-  const image = (icon: string, nome: string) => {
+  const image = (icon: string, name: string) => {
     return (
       <div className="text-center cursor-pointer">
-        <Image src={icon} boxSize={"60px"} mx={5} />
-        <p className="text-xs lg:text-base">{nome}</p>
+        <Image src={icon} boxSize={"60px"} mx={5} alt={name}/>
+        <p className="text-xs lg:text-base">{name}</p>
       </div>
     );
   };

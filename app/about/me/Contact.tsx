@@ -38,7 +38,7 @@ export default function Contact() {
   return (
     <div className="text-black font-inter flex flex-col items-center h-full space-y-4">
       <h1 className="text-2xl border-b-4 border-purple-800 w-fit text-start pr-2 text-white mb-5">
-        Let's build something together?
+        Let&apos;s build something together?
       </h1>
       <div className="flex-1 flex flex-col space-y-4 font-semibold">
         {socialMediasList}

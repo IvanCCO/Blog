@@ -33,12 +33,12 @@ export default function NotFound() {
             fontWeight={"semibold"}
             color={"white"}
           >
-            Hmmm, we couldn't find that page.
+            Hmmm, we couldn&apos;t find that page.
           </Text>
           <Text fontSize={"lg"} color={"#727272"}>
             Go to our home page, that definitely does exists.
             <br></br>
-            If you think that's a bug,{" "}
+            If you think that&apos;s a bug,{" "}
             <a
               href="https://www.linkedin.com/in/ivan-medeiros-024133241"
               target="_blank"
@@ -68,7 +68,7 @@ export default function NotFound() {
           <PopoverContent>
             <PopoverArrow />
             <PopoverBody>
-              Simple, my girl's dream is to work with horse genetics
+              Simple, my girl&apos;s dream is to work with horse genetics
             </PopoverBody>
           </PopoverContent>
         </Popover>
