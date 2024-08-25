@@ -1,113 +1,169 @@
-import Image from "next/image";
+"use client";
+import { Select, Stack, Text } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import Header from "../components/Header";
+import { MainCard } from "../components/MainCard";
+import { Pagination } from "../components/Pagination";
+import { SampleCard } from "../components/SampleCard";
+
+function getUniqueTags(posts: any[]): string[] {
+  const tags = posts.map((post) => post.tag.name);
+  return Array.from(new Set(tags));
+}
+
+const ARTICLES = {
+  posts: [
+    {
+      id: "the-millionarie-fastlane-review",
+      enabled: true,
+      title: "The book that changed the way that I see the world",
+      description:
+        "The millionarie fastlane is a book that changed the way I see the world. After reading this book I trully understand how people really get rich, and how can I be one of them.",
+      readTime: 10,
+      createdAt: "2024-08-15",
+      imageUrl: "pic.jpeg",
+      imageAlt:
+        "3 lanes of a street, beeing the sidewalk, fastlane and slowlane",
+      tag: {
+        name: "Books",
+        color: "black",
+      },
+    },
+    {
+      id: "the-millionarie-fastlane-review",
+      enabled: true,
+      title: "The book that changed the way that I see the world",
+      description:
+        "The millionarie fastlane is a book that changed the way I see the world. After reading this book I trully understand how people really get rich, and how can I be one of them.",
+      readTime: 10,
+      createdAt: "2024-08-15",
+      imageUrl: "pic.jpeg",
+      imageAlt:
+        "3 lanes of a street, beeing the sidewalk, fastlane and slowlane",
+      tag: {
+        name: "Books",
+        color: "black",
+      },
+    },
+  ],
+};
 
 export default function Home() {
+  const sampleCards: JSX.Element[] = [];
+
+  const [posts, setPosts] = useState(ARTICLES.posts.filter((p) => p.enabled));
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 3;
+
+  const [currentPosts, setCurrentPosts] = useState<any[]>([]);
+
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+
+  const [totalPages, setTotalPages] = useState(1);
+
+  const uniqueTags = getUniqueTags(posts);
+
+  const onPageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  const justifyContent =
+    sampleCards?.length < 3 ? "flex-start" : "space-between";
+
+  const MainCardRender: React.FC = () => {
+    return (
+      <MainCard
+        id={posts[0].id.toString()}
+        title={posts[0].title}
+        createdAt={posts[0].createdAt}
+        readTime={posts[0].readTime}
+        description={posts[0].description}
+        imageUrl={"fierub"}
+        imageAlt={posts[0].imageAlt}
+      />
+    );
+  };
+
+  useEffect(() => {
+    const filteredPosts = selectedTag
+      ? posts.filter((post) => post.tag.name === selectedTag)
+      : posts;
+
+    setPosts(filteredPosts);
+    const startIndex = (currentPage - 1) * postsPerPage;
+    setCurrentPosts(filteredPosts.slice(startIndex, startIndex + postsPerPage));
+    setTotalPages(Math.ceil(filteredPosts.length / postsPerPage));
+  }, [selectedTag, currentPage, posts]);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <Header />
+      <main className="main space-y-8 grid place-items-center px-default-width md:px-44 sm:px-28 lg:px-52 xl:px-72 2xl:px-96 justify-center bg-he-background">
+        <div className="space-y-2 text-white w-full">
+          <Text fontSize={"3xl"} fontWeight={"semibold"}>
+            Latest
+          </Text>
+          <MainCardRender />
         </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <div className="space-y-3 w-full">
+          <div className="flex justify-between place-items-center text-white">
+            <Text fontSize={"3xl"} fontWeight={"semibold"}>
+              Posts
+            </Text>
+            <Select
+              aria-label="Select a topic"
+              sx={{
+                "--select-bg": "transparent !important",
+              }}
+              bg={"#16141C"}
+              variant="flushed"
+              w={1 / 3}
+              onChange={(e) => {
+                const selectedValue = e.target.value;
+                if (selectedValue === "all") {
+                  setSelectedTag(null);
+                } else {
+                  setSelectedTag(uniqueTags[parseInt(selectedValue)]);
+                }
+                setCurrentPage(1);
+              }}
+            >
+              <option value="all">All</option>
+              {uniqueTags.map((tag, index) => (
+                <option key={index} value={index}>
+                  {tag}
+                </option>
+              ))}
+            </Select>
+          </div>
+          <Stack
+            direction={["column", "column", "row"]}
+            placeItems={"center"}
+            justifyContent={["center", "center", justifyContent]}
+            w={"full"}
+          >
+            {currentPosts.map((value, index) => (
+              <SampleCard
+                key={index}
+                id={value.id}
+                title={value.title}
+                description={value.description}
+                createdAt={value.createdAt}
+                readTime={value.readTime}
+                imageUrl={"feiub"}
+                imageAlt={value.imageAlt}
+                tag={value.tag}
+              />
+            ))}
+          </Stack>
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={onPageChange}
+          />
+        </div>
+      </main>
+    </>
   );
 }

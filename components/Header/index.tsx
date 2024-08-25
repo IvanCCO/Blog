@@ -1,3 +1,4 @@
+"use client";
 import { Logo } from "./Logo";
 import { Hamburguer } from "./Hamburguer";
 import Link from "next/link";
@@ -7,7 +8,6 @@ const beforeStyle = (
   color: string,
   path: string
 ): React.ReactElement => {
-  
   const isActive = location.pathname === path;
 
   return (

@@ -5,9 +5,9 @@ import { Image, useMediaQuery } from "@chakra-ui/react";
 import mypic from "../../assets/myself.jpg";
 import Header from "../../../components/Header";
 import { Reveal } from "../../../components/Reveal";
-import About from "./about";
-import Contact from "./contact";
-import Experience from "./experience";
+import About from "./About";
+import Contact from "./Contact";
+import Experience from "./Experience";
 import SocialMediaList from "./SocialMediaList";
 import Suggestions from "./Suggestions";
 
