@@ -187,11 +187,9 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         img(props) {
           return (
-            <Center my={6}>
-              <VStack>
-                <Image src={props.src} boxSize="250px" alt={props.alt} />
-              </VStack>
-            </Center>
+            <div className="flex justify-center my-6">
+              <Image src={props.src} boxSize={["100%", "80%", "70%"]} />
+            </div>
           );
         },
       }}
