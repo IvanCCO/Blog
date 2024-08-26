@@ -1,8 +1,29 @@
 import { Inter } from "next/font/google";
 import { Providers } from "./providers";
 import "./globals.css";
+import { Metadata } from "next";
+import { formatUrlDefault } from "./_lib/formatUrl";
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Taxco | My Digital Garden",
+  description: "My Digital Garden with my thoughts about everything",
+  authors: { name: "Ivan Miranda" },
+  keywords: ["book", "article", "code", "finance", "HowTo"],
+  openGraph: {
+    siteName: "Taxco",
+    title: "Taxco | My Digital Garden",
+    description: "My Digital Garden with my thoughts about everything",
+    images: formatUrlDefault("logo-taxco.png"),
+    type: "article",
+  },
+  twitter: {
+    title: "Taxco | My Digital Garden",
+    description: "My Digital Garden with my thoughts about everything",
+    images: formatUrlDefault("logo-taxco.png"),
+  },
+};
 
 export default function RootLayout({
   children,

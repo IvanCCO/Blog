@@ -45,7 +45,7 @@ export async function generateMetadata(
       card: "summary_large_image",
       images: formatUrlArticle(id, post.imageUrl),
       title: post.title,
-      description: post,
+      description: post.description,
     },
   };
 }
