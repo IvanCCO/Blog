@@ -20,9 +20,6 @@ type PostProps = {
 export default function Post({ postData }: PostProps) {
   const router = useRouter();
 
-  if (!postData) {
-    router.replace("/404");
-  }
   const [article, _] = useState<any | null>(postData);
   const [content, setContent] = useState<string | null>(null);
 
