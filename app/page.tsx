@@ -53,8 +53,8 @@ export default function Home() {
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await fetch(`/api/posts`);
-      const data = await res.json();
-      setPosts(data);
+      const data = await res.json()
+      setPosts(data.filter((p : any) => p.enabled));
     };
 
     fetchPosts();
