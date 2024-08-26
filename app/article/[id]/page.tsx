@@ -52,11 +52,8 @@ export async function generateMetadata(
 }
 
 export default async function Page({ params }: Props) {
-  const postData = await getPostData(params.id);
 
-  if (!postData) {
-    return <div>Post not found</div>;
-  }
+  const postData = await getPostData(params.id);
 
   return <Post postData={postData} />;
 }

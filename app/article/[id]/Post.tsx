@@ -8,10 +8,9 @@ import { Box, Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
 import { useEffect } from "react";
 import ProgressBar from "../../../components/ProgressBar";
 import { TopicTag } from "../../../components/TopicTag";
-import { ActionRow } from "./ActionRow";
 import { ImageBlock } from "./ImageBlock";
 import { ProfileRow } from "./ProfileRow";
-import {  useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { formatUrlArticle } from "@/app/_lib/formatUrl";
 
 type PostProps = {
@@ -20,7 +19,11 @@ type PostProps = {
 
 export default function Post({ postData }: PostProps) {
   const router = useRouter();
-  const [article, setArticle] = useState<any | null>(postData);
+
+  if (!postData) {
+    router.replace("/404");
+  }
+  const [article, _] = useState<any | null>(postData);
   const [content, setContent] = useState<string | null>(null);
 
   useEffect(() => {
