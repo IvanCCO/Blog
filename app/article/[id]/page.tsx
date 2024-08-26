@@ -30,6 +30,7 @@ export async function generateMetadata(
     title: post.title,
     description: post.description,
     openGraph: {
+      siteName: "Taxco",
       images: [
         {
           url: formatUrlArticle(id, post.imageUrl),
