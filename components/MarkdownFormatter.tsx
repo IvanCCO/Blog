@@ -8,7 +8,7 @@ import {
   Th,
   Thead,
   Tr,
-  VStack,
+  Text,
 } from "@chakra-ui/react";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -187,8 +187,15 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         img(props) {
           return (
-            <div className="flex justify-center my-6">
-              <Image src={props.src} boxSize={["100%", "80%", "70%"]} />
+            <div className="flex justify-center items-center my-6 flex-col text-center">
+              <Image
+                src={props.src}
+                boxSize={["100%", "80%", "70%"]}
+                alt={props.alt}
+              />
+              <Text fontSize={"xs"} color={"GrayText"}>
+                {props.alt}
+              </Text>
             </div>
           );
         },
