@@ -7,20 +7,20 @@ import { formatUrlDefault } from "./_lib/formatUrl";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Taxco | My Digital Garden",
-  description: "My Digital Garden with my thoughts about everything",
+  title: "Taxco | meu Palácio Digital",
+  description: "Aqui eu compartilho meus pensamentos, ideias, opniões e muito mais.",
   authors: { name: "Ivan Miranda" },
-  keywords: ["book", "article", "code", "finance", "HowTo"],
+  keywords: ["livro", "artigo", "codigo", "finanças", "HowTo", "tecnologia"],
   openGraph: {
     siteName: "Taxco",
-    title: "Taxco | My Digital Garden",
-    description: "My Digital Garden with my thoughts about everything",
+    title: "Taxco | meu Palácio Digital",
+    description: "Aqui eu compartilho meus pensamentos, ideias, opniões e muito mais",
     images: formatUrlDefault("logo-taxco.png"),
     type: "article",
   },
   twitter: {
-    title: "Taxco | My Digital Garden",
-    description: "My Digital Garden with my thoughts about everything",
+    title: "Taxco | meu Palácio Digital",
+    description: "Aqui eu compartilho meus pensamentos, ideias, opniões e muito mais",
     images: formatUrlDefault("logo-taxco.png"),
   },
 };

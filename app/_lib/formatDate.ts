@@ -27,27 +27,27 @@ const formatMonth = (month: string): string => {
     case "1":
       return "Jan";
     case "2":
-      return "Feb";
+      return "Fev";
     case "3":
       return "Mar";
     case "4":
-      return "Apr";
+      return "Abr";
     case "5":
-      return "May";
+      return "Mai";
     case "6":
       return "Jun";
     case "7":
       return "Jul";
     case "8":
-      return "Aug";
+      return "Ago";
     case "9":
-      return "Sep";
+      return "Set";
     case "10":
-      return "Oct";
+      return "Out";
     case "11":
       return "Nov";
     case "12":
-      return "Dec";
+      return "Dez";
     default:
       return "--";
   }

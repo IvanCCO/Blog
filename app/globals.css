@@ -61,7 +61,7 @@
   transition: transform 0.2s ease;
 }
 
-#Me::before {
+#Eu::before {
   background-color: rgb(126 34 206);
 }
 
@@ -72,7 +72,7 @@
   background-color: rgb(22 101 52);
 }
 
-#World::before {
+#Globo::before {
   background-color: rgb(14 116 144);
 }
 

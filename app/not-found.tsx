@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/popover";
 import { QuestionOutlineIcon } from "@chakra-ui/icons";
 import NOT_FOUND_IMAGE from "../public/not-found.png";
-import Header from "../components/Header"
+import Header from "../components/Header";
 
 export default function NotFound() {
   const router = useRouter();
@@ -33,18 +33,18 @@ export default function NotFound() {
             fontWeight={"semibold"}
             color={"white"}
           >
-            Hmmm, we couldn&apos;t find that page.
+            Hmmm, não foi possível encontrar essa página
           </Text>
           <Text fontSize={"lg"} color={"#727272"}>
-            Go to our home page, that definitely does exists.
+            Vá para página inicial, essa com certeza existe
             <br></br>
-            If you think that&apos;s a bug,{" "}
+            Se você acha que isso é um bug,
             <a
               href="https://www.linkedin.com/in/ivan-medeiros-024133241"
               target="_blank"
               className="text-purple-400 font-semibold"
             >
-              contact me
+              Entre em Contato
             </a>
           </Text>
         </div>
@@ -54,21 +54,22 @@ export default function NotFound() {
           size={["md", "lg"]}
           onClick={() => router.push("/")}
         >
-          Back to Home
+          Voltar para o Início
         </Button>
         <Popover isLazy>
           <PopoverTrigger>
             <HStack cursor={"pointer"}>
               <QuestionOutlineIcon color={"#727272"} />
               <Text fontSize={"xs"} color={"#727272"}>
-                Why a horse?
+                Por que um cavalo?
               </Text>
             </HStack>
           </PopoverTrigger>
           <PopoverContent>
             <PopoverArrow />
             <PopoverBody>
-              Simple, my girl&apos;s dream is to work with horse genetics
+              Simples, o sonho da minha namorada é trabalhar com genética de
+              cavalo.
             </PopoverBody>
           </PopoverContent>
         </Popover>

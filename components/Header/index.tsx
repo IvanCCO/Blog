@@ -1,7 +1,7 @@
 "use client";
 import { Logo } from "./Logo";
 import { Hamburguer } from "./Hamburguer";
-import { useRouter, usePathname  } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 const BeforeStyle = (
   text: string,
@@ -9,7 +9,7 @@ const BeforeStyle = (
   path: string,
   onClick: () => void
 ): React.ReactElement => {
-  const currentPath = usePathname()
+  const currentPath = usePathname();
   const isActive = currentPath === path;
 
   return (
@@ -20,7 +20,7 @@ const BeforeStyle = (
       id={text}
       onClick={onClick}
     >
-      <span>{text}</span>
+      <span translate="no">{text}</span>
       {isActive && <span className={`circle ${color}`}></span>}
     </span>
   );
@@ -31,14 +31,22 @@ const headerItens = ({ onClick }: { onClick: (path: string) => void }) => {
     ROOT: "/",
     ABOUT: "/about/me",
     WORLD: "/world",
-    TAXCO: "/about/taxco"
-  }
+    TAXCO: "/about/taxco",
+  };
   return (
     <div className="hidden sm:inline-flex w-1/2 justify-between text-lg">
-      {BeforeStyle("Me", "bg-purple-700", PATHS.ABOUT, () => onClick(PATHS.ABOUT))}
-      {BeforeStyle("Posts", "bg-orange-700", PATHS.ROOT, () => onClick(PATHS.ROOT))}
-      {BeforeStyle("World", "bg-cyan-700", PATHS.WORLD, () => onClick(PATHS.WORLD))}
-      {BeforeStyle("Taxco", "bg-green-800", PATHS.TAXCO, () => onClick(PATHS.TAXCO))}
+      {BeforeStyle("Eu", "bg-purple-700", PATHS.ABOUT, () =>
+        onClick(PATHS.ABOUT)
+      )}
+      {BeforeStyle("Posts", "bg-orange-700", PATHS.ROOT, () =>
+        onClick(PATHS.ROOT)
+      )}
+      {BeforeStyle("Globo", "bg-cyan-700", PATHS.WORLD, () =>
+        onClick(PATHS.WORLD)
+      )}
+      {BeforeStyle("Taxco", "bg-green-800", PATHS.TAXCO, () =>
+        onClick(PATHS.TAXCO)
+      )}
     </div>
   );
 };

@@ -21,15 +21,15 @@ export default function He() {
         <Reveal position={{ y: 120 }} animation={{ delay: 0.8 }}>
           <div>
             <div>
-              <p className="text-xl text-white 2xl:text-2xl">Hi there, i am</p>
+              <p className="text-xl text-white 2xl:text-2xl">Olá, eu sou</p>
             </div>
             <p className="text-5xl text-white leading-tight 2xl:text-7xl">
-              Ivan Miranda, Software Enginner🤙
+              Ivan Freire, Enginner Software🤙
             </p>
             <Reveal position={{ x: 120 }} animation={{ delay: 1.5 }}>
               <div>
                 <p className="text-sm text-low-text-black font-inter xl:text-lg mt-8">
-                  Currently working at @C6Bank, São Paulo Brasil
+                  Atualmente trabalhando no @C6Bank, São Paulo Brasil
                 </p>
               </div>
             </Reveal>
@@ -43,7 +43,7 @@ export default function He() {
             onClick={() => router.push("/")}
           >
             <p className="text-center font-inter font-bold text-base sm:text-lg xl:text-2xl">
-              My Posts
+              Meus Artigos
             </p>
             <ArrowForwardIcon boxSize={{ base: "20px", xl: "30px" }} />
           </div>
@@ -66,7 +66,7 @@ export default function He() {
         >
           <div>
             <p className="text-md sm:text-lg lg:text-lg text-white">
-              Hi there, i am
+              Olá, eu sou
             </p>
           </div>
         </Reveal>
@@ -74,7 +74,7 @@ export default function He() {
         <div>
           <Reveal position={{ y: 120 }} animation={{ delay: 0.8 }}>
             <p className="text-5xl leading-tight text-white md:text-6xl lg:text-7xl md:pb-3">
-              Ivan, Software Enginner🤙
+              Ivan Freire, Engenheiro de Software🤙
             </p>
           </Reveal>
         </div>
@@ -82,7 +82,7 @@ export default function He() {
       <Reveal position={{ x: 120 }} animation={{ delay: 1.5 }}>
         <div>
           <p className="text-sm md:text-base lg:text-lg text-low-text-black font-inter ">
-            Currently working at @C6Bank, São Paulo Brasil
+            Atualmente trabalhando no @C6Bank, São Paulo Brasil
           </p>
         </div>
       </Reveal>
@@ -103,7 +103,7 @@ export default function He() {
           onClick={() => router.push("/")}
         >
           <p className="text-center font-inter font-bold text-base sm:text-lg">
-            My Posts
+            Meus Artigos
           </p>
           <ArrowForwardIcon />
         </div>
@@ -118,7 +118,7 @@ export default function He() {
       </h1>
       <Skills />
       <div>
-        <span className="text-xs lg:text-base">All those icons are from </span>
+        <span className="text-xs lg:text-base">Todos os ícones são do</span>
         <a
           target="_blank"
           href="https://icons8.com"
@@ -152,8 +152,8 @@ export default function He() {
           <div className="text-white font-inter flex flex-col items-start space-y-4 h-full md:items-center">
             <>
               <h1 className="text-2xl border-b-4 border-purple-800 w-fit text-start pr-2 text-white mb-5">
-                Experience <span className="text-lg font-normal">&</span>{" "}
-                Projects
+                Experiência <span className="text-lg font-normal">&</span>{" "}
+                Projetos
               </h1>
               <Experience />
             </>

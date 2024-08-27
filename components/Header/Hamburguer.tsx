@@ -1,4 +1,4 @@
-'use-client'
+"use-client";
 import { HamburgerIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 import {
   IconButton,
@@ -20,16 +20,21 @@ export function Hamburguer() {
       />
       <MenuList>
         <MenuItem as="a" href="/" icon={<IoMdHome />}>
-          Home
+          Posts
         </MenuItem>
         <MenuItem as="a" href="/about/me" icon={<IoIosMale />}>
-          Me
+          Eu
         </MenuItem>
         <MenuItem as="a" href="/world" icon={<IoMdGlobe />}>
-          World
+          Globo
         </MenuItem>
         <MenuDivider />
-        <MenuItem as="a" href="/about/taxco" icon={<InfoOutlineIcon />}>
+        <MenuItem
+          as="a"
+          href="/about/taxco"
+          icon={<InfoOutlineIcon />}
+          translate="no"
+        >
           Taxco
         </MenuItem>
       </MenuList>

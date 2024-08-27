@@ -16,8 +16,8 @@ export async function generateMetadata(
 
   if (!post) {
     return {
-      title: "Post not found",
-      description: "The post you are looking for does not exist.",
+      title: "Página não encontrada",
+      description: "O Artigo que você procura não existe.",
       openGraph: {
         images: [],
       },

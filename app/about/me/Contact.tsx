@@ -1,5 +1,4 @@
 import { SocialIcon } from "react-social-icons";
-import Link from "next/link";
 
 interface Props {
   url: string;
@@ -8,9 +7,7 @@ interface Props {
 
 export default function Contact() {
   const SocialComponent = ({ url, name }: Props) => (
-    <div
-      className="flex-1 inline-flex place-items-center py-2 px-4 sm:px-8 sm:py-3 md:px-10 space-x-6 bg-white rounded-lg"
-    >
+    <div className="flex-1 inline-flex place-items-center py-2 px-4 sm:px-8 sm:py-3 md:px-10 space-x-6 bg-white rounded-lg">
       <SocialIcon
         url={url}
         style={{ height: 25, width: 25 }}
@@ -38,7 +35,7 @@ export default function Contact() {
   return (
     <div className="text-black font-inter flex flex-col items-center h-full space-y-4">
       <h1 className="text-2xl border-b-4 border-purple-800 w-fit text-start pr-2 text-white mb-5">
-        Let&apos;s build something together?
+        Vamos construir algo juntos?
       </h1>
       <div className="flex-1 flex flex-col space-y-4 font-semibold">
         {socialMediasList}

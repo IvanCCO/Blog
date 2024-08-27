@@ -10,23 +10,26 @@ export default function About() {
       </h1>
       <div>
         <p className="text-md font-light leading-relaxed text-justify xl:text-lg">
-          Hey, I&apos;m Ivan Medeiros. I&apos;m currently a Software Engineer, YouTuber,
-          writer, gamer, and entrepreneur. I&apos;ve been working with technology for
-          the past 2 years, helping companies deliver the best results.
+          Olá, eu sou Ivan Freire. Atualmente sou Engenheiro de Software,
+          YouTuber, escritor, gamer e aspirante a empreendedor. Tenho trabalhado
+          com tecnologia nos últimos 2 anos, ajudando empresas a entregar os
+          melhores resultados.
           <br></br>
           <br></br>
-          My technology journey started when I had a great idea for a website,
-          but I didn&apos;t have the knowledge to start. I didn&apos;t want to make a
-          pre-built website, so I started learning how to code on my own. I
-          learned the basics of web development, but it wasn&apos;t enough, so I
-          enrolled in computer science degree to learn the fundamental concepts
-          of computers and software projects.
+          Minha jornada na tecnologia começou quando tive uma grande ideia para
+          um site, mas não tinha o conhecimento necessário para começar. Eu não
+          queria fazer um site pré-fabricado, então comecei a aprender a
+          programar por conta própria. Aprendi o básico de desenvolvimento web,
+          mas não foi suficiente, então me inscrevi em um curso de ciência da
+          computação para aprender os conceitos fundamentais de computadores e
+          projetos de software.
           <br></br>
           <br></br>
-          Nowadays, I work full time as backend developer and I write articles
-          on this blog about things that I think it&apos;s relevant to people to
-          know. Things like a book review, my thought about some topic or just
-          my point of view about a new tecnology that I am working on.
+          Hoje em dia, trabalho em tempo integral como desenvolvedor backend e
+          escrevo artigos neste blog sobre coisas que considero relevantes para
+          as pessoas saberem. Coisas como uma resenha de livro, minhas reflexões
+          sobre algum assunto ou apenas meu ponto de vista sobre uma nova
+          tecnologia em que estou trabalhando.
         </p>
       </div>
 
@@ -37,7 +40,7 @@ export default function About() {
             size={{ base: "md", xl: "lg" }}
             colorScheme="teal"
           >
-            See my Resume
+            Veja meu currículo
           </Button>
         </Link>
       </div>

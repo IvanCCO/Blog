@@ -12,9 +12,9 @@ export function Logo() {
       className={`flex-none text-5xl py-3 text-white cursor-pointer w-fit ${itim.className}`}
       onClick={() => router.push("/")}
     >
-      <span className="hidden md:inline">Taxco.</span>
+      <span className="hidden md:inline" translate="no">Taxco.</span>
       {/* <span className="md:hidden">{isPostPage ? "<" : "Tx."}</span> */}
-      <span className="md:hidden">{"Tx."}</span>
+      <span className="md:hidden" translate="no">{"Tx."}</span>
     </div>
   );
 }

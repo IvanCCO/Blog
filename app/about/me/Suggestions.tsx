@@ -4,7 +4,7 @@ import { Reveal } from "../../../components/Reveal";
 interface Props {
   title: string;
   author: string;
-  url: string;
+  imageUrl: string;
   buyUrl: string;
 }
 
@@ -16,7 +16,7 @@ export default function Suggestions() {
     }
   }
 
-  const Recomendation = ({ title, author, url, buyUrl }: Props) => (
+  const Recomendation = ({ title, author, imageUrl: url, buyUrl }: Props) => (
     <div className="flex flex-col justify-center place-items-center space-y-3 self-center lg:flex-row  lg:justify-start lg:space-x-4">
       <Image
         src={url}
@@ -40,7 +40,7 @@ export default function Suggestions() {
             bg: "silver",
           }}
         >
-          Buy on Amazon
+          Compre na Amazon
         </Button>
       </div>
     </div>
@@ -51,42 +51,42 @@ export default function Suggestions() {
       key={0}
       title="The Millionaire Fastlane"
       author="M. J. DeMarco"
-      url="https://m.media-amazon.com/images/I/616BYPbOCyL._SL1500_.jpg"
+      imageUrl="https://m.media-amazon.com/images/I/616BYPbOCyL._SL1500_.jpg"
       buyUrl="https://amzn.to/3YEnpvW"
     />,
     <Recomendation
       key={1}
-      title="The Hitchhiker's Guide to the Galaxy"
+      title="Guia do Mochileiro das Galáxias"
       author="Douglas Adams"
-      url="https://m.media-amazon.com/images/I/81s2iRXDDSL._SL1500_.jpg"
-      buyUrl="https://amzn.to/3M3ipt9"
+      imageUrl="https://m.media-amazon.com/images/I/81s2iRXDDSL._SL1500_.jpg"
+      buyUrl="https://amzn.to/3T4Iv2Q"
     />,
     <Recomendation
       key={2}
-      title="The Pragmatic Programmer"
+      title="Programador Pragmático"
       author="Andrew Hunt"
-      url="https://m.media-amazon.com/images/I/61ztlXgCmpL._SL1500_.jpg"
-      buyUrl="https://amzn.to/3M3XupT"
+      imageUrl="https://m.media-amazon.com/images/I/61ztlXgCmpL._SL1500_.jpg"
+      buyUrl="https://amzn.to/3T6fELP"
     />,
     <Recomendation
       key={3}
       title="Design Patterns"
       author="Erich Gamma"
-      url="https://prodimage.images-bn.com/pimages/9780201633610_p0_v5_s1200x630.jpg"
-      buyUrl="https://amzn.to/3X4ZggZ"
+      imageUrl="https://prodimage.images-bn.com/pimages/9780201633610_p0_v5_s1200x630.jpg"
+      buyUrl="https://amzn.to/4cJj7H9"
     />,
     <Recomendation
       key={4}
-      title="Clean Code"
+      title="Código Limpo"
       author="Robert C. Martin"
-      url="https://m.media-amazon.com/images/I/51E2055ZGUL._SL1000_.jpg"
+      imageUrl="https://m.media-amazon.com/images/I/51E2055ZGUL._SL1000_.jpg"
       buyUrl="https://amzn.to/4dkt3bb"
     />,
     <Recomendation
       key={5}
-      title="How to Take Smart Notes"
+      title="How to take smart notes"
       author="Sönke Ahrens"
-      url="https://m.media-amazon.com/images/I/71nRKaywvrL._SL1500_.jpg"
+      imageUrl="https://m.media-amazon.com/images/I/71nRKaywvrL._SL1500_.jpg"
       buyUrl="https://amzn.to/3SLvw5W"
     />,
   ];
@@ -94,7 +94,7 @@ export default function Suggestions() {
   return (
     <div className="text-white font-inter flex flex-col items-center space-y-4 h-full lg:items-start ">
       <h1 className="text-2xl border-b-4 border-purple-800 w-fit text-start pr-2 text-white mb-5">
-        Currently Reading
+        Leituras do momento
       </h1>
       <SimpleGrid columns={{ base: 1, sm: 2 }} spacingY={10} w={"full"}>
         {books.map((value, index) => (

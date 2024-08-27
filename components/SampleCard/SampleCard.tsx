@@ -90,7 +90,7 @@ export function SampleCard({
               <div className="inline-flex space-x-1 place-items-center minW-fit text-neutral-300">
                 <p className="text-sm mt-4 min-w-fit">{date}</p>
                 <p className="text-sm mt-4 min-w-fit">·</p>
-                <p className="text-sm mt-4 min-w-fit">{readTime} min read</p>
+                <p className="text-sm mt-4 min-w-fit">{readTime} min</p>
               </div>
             </Flex>
           </div>

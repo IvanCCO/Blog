@@ -76,7 +76,7 @@ export function MainCard({
           </CardBody>
           <CardFooter justify="space-between">
             <p className="text-sm text-neutral-300">{date}</p>
-            <p className="text-sm text-neutral-300">{readTime} min read</p>
+            <p className="text-sm text-neutral-300">Ivan Freire</p>
           </CardFooter>
         </Stack>
       </Card>
