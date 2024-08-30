@@ -3,6 +3,8 @@ import { Providers } from "./providers";
 import "./globals.css";
 import { Metadata } from "next";
 import { formatUrlDefault } from "./_lib/formatUrl";
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,6 +36,8 @@ export default function RootLayout({
     <html lang="en" style={{ colorScheme: "dark" }} suppressHydrationWarning>
       <body className={inter.className}>
         <Providers>{children}</Providers>
+        <SpeedInsights/>
+        <Analytics />
       </body>
     </html>
   );
