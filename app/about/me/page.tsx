@@ -51,7 +51,7 @@ export default function He() {
       </div>
       <Image
         src={MY_PIC.src}
-        alt="Ivan Miranda climbing a dune"
+        alt="Ivan Freire com óculos de motocross"
         className="w-1/2 object-cover rounded-tl-full rounded-bl-full rounded-br-md rounded-tr-md max-h-[500px] max-w-[500px]"
         loading="lazy"
       />

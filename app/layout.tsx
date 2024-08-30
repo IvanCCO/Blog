@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Ivan Freire | meu Palácio Digital",
   description: "Aqui eu compartilho meus pensamentos, ideias, opniões e muito mais.",
-  authors: { name: "Ivan Miranda" },
+  authors: { name: "Ivan Freire" },
   keywords: ["livro", "artigo", "codigo", "finanças", "HowTo", "tecnologia"],
   openGraph: {
     siteName: "Ivan Freire",

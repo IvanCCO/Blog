@@ -24,7 +24,7 @@ export function ProfileRow({
         size={{ base: "md", md: "lg" }}
       />
       <Box>
-        <h1 className="text-sm sm:text-base lg:text-lg">Ivan Miranda</h1>
+        <h1 className="text-sm sm:text-base lg:text-lg">Ivan Freire</h1>
         <p className="text-xs text-neutral-300 sm:text-base">
           Postado {data && formatDateWithYear(new Date(data))} · {readTime} min
         </p>
