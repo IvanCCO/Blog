@@ -102,7 +102,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
               <>
                 <br />
                 <p
-                  className="text-base font-bold leading-relaxed lg:text-lg italic"
+                  className="text-base font-bold leading-loose lg:text-lg italic"
                   {...props}
                 >
                   {strippedContent}
