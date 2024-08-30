@@ -6,7 +6,7 @@ export default function About() {
   return (
     <div className="text-white font-inter space-y-4">
       <h1 className="text-2xl border-b-4 border-purple-800 w-fit pr-4">
-        About Ivan
+        Sobre Ivan
       </h1>
       <div>
         <p className="text-md font-light leading-relaxed text-justify xl:text-lg">

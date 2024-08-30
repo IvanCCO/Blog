@@ -21,10 +21,12 @@ export default function He() {
         <Reveal position={{ y: 120 }} animation={{ delay: 0.8 }}>
           <div>
             <div>
-              <p className="text-xl text-white 2xl:text-2xl">Olá, eu sou</p>
+              <p className="text-xl text-white 2xl:text-2xl">
+                Olá amigos, eu sou
+              </p>
             </div>
             <p className="text-5xl text-white leading-tight 2xl:text-7xl">
-              Ivan Freire, Enginner Software🤙
+              Ivan Freire, Engenheiro de Software🤙
             </p>
             <Reveal position={{ x: 120 }} animation={{ delay: 1.5 }}>
               <div>
@@ -66,7 +68,7 @@ export default function He() {
         >
           <div>
             <p className="text-md sm:text-lg lg:text-lg text-white">
-              Olá, eu sou
+              Olá amigos, eu sou
             </p>
           </div>
         </Reveal>
@@ -118,7 +120,7 @@ export default function He() {
       </h1>
       <Skills />
       <div>
-        <span className="text-xs lg:text-base">Todos os ícones são do</span>
+        <span className="text-xs lg:text-base">Todos os ícones são do </span>
         <a
           target="_blank"
           href="https://icons8.com"
