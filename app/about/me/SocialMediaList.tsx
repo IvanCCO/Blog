@@ -20,7 +20,7 @@ export default function SocialMediaList() {
       network: "github",
     },
     {
-      url: "https://www.linkedin.com/in/ivan-medeiros-024133241",
+      url: "https://www.linkedin.com/in/ivan-f-m-medeiros",
     },
     {
       url: "https://www.instagram.com/ivan_oliverss/",
@@ -56,6 +56,7 @@ export default function SocialMediaList() {
               height: iconSize,
               width: iconSize,
             }}
+            target="_blank"
             url={value.url}
             {...(!value.useDefault && {
               bgColor: value.bg,
