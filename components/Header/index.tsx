@@ -31,7 +31,7 @@ const headerItens = ({ onClick }: { onClick: (path: string) => void }) => {
     ROOT: "/",
     ABOUT: "/about/me",
     WORLD: "/world",
-    TAXCO: "/about/taxco",
+    TAXCO: "/about",
   };
   return (
     <div className="hidden sm:inline-flex w-1/2 justify-between text-lg">
@@ -44,7 +44,7 @@ const headerItens = ({ onClick }: { onClick: (path: string) => void }) => {
       {BeforeStyle("Globo", "bg-cyan-700", PATHS.WORLD, () =>
         onClick(PATHS.WORLD)
       )}
-      {BeforeStyle("Taxco", "bg-green-800", PATHS.TAXCO, () =>
+      {BeforeStyle("Sobre", "bg-green-800", PATHS.TAXCO, () =>
         onClick(PATHS.TAXCO)
       )}
     </div>

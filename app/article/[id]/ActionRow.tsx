@@ -35,7 +35,7 @@ export function ActionRow({
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const shareUrl = "taxco.vercel.app"
+  const shareUrl = "ivanfreire.me"
   const iconSize = useBreakpointValue({
     base: "15vw",
     sm: "60px",

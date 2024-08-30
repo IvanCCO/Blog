@@ -1,6 +1,6 @@
 "use client";
-import { formatUrlArticle, formatUrlDefault } from "@/app/_lib/formatUrl";
-import Header from "../../../components/Header";
+import { formatUrlDefault } from "@/app/_lib/formatUrl";
+import Header from "../../components/Header";
 import MarkdownFormatter from "@/components/MarkdownFormatter";
 import { useEffect, useState } from "react";
 

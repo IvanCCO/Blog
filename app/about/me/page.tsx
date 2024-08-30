@@ -29,7 +29,7 @@ export default function He() {
             <Reveal position={{ x: 120 }} animation={{ delay: 1.5 }}>
               <div>
                 <p className="text-sm text-low-text-black font-inter xl:text-lg mt-8">
-                  Atualmente trabalhando no @C6Bank, São Paulo Brasil
+                  Atualmente trabalho no @C6Bank, São Paulo Brasil
                 </p>
               </div>
             </Reveal>
@@ -82,7 +82,7 @@ export default function He() {
       <Reveal position={{ x: 120 }} animation={{ delay: 1.5 }}>
         <div>
           <p className="text-sm md:text-base lg:text-lg text-low-text-black font-inter ">
-            Atualmente trabalhando no @C6Bank, São Paulo Brasil
+            Atualmente trabalho no @C6Bank, São Paulo Brasil
           </p>
         </div>
       </Reveal>

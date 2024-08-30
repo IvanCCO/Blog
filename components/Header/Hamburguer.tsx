@@ -31,11 +31,11 @@ export function Hamburguer() {
         <MenuDivider />
         <MenuItem
           as="a"
-          href="/about/taxco"
+          href="/about"
           icon={<InfoOutlineIcon />}
           translate="no"
         >
-          Taxco
+          Sobre
         </MenuItem>
       </MenuList>
     </Menu>

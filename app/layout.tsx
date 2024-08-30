@@ -7,19 +7,19 @@ import { formatUrlDefault } from "./_lib/formatUrl";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Taxco | meu Palácio Digital",
+  title: "Ivan Freire | meu Palácio Digital",
   description: "Aqui eu compartilho meus pensamentos, ideias, opniões e muito mais.",
   authors: { name: "Ivan Miranda" },
   keywords: ["livro", "artigo", "codigo", "finanças", "HowTo", "tecnologia"],
   openGraph: {
-    siteName: "Taxco",
-    title: "Taxco | meu Palácio Digital",
+    siteName: "Ivan Freire",
+    title: "Ivan Freire | meu Palácio Digital",
     description: "Aqui eu compartilho meus pensamentos, ideias, opniões e muito mais",
     images: formatUrlDefault("logo-taxco.png"),
     type: "article",
   },
   twitter: {
-    title: "Taxco | meu Palácio Digital",
+    title: "Ivan Freire | meu Palácio Digital",
     description: "Aqui eu compartilho meus pensamentos, ideias, opniões e muito mais",
     images: formatUrlDefault("logo-taxco.png"),
   },
