@@ -63,10 +63,10 @@ export default function Suggestions() {
     />,
     <Recomendation
       key={2}
-      title="Programador Pragmático"
-      author="Andrew Hunt"
-      imageUrl="https://m.media-amazon.com/images/I/61ztlXgCmpL._SL1500_.jpg"
-      buyUrl="https://amzn.to/3T6fELP"
+      title="Mostre seu trabalho!"
+      author=" Austin Kleon"
+      imageUrl="https://m.media-amazon.com/images/I/71vKQ7MJm-L._SL1500_.jpg"
+      buyUrl="https://a.co/d/bV0D3CU"
     />,
     <Recomendation
       key={3}
@@ -77,10 +77,10 @@ export default function Suggestions() {
     />,
     <Recomendation
       key={4}
-      title="Código Limpo"
-      author="Robert C. Martin"
-      imageUrl="https://m.media-amazon.com/images/I/51E2055ZGUL._SL1000_.jpg"
-      buyUrl="https://amzn.to/4dkt3bb"
+      title="Traction: How Any Startup Can Achieve Explosive Customer Growth"
+      author="Gabriel Weinberg"
+      imageUrl="https://m.media-amazon.com/images/I/81zyjfthhcL._SL1500_.jpg"
+      buyUrl="https://a.co/d/aFpmjMf"
     />,
     <Recomendation
       key={5}
