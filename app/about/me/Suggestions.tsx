@@ -66,7 +66,7 @@ export default function Suggestions() {
       title="Mostre seu trabalho!"
       author=" Austin Kleon"
       imageUrl="https://m.media-amazon.com/images/I/71vKQ7MJm-L._SL1500_.jpg"
-      buyUrl="https://a.co/d/bV0D3CU"
+      buyUrl="https://amzn.to/4dUwGF4"
     />,
     <Recomendation
       key={3}
@@ -80,7 +80,7 @@ export default function Suggestions() {
       title="Traction: How Any Startup Can Achieve Explosive Customer Growth"
       author="Gabriel Weinberg"
       imageUrl="https://m.media-amazon.com/images/I/81zyjfthhcL._SL1500_.jpg"
-      buyUrl="https://a.co/d/aFpmjMf"
+      buyUrl="https://amzn.to/4e7gWOo"
     />,
     <Recomendation
       key={5}
