@@ -6,7 +6,7 @@ This blog bears some resemblance to Medium, but it's exclusively for my use. Cur
 
 Requirements
 
-To run Taxco, you only need to have Node installed. ❤
+To run, you only need to have Node installed. ❤
 
 git clone https://github.com/IvanCCO/Blog
 cd Blog
