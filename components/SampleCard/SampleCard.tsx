@@ -21,10 +21,8 @@ interface Props {
   createdAt: string | undefined;
   imageUrl: string | undefined;
   imageAlt: string | undefined;
-  tag: {
-    name: string;
-    color: string;
-  };
+  tag: string;
+  tagColor: string;
   onClick: () => void;
 }
 
@@ -37,6 +35,7 @@ export function SampleCard({
   imageUrl,
   imageAlt,
   tag,
+  tagColor,
   onClick
 }: Props) {
 
@@ -86,7 +85,7 @@ export function SampleCard({
               h="fit-content"
               alignItems={{ base: "baseline", md: "center", lg: "baseline" }}
             >
-              <TopicTag title={tag.name} color={tag.color} variant="solid" />
+              <TopicTag title={tag} color={tagColor} variant="solid" />
               <div className="inline-flex space-x-1 place-items-center minW-fit text-neutral-300">
                 <p className="text-sm mt-4 min-w-fit">{date}</p>
                 <p className="text-sm mt-4 min-w-fit">·</p>

@@ -9,20 +9,7 @@ import { formatUrlArticle } from "./_lib/formatUrl";
 import { useRouter } from "next/navigation";
 import MainCardSkeleton from "@/components/MainCard/MainCardSkeleton";
 import { renderSkeletons } from "@/components/SampleCard/SampleCardSkeleton";
-
-interface Post {
-  id: string;
-  title: string;
-  description: string;
-  readTime: number;
-  createdAt: string;
-  imageUrl: string;
-  imageAlt: string;
-  tag: {
-    name: string;
-    color: string;
-  };
-}
+import { Post } from "@/.contentlayer/generated";
 
 type HomeProps = {
   postsListData: Post[];
@@ -55,7 +42,7 @@ export default function Home({ postsListData }: HomeProps) {
   useEffect(() => {
     if (posts.length > 0) {
       const filteredPosts = selectedTag
-        ? posts.filter((post) => post.tag.name === selectedTag)
+        ? posts.filter((post) => post.tag === selectedTag)
         : posts;
 
       setCurrentPosts(
@@ -71,14 +58,14 @@ export default function Home({ postsListData }: HomeProps) {
   const MainCardRender: React.FC = () => {
     return (
       <MainCard
-        id={posts[0].id.toString()}
+        id={posts[0]._raw.sourceFilePath}
         title={posts[0].title}
         createdAt={posts[0].createdAt}
         readTime={posts[0].readTime}
         description={posts[0].description}
-        imageUrl={formatUrlArticle(posts[0].id.toString(), posts[0].imageUrl)}
+        imageUrl={formatUrlArticle(posts[0].imageUrl)}
         imageAlt={posts[0].imageAlt}
-        onClick={() => router.push(`article/${posts[0].id}`)}
+        onClick={() => router.push(`article/${posts[0]._raw.sourceFilePath}`)}
       />
     );
   };
@@ -88,15 +75,16 @@ export default function Home({ postsListData }: HomeProps) {
       return posts.map((value, index) => (
         <SampleCard
           key={index}
-          id={value.id}
+          id={value.title}
           title={value.title}
           description={value.description}
           createdAt={value.createdAt}
           readTime={value.readTime}
-          imageUrl={formatUrlArticle(value.id, value.imageUrl)}
+          imageUrl={formatUrlArticle(value.imageUrl)}
           imageAlt={value.imageAlt}
           tag={value.tag}
-          onClick={() => router.push(`article/${value.id}`)}
+          tagColor={value.tagColor}
+          onClick={() => router.push(`article/${value._raw.sourceFilePath}`)}
         />
       ));
     } else {
