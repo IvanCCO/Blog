@@ -96,18 +96,20 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
           const childContent =
             typeof props.children === "string" ? props.children : "";
 
+          if(childContent == "/"){
+            return <br/>
+          }
+
           if (childContent.startsWith("$$") && childContent.endsWith("$$")) {
             const strippedContent = childContent.slice(2, -2);
             return (
               <>
-                <br />
                 <p
-                  className="text-base font-bold leading-loose lg:text-lg italic"
+                  className="text-base font-bold leading-loose lg:text-lg italic my-14"
                   {...props}
                 >
                   {strippedContent}
                 </p>
-                <br />
               </>
             );
           }
@@ -180,7 +182,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         hr() {
           return (
-            <div className="w-full flex justify-center my-3 place-items-baseline">
+            <div className="w-full flex justify-center my-3 place-items-baseline my-20">
               <p className="font-itim text-xl ">ههههه</p>
             </div>
           );
