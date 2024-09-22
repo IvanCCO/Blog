@@ -1,8 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    allowMiddlewareResponseBody : true,
-  },
-};
+import { withContentlayer } from 'next-contentlayer'
 
-export default nextConfig;
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+
+export default withContentlayer(nextConfig);

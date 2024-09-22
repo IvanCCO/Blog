@@ -13,7 +13,7 @@ export function TopicTag({ title, color, variant }: TagProps) {
       borderRadius={"md"}
       cursor="pointer"
       variant={variant}
-      colorScheme={color}
+      bgColor={`#${color}`}
       textAlign="center"
       placeItems={"center"}
       justifyContent="center"

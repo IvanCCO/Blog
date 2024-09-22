@@ -1,8 +1,6 @@
-import { getWorldLocationData } from "./cache";
-import World from "./World";
+import World from "../article/[slug]/World";
+import { world } from "./worldData";
 
 export default async function Page() {
-  const worldMarkers = await getWorldLocationData();
-
-  return <World locations={worldMarkers} />;
+  return <World locations={world.features} />;
 }

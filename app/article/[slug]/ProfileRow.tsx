@@ -1,6 +1,6 @@
 import { formatDateWithYear } from "@/app/_lib/formatDate";
 import { Avatar, Box, Flex } from "@chakra-ui/react";
-import PIC from "../../../public/he-pic.jpg";
+import PIC from "../../../public/myself.jpg";
 
 export function ProfileRow({
   data,

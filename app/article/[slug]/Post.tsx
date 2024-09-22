@@ -10,34 +10,16 @@ import ProgressBar from "../../../components/ProgressBar";
 import { TopicTag } from "../../../components/TopicTag";
 import { ImageBlock } from "./ImageBlock";
 import { ProfileRow } from "./ProfileRow";
-import { useRouter } from "next/navigation";
-import { formatUrlArticle } from "@/app/_lib/formatUrl";
+import { Post as PostType } from 'contentlayer/generated'
+
 
 type PostProps = {
-  postData: any;
+  postData: PostType;
 };
 
 export default function Post({ postData }: PostProps) {
-  const router = useRouter();
 
-  const [article, _] = useState<any | null>(postData);
-  const [content, setContent] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchContent = async () => {
-      try {
-        const response = await fetch(
-          `${formatUrlArticle(postData.id, "content.txt")}`
-        );
-        const text: string = await response.text();
-        setContent(text);
-      } catch (error) {
-        router.replace("/404");
-      }
-    };
-
-    fetchContent();
-  }, []);
+  const [article, _] = useState<PostType | null>(postData);
 
   const ProfileRowSkeleton = (
     <Box boxShadow="lg" w={"50%"}>
@@ -56,9 +38,9 @@ export default function Post({ postData }: PostProps) {
             <div className="w-fit">
               {article ? (
                 <TopicTag
-                  color={article.tag.color}
+                  color={article.tagColor}
                   variant="solid"
-                  title={article.tag.name}
+                  title={article.tag}
                 />
               ) : (
                 <Skeleton
@@ -86,24 +68,16 @@ export default function Post({ postData }: PostProps) {
 
             {article ? (
               <ProfileRow
-                data={article.createdAt}
+                data={new Date(article.createdAt)}
                 readTime={article.readTime}
               />
             ) : (
               ProfileRowSkeleton
             )}
-
-            {/* {article && (
-              <ActionRow
-                title={article.title}
-                description={article.description}
-              />
-            )} */}
           </div>
           <div className="py-6">
             {article && (
               <ImageBlock
-                articleId={article.id}
                 imagePath={article.imageUrl}
                 imageAlt={article.imageAlt}
               />
@@ -111,8 +85,8 @@ export default function Post({ postData }: PostProps) {
           </div>
 
           <div>
-            {content ? (
-              <MarkdownFormatter text={content} />
+            {article ? (
+              <MarkdownFormatter text={article?.body.raw} />
             ) : (
               <SkeletonText mt={3} noOfLines={4} />
             )}
