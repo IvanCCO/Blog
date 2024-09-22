@@ -1,7 +1,8 @@
 import { Metadata, ResolvingMetadata } from "next";
+import { notFound } from 'next/navigation'
 import { formatUrlArticle } from "@/app/_lib/formatUrl";
 import Post from "./Post";
-import { allPosts, Post as PostType} from "@/.contentlayer/generated";
+import { allPosts, Post as PostType } from "@/.contentlayer/generated";
 
 
 export const generateStaticParams = async () => allPosts.map((post) => ({ slug: post._raw.flattenedPath }))
@@ -59,7 +60,7 @@ export default async function Page({ params }: Props) {
     = allPosts.find((post) => post._raw.flattenedPath === params.slug)
 
   if (!post) {
-    throw Error()
+    notFound()
   }
 
   return <Post postData={post!!} />;
