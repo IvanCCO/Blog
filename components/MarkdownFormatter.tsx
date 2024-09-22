@@ -182,7 +182,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         hr() {
           return (
-            <div className="w-full flex justify-center my-3 place-items-baseline my-20">
+            <div className="w-full flex justify-center place-items-baseline my-20">
               <p className="font-itim text-xl ">ههههه</p>
             </div>
           );

@@ -1,5 +1,4 @@
 "use client";
-import { formatUrlDefault } from "@/app/_lib/formatUrl";
 import Header from "../../components/Header";
 import MarkdownFormatter from "@/components/MarkdownFormatter";
 
