@@ -4,7 +4,7 @@
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { useEffect, useRef } from "react";
-import Header from "../../components/Header";
+import Header from "../../../components/Header";
 import Head from "next/head";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAP_TOKEN;
