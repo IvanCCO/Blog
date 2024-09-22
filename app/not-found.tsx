@@ -38,9 +38,9 @@ export default function NotFound() {
           <Text fontSize={"lg"} color={"#727272"}>
             Vá para página inicial, essa com certeza existe
             <br></br>
-            Se você acha que isso é um bug,
+            Se você acha que isso é um bug.&nbsp;
             <a
-              href="https://www.linkedin.com/in/ivan-medeiros-024133241"
+              href="www.linkedin.com/in/ivan-f-m-medeiros"
               target="_blank"
               className="text-purple-400 font-semibold"
             >

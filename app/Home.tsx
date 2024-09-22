@@ -16,12 +16,13 @@ type HomeProps = {
 };
 
 function getUniqueTags(posts: any[]): string[] {
-  const tags = posts.map((post) => post.tag.name);
+  const tags = posts.map((post) => post.tag);
   return Array.from(new Set(tags));
 }
 
 export default function Home({ postsListData }: HomeProps) {
   const router = useRouter();
+
 
   const [posts, _] = useState<Post[]>(postsListData);
   const [currentPage, setCurrentPage] = useState(1);
@@ -65,7 +66,7 @@ export default function Home({ postsListData }: HomeProps) {
         description={posts[0].description}
         imageUrl={formatUrlArticle(posts[0].imageUrl)}
         imageAlt={posts[0].imageAlt}
-        onClick={() => router.push(`article/${posts[0]._raw.sourceFilePath}`)}
+        onClick={() => router.push(posts[0].url)}
       />
     );
   };
@@ -84,7 +85,7 @@ export default function Home({ postsListData }: HomeProps) {
           imageAlt={value.imageAlt}
           tag={value.tag}
           tagColor={value.tagColor}
-          onClick={() => router.push(`article/${value._raw.sourceFilePath}`)}
+          onClick={() => router.push(value.url)}
         />
       ));
     } else {

@@ -1,18 +1,21 @@
 import { Metadata, ResolvingMetadata } from "next";
-import { getPostData } from "./cache";
 import { formatUrlArticle } from "@/app/_lib/formatUrl";
 import Post from "./Post";
+import { allPosts, Post as PostType} from "@/.contentlayer/generated";
+
+
+export const generateStaticParams = async () => allPosts.map((post) => ({ slug: post._raw.flattenedPath }))
 
 type Props = {
-  params: { id: string };
+  params: { slug: string };
 };
 
 export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const id = params.id;
-  const post = await getPostData(id);
+
+  const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)
 
   if (!post) {
     return {
@@ -24,8 +27,6 @@ export async function generateMetadata(
     };
   }
 
-  const previousImages = (await parent).openGraph?.images || [];
-
   return {
     title: post.title,
     description: post.description,
@@ -33,7 +34,7 @@ export async function generateMetadata(
       siteName: "Ivan Freire",
       images: [
         {
-          url: formatUrlArticle(id, post.imageUrl),
+          url: formatUrlArticle(post.imageUrl),
           width: 800,
           height: 600,
         },
@@ -44,16 +45,22 @@ export async function generateMetadata(
     },
     twitter: {
       card: "summary_large_image",
-      images: formatUrlArticle(id, post.imageUrl),
+      images: formatUrlArticle(post.imageUrl),
       title: post.title,
       description: post.description,
     },
   };
 }
 
+
 export default async function Page({ params }: Props) {
 
-  const postData = await getPostData(params.id);
+  const post: PostType | undefined
+    = allPosts.find((post) => post._raw.flattenedPath === params.slug)
 
-  return <Post postData={postData} />;
+  if (!post) {
+    throw Error()
+  }
+
+  return <Post postData={post!!} />;
 }
