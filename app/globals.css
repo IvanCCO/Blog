@@ -285,3 +285,7 @@ html {
   background-color: #c2410c;
   border-radius: 10px;
 }
+
+.formula-text {
+  font-family: 'Cambria Math', 'monospace', 'Courier New', serif; 
+}
