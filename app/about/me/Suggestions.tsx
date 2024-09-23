@@ -84,10 +84,10 @@ export default function Suggestions() {
     />,
     <Recomendation
       key={5}
-      title="How to take smart notes"
-      author="Sönke Ahrens"
-      imageUrl="https://m.media-amazon.com/images/I/71nRKaywvrL._SL1500_.jpg"
-      buyUrl="https://amzn.to/3SLvw5W"
+      title="How to Write Copy That Sells"
+      author="Ray Edwards"
+      imageUrl="https://taxco-bucket.s3.us-east-2.amazonaws.com/default/books/how-to-write-copy.png"
+      buyUrl="https://amzn.to/4eyLoRN"
     />,
   ];
 
