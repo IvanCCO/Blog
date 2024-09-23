@@ -103,14 +103,14 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
           if (childContent.startsWith("$$") && childContent.endsWith("$$")) {
             const strippedContent = childContent.slice(2, -2);
             return (
-              <>
+              <Center>
                 <p
-                  className="text-base font-bold leading-loose lg:text-lg italic my-14"
+                  className="text-base lg:text-lg font-light leading-loose italic my-14 formula-text border border-white-main p-10 rounded-xl"
                   {...props}
                 >
                   {strippedContent}
                 </p>
-              </>
+              </Center>
             );
           }
 

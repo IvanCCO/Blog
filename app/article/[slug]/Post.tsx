@@ -91,6 +91,7 @@ export default function Post({ postData }: PostProps) {
               <SkeletonText mt={3} noOfLines={4} />
             )}
           </div>
+          <p className="text-end font-light">Escrito por Ivan Freire</p>
           <Footer />
         </main>
       </>
