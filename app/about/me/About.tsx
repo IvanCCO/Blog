@@ -6,12 +6,12 @@ export default function About() {
   return (
     <div className="text-white font-inter space-y-4">
       <h1 className="text-2xl border-b-4 border-purple-800 w-fit pr-4">
-        Sobre Ivan
+        Sobre Mim
       </h1>
       <div>
         <p className="text-md font-light leading-relaxed text-justify xl:text-lg">
           Olá, eu sou Ivan Freire. Atualmente sou Engenheiro de Software,
-          YouTuber, escritor, gamer e aspirante a empreendedor. Tenho trabalhado
+          YouTuber, escritor e empreendedor. Tenho trabalhado
           com tecnologia nos últimos 2 anos, ajudando empresas a entregar os
           melhores resultados.
           <br></br>
