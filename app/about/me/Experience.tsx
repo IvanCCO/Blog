@@ -63,8 +63,19 @@ export default function Experience() {
     name: "South's Eagles",
     link: "https://github.com/orgs/South-s-Eagles/repositories",
   };
+  
+  const kindleTwoNotion: LinkProps = {
+    name: "KindleTwoNotion",
+    link: "https://kindletwonotion.com",
+  };
 
   const experiences = [
+    ExpecienceBlock(
+      "2024 - Current",
+      "kindleTwoNotion - CEO",
+      "Solução para leitores de Kindle e usuários do Notion, onde é possível exportar seus destaques do Kindle para o Notion de maneira simples e rápida. Mantendo seus destaques, notas, em um lugar só. Ajudando leitores, estudantes, empresários, a conseguir revisitar os aprendizados de um livro na mesma plataforma onde gerenciam seus negócios.",
+      kindleTwoNotion
+    ),
     ExpecienceBlock(
       "2024 - Current",
       "South's Eagles - Faculdade",
