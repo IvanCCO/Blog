@@ -72,7 +72,7 @@ export default function Experience() {
   const experiences = [
     ExpecienceBlock(
       "2024 - Current",
-      "kindleTwoNotion - CEO",
+      "kindleTwoNotion - Founder",
       "Solução para leitores de Kindle e usuários do Notion, onde é possível exportar seus destaques do Kindle para o Notion de maneira simples e rápida. Mantendo seus destaques, notas, em um lugar só. Ajudando leitores, estudantes, empresários, a conseguir revisitar os aprendizados de um livro na mesma plataforma onde gerenciam seus negócios.",
       kindleTwoNotion
     ),
