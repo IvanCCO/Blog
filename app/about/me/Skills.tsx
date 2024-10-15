@@ -32,7 +32,7 @@ export default function Skills() {
 
   const image = (icon: string, name: string) => {
     return (
-      <div className="text-center cursor-pointer">
+      <div className="text-center cursor-pointer py-12">
         <Image src={icon} boxSize={"60px"} mx={5} alt={name}/>
         <p className="text-xs lg:text-base">{name}</p>
       </div>

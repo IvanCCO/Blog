@@ -39,17 +39,6 @@ export default function He() {
         </Reveal>
 
         <SocialMediaList />
-        <Reveal position={{ y: -75 }} animation={{ duration: 0.2, delay: 2 }}>
-          <div
-            className="gradient relative items-center content-center text-white text-md rounded-md py-2 px-4 z-0 flex-row inline-flex w-full justify-center cursor-pointer xl:py-5"
-            onClick={() => router.push("/")}
-          >
-            <p className="text-center font-inter font-bold text-base sm:text-lg xl:text-2xl">
-              Meus Artigos
-            </p>
-            <ArrowForwardIcon boxSize={{ base: "20px", xl: "30px" }} />
-          </div>
-        </Reveal>
       </div>
       <Image
         src={MY_PIC.src}
@@ -100,15 +89,6 @@ export default function He() {
       />
       <div className="w-1/2 flex flex-col space-y-3 justify-center place-items-center">
         <SocialMediaList />
-        <div
-          className="gradient relative items-center content-center text-white text-md rounded-md py-2 px-4 z-0 flex-row inline-flex w-full justify-center cursor-pointer"
-          onClick={() => router.push("/")}
-        >
-          <p className="text-center font-inter font-bold text-base sm:text-lg">
-            Meus Artigos
-          </p>
-          <ArrowForwardIcon />
-        </div>
       </div>
     </div>
   );
@@ -161,7 +141,6 @@ export default function He() {
             </>
           </div>
           <Suggestions />
-          <Contact />
           <Footer />
         </div>
       </main>

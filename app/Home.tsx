@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import MainCardSkeleton from "@/components/MainCard/MainCardSkeleton";
 import { renderSkeletons } from "@/components/SampleCard/SampleCardSkeleton";
 import { Post } from "@/.contentlayer/generated";
+import Footer from "@/components/Footer";
 
 type HomeProps = {
   postsListData: Post[];
@@ -22,7 +23,6 @@ function getUniqueTags(posts: any[]): string[] {
 
 export default function Home({ postsListData }: HomeProps) {
   const router = useRouter();
-
 
   const [posts, _] = useState<Post[]>(postsListData);
   const [currentPage, setCurrentPage] = useState(1);
@@ -148,6 +148,7 @@ export default function Home({ postsListData }: HomeProps) {
             onPageChange={onPageChange}
           />
         </div>
+        <Footer />
       </main>
     </>
   );

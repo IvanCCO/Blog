@@ -1,9 +1,9 @@
 "use client";
+import Footer from "@/components/Footer";
 import Header from "../../components/Header";
 import MarkdownFormatter from "@/components/MarkdownFormatter";
 
 export default function About() {
-
   const content = `Esse blog é um marco importante pra mim, sendo meu primeiro projeto solo, desde a ideia inicial até o lançamento. Mas o que exatamente é esse site? Um portfólio? Um blog? Na verdade, é um pouco de tudo isso e mais. Aqui é o meu cantinho virtual, onde guardo meus pensamentos, descobertas e insights que acho que valem a pena serem compartilhados.
 
 
@@ -34,7 +34,7 @@ Quero expressar minha imensa gratidão à minha mãe, que sempre me apoiou e me 
 
 E este projeto também é um reflexo do apoio incrível da minha namorada, Stéphanie. Seu apoio me manteve motivado e me ajudou a não desistir mesmo quando a motivação estava em baixa.
 
-**@Ivan Freire**`
+**@Ivan Freire**`;
 
   return (
     <>
@@ -42,6 +42,7 @@ E este projeto também é um reflexo do apoio incrível da minha namorada, Stép
 
       <main className="main px-default-width md:px-44 sm:px-28 lg:px-52 xl:px-72 2xl:px-[30rem] 3xl:px-[36rem] bg-he-background">
         <MarkdownFormatter text={content} />
+        <Footer />
       </main>
     </>
   );

@@ -23,7 +23,7 @@ export default function SocialMediaList() {
       url: "https://www.linkedin.com/in/ivan-f-m-medeiros",
     },
     {
-      url: "https://www.instagram.com/ivan_oliverss/",
+      url: "https://www.instagram.com/ivanfreiremm",
     },
     {
       url: "https://www.youtube.com/channel/UCGl5UhjdrFYYPryKV5OIsiQ",
@@ -40,7 +40,7 @@ export default function SocialMediaList() {
 
   return (
     <SimpleGrid
-      columns={{ base: 3, lg: 6 }}
+      columns={{ base: 2, lg: 6 }}
       spacingX={{ base: 2, sm: 2, md: 3, lg: 1 }}
       spacingY={{ base: 4, sm: 6, md: 7 }}
     >

@@ -31,6 +31,6 @@
     "app/world/page.jsx",
     ".contentlayer/generated",
     ".contentlayer/generated/**/*.json"
-  ],
+, "components/icons/icons.jsx"  ],
   "exclude": ["node_modules"]
 }

@@ -38,7 +38,8 @@ export default function About() {
           <Button
             leftIcon={<Icon as={IoMdPaper} />}
             size={{ base: "md", xl: "lg" }}
-            colorScheme="teal"
+            bg={"white"}
+            color={"black"}
           >
             Veja meu currículo
           </Button>

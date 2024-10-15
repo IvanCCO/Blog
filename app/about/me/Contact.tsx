@@ -30,6 +30,11 @@ export default function Contact() {
       url="https://www.instagram.com/ivan_oliverss/"
       name="Instagram"
     />,
+    <SocialComponent
+      key={3}
+      url="https://www.youtube.com/@ivanfreirem"
+      name="Youtube"
+    />,
   ];
 
   return (
