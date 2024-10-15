@@ -49,10 +49,10 @@ export default function Suggestions() {
   const books = [
     <Recomendation
       key={0}
-      title="The Millionaire Fastlane"
-      author="M. J. DeMarco"
-      imageUrl="https://m.media-amazon.com/images/I/616BYPbOCyL._SL1500_.jpg"
-      buyUrl="https://amzn.to/3YEnpvW"
+      title="Dotcom Secrets"
+      author="Russell Brunson"
+      imageUrl="https://m.media-amazon.com/images/I/81OtGeBZ5BL._SL1500_.jpg"
+      buyUrl="https://amzn.to/487lToK"
     />,
     <Recomendation
       key={1}
@@ -64,16 +64,16 @@ export default function Suggestions() {
     <Recomendation
       key={2}
       title="Mostre seu trabalho!"
-      author=" Austin Kleon"
+      author="Austin Kleon"
       imageUrl="https://m.media-amazon.com/images/I/71vKQ7MJm-L._SL1500_.jpg"
       buyUrl="https://amzn.to/4dUwGF4"
     />,
     <Recomendation
       key={3}
-      title="Design Patterns"
-      author="Erich Gamma"
-      imageUrl="https://prodimage.images-bn.com/pimages/9780201633610_p0_v5_s1200x630.jpg"
-      buyUrl="https://amzn.to/4cJj7H9"
+      title="The Best Story Wins"
+      author="Matthew Luhn"
+      imageUrl="https://m.media-amazon.com/images/I/7148pdpPhJL._SL1500_.jpg"
+      buyUrl="https://amzn.to/3A11yor"
     />,
     <Recomendation
       key={4}
