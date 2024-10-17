@@ -1,9 +1,8 @@
-"use server";
-import Footer from "@/components/Footer";
 import Header from "../../components/Header";
 import MarkdownFormatter from "@/components/MarkdownFormatter";
 import type { Metadata } from "next";
 import { formatUrlDefault } from "@/app/_lib/formatUrl";
+import Footer from "@/components/Footer";
 
 const openGraph = {
   title: "Sobre o Blog",
@@ -35,7 +34,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function About() {
+export default function About() {
   const content = `Esse blog é um marco importante pra mim, sendo meu primeiro projeto solo, desde a ideia inicial até o lançamento. Mas o que exatamente é esse site? Um portfólio? Um blog? Na verdade, é um pouco de tudo isso e mais. Aqui é o meu cantinho virtual, onde guardo meus pensamentos, descobertas e insights que acho que valem a pena serem compartilhados.
 
 
