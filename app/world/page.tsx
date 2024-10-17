@@ -4,7 +4,7 @@ import { world } from "./worldData";
 import type { Metadata } from "next";
 
 const openGraph = {
-  title: "Ivan Freire - Globo | Todos os lugares que já estive.",
+  title: "Globo | Todos os lugares que já estive.",
   description:
     "Meu sonho é conhecer os 4 oceanos, ter contato com diversas culturas, aprender dezenas de idiomas, e não vou desistir.",
 };
