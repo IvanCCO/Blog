@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" style={{ colorScheme: "dark" }} suppressHydrationWarning>
+    <html lang="pt" style={{ colorScheme: "dark" }} suppressHydrationWarning>
       <body className={inter.className}>
         <Providers>{children}</Providers>
         <Analytics />

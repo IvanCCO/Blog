@@ -12,38 +12,6 @@ import SocialMediaList from "./SocialMediaList";
 import Suggestions from "./Suggestions";
 import Skills from "./Skills";
 import Footer from "@/components/Footer";
-import type { Metadata } from "next";
-import { formatUrlDefault } from "@/app/_lib/formatUrl";
-
-const openGraph = {
-  title: "Sobre mim",
-  description:
-    "Aqui eu falo um pouco sobre mim, o que eu sei, os projetos que trabalhei, minhas redes sociais e mais importante, o que estou lendo no momento.",
-};
-
-export const metadata: Metadata = {
-  title: openGraph.title,
-  description: openGraph.description,
-  openGraph: {
-    siteName: "Ivan Freire",
-    images: [
-      {
-        url: formatUrlDefault("logo-taxco.png"),
-        width: 800,
-        height: 600,
-      },
-    ],
-    type: "website",
-    title: openGraph.title,
-    description: openGraph.description,
-  },
-  twitter: {
-    card: "summary_large_image",
-    images: formatUrlDefault("logo-taxco.png"),
-    title: openGraph.title,
-    description: openGraph.description,
-  },
-};
 
 export default function He() {
   const router = useRouter();
