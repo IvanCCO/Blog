@@ -28,7 +28,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/world/page.jsx",
     ".contentlayer/generated",
     ".contentlayer/generated/**/*.json"
 , "components/icons/icons.jsx"  ],
