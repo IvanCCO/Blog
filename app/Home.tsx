@@ -1,5 +1,5 @@
 "use client";
-import { Select, Stack, Text } from "@chakra-ui/react";
+import { Grid, Select, Stack, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import { MainCard } from "../components/MainCard/MainCard";
@@ -136,9 +136,11 @@ export default function Home({ postsListData }: HomeProps) {
           </div>
           <Stack
             direction={["column", "column", "row"]}
+            wrap="nowrap"
             placeItems={"center"}
             justifyContent={["center", "center", justifyContent]}
             w={"full"}
+            alignItems="stretch"
           >
             {renderPosts(currentPosts)}
           </Stack>

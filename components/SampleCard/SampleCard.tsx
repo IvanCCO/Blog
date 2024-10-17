@@ -36,9 +36,8 @@ export function SampleCard({
   imageAlt,
   tag,
   tagColor,
-  onClick
+  onClick,
 }: Props) {
-
   const maxCharacters = 125;
   const date = formatDate(createdAt);
 
@@ -47,11 +46,12 @@ export function SampleCard({
       <Card
         cursor={"pointer"}
         boxShadow={"base"}
+        w={{ xl: "320px" }}
         minW="220px"
         maxW={["full", "full", "330px"]}
         bg={"whiteAlpha.200"}
         color={"white"}
-        alignSelf={["center", "center", "stretch"]}
+        alignSelf={["center", "stretch", "stretch"]}
         onClick={onClick}
       >
         <CardBody>
