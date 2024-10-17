@@ -1,3 +1,4 @@
+"use server";
 import Footer from "@/components/Footer";
 import Header from "../../components/Header";
 import MarkdownFormatter from "@/components/MarkdownFormatter";
@@ -10,7 +11,6 @@ const openGraph = {
     "Por que eu construi esse blog? Não era melhor ter feito outras coisas da minha vida?",
 };
 
-("use server");
 export const metadata: Metadata = {
   title: openGraph.title,
   description: openGraph.description,
