@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function About() {
+export default async function About() {
   const content = `Esse blog é um marco importante pra mim, sendo meu primeiro projeto solo, desde a ideia inicial até o lançamento. Mas o que exatamente é esse site? Um portfólio? Um blog? Na verdade, é um pouco de tudo isso e mais. Aqui é o meu cantinho virtual, onde guardo meus pensamentos, descobertas e insights que acho que valem a pena serem compartilhados.
 
 
