@@ -1,7 +1,39 @@
-"use client";
 import Footer from "@/components/Footer";
 import Header from "../../components/Header";
 import MarkdownFormatter from "@/components/MarkdownFormatter";
+import type { Metadata } from "next";
+import { formatUrlDefault } from "@/app/_lib/formatUrl";
+
+const openGraph = {
+  title: "Sobre o Blog",
+  description:
+    "Por que eu construi esse blog? Não era melhor ter feito outras coisas da minha vida?",
+};
+
+("use server");
+export const metadata: Metadata = {
+  title: openGraph.title,
+  description: openGraph.description,
+  openGraph: {
+    siteName: "Ivan Freire",
+    images: [
+      {
+        url: formatUrlDefault("logo-taxco.png"),
+        width: 800,
+        height: 600,
+      },
+    ],
+    type: "website",
+    title: openGraph.title,
+    description: openGraph.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: formatUrlDefault("logo-taxco.png"),
+    title: openGraph.title,
+    description: openGraph.description,
+  },
+};
 
 export default function About() {
   const content = `Esse blog é um marco importante pra mim, sendo meu primeiro projeto solo, desde a ideia inicial até o lançamento. Mas o que exatamente é esse site? Um portfólio? Um blog? Na verdade, é um pouco de tudo isso e mais. Aqui é o meu cantinho virtual, onde guardo meus pensamentos, descobertas e insights que acho que valem a pena serem compartilhados.
