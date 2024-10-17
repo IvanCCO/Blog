@@ -10,19 +10,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${BASE_URL}/about/me`,
+      url: `${BASE_URL}/world`,
       lastModified: new Date(),
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/world`,
-      lastModified: new Date(),
-      priority: 0.8,
-    },
-    {
       url: `${BASE_URL}/about`,
       lastModified: new Date(),
-      priority: 0.7,
+      priority: 0.8,
     },
   ];
 }
