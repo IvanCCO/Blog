@@ -1,10 +1,9 @@
 import { Divider } from "@chakra-ui/react";
-import Image from "next/image";
-import GITHUB_ICON from "./icons/github.svg";
 import {
   GithubIcon,
   InstagramIcon,
   LinkedInIcon,
+  XIcon,
   YoutubeIcon,
 } from "./icons/icons";
 import Link from "next/link";
@@ -20,11 +19,17 @@ export default function Footer() {
         <Link href={"https://www.instagram.com/ivanfreiremm"} target="_blank">
           <InstagramIcon fill="white" w="20" />
         </Link>
-        <Link href={"https://www.linkedin.com/in/ivan-f-m-medeiros"} target="_blank">
+        <Link
+          href={"https://www.linkedin.com/in/ivan-f-m-medeiros"}
+          target="_blank"
+        >
           <LinkedInIcon fill="white" w="20" />
         </Link>
         <Link href={"https://www.youtube.com/@ivanfreirem"} target="_blank">
           <YoutubeIcon fill="white" w="20" />
+        </Link>
+        <Link href={"https://x.com/IvanFreire53674"} target="_blank">
+          <XIcon fill="white" w="20" />
         </Link>
       </div>
     </div>
