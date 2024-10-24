@@ -28,6 +28,9 @@ export default function SocialMediaList() {
     {
       url: "https://www.youtube.com/channel/UCGl5UhjdrFYYPryKV5OIsiQ",
     },
+    {
+      url: "https://x.com/IvanFreire53674",
+    },
   ];
 
   const iconSize = useBreakpointValue({
