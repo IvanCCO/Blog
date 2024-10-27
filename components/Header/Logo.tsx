@@ -2,8 +2,6 @@ import { itim } from "@/app/fonts";
 import { useRouter } from "next/navigation";
 
 export function Logo() {
-
-
   const router = useRouter();
 
   return (

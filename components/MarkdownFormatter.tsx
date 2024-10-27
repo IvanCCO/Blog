@@ -24,7 +24,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
   return (
     <Markdown
       remarkPlugins={[remarkGfm, remarkToc]}
-      className={"text-white pb-24"}
+      className={"text-white pb-12"}
       components={{
         code(props) {
           const { children, className, node, ...rest } = props;
