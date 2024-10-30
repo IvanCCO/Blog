@@ -27,6 +27,9 @@ export const metadata: Metadata = {
       "Aqui eu compartilho meus pensamentos, ideias, opniões e muito mais",
     images: formatUrlDefault("logo-taxco.png"),
   },
+  alternates: {
+    canonical: "https://www.ivanfreire.me"
+  }
 };
 
 export default function RootLayout({
