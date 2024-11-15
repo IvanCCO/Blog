@@ -56,17 +56,17 @@ export default function Suggestions() {
     />,
     <Recomendation
       key={1}
-      title="Guia do Mochileiro das Galáxias"
-      author="Douglas Adams"
-      imageUrl="https://m.media-amazon.com/images/I/81s2iRXDDSL._SL1500_.jpg"
-      buyUrl="https://amzn.to/3T4Iv2Q"
+      title="Domain-Driven Design"
+      author="Eric Evans"
+      imageUrl="https://m.media-amazon.com/images/I/61aIS4n2jZL._SL1000_.jpg"
+      buyUrl="https://amzn.to/3Oup6WF"
     />,
     <Recomendation
       key={2}
-      title="Mostre seu trabalho!"
-      author="Austin Kleon"
-      imageUrl="https://m.media-amazon.com/images/I/71vKQ7MJm-L._SL1500_.jpg"
-      buyUrl="https://amzn.to/4dUwGF4"
+      title="Originais"
+      author="Adam Grant"
+      imageUrl="https://m.media-amazon.com/images/I/810b-Dg3SfL._SL1500_.jpg"
+      buyUrl="https://amzn.to/40IU4BB"
     />,
     <Recomendation
       key={3}
