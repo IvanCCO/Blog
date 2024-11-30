@@ -70,10 +70,10 @@ export default function Suggestions() {
     />,
     <Recomendation
       key={3}
-      title="The Best Story Wins"
-      author="Matthew Luhn"
-      imageUrl="https://m.media-amazon.com/images/I/7148pdpPhJL._SL1500_.jpg"
-      buyUrl="https://amzn.to/3A11yor"
+      title="O ato criativo"
+      author="Rick Rubin"
+      imageUrl="https://m.media-amazon.com/images/I/91uvoWVqhuL._SL1500_.jpg"
+      buyUrl="https://amzn.to/4id0CP6"
     />,
     <Recomendation
       key={4}
