@@ -84,10 +84,10 @@ export default function Suggestions() {
     />,
     <Recomendation
       key={5}
-      title="How to Write Copy That Sells"
-      author="Ray Edwards"
-      imageUrl="https://taxco-bucket.s3.us-east-2.amazonaws.com/default/books/how-to-write-copy.png"
-      buyUrl="https://amzn.to/4eyLoRN"
+      title="Entendendo Algoritmos"
+      author="Aditya Y. Bhargava"
+      imageUrl="https://m.media-amazon.com/images/I/71Vkg7GfPFL._SL1296_.jpg"
+      buyUrl="https://amzn.to/3CTKTV5"
     />,
   ];
 
