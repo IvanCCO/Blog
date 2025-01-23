@@ -41,6 +41,7 @@ const jsonLd: WithContext<Blog> =
   "@type": "Blog",
   name: "Ivan Freire",
   url: "https://www.ivanfreire.me",
+  inLanguage: 'pt-BR',
   description: "Nesse blog compartilho Minha jornada, vivências, derrotas, vitórias e desafios.",
   blogPost: {
     "@id": allPosts.reduce((latest, post) => {
@@ -50,6 +51,10 @@ const jsonLd: WithContext<Blog> =
   about: "My Life",
   author: "Ivan Freire",
   character: {
+    "@type": "Person",
+    name: "Ivan Freire",
+  },
+  creator: {
     "@type": "Person",
     name: "Ivan Freire",
   }

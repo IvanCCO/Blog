@@ -6,15 +6,37 @@ import MY_PIC from "../../../public/myself.jpg";
 import Header from "../../../components/Header";
 import { Reveal } from "../../../components/Reveal";
 import About from "./About";
-import Contact from "./Contact";
 import Experience from "./Experience";
 import SocialMediaList from "./SocialMediaList";
 import Suggestions from "./Suggestions";
 import Skills from "./Skills";
 import Footer from "@/components/Footer";
+import { Blog, WithContext } from "schema-dts";
+import Script from "next/script";
+
+const jsonLd: WithContext<Blog> =
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  name: "Ivan Freire",
+  url: "https://www.ivanfreire.me",
+  inLanguage: 'pt-BR',
+  description: "Nesse blog compartilho Minha jornada, vivências, derrotas, vitórias e desafios.",
+  about: "My Life",
+  author: "Ivan Freire",
+  character: {
+    "@type": "Person",
+    name: "Ivan Freire",
+  },
+  creator: {
+    "@type": "Person",
+    name: "Ivan Freire",
+  }
+};
+
+
 
 export default function He() {
-  const router = useRouter();
   const desktopWorking = (
     <div className="flex justify-between h-4/6">
       <div className="flex flex-col w-1/2 pr-7 space-y-7 xl:justify-evenly">
@@ -115,6 +137,13 @@ export default function He() {
   const [isLargerThan1024] = useMediaQuery("(min-width: 1024px)");
   return (
     <>
+      <Script
+        id="about-me-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
       <Header />
 
       <main className="h-full py-24 bg-he-background px-default-width sm:px-28 md:px-44 lg:px-52 xl:px-72 2xl:px-96">

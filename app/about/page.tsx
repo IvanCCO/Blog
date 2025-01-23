@@ -3,6 +3,8 @@ import MarkdownFormatter from "@/components/MarkdownFormatter";
 import type { Metadata } from "next";
 import { formatUrlDefault } from "@/app/_lib/formatUrl";
 import Footer from "@/components/Footer";
+import { AboutPage, WithContext } from "schema-dts";
+import Script from "next/script";
 
 const openGraph = {
   title: "Sobre o Blog",
@@ -33,6 +35,29 @@ export const metadata: Metadata = {
     description: openGraph.description,
   },
 };
+
+const jsonLd: WithContext<AboutPage> =
+{
+  "@context": "https://schema.org",
+  '@id': 'https://www.ivanfreire.me/#about',
+  '@type': 'AboutPage',
+  url: 'https://www.ivanfreire.me/about',
+  name: "Ivan Freire",
+  inLanguage: 'pt-BR',
+  description: 'Nesse blog compartilho Minha jornada, vivências, derrotas, vitórias e desafios.',
+  mainEntity: { '@id': 'https://www.ivanfreire.me' },
+  character: {
+    "@type": "Person",
+    name: "Ivan Freire",
+  },
+  creator: {
+    "@type": "Person",
+    name: "Ivan Freire",
+  }
+};
+
+
+
 
 export default function About() {
   const content = `Esse blog é um marco importante pra mim, sendo meu primeiro projeto solo, desde a ideia inicial até o lançamento. Mas o que exatamente é esse site? Um portfólio? Um blog? Na verdade, é um pouco de tudo isso e mais. Aqui é o meu cantinho virtual, onde guardo meus pensamentos, descobertas e insights que acho que valem a pena serem compartilhados.
@@ -69,6 +94,13 @@ E este projeto também é um reflexo do apoio incrível da minha namorada, Stép
 
   return (
     <>
+      <Script
+        id="about-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
       <Header />
 
       <main className="main px-default-width md:px-44 sm:px-28 lg:px-52 xl:px-72 2xl:px-[30rem] 3xl:px-[36rem] bg-he-background">

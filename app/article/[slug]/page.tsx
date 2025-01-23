@@ -70,6 +70,7 @@ export default async function Page({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     identifier: post._id,
+    inLanguage: 'pt-BR',
     headline: post.title,
     description: post.description,
     datePublished: post.createdAt,
