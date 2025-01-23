@@ -6,6 +6,7 @@ import { formatUrlDefault } from "./_lib/formatUrl";
 import { Analytics } from "@vercel/analytics/react";
 import { Blog, WithContext } from "schema-dts";
 import Script from "next/script";
+import { allPosts } from "@/.contentlayer/generated";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,7 +41,18 @@ const jsonLd: WithContext<Blog> =
   "@type": "Blog",
   name: "Ivan Freire",
   url: "https://www.ivanfreire.me",
-  description: "Meu Blog onde compartilho meus pensamentos, ideias, opniões e aprendizados.",
+  description: "Nesse blog compartilho Minha jornada, vivências, derrotas, vitórias e desafios.",
+  blogPost: {
+    "@id": allPosts.reduce((latest, post) => {
+      return new Date(post.createdAt) > new Date(latest.createdAt) ? post : latest;
+    }, allPosts[0])._id
+  },
+  about: "My Life",
+  author: "Ivan Freire",
+  character: {
+    "@type": "Person",
+    name: "Ivan Freire",
+  }
 };
 
 export default function RootLayout({

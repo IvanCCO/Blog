@@ -69,11 +69,13 @@ export default async function Page({ params }: Props) {
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    identifier: post._id,
     headline: post.title,
     description: post.description,
     datePublished: post.createdAt,
     dateModified: post.createdAt,
     articleBody: post.body.raw,
+    about: post.tag,
     author: {
       "@type": "Person",
       name: "Ivan Freire",
