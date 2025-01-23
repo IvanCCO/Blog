@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import { formatUrlArticle } from "@/app/_lib/formatUrl";
 import Post from "./Post";
 import { allPosts, Post as PostType } from "@/.contentlayer/generated";
+import Script from "next/script";
+import { BlogPosting, WithContext } from "schema-dts";
 
 
 export const generateStaticParams = async () => allPosts.map((post) => ({ slug: post._raw.flattenedPath }))
@@ -53,7 +55,6 @@ export async function generateMetadata(
   };
 }
 
-
 export default async function Page({ params }: Props) {
 
   const post: PostType | undefined
@@ -63,5 +64,39 @@ export default async function Page({ params }: Props) {
     notFound()
   }
 
-  return <Post postData={post!!} />;
+
+  const jsonLd: WithContext<BlogPosting> =
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    datePublished: post.createdAt,
+    dateModified: post.createdAt,
+    articleBody: post.body.raw,
+    author: {
+      "@type": "Person",
+      name: "Ivan Freire",
+    },
+    image: formatUrlArticle(post.imageUrl),
+    url: `https://www.ivanfreire.me/article/${post._raw.flattenedPath}`,
+    publisher: {
+      "@type": "Organization",
+      name: "Ivan Freire",
+    }
+  }
+
+
+  return (
+    <>
+      <Script
+        id="article-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
+      <Post postData={post!!} />;
+    </>
+  )
 }
