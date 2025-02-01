@@ -49,10 +49,10 @@ export default function Suggestions() {
   const books = [
     <Recomendation
       key={0}
-      title="Dotcom Secrets"
-      author="Russell Brunson"
-      imageUrl="https://m.media-amazon.com/images/I/81OtGeBZ5BL._SL1500_.jpg"
-      buyUrl="https://amzn.to/487lToK"
+      title="Previsivelmente irracional"
+      author="Dan Ariely"
+      imageUrl="https://m.media-amazon.com/images/I/81cbXYZBbTL._SL1500_.jpg"
+      buyUrl="https://amzn.to/3ElLzmU"
     />,
     <Recomendation
       key={1}
@@ -70,10 +70,10 @@ export default function Suggestions() {
     />,
     <Recomendation
       key={3}
-      title="O ato criativo"
-      author="Rick Rubin"
-      imageUrl="https://m.media-amazon.com/images/I/91uvoWVqhuL._SL1500_.jpg"
-      buyUrl="https://amzn.to/4id0CP6"
+      title="Como fazer amigos e influenciar pessoas"
+      author="Dale Carnegie"
+      imageUrl="https://m.media-amazon.com/images/I/71x-i7sKSvL._SL1500_.jpg"
+      buyUrl="https://amzn.to/4jFaeCY"
     />,
     <Recomendation
       key={4}
@@ -84,10 +84,10 @@ export default function Suggestions() {
     />,
     <Recomendation
       key={5}
-      title="Entendendo Algoritmos"
-      author="Aditya Y. Bhargava"
-      imageUrl="https://m.media-amazon.com/images/I/71Vkg7GfPFL._SL1296_.jpg"
-      buyUrl="https://amzn.to/3CTKTV5"
+      title="De zero a um"
+      author="Peter Thiel"
+      imageUrl="https://m.media-amazon.com/images/I/71nURqHifwL._SL1500_.jpg"
+      buyUrl="https://amzn.to/4hHGgfX"
     />,
   ];
 
