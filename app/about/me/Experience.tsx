@@ -77,7 +77,7 @@ export default function Experience() {
       kindleTwoNotion
     ),
     ExpecienceBlock(
-      "2024 - Current",
+      "2024",
       "South's Eagles - Faculdade",
       "Desenvolvi uma solução inovadora de IoT voltada para medir os níveis de estresse em indivíduos, utilizando uma variedade de sensores e desenvolvendo um simulador para gerar dados. Orquestrei o processo de Extração, Transformação e Carregamento (ETL) usando tecnologias de ponta, incluindo Spark e AWS. Em particular, liderou a integração de um sensor de EEG para capturar ondas cerebrais, possibilitando a avaliação em tempo real dos níveis de estresse e estados de relaxamento dos usuários.",
       southsEagle

@@ -34,7 +34,7 @@ export default function About() {
       </div>
 
       <div className="w-full grid place-items-center pt-5">
-        <Link href={"https://taxco-bucket.s3.us-east-2.amazonaws.com/default/Ivan+Miranda+-+PT.pdf"} isExternal>
+        <Link href={"https://taxco-bucket.s3.us-east-2.amazonaws.com/default/resume-3.pdf"} isExternal>
           <Button
             leftIcon={<Icon as={IoMdPaper} />}
             size={{ base: "md", xl: "lg" }}
