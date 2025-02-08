@@ -18,7 +18,7 @@ import REDIS from "../../../public/skills_icon/redis.svg";
 import SPRING from "../../../public/skills_icon/spring.svg";
 import TAILWIND from "../../../public/skills_icon/tailwind.svg";
 import TF from "../../../public/skills_icon/terraform.svg";
-import VIM from "../../../public/skills_icon/vim.svg";
+import NEXT_JS from "../../../public/skills_icon/Next.svg";
 
 export default function Skills() {
   const gradientWidth = useBreakpointValue({
@@ -64,7 +64,7 @@ export default function Skills() {
       {image(K8S.src, "Kubernetes")}
       {image(JS.src, "JavaScript")}
       {image(KAFKA.src, "Kafka")}
-      {image(VIM.src, "Vim")}
+      {image(NEXT_JS.src, "NextJS")}
     </Marquee>
   );
 }

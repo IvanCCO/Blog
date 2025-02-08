@@ -1,4 +1,4 @@
-import { Button, Image, SimpleGrid } from "@chakra-ui/react";
+import { Button, Image, Link, SimpleGrid } from "@chakra-ui/react";
 import { Reveal } from "../../../components/Reveal";
 
 interface Props {
@@ -92,7 +92,7 @@ export default function Suggestions() {
   ];
 
   return (
-    <div className="text-white font-inter flex flex-col items-center space-y-4 h-full lg:items-start ">
+    <div className="text-white font-inter flex flex-col items-center space-y-4 h-full lg:items-start">
       <h1 className="text-2xl border-b-4 border-purple-800 w-fit text-start pr-2 text-white mb-5">
         Leituras do momento
       </h1>
@@ -107,6 +107,7 @@ export default function Suggestions() {
           </Reveal>
         ))}
       </SimpleGrid>
+      <Link alignSelf={"center"} color={"#797979"} isExternal textDecoration={"underline"} href="https://hushed-bus-4a5.notion.site/List-Books-ccdaa14f5a5f4df8b538d36628739e05">Minha lista de livros</Link>
     </div>
   );
 }
