@@ -1,4 +1,22 @@
-export const world = {
+import { StringFieldDef } from "contentlayer/core";
+
+type LocationData = {
+  type: string;
+  features: {
+    type: string;
+    geometry: {
+      type: string;
+      coordinates: number[];
+    };
+    properties: {
+      title: string;
+      description: string;
+      url?: string | null | undefined;
+    };
+  }[];
+};
+
+export const world: LocationData = {
   type: "FeatureCollection",
   features: [
     {
@@ -8,8 +26,9 @@ export const world = {
         coordinates: [-34.913, -7.032],
       },
       properties: {
-        title: "Mapbox",
-        description: "João Pessoa, Paraíba.",
+        title: "João Pessoa, Paraíba",
+        description:
+          "Tem as praias mais bonitas nos arredores, o calçadão é bem movimentado só é preciso tomar um pouco de cuidado a noite porque não é muito seguro. Mas gostei bastante ❤",
       },
     },
     {
@@ -19,8 +38,9 @@ export const world = {
         coordinates: [-48.502282, -1.450172],
       },
       properties: {
-        title: "Mapbox",
-        description: "Belém, Pará",
+        title: "Belém, Pará",
+        description:
+          "Minha experiência não foi das melhores, não gostei muito do porto nem do Veropeso, achei meio sem graça, uma cidade que parece estar meio abandonada.",
       },
     },
     {
@@ -30,8 +50,9 @@ export const world = {
         coordinates: [-49.889772, -6.079684],
       },
       properties: {
-        title: "Mapbox",
-        description: "Parauapebas, Pará",
+        title: "Parauapebas, Pará",
+        description:
+          "Uma cidade pequena grande, com muita coisa para fazer, vários rolês na natureza, águas termais, tribos indígenas e um pouco de contato com a floresta Amazônica",
       },
     },
     {
@@ -41,8 +62,9 @@ export const world = {
         coordinates: [-47.926047, -15.811179],
       },
       properties: {
-        title: "Mapbox",
-        description: "Brasília, DF",
+        title: "Brasília, DF",
+        description:
+          "Uma cidade bem planejada, tem uns rolês legais nos museus, da pra tirar umas fotos maneiras, mas nada demais, talvez ir a trabalho deva ser mais divertido",
       },
     },
     {
@@ -52,8 +74,9 @@ export const world = {
         coordinates: [-46.596501, -23.587851],
       },
       properties: {
-        title: "Mapbox",
-        description: "São Paulo, São Paulo",
+        title: "São Paulo, São Paulo",
+        description:
+          "Minha cidade natal, tem seus problemas mas eu amo muito, eu amo a aleatoriedade dessa cidade",
       },
     },
     {
@@ -63,8 +86,9 @@ export const world = {
         coordinates: [-81.390563, 28.52471],
       },
       properties: {
-        title: "Mapbox",
-        description: "Miami, Florida",
+        title: "Orlando, Florida",
+        description:
+          "Fui para Disney quando era mais novo, passeios muito legais, e uma experiência realmente única, mas caro para brasileiros",
       },
     },
     {
@@ -74,8 +98,9 @@ export const world = {
         coordinates: [-43.182156, -22.968441],
       },
       properties: {
-        title: "Mapbox",
-        description: "Rio de Janeiro, Rio de Janeiro",
+        title: "Rio de Janeiro, Rio de Janeiro",
+        description:
+          "A cidade maravilhosa é maravilhosa, tem seus problemas de segurança mas é de fato a cidade mais bonita do Brasil",
       },
     },
     {
@@ -85,8 +110,8 @@ export const world = {
         coordinates: [-48.187471, -7.180745],
       },
       properties: {
-        title: "Mapbox",
-        description: "Araguaína, Tocantins",
+        title: "Araguaína, Tocantins",
+        description: "Tem nada",
       },
     },
     {
@@ -96,8 +121,9 @@ export const world = {
         coordinates: [-34.889414, -8.074846],
       },
       properties: {
-        title: "Mapbox",
-        description: "Recife, Pernambuco",
+        title: "Recife, Pernambuco",
+        description:
+          "Tem seu valor porém fiquei pouco tempo então não sei julgar",
       },
     },
     {
@@ -107,8 +133,10 @@ export const world = {
         coordinates: [-40.513457, -2.795719],
       },
       properties: {
-        title: "Mapbox",
-        description: "Jericoacoara, Ceará",
+        title: "Jericoacoara, Ceará",
+        description:
+          "Muito gostoso, tem passeio na pria, esporte radical, diversos parques e muuuita água, um pouco caro e tem a vibe de pay-to-have-fun mas é muito bom, e a noite na vila é inesquecível",
+        url: "https://www.instagram.com/p/C-lAnjKuehF/?theme=dark&utm_source=ig_embed&amp;utm_campaign=loading",
       },
     },
     {
@@ -118,8 +146,9 @@ export const world = {
         coordinates: [-42.81435, -2.758592],
       },
       properties: {
-        title: "Mapbox",
-        description: "Barrerinhas, Maranhão",
+        title: "Barrerinhas, Maranhão",
+        description:
+          "O lugar mais bonito que você pode pensar em visitar, é mais bonito pessoalmente, acredite!",
       },
     },
     {
@@ -129,8 +158,8 @@ export const world = {
         coordinates: [-41.557363, -3.471038],
       },
       properties: {
-        title: "Mapbox",
-        description: "Cocal, Piauí",
+        title: "Cocal, Piauí",
+        description: "Tem nada aqui também",
       },
     },
   ],

@@ -29,6 +29,7 @@ export default function World({ locations }) {
   const [selectedPost, setSelectedPost] = useState({
     url: null,
     place: null,
+    history: null,
   });
 
   useEffect(() => {
@@ -48,10 +49,15 @@ export default function World({ locations }) {
         el.id = idStyle[index % idStyle.length];
 
         el.onclick = () => {
-          setSelectedPost({
-            url: "https://www.instagram.com/p/C-lAnjKuehF/?utm_source=ig_embed&amp;utm_campaign=loading",
-            place: value.properties.description
-          });
+          console.log("Marker clicked:", value);
+
+          if (value?.properties) {
+            setSelectedPost({
+              url: value.properties.url || null,
+              place: value.properties.title || null,
+              history: value.properties.description || null,
+            });
+          }
           onOpen();
         };
 
@@ -85,11 +91,7 @@ export default function World({ locations }) {
           <div ref={mapContainer} className="w-screen h-screen" />
         </div>
         {selectedPost && (
-          <MarkerModal
-            postUrl={selectedPost}
-            isOpen={isOpen}
-            onClose={onClose}
-          />
+          <MarkerModal post={selectedPost} isOpen={isOpen} onClose={onClose} />
         )}
       </main>
     </>
