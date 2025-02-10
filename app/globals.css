@@ -214,9 +214,9 @@ h4::selection {
 }
 
 .marker {
-  height: 0.5rem;
+  height: 0.7rem;
   border-radius: 100%;
-  width: 0.5rem;
+  width: 0.7rem;
   cursor: pointer;
 }
 
