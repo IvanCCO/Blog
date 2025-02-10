@@ -30,6 +30,6 @@
     ".next/types/**/*.ts",
     ".contentlayer/generated",
     ".contentlayer/generated/**/*.json"
-, "components/icons/icons.jsx"  ],
+, "components/icons/icons.jsx", "components/MarkerModal.jsx"  ],
   "exclude": ["node_modules"]
 }
