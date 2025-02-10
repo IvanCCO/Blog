@@ -136,7 +136,7 @@ export const world: LocationData = {
       properties: {
         title: "Jericoacoara, Ceará",
         description:
-          "Muito gostoso, tem passeio na pria, esporte radical, diversos parques e muuuita água, um pouco caro e tem a vibe de pay-to-have-fun mas é muito bom, e a noite na vila é inesquecível",
+          "Muito gostoso, tem passeio na praia, esporte radical, diversos parques e muuuita água, um pouco caro e tem a vibe de pay-to-have-fun mas é muito bom, e a noite na vila é inesquecível",
         url: "https://www.instagram.com/p/C-lAnjKuehF/?theme=dark&utm_source=ig_embed&amp;utm_campaign=loading",
       },
     },
