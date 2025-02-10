@@ -65,7 +65,7 @@ export const world: LocationData = {
         title: "Brasília, DF",
         description:
           "Uma cidade bem planejada, tem uns rolês legais nos museus, da pra tirar umas fotos maneiras, mas nada demais, talvez ir a trabalho deva ser mais divertido",
-        url: "https://www.instagram.com/p/C-VuHONOQRA/?utm_source=ig_embed&amp;utm_campaign=loading",
+        url: "https://www.ddinstagram.com/p/C-VuHONOQRA/?utm_source=ig_embed&amp;utm_campaign=loading",
       },
     },
     {
