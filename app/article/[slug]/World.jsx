@@ -2,10 +2,13 @@
 /* eslint-disable */
 // @ts-ignore
 import mapboxgl from "mapbox-gl";
+import { useState } from "react";
+import { useDisclosure } from "@chakra-ui/react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { useEffect, useRef } from "react";
 import Header from "../../../components/Header";
 import Head from "next/head";
+import MarkerModal from "../../../components/MarkerModal";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAP_TOKEN;
 
@@ -22,6 +25,11 @@ export default function World({ locations }) {
 
   const mapContainer = useRef(null);
   const map = useRef(null);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [selectedPost, setSelectedPost] = useState({
+    url: null,
+    place: null,
+  });
 
   useEffect(() => {
     const initializeMap = async () => {
@@ -38,6 +46,14 @@ export default function World({ locations }) {
         const el = document.createElement("div");
         el.className = `marker`;
         el.id = idStyle[index % idStyle.length];
+
+        el.onclick = () => {
+          setSelectedPost({
+            url: "https://www.instagram.com/p/C-lAnjKuehF/?utm_source=ig_embed&amp;utm_campaign=loading",
+            place: value.properties.description
+          });
+          onOpen();
+        };
 
         new mapboxgl.Marker(el)
           .setLngLat(value.geometry.coordinates)
@@ -68,6 +84,13 @@ export default function World({ locations }) {
           </div>
           <div ref={mapContainer} className="w-screen h-screen" />
         </div>
+        {selectedPost && (
+          <MarkerModal
+            postUrl={selectedPost}
+            isOpen={isOpen}
+            onClose={onClose}
+          />
+        )}
       </main>
     </>
   );
