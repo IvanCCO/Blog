@@ -150,6 +150,7 @@ export const world: LocationData = {
         title: "Barrerinhas, Maranhão",
         description:
           "O lugar mais bonito que você pode pensar em visitar, é mais bonito pessoalmente, acredite!",
+        url: "https://www.instagram.com/p/DF7w4ckp-kp/?utm_source=ig_embed&amp%3Butm_campaign=loading"
       },
     },
     {
