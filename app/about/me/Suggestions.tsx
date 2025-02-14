@@ -63,17 +63,17 @@ export default function Suggestions() {
     />,
     <Recomendation
       key={2}
-      title="Originais"
-      author="Adam Grant"
-      imageUrl="https://m.media-amazon.com/images/I/810b-Dg3SfL._SL1500_.jpg"
-      buyUrl="https://amzn.to/40IU4BB"
+      title="As seis lições"
+      author="Ludwig von Mises"
+      imageUrl="https://m.media-amazon.com/images/I/71M-fsD472L._SL1500_.jpg"
+      buyUrl="https://amzn.to/3X2A5LD"
     />,
     <Recomendation
       key={3}
-      title="Como fazer amigos e influenciar pessoas"
-      author="Dale Carnegie"
-      imageUrl="https://m.media-amazon.com/images/I/71x-i7sKSvL._SL1500_.jpg"
-      buyUrl="https://amzn.to/4jFaeCY"
+      title="A startup enxuta"
+      author="Eric Ries"
+      imageUrl="https://m.media-amazon.com/images/I/71KJRfm0pGL._SL1500_.jpg"
+      buyUrl="https://amzn.to/3CUvF2r"
     />,
     <Recomendation
       key={4}
