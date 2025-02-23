@@ -10,6 +10,7 @@ import {
     Heading,
 } from "@chakra-ui/react";
 import { Reveal } from "../../../components/Reveal";
+import Link from "next/link";
 
 
 const dict =
@@ -22,7 +23,8 @@ const dict =
         },
         {
             question: "Você faz anotações dos seus livros em algum lugar?",
-            answer: "Sim, você pode acessar a o link abaixo que irá levar para as anotações que faço dos livros que li, os destaques são movidos automaticamente pelo meu produto Kindle2Notion."
+            answer: "Sim, você pode acessar a o link abaixo que irá levar para as anotações que faço dos livros que li, os destaques são movidos automaticamente pelo meu produto Kindle2Notion.",
+            url: "https://hushed-bus-4a5.notion.site/My-Bookmarks-1630dff3638f8197a0d0fa168130b9d0"
         },
         {
             question: "Com que frequência você posta nesse blog?",
@@ -76,7 +78,8 @@ export default function FAQ() {
                                         </AccordionButton>
                                     </h2>
                                     <AccordionPanel>
-                                        <p className="text-base text-low-text-black">{q.answer}</p>
+                                        <p className={`text-base text-low-text-black ${q.url && "pb-2"}`}>{q.answer}</p>
+                                        {q.url && <a href={q.url} className="link-color" target="_blank">Minhas notas</a>}
                                     </AccordionPanel>
                                 </AccordionItem>
                             );
