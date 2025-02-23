@@ -107,7 +107,6 @@ export default function Suggestions() {
           </Reveal>
         ))}
       </SimpleGrid>
-      <Link alignSelf={"center"} color={"#797979"} isExternal textDecoration={"underline"} href="https://hushed-bus-4a5.notion.site/List-Books-ccdaa14f5a5f4df8b538d36628739e05">Minha lista de livros</Link>
     </div>
   );
 }

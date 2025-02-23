@@ -13,6 +13,7 @@ import Skills from "./Skills";
 import Footer from "@/components/Footer";
 import { Blog, WithContext } from "schema-dts";
 import Script from "next/script";
+import FAQ from "./Faq";
 
 const jsonLd: WithContext<Blog> =
 {
@@ -170,6 +171,7 @@ export default function He() {
             </>
           </div>
           <Suggestions />
+          <FAQ />
           <Footer />
         </div>
       </main>
