@@ -17,6 +17,8 @@ import { gruvboxDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import remarkGfm from "remark-gfm";
 import remarkToc from "remark-toc";
 
+const YOUTUBE_URL = "https://www.youtube.com"
+
 interface MarkdownText {
   text: string;
 }
@@ -140,7 +142,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         a(props) {
 
-          if (props.href?.startsWith("https://www.youtube.com")) {
+          if (props.href?.startsWith(YOUTUBE_URL)) {
             return (
               <Center my={4}>
                 <AspectRatio maxW="860px" w="100%" ratio={16 / 9}>
