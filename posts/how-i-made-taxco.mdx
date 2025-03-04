@@ -73,13 +73,23 @@ No entanto, para armazenar imagens e conteúdo de postagens, busquei uma soluç�
 
 Depois de muito esforço, lancei finalmente o projeto em produção, usando o [Vercel](https://vercel.com/) para hospedar o site. No entanto, como escolhi uma linguagem "pesada" para o back-end, as soluções de hospedagem na modalidade free-tier não funcionavam de forma satisfatória. O resultado? Uma navegação extremamente lenta, com requisições ao back-end demorando cerca de 10 segundos. Dez segundos para carregar uma página é inaceitável, especialmente porque este site carrega o meu nome, e eu quero entregar uma experiência de qualidade.
 
+/
+
 Além disso, enfrentei outro grande desafio: o [OpenGraph](https://ogp.me/). Se você não conhece, o OpenGraph é o que permite, por exemplo, que ao compartilhar um vídeo do YouTube no LinkedIn, um card atraente com a pré-visualização do conteúdo seja exibido. Como o meu site terá vários artigos, eu queria que ao compartilhar o link aparecessem o título do artigo e a thumbnail. Sem isso, os links ficariam sem graça e pouco chamativos, o que seria uma grande falha.
+
+/
 
 Quando você vê um vídeo muito legal no YouTube, e deseja compartilhar nas suas redes sociais como o LinkedIn, por exemplo, coloca o link do vídeo e aparece um card muito legal, mostrando a pré-visualização do conteúdo, bom, isso é o que o OpenGraph faz. Como no meu site terei vários artigos, na hora de compartilhar queria que mostrasse o título do artigo e a thumbnail por que se não tivesse isso, os links iam ficar extremamente sem graça e nada chamativo, seria uma falha muito grande.
 
+/
+
 Você deve estar pensando: "Resolver isso deve ser fácil, certo?" E é, desde que eu tivesse feito escolhas melhores no passado. O OpenGraph funciona em sites renderizados do lado do servidor [(SSR)](https://www.sqlshack.com/sql-server-reporting-services-architecture-and-component-topology/). Mas eu havia desenvolvido todo o site para ser renderizado do lado do cliente [(CSR)](https://prismic.io/blog/client-side-rendering). Em resumo, precisei refazer quase tudo: tirei o back-end da JVM (Kotlin) e adotei um framework de front-end que suportasse a renderização do lado do servidor. Para isso, precisei migrar meu projeto de [CRA](https://create-react-app.dev/) para [Next.js](https://nextjs.org/).
 
+/
+
 Agora, se você, leitor experiente, está se perguntando "Mas por que você não fez...?", a resposta é simples: falta de conhecimento. Minhas pesquisas me levaram a acreditar que essa era a melhor solução. Pode haver outras formas de resolver o problema; eu vi algumas alternativas, mas essa parecia a mais adequada para o longo prazo.
+
+/
 
 No final, percebi que não precisava de tudo o que havia planejado. Não precisava de um banco de dados separado, nem de um servidor ou um back-end independente. Com alguns serviços, como o S3 e outras ferramentas oferecidas pela Vercel, já consegui entregar um resultado de qualidade, exatamente como eu queria.
 

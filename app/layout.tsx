@@ -74,7 +74,7 @@ export default function RootLayout({
           __html: JSON.stringify(jsonLd),
         }}
       />
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-he-background`}>
         <Providers>{children}</Providers>
         <Analytics />
       </body>
