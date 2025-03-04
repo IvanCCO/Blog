@@ -9,6 +9,7 @@ import {
   Thead,
   Tr,
   Text,
+  AspectRatio,
 } from "@chakra-ui/react";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -96,8 +97,8 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
           const childContent =
             typeof props.children === "string" ? props.children : "";
 
-          if(childContent == "/"){
-            return <br/>
+          if (childContent == "/") {
+            return <br />
           }
 
           if (childContent.startsWith("$$") && childContent.endsWith("$$")) {
@@ -138,6 +139,21 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
           );
         },
         a(props) {
+
+          if (props.href?.startsWith("https://www.youtube.com")) {
+            return (
+              <Center my={4}>
+                <AspectRatio maxW="860px" w="100%" ratio={16 / 9}>
+                  <iframe
+                    title="youtube-video"
+                    src={props.href.replace("watch?v=", "embed/")}
+                    allowFullScreen
+                  />
+                </AspectRatio>
+              </Center>
+            );
+          }
+
           return (
             <a
               href={props.href}
