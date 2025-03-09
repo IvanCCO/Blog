@@ -287,5 +287,71 @@ html {
 }
 
 .formula-text {
-  font-family: 'Cambria Math', 'monospace', 'Courier New', serif; 
+  font-family: "Cambria Math", "monospace", "Courier New", serif;
+}
+
+/*
+Callout 
+==========================================
+Para adicionar um estilo novo
+https://r4ai.github.io/remark-callout/playground/ 
+*/
+[data-callout] {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  padding-bottom: 1.25rem;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  background-color: rgba(59, 130, 246, 0.1); /* Azul padrão para "note" */
+  border-color: rgba(30, 64, 175, 0.2);
+}
+
+/* Warning */
+[data-callout][data-callout-type="warning"] {
+  background-color: rgba(234, 179, 8, 0.1); /* Amarelo */
+  border-color: rgba(202, 138, 4, 0.2);
+}
+
+/* Callout Title */
+[data-callout] > [data-callout-title] {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-weight: bold;
+  color: rgb(59, 130, 246); /* Azul para "note" */
+}
+
+/* Warning Title */
+[data-callout][data-callout-type="warning"] > [data-callout-title] {
+  color: rgb(202, 138, 4); /* Amarelo para "warning" */
+}
+
+/* Ajuste de espaçamento */
+[data-callout] > [data-callout-title]:not(:only-child) {
+  margin-bottom: 0.5rem;
+}
+
+/* Ícones por tipo */
+[data-callout] > [data-callout-title]::before {
+  display: block;
+  margin-top: 0.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: currentColor;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  content: "";
+  mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTE3IDNhMi44NSAyLjgzIDAgMSAxIDQgNEw3LjUgMjAuNUwyIDIybDEuNS01LjVabS0yIDJsNCA0Ii8+PC9zdmc+"); /* Ícone lápis para "note" */
+}
+
+[data-callout][data-callout-type="warning"] > [data-callout-title]::before {
+  mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0ibTIxLjczIDE4bC04LTE0YTIgMiAwIDAgMC0zLjQ4IDBsLTggMTRBMiAyIDAgMCAwIDQgMjFoMTZhMiAyIDAgMCAwIDEuNzMtM00xMiA5djRtMCA0aC4wMSIvPjwvc3ZnPg=="); /* Ícone de alerta para "warning" */
+}
+
+/* Corpo do Callout */
+[data-callout] > [data-callout-body] {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }

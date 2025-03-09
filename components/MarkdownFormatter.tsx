@@ -15,6 +15,7 @@ import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { gruvboxDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import remarkGfm from "remark-gfm";
+import remarkCallout from "@r4ai/remark-callout"
 import remarkToc from "remark-toc";
 
 const YOUTUBE_URL = "https://www.youtube.com"
@@ -26,7 +27,7 @@ interface MarkdownText {
 export default function MarkdownFormatter({ text }: MarkdownText) {
   return (
     <Markdown
-      remarkPlugins={[remarkGfm, remarkToc]}
+      remarkPlugins={[remarkGfm, remarkToc, remarkCallout]}
       className={"text-white pb-12"}
       components={{
         code(props) {
@@ -108,7 +109,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
             return (
               <Center>
                 <p
-                  className="text-base lg:text-lg font-light leading-loose italic my-14 formula-text border border-white-main p-10 rounded-xl"
+                  className="text-base lg:text-lg font-light leading-loose italic my-14 formula-text border border-white-main p-10 rounded-xl text-white-main"
                   {...props}
                 >
                   {strippedContent}
