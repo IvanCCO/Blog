@@ -6,12 +6,32 @@ import {
   Divider,
   Flex,
   Heading,
+  Icon,
   Image,
   Stack,
+  Tag,
+  TagLabel,
+  TagRightIcon,
   Text,
 } from "@chakra-ui/react";
 import { TopicTag } from "../TopicTag";
 import { formatDate } from "@/app/_lib/formatDate";
+
+function choosePlant(dateString?: string): string {
+
+  if (!dateString) {
+    return "🍇"
+  }
+
+  const date = new Date(dateString);
+  const now = new Date();
+
+  const diffInMonths = (now.getTime() - date.getTime()) / (1000 * 60 * 60 * 24 * 30);
+
+  if (diffInMonths < 3) return "🌱";
+  if (diffInMonths < 6) return "🍇";
+  return "🌲";
+}
 
 interface Props {
   id: string;
@@ -66,7 +86,7 @@ export function SampleCard({
           </AspectRatio>
           <Stack spacing="3">
             <Heading size={{ base: "sm", sm: "md" }} as={"h1"}>
-              {title}
+              {title} {choosePlant(createdAt)}
             </Heading>
             <Text fontSize={{ base: "md", xl: "lg" }}>
               {description != undefined && description.length > maxCharacters
@@ -94,7 +114,7 @@ export function SampleCard({
             </Flex>
           </div>
         </CardFooter>
-      </Card>
+      </Card >
     </>
   );
 }
