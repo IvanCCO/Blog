@@ -6,12 +6,7 @@
 .link-color {
   padding: 2px 1px 1px;
   cursor: pointer;
-  background-image: linear-gradient(
-    transparent 0,
-    transparent calc(50% - 9px),
-    rgb(219, 86, 34) calc(50% - 9px),
-    rgba(219, 80, 34, 0.445) 100%
-  );
+  background-image: linear-gradient(transparent,transparent calc(50% - 9px),rgba(37, 134, 220, 0.77) calc(50% - 9px),rgba(167, 33, 114, 0.74));
   transition: all 230ms ease-in-out 0s;
   background-size: 100% 230%;
   background-position: 0 0;
