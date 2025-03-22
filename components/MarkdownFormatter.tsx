@@ -194,7 +194,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         strong(props) {
           return (
-            <strong className="font-bold text-[#F19953]">
+            <strong className="font-bold text-[#3C7A89]">
               {props.children}
             </strong>
           );
