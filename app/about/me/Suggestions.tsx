@@ -63,10 +63,10 @@ export default function Suggestions() {
     />,
     <Recomendation
       key={2}
-      title="As seis lições"
-      author="Ludwig von Mises"
-      imageUrl="https://m.media-amazon.com/images/I/71M-fsD472L._SL1500_.jpg"
-      buyUrl="https://amzn.to/3X2A5LD"
+      title="Código: A Vida Secreta dos Computadores"
+      author=" Charles Petzold"
+      imageUrl="https://m.media-amazon.com/images/I/51EQYgFpYtL._SL1359_.jpg"
+      buyUrl="https://amzn.to/4iAM8Zm"
     />,
     <Recomendation
       key={3}
@@ -77,10 +77,10 @@ export default function Suggestions() {
     />,
     <Recomendation
       key={4}
-      title="Traction: How Any Startup Can Achieve Explosive Customer Growth"
-      author="Gabriel Weinberg"
-      imageUrl="https://m.media-amazon.com/images/I/81zyjfthhcL._SL1500_.jpg"
-      buyUrl="https://amzn.to/4e7gWOo"
+      title="A morte de Ivan Ilitch"
+      author="Lev Tolstoi"
+      imageUrl="https://m.media-amazon.com/images/I/61zgVBVoqqL._SL1500_.jpg"
+      buyUrl="https://amzn.to/4ivwC0K"
     />,
     <Recomendation
       key={5}
