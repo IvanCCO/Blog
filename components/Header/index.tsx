@@ -60,7 +60,7 @@ export default function Header() {
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 inline-flex justify-between px-default-width md:px-44 sm:px-28 lg:px-52 xl:px-72 2xl:px-96 place-items-center z-900 bg-transparent backdrop-blur-sm`}
+      className={`fixed top-0 left-0 right-0 inline-flex justify-between px-default-width md:px-44 sm:px-28 lg:px-52 xl:px-72 2xl:px-96 place-items-center z-900 bg-he-background`}
     >
       <Logo />
 
