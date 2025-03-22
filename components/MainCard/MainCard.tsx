@@ -45,6 +45,7 @@ export function MainCard({
         color={"white"}
         maxW={{ xl: "1000px" }}
         w={"full"}
+        zIndex={100}
       >
         <AspectRatio
           ratio={16 / 9}

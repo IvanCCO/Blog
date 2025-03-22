@@ -73,6 +73,7 @@ export function SampleCard({
         color={"white"}
         alignSelf={["center", "stretch", "stretch"]}
         onClick={onClick}
+        zIndex={100}
       >
         <CardBody>
           <AspectRatio

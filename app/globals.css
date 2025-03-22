@@ -380,7 +380,7 @@ body::before {
   background-repeat: repeat;
   background-size: 200px 200px;
   pointer-events: none;
-  opacity: 0.325;
+  opacity: 0.265;
   mix-blend-mode: soft-light;
   z-index: 1; 
 }
