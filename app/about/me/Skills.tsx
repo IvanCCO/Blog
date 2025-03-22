@@ -41,12 +41,12 @@ export default function Skills() {
 
   return (
     <Marquee
-      speed={50}
+      speed={20}
       gradient={true}
       autoFill={true}
       pauseOnHover={true}
       direction="right"
-      gradientColor="#16141C"
+      gradientColor="transparent"
       gradientWidth={gradientWidth}
     >
       {image(JAVA.src, "Java")}

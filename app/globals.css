@@ -355,3 +355,32 @@ https://r4ai.github.io/remark-callout/playground/
   flex-direction: column;
   gap: 0.5rem;
 }
+
+.kuNmSb {
+  --columns: 12;
+  --content-width: min(96%, 1842px);
+  --content: repeat(
+    var(--columns),
+    calc(var(--content-width) / var(--columns))
+  );
+  display: grid;
+  grid-template-columns: 1fr var(--content) 1fr;
+  gap: 0px;
+  position: relative;
+}
+
+/* Add this grain effect overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://hex.tech/images/bkg-noise.webp");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  pointer-events: none;
+  opacity: 0.325;
+  mix-blend-mode: soft-light;
+  z-index: 1; 
+}

@@ -28,7 +28,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
   return (
     <Markdown
       remarkPlugins={[remarkGfm, remarkToc, remarkCallout]}
-      className={"text-white pb-12"}
+      className={"text-[#f8e5e7] pb-12"}
       components={{
         code(props) {
           const { children, className, node, ...rest } = props;
@@ -52,7 +52,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         h1(props) {
           return (
             <h1
-              className="text-2xl !my-10 lg:text-3xl font-bold text-[#AE9DFF]"
+              className="text-2xl !my-10 lg:text-3xl font-bold text-[#f09394]"
               {...props}
             >
               {props.children}
@@ -62,7 +62,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         h2(props) {
           return (
             <h1
-              className="text-xl font-bold !my-8 lg:text-2xl text-[#AE9DFF]"
+              className="text-xl font-bold !my-8 lg:text-2xl text-[#f09394]"
               {...props}
             >
               {props.children}
@@ -72,7 +72,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         h3(props) {
           return (
             <h1
-              className="text-lg font-bold !my-6 lg:text-xl text-[#AE9DFF]"
+              className="text-lg font-bold !my-6 lg:text-xl text-[#f09394]"
               {...props}
             >
               {props.children}
@@ -130,12 +130,12 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
         },
         blockquote(props) {
           return (
-            <blockquote className="relative w-5/5 mx-auto my-12 p-8 pl-12 italic font-sans text-lg text-white border-l-8 border-[#AE9DFF] leading-7">
-              <span className="absolute left-2 top-[-10px] text-4xl text-[#AE9DFF] font-sans">
+            <blockquote className="relative w-5/5 mx-auto my-12 p-8 pl-12 italic font-sans text-lg text-[#f8e5e7] border-l-8 border-[#f09394] leading-7">
+              <span className="absolute left-2 top-[-10px] text-4xl text-[#f09394] font-sans">
                 &ldquo;
               </span>
               {props.children}
-              <span className="absolute right-2 bottom-[-10px] text-4xl text-[#AE9DFF] font-sans">
+              <span className="absolute right-2 bottom-[-10px] text-4xl text-[#f09394] font-sans">
                 &ldquo;
               </span>
             </blockquote>
