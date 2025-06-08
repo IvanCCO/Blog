@@ -374,3 +374,17 @@ body::before {
   mix-blend-mode: soft-light;
   z-index: 1; 
 }
+
+/* Love Callout */
+[data-callout][data-callout-type="love"] {
+  background-color: rgba(239, 68, 68, 0.1); /* Red background */
+  border-color: rgba(185, 28, 28, 0.2);
+}
+
+[data-callout][data-callout-type="love"] > [data-callout-title] {
+  color: rgb(220, 38, 38); /* Red color for title */
+}
+
+[data-callout][data-callout-type="love"] > [data-callout-title]::before {
+  mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTIwLjg0IDQuNjFhNS41IDUuNSAwIDAgMC03LjY2IDBsLTEuMTIgMS4xMi0xLjEyLTEuMTJhNS41IDUuNSAwIDAgMC03LjY2IDAgNS41IDUuNSAwIDAgMCAwIDcuNjZsMS4xMiAxLjEyTDExIDIwLjQ2bDcuNjYtNy42NiAxLjEyLTEuMTJhNS41IDUuNSAwIDAgMCAwLTcuNjZaIi8+PC9zdmc+"); /* Heart icon */
+}
