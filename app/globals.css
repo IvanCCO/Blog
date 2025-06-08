@@ -391,12 +391,12 @@ body::before {
 
 /* Night Callout */
 [data-callout][data-callout-type="night"] {
-  background-color: rgba(17, 24, 39, 0.1); /* Dark background */
-  border-color: rgba(31, 41, 55, 0.2);
+  background-color: rgb(12, 12, 12); /* Dark background */
+  border-color: #3a3e47;
 }
 
 [data-callout][data-callout-type="night"] > [data-callout-title] {
-  color: rgb(17, 24, 39); /* Dark color for title */
+  color: #3a3e47; /* Dark color for title */
 }
 
 [data-callout][data-callout-type="night"] > [data-callout-title]::before {
