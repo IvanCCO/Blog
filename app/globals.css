@@ -388,3 +388,17 @@ body::before {
 [data-callout][data-callout-type="love"] > [data-callout-title]::before {
   mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTIwLjg0IDQuNjFhNS41IDUuNSAwIDAgMC03LjY2IDBsLTEuMTIgMS4xMi0xLjEyLTEuMTJhNS41IDUuNSAwIDAgMC03LjY2IDAgNS41IDUuNSAwIDAgMCAwIDcuNjZsMS4xMiAxLjEyTDExIDIwLjQ2bDcuNjYtNy42NiAxLjEyLTEuMTJhNS41IDUuNSAwIDAgMCAwLTcuNjZaIi8+PC9zdmc+"); /* Heart icon */
 }
+
+/* Night Callout */
+[data-callout][data-callout-type="night"] {
+  background-color: rgba(17, 24, 39, 0.1); /* Dark background */
+  border-color: rgba(31, 41, 55, 0.2);
+}
+
+[data-callout][data-callout-type="night"] > [data-callout-title] {
+  color: rgb(17, 24, 39); /* Dark color for title */
+}
+
+[data-callout][data-callout-type="night"] > [data-callout-title]::before {
+  mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLW1vb24taWNvbiBsdWNpZGUtbW9vbiI+PHBhdGggZD0iTTEyIDNhNiA2IDAgMCAwIDkgOSA5IDkgMCAxIDEtOS05WiIvPjwvc3ZnPg=="); /* Moon icon */
+}
