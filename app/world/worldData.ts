@@ -102,6 +102,7 @@ export const world: LocationData = {
         title: "Rio de Janeiro, Rio de Janeiro",
         description:
           "A cidade maravilhosa é maravilhosa, tem seus problemas de segurança mas é de fato a cidade mais bonita do Brasil",
+        url: "https://www.instagram.com/p/DKr4fuAAmp4/?utm_source=ig_embed&amp;utm_campaign=loading"
       },
     },
     {
