@@ -1,0 +1,49 @@
+### Guidelines for Creating Emotional Motion Design
+
+- **Prioritize Speed and Timing**
+  - Great animations are _fast_ but not rushed; they deliver information quickly and keep attention without lagging or dragging.
+  - Use timing to evoke emotion: faster motions can convey excitement or urgency; slower, smoother motions can evoke calm or elegance
+
+- **Use CSS Transforms and Clip-Path Creatively**
+  - Leverage **CSS transforms** (translate, scale, rotate) for smooth, hardware-accelerated animations that feel natural and fluid
+  - Employ **clip-path** to create dynamic reveals and mask effects that add a magical, surprising quality to transitions
+
+- **Apply the 12 Principles of Animation Adapted for UI**
+  - Incorporate **anticipation**: prepare the user’s eye by moving elements slightly in the opposite direction before the main action
+  - Use **arcs** instead of linear motion to mimic natural movement and increase visual appeal
+  - Implement **ease-in and ease-out** easing curves to make motion feel organic and less mechanical
+  - Convey **mass and weight** by adjusting speed and acceleration according to the perceived heaviness of objects
+
+- **Keep Motion Purposeful and Clear**
+  - Every motion must serve a function: guide attention, provide feedback, or tell a story
+  - Avoid unnecessary or overly complex animations that distract or confuse users
+  - Use motion to _highlight_ key elements and evoke the desired emotional response (e.g., delight, trust, urgency)
+
+- **Maintain Consistency and Simplicity**
+  - Use consistent easing, timing, and style across the interface to create a cohesive experience
+  - Keep animations simple and minimalistic to avoid overwhelming users; let the message shine through
+
+- **Incorporate Follow-through and Overlapping Action**
+  - Elements should continue moving slightly after the main action to simulate natural physics and add realism
+  - Layer animations so secondary movements complement the primary action, enriching the emotional depth
+
+- **Storyboard and Plan Your Motion**
+  - Sketch storyboards to map out key frames and transitions before animating; this ensures clarity and emotional impact.
+  - Design with contrast in size, color, and value to enhance composition and emotional storytelling.
+
+- **Use Motion to Enhance Brand Personality**
+  - Reflect the brand’s voice and values through motion style—playful, elegant, bold, or subtle—to emotionally connect with users
+
+### Summary Table of Key Rules
+
+| Rule                        | Description                                                                    | Emotional Impact                   |
+| --------------------------- | ------------------------------------------------------------------------------ | ---------------------------------- |
+| Fast but purposeful         | Keep animations quick to maintain engagement but meaningful to avoid confusion | Excitement, clarity                |
+| CSS transforms & clip-path  | Use performant transforms and creative clipping for smooth, magical effects    | Surprise, delight                  |
+| Anticipation & arcs         | Prepare motion with opposite movement and natural curved paths                 | Naturalness, appeal                |
+| Ease-in/out easing          | Smooth acceleration and deceleration for organic feel                          | Comfort, believability             |
+| Mass & weight               | Animate heavier objects slower, lighter ones faster                            | Realism, grounded emotion          |
+| Consistency & simplicity    | Uniform style and minimalism to avoid cognitive overload                       | Trust, focus                       |
+| Follow-through & layering   | Secondary motions after main action add realism and depth                      | Liveliness, immersion              |
+| Storyboard & plan           | Visualize motion sequences beforehand for better storytelling                  | Emotional clarity, narrative flow  |
+| Brand personality in motion | Tailor motion style to brand identity                                          | Emotional connection, memorability |--

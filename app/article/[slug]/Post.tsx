@@ -1,18 +1,14 @@
 "use client";
 import { useState } from "react";
 import Footer from "../../../components/Footer";
-import Header from "../../../components/Header";
 import MarkdownFormatter from "../../../components/MarkdownFormatter";
 
 import { Box, Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
-import { useEffect } from "react";
 import ProgressBar from "../../../components/ProgressBar";
 import { TopicTag } from "../../../components/TopicTag";
 import { ImageBlock } from "./ImageBlock";
 import { ProfileRow } from "./ProfileRow";
 import { Post as PostType } from 'contentlayer/generated'
-import Image from "next/image";
-import LOGO from "../../../public/signature.svg"
 import { Signature } from "@/components/Signature";
 
 
@@ -35,7 +31,6 @@ export default function Post({ postData }: PostProps) {
     return (
       <>
         <ProgressBar />
-        <Header />
         <main className="main space-y-2 px-default-width md:px-44 sm:px-28 lg:px-52 xl:px-72 2xl:px-[30rem] 3xl:px-[36rem] bg-he-background">
           <div className="space-y-4">
             <div className="w-fit">

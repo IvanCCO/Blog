@@ -6,7 +6,6 @@ import { useState } from "react";
 import { useDisclosure } from "@chakra-ui/react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { useEffect, useRef } from "react";
-import Header from "../../../components/Header";
 import Head from "next/head";
 import MarkerModal from "../../../components/MarkerModal";
 
@@ -78,7 +77,6 @@ export default function World({ locations }) {
         />
       </Head>
       <main className="bg-he-background h-screen">
-        <Header />
         <div>
           <div className="top-0 left-0 z-10 absolute pt-20 text-white w-full text-center flex justify-center flex-col bg-transparent backdrop-blur-sm space-y-3">
             <p className="text-lg md:text-2xl font-semibold font-inter">

@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { Blog, WithContext } from "schema-dts";
 import Script from "next/script";
 import { allPosts } from "@/.contentlayer/generated";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -75,7 +76,10 @@ export default function RootLayout({
         }}
       />
       <body className={`${inter.className} bg-he-background`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
         <Analytics />
       </body>
     </html>

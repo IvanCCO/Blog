@@ -1,9 +1,6 @@
 "use client";
-import { useRouter } from "next/navigation";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Image, useMediaQuery } from "@chakra-ui/react";
 import MY_PIC from "../../../public/myself.jpg";
-import Header from "../../../components/Header";
 import { Reveal } from "../../../components/Reveal";
 import About from "./About";
 import Experience from "./Experience";
@@ -145,7 +142,6 @@ export default function He() {
           __html: JSON.stringify(jsonLd),
         }}
       />
-      <Header />
 
       <main className="h-full py-24 bg-he-background px-default-width sm:px-28 md:px-44 lg:px-52 xl:px-72 2xl:px-96">
         <div className="font-jomolhari flex flex-col text-font-black-color space-y-16">

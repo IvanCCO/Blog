@@ -29,42 +29,7 @@
   z-index: -1;
 }
 
-/* Hover do Header  */
-.header-item::before {
-  transform: scaleX(0);
-  transform-origin: bottom right;
-}
-.header-item:hover::before {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-.header-item::before {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  inset: 0 0 0 0;
-  z-index: -1;
-  transition: transform 0.2s ease;
-}
-
-#Eu::before {
-  background-color: rgb(126 34 206);
-}
-
-#Posts::before {
-  background-color: rgb(194 65 12);
-}
-#Sobre::before {
-  background-color: rgb(22 101 52);
-}
-
-#Globo::before {
-  background-color: rgb(14 116 144);
-}
+/* Header animation styles - now handled by Framer Motion */
 
 p::selection,
 h1::selection,

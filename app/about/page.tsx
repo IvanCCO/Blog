@@ -1,4 +1,3 @@
-import Header from "../../components/Header";
 import MarkdownFormatter from "@/components/MarkdownFormatter";
 import type { Metadata } from "next";
 import { formatUrlDefault } from "@/app/_lib/formatUrl";
@@ -144,7 +143,6 @@ E este projeto também é um reflexo do apoio incrível da minha namorada, Stép
           __html: JSON.stringify(jsonLd),
         }}
       />
-      <Header />
 
       <main className="main px-default-width md:px-44 sm:px-28 lg:px-52 xl:px-72 2xl:px-[30rem] 3xl:px-[36rem] bg-he-background">
         <MarkdownFormatter text={content} />

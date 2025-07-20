@@ -12,13 +12,11 @@ import {
 } from "@chakra-ui/popover";
 import { QuestionOutlineIcon } from "@chakra-ui/icons";
 import NOT_FOUND_IMAGE from "../public/not-found.png";
-import Header from "../components/Header";
 
 export default function NotFound() {
   const router = useRouter();
   return (
     <main className="main bg-he-background sm:px-28 md:px-44 lg:px-96">
-      <Header />
       <Center>
         <Image
           src={NOT_FOUND_IMAGE.src}
