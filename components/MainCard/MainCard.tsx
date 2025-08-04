@@ -6,10 +6,10 @@ import {
   CardFooter,
   Center,
   Heading,
-  Image,
   Stack,
   Text,
 } from "@chakra-ui/react";
+import Image from "next/image";
 
 interface Props {
   id: string;
@@ -54,12 +54,11 @@ export function MainCard({
           maxW={{ lg: "400px" }}
         >
           <Image
-            w={"full"}
-            src={imageUrl}
-            alt={imageAlt}
-            borderRadius={"md"}
+            src={imageUrl || ""}
+            alt={imageAlt || "Image"}
+            width={1000}
+            height={1000}
             objectFit="cover"
-            fallbackStrategy="onError"
           />
         </AspectRatio>
         <Stack>
