@@ -128,11 +128,7 @@ ${code}
 
 # Agradecimentos
 
-Quero expressar minha imensa gratidão à minha mãe, que sempre me apoiou e me ajudou a focar nos estudos e a seguir minhas paixões. Seu encorajamento e apoio em todas as minhas decisões foram fundamentais para minha jornada.
-
-/
-
-E este projeto também é um reflexo do apoio incrível da minha namorada, Stéphanie. Seu apoio me manteve motivado e me ajudou a não desistir mesmo quando a motivação estava em baixa.` ;
+Quero expressar minha imensa gratidão à minha mãe, que sempre me apoiou e me ajudou a focar nos estudos e a seguir minhas paixões. Seu encorajamento e apoio em todas as minhas decisões foram fundamentais para minha jornada.` ;
 
   return (
     <>
