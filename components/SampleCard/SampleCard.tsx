@@ -74,22 +74,24 @@ export function SampleCard({
         alignSelf={["center", "stretch", "stretch"]}
         onClick={onClick}
         zIndex={100}
+        overflow="hidden"
       >
+        <AspectRatio ratio={4 / 3} w="full" maxH={"220px"}>
+          <Image
+            src={imageUrl}
+            alt={imageAlt}
+            loading="lazy"
+            objectFit="cover"
+            w="full"
+            h="full"
+          />
+        </AspectRatio>
         <CardBody>
-          <AspectRatio
-            ratio={4 / 3}
-            maxW={"full"}
-            maxH={"150px"}
-            mb={3}
-            display={"block"}
-          >
-            <Image src={imageUrl} alt={imageAlt} loading="lazy" />
-          </AspectRatio>
           <Stack spacing="3">
             <Heading size={{ base: "sm", sm: "md" }} as={"h1"}>
               {title} {choosePlant(createdAt)}
             </Heading>
-            <Text fontSize={{ base: "md", xl: "lg" }}>
+            <Text fontSize={{ base: "sm", xl: "md" }} color="whiteAlpha.700">
               {description != undefined && description.length > maxCharacters
                 ? description.substring(0, 120) + "..."
                 : description}

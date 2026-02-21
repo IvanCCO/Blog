@@ -37,28 +37,20 @@ const jsonLd: WithContext<Blog> =
 export default function He() {
   const desktopWorking = (
     <div className="flex justify-between h-4/6">
-      <div className="flex flex-col w-1/2 pr-7 space-y-7 xl:justify-evenly">
+      <div className="flex flex-col w-1/2 pr-7 xl:justify-evenly">
         <Reveal position={{ y: 120 }} animation={{ delay: 0.8 }}>
-          <div>
-            <div>
+          <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-2">
               <p className="text-xl text-white 2xl:text-2xl">
                 Olá amigos, eu sou
               </p>
+              <p className="text-5xl text-white leading-tight 2xl:text-7xl">
+                Ivan Freire 🤙
+              </p>
             </div>
-            <p className="text-5xl text-white leading-tight 2xl:text-7xl">
-              Ivan Freire, Engenheiro de Software🤙
-            </p>
-            <Reveal position={{ x: 120 }} animation={{ delay: 1.5 }}>
-              <div>
-                <p className="text-sm text-low-text-black font-inter xl:text-lg mt-8">
-                  Atualmente trabalho no @C6Bank, São Paulo Brasil
-                </p>
-              </div>
-            </Reveal>
+            <SocialMediaList />
           </div>
         </Reveal>
-
-        <SocialMediaList />
       </div>
       <Image
         src={MY_PIC.src}
@@ -76,7 +68,7 @@ export default function He() {
           animation={{ delay: 0.3, duration: 1.2 }}
         >
           <div>
-            <p className="text-md sm:text-lg lg:text-lg text-white">
+            <p className="text-md sm:text-lg lg:text-lg text-white/70">
               Olá amigos, eu sou
             </p>
           </div>
@@ -85,7 +77,7 @@ export default function He() {
         <div>
           <Reveal position={{ y: 120 }} animation={{ delay: 0.8 }}>
             <p className="text-5xl leading-tight text-white md:text-6xl lg:text-7xl md:pb-3">
-              Ivan Freire, Engenheiro de Software🤙
+              Ivan Freire 🤙
             </p>
           </Reveal>
         </div>
