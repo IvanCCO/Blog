@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import dynamic from "next/dynamic";
 import Footer from "../../../components/Footer";
 import MarkdownFormatter from "../../../components/MarkdownFormatter";
 
@@ -10,11 +9,7 @@ import { TopicTag } from "../../../components/TopicTag";
 import { ImageBlock } from "./ImageBlock";
 import { ProfileRow } from "./ProfileRow";
 import { Post as PostType } from 'contentlayer/generated'
-
-const Signature = dynamic(
-  () => import("@/components/Signature").then((m) => ({ default: m.Signature })),
-  { ssr: false }
-);
+import { Signature } from "@/components/Signature";
 
 
 type PostProps = {

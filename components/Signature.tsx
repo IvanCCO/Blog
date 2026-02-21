@@ -1,7 +1,12 @@
 "use client";
 
-import { Penflow } from "penflow/react";
+import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
+
+const Penflow = dynamic(
+  () => import("penflow/react").then((m) => ({ default: m.Penflow })),
+  { ssr: false }
+);
 
 export function Signature() {
     const containerRef = useRef<HTMLDivElement>(null);
