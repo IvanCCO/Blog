@@ -8,6 +8,7 @@ import { Blog, WithContext } from "schema-dts";
 import Script from "next/script";
 import { allPosts } from "@/.contentlayer/generated";
 import Header from "@/components/Header";
+import { Agentation  } from "agentation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -81,6 +82,7 @@ export default function RootLayout({
           {children}
         </Providers>
         <Analytics />
+        {process.env.NODE_ENV === "development" && <Agentation />}
       </body>
     </html>
   );

@@ -1,21 +1,40 @@
-import Image from "next/image"
-import LOGO from "../public/signature.svg"
+"use client";
+
+import { Penflow } from "penflow/react";
+import { useEffect, useRef, useState } from "react";
 
 export function Signature() {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const [isInView, setIsInView] = useState(false);
+
+    useEffect(() => {
+        const el = containerRef.current;
+        if (!el) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsInView(entry.isIntersecting);
+            },
+            { threshold: 0.2 }
+        );
+
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <div className="flex flex-col gap-4 justify-start mb-12">
+        <div ref={containerRef} className="flex flex-col gap-4 justify-start mb-12">
             <p className="font-ligth">Escrito por</p>
-            <Image
-                src={LOGO}
-                alt="Signature"
-                width={0}
-                height={0}
-                sizes="(max-width: 768px) 50px, 
-               (max-width: 1200px) 80px, 
-               100px"
-                className="h-auto max-h-16 w-fit"
-                priority
-            />
+            {isInView && (
+                <Penflow
+                    text="Ivan Freire M.M"
+                    fontUrl="/fonts/BrittanySignature.ttf"
+                    speed={0.1}
+                    animate={true}
+                    color="white"
+                    size={50}
+                />
+            )}
         </div>
-    )
+    );
 }
