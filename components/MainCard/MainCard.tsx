@@ -67,9 +67,9 @@ export function MainCard({
               {title}
             </Heading>
             <Text
-              color={"white"}
+              color={"whiteAlpha.700"}
               maxW={{ lg: "70%" }}
-              fontSize={{ base: "md", xl: "lg" }}
+              fontSize={{ base: "sm", xl: "md" }}
             >
               {description}
             </Text>
