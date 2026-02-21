@@ -46,6 +46,8 @@ export function MainCard({
         maxW={{ xl: "1000px" }}
         w={"full"}
         zIndex={100}
+        overflow="hidden"
+        borderRadius="lg"
       >
         <AspectRatio
           ratio={16 / 9}

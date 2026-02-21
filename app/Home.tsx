@@ -1,10 +1,13 @@
 "use client";
 import { Select, Stack, Text } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MainCard } from "../components/MainCard/MainCard";
 import { Pagination } from "../components/Pagination";
 import { SampleCard } from "../components/SampleCard/SampleCard";
-import { SwipeableCardsStack } from "@/components/SwipeableCardsStack";
+import {
+  SwipeableCardsStack,
+  type SwipeableCardsStackHandle,
+} from "@/components/SwipeableCardsStack";
 import { formatUrlArticle } from "./_lib/formatUrl";
 import { useRouter } from "next/navigation";
 import MainCardSkeleton from "@/components/MainCard/MainCardSkeleton";
@@ -32,9 +35,14 @@ export default function Home({ postsListData }: HomeProps) {
   const [totalPages, setTotalPages] = useState(1);
 
   const uniqueTags = getUniqueTags(posts);
+  const swipeableRef = useRef<SwipeableCardsStackHandle>(null);
 
   const onPageChange = (page: number) => {
     setCurrentPage(page);
+  };
+
+  const onPaginationPageChange = (page: number) => {
+    swipeableRef.current?.animateToPage(page);
   };
 
   const justifyContent =
@@ -134,6 +142,7 @@ export default function Home({ postsListData }: HomeProps) {
             </Select>
           </div>
           <SwipeableCardsStack
+            ref={swipeableRef}
             currentPage={currentPage}
             totalPages={totalPages}
             onPageChange={setCurrentPage}
@@ -152,7 +161,7 @@ export default function Home({ postsListData }: HomeProps) {
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
-            onPageChange={onPageChange}
+            onPageChange={onPaginationPageChange}
           />
         </div>
         <Footer />
