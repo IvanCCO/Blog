@@ -1,4 +1,3 @@
-import { Inter } from "next/font/google";
 import { Providers } from "./providers";
 import "./globals.css";
 import { Metadata } from "next";
@@ -9,8 +8,7 @@ import Script from "next/script";
 import { allPosts } from "@/.contentlayer/generated";
 import Header from "@/components/Header";
 import { Agentation  } from "agentation";
-
-const inter = Inter({ subsets: ["latin"] });
+import { itim, lora } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Ivan Freire",
@@ -76,7 +74,7 @@ export default function RootLayout({
           __html: JSON.stringify(jsonLd),
         }}
       />
-      <body className={`${inter.className} bg-he-background`}>
+      <body className={`${itim.variable} ${lora.variable} ${lora.className} bg-he-background`}>
         <Providers>
           <Header />
           {children}

@@ -65,7 +65,11 @@ export function MainCard({
         </AspectRatio>
         <Stack>
           <CardBody>
-            <Heading size={{ base: "lg", sm: "md", xl: "lg" }} mb={2}>
+            <Heading
+              size={{ base: "lg", sm: "md", xl: "lg" }}
+              fontFamily="heading"
+              mb={2}
+            >
               {title}
             </Heading>
             <Text

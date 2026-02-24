@@ -1,6 +1,5 @@
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import { Button } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
 
 export function Pagination({
   currentPage,
@@ -11,23 +10,17 @@ export function Pagination({
   totalPages: number;
   onPageChange: (page: number) => void;
 }) {
-  const [hasNext, setHasNext] = useState<boolean>(currentPage < totalPages);
-  const [hasPrev, setHasPrev] = useState<boolean>(currentPage > 1);
-
-  useEffect(() => {
-    setHasNext(currentPage < totalPages);
-    setHasPrev(currentPage > 1);
-  }, [currentPage, totalPages]);
+  const hasNext = currentPage < totalPages;
+  const hasPrev = currentPage > 1;
 
   function handleNextPage() {
-    if (currentPage < totalPages) {
-      onPageChange(currentPage + 1);
-    }
+    if (!hasNext) return;
+    onPageChange(currentPage + 1);
   }
+
   function handlePrevPage() {
-    if (currentPage > 1) {
-      onPageChange(currentPage - 1);
-    }
+    if (!hasPrev) return;
+    onPageChange(currentPage - 1);
   }
 
   return (

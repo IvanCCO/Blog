@@ -176,7 +176,7 @@ export default function Header() {
       <Logo />
 
       <div
-        className="hidden sm:inline-flex w-1/2 justify-between text-lg relative header-container"
+        className="hidden sm:inline-flex w-1/2 justify-between text-lg relative header-container font-itim"
         onMouseLeave={handleContainerLeave}
       >
         {/* Animated background */}

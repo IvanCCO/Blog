@@ -2,9 +2,6 @@ import {
   AspectRatio,
   Card,
   CardBody,
-  CardFooter,
-  Divider,
-  Flex,
   Skeleton,
   SkeletonText,
   Stack,
@@ -15,15 +12,17 @@ export function SampleCardSkeleton() {
     <Card
       cursor={"pointer"}
       boxShadow={"base"}
-      minW="220px"
-      maxW={["full", "full", "330px"]}
+      w="full"
+      minW={0}
+      maxW="full"
+      h="full"
       bg={"whiteAlpha.200"}
       color={"white"}
-      alignSelf={["center", "center", "stretch"]}
+      alignSelf="stretch"
     >
-      <CardBody>
+      <CardBody px={{ base: 5, md: 6 }} py={{ base: 4, md: 5 }}>
         <AspectRatio
-          ratio={4 / 3}
+          ratio={16 / 10}
           maxW={"full"}
           maxH={"150px"}
           mb={3}
@@ -31,28 +30,11 @@ export function SampleCardSkeleton() {
         >
           <Skeleton height="100%" width="100%" />
         </AspectRatio>
-        <Stack spacing="3">
-          <Skeleton height="20px" width={"80%"} />
-          <SkeletonText noOfLines={3} spacing={3} skeletonHeight="2" />
+        <Stack spacing={{ base: 3, md: 4 }}>
+          <Skeleton height="16px" width={"72%"} />
+          <SkeletonText noOfLines={2} spacing={3} skeletonHeight="2" />
         </Stack>
       </CardBody>
-      <Divider />
-      <CardFooter>
-        <Flex
-          direction={{ base: "row", md: "column", lg: "row" }}
-          w="full"
-          justifyContent={"space-between"}
-          h="fit-content"
-          alignItems={{ base: "baseline", md: "center", lg: "baseline" }}
-        >
-          <Skeleton height="30px" width="70px" />
-          <Flex className="inline-flex space-x-1 place-items-center minW-fit text-neutral-300">
-            <Skeleton height="20px" width="50px" />
-            <Skeleton height="20px" width="10px" />
-            <Skeleton height="20px" width="50px" />
-          </Flex>
-        </Flex>
-      </CardFooter>
     </Card>
   );
 }
@@ -65,4 +47,3 @@ export const renderSkeletons = (count: number) => {
 
 
 export default SampleCardSkeleton;
-

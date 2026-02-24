@@ -42,8 +42,8 @@ const config: Config = {
         "he-cycle": "#7A7A8D",
       },
       fontFamily: {
-        itim: ["Itim", "cursive"],
-        inter: ["Inter", "sans-serif"],
+        itim: ["var(--font-itim)", "cursive"],
+        inter: ["var(--font-lora)", "serif"],
         jomolhari: ["Jomolhari", "serif"],
         playfair: ["Playfair"],
       },

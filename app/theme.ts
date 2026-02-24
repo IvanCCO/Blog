@@ -5,6 +5,10 @@ const theme = extendTheme({
     initialColorMode: "dark",
     useSystemColorMode: false,
   },
+  fonts: {
+    heading: "var(--font-itim), cursive",
+    body: "var(--font-lora), serif",
+  },
   breakpoints: {
     sm: "640px",
     md: "768px",

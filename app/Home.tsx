@@ -1,13 +1,8 @@
 "use client";
-import { Select, Stack, Text } from "@chakra-ui/react";
-import { useEffect, useRef, useState } from "react";
+import { Select, Text } from "@chakra-ui/react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { MainCard } from "../components/MainCard/MainCard";
-import { Pagination } from "../components/Pagination";
 import { SampleCard } from "../components/SampleCard/SampleCard";
-import {
-  SwipeableCardsStack,
-  type SwipeableCardsStackHandle,
-} from "@/components/SwipeableCardsStack";
 import { formatUrlArticle } from "./_lib/formatUrl";
 import { useRouter } from "next/navigation";
 import MainCardSkeleton from "@/components/MainCard/MainCardSkeleton";
@@ -19,7 +14,10 @@ type HomeProps = {
   postsListData: Post[];
 };
 
-function getUniqueTags(posts: any[]): string[] {
+const INITIAL_VISIBLE_POSTS = 6;
+const LOAD_MORE_STEP = 3;
+
+function getUniqueTags(posts: Post[]): string[] {
   const tags = posts.map((post) => post.tag);
   return Array.from(new Set(tags));
 }
@@ -27,72 +25,78 @@ function getUniqueTags(posts: any[]): string[] {
 export default function Home({ postsListData }: HomeProps) {
   const router = useRouter();
 
-  const [posts, _] = useState<Post[]>(postsListData);
-  const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 3;
-  const [currentPosts, setCurrentPosts] = useState<Post[]>([]);
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  const [totalPages, setTotalPages] = useState(1);
+  const [visiblePostsCount, setVisiblePostsCount] = useState(INITIAL_VISIBLE_POSTS);
 
-  const uniqueTags = getUniqueTags(posts);
-  const swipeableRef = useRef<SwipeableCardsStackHandle>(null);
+  const uniqueTags = useMemo(() => getUniqueTags(postsListData), [postsListData]);
+  const loadMoreTriggerRef = useRef<HTMLDivElement | null>(null);
 
-  const onPageChange = (page: number) => {
-    setCurrentPage(page);
-  };
+  const filteredPosts = useMemo(() => {
+    if (!selectedTag) return postsListData;
+    return postsListData.filter((post) => post.tag === selectedTag);
+  }, [postsListData, selectedTag]);
 
-  const onPaginationPageChange = (page: number) => {
-    swipeableRef.current?.animateToPage(page);
-  };
+  const visiblePosts = useMemo(() => {
+    return filteredPosts.slice(0, visiblePostsCount);
+  }, [filteredPosts, visiblePostsCount]);
 
-  const justifyContent =
-    currentPosts?.length < 3 ? "flex-start" : "space-between";
+  const hasMorePosts = visiblePosts.length < filteredPosts.length;
 
   useEffect(() => {
-    if (posts.length > 0) {
-      const filteredPosts = selectedTag
-        ? posts.filter((post) => post.tag === selectedTag)
-        : posts;
+    setVisiblePostsCount(INITIAL_VISIBLE_POSTS);
+  }, [selectedTag]);
 
-      setCurrentPosts(
-        filteredPosts.slice(
-          (currentPage - 1) * postsPerPage,
-          currentPage * postsPerPage
-        )
-      );
-      setTotalPages(Math.ceil(filteredPosts.length / postsPerPage));
-    }
-  }, [selectedTag, currentPage, posts]);
+  useEffect(() => {
+    if (!hasMorePosts) return;
+    const triggerNode = loadMoreTriggerRef.current;
+    if (!triggerNode) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (!entry?.isIntersecting) return;
+
+        setVisiblePostsCount((prevCount) =>
+          Math.min(prevCount + LOAD_MORE_STEP, filteredPosts.length)
+        );
+      },
+      {
+        root: null,
+        rootMargin: "0px 0px 220px 0px",
+        threshold: 0.15,
+      }
+    );
+
+    observer.observe(triggerNode);
+
+    return () => observer.disconnect();
+  }, [filteredPosts.length, hasMorePosts]);
 
   const MainCardRender: React.FC = () => {
     return (
       <MainCard
-        id={posts[0]._raw.sourceFilePath}
-        title={posts[0].title}
-        createdAt={posts[0].createdAt}
-        readTime={posts[0].readTime}
-        description={posts[0].description}
-        imageUrl={formatUrlArticle(posts[0].imageUrl)}
-        imageAlt={posts[0].imageAlt}
-        onClick={() => router.push(posts[0].url)}
+        id={postsListData[0]._raw.sourceFilePath}
+        title={postsListData[0].title}
+        createdAt={postsListData[0].createdAt}
+        readTime={postsListData[0].readTime}
+        description={postsListData[0].description}
+        imageUrl={formatUrlArticle(postsListData[0].imageUrl)}
+        imageAlt={postsListData[0].imageAlt}
+        onClick={() => router.push(postsListData[0].url)}
       />
     );
   };
 
   const renderPosts = (posts: Post[]) => {
     if (posts.length > 0) {
-      return posts.map((value, index) => (
+      return posts.map((value) => (
         <SampleCard
-          key={index}
-          id={value.title}
+          key={value._raw.sourceFilePath}
           title={value.title}
           description={value.description}
           createdAt={value.createdAt}
-          readTime={value.readTime}
           imageUrl={formatUrlArticle(value.imageUrl)}
           imageAlt={value.imageAlt}
-          tag={value.tag}
-          tagColor={value.tagColor}
           onClick={() => router.push(value.url)}
         />
       ));
@@ -105,14 +109,11 @@ export default function Home({ postsListData }: HomeProps) {
     <>
       <main className="main space-y-8 grid place-items-center px-default-width md:px-44 sm:px-28 lg:px-52 xl:px-72 2xl:px-96 justify-center bg-he-background">
         <div className="space-y-2 text-white w-full">
-          <Text fontSize={"3xl"} fontWeight={"semibold"}>
-            Novidade
-          </Text>
-          {posts[0] ? <MainCardRender /> : <MainCardSkeleton />}
+          {postsListData[0] ? <MainCardRender /> : <MainCardSkeleton />}
         </div>
         <div className="space-y-3 w-full">
           <div className="flex justify-between place-items-center text-white">
-            <Text fontSize={"3xl"} fontWeight={"semibold"}>
+            <Text fontSize={"xl"} fontWeight={"normal"} fontFamily="heading">
               Artigos
             </Text>
             <Select
@@ -128,9 +129,8 @@ export default function Home({ postsListData }: HomeProps) {
                 if (selectedValue === "all") {
                   setSelectedTag(null);
                 } else {
-                  setSelectedTag(uniqueTags[parseInt(selectedValue)]);
+                  setSelectedTag(uniqueTags[parseInt(selectedValue, 10)]);
                 }
-                setCurrentPage(1);
               }}
             >
               <option value="all">Todos</option>
@@ -141,28 +141,17 @@ export default function Home({ postsListData }: HomeProps) {
               ))}
             </Select>
           </div>
-          <SwipeableCardsStack
-            ref={swipeableRef}
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={setCurrentPage}
-          >
-            <Stack
-              direction={["column", "column", "row"]}
-              wrap="nowrap"
-              placeItems={"center"}
-              justifyContent={["center", "center", justifyContent]}
-              w={"full"}
-              alignItems="stretch"
-            >
-              {renderPosts(currentPosts)}
-            </Stack>
-          </SwipeableCardsStack>
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={onPaginationPageChange}
-          />
+          <div className="grid w-full grid-cols-1 items-stretch gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {renderPosts(visiblePosts)}
+          </div>
+          {hasMorePosts && (
+            <>
+              <div ref={loadMoreTriggerRef} className="h-6 w-full" aria-hidden="true" />
+              <Text color="whiteAlpha.700" textAlign="center" fontSize="sm">
+                Carregando mais artigos...
+              </Text>
+            </>
+          )}
         </div>
         <Footer />
       </main>
