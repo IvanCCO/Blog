@@ -43,7 +43,7 @@ const config: Config = {
       },
       fontFamily: {
         itim: ["var(--font-itim)", "cursive"],
-        inter: ["var(--font-lora)", "serif"],
+        inter: ["var(--font-inter)", "sans-serif"],
         jomolhari: ["Jomolhari", "serif"],
         playfair: ["Playfair"],
       },
