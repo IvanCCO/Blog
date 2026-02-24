@@ -28,7 +28,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
   return (
     <Markdown
       remarkPlugins={[remarkGfm, remarkToc, remarkCallout]}
-      className={"text-[#d4d4d4] pb-12 font-body font-sm"}
+      className={"text-[#f8e5e7] pb-12"}
       components={{
         code(props) {
           const { children, className, node, ...rest } = props;
@@ -123,7 +123,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
           }
 
           return (
-            <p className="font-body font-sm leading-relaxed lg:text-md" {...props}>
+            <p className="text-base leading-relaxed lg:text-lg" {...props}>
               {props.children}
             </p>
           );
