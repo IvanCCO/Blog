@@ -87,10 +87,10 @@ export function SampleCard({
         <CardBody px={{ base: 5, md: 6 }} py={{ base: 4, md: 5 }}>
           <Stack spacing={{ base: 3, md: 4 }}>
             <Heading
-              size={{ base: "sm", md: "sm" }}
+              size={{ base: "sm", md: "md" }}
               fontFamily="heading"
               as={"h1"}
-              lineHeight={{ base: "short", md: "1.35" }}
+              lineHeight={{ base: "short" }}
             >
               {title}
             </Heading>
