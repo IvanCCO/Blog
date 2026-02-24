@@ -228,10 +228,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: var(--font-lora), serif;
-}
-
 h1,
 h2,
 h3,

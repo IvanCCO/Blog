@@ -7,7 +7,7 @@ const theme = extendTheme({
   },
   fonts: {
     heading: "var(--font-itim), cursive",
-    body: "var(--font-lora), serif",
+    body: "var(--font-inter), sans-serif",
   },
   breakpoints: {
     sm: "640px",
