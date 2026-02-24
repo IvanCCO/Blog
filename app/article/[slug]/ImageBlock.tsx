@@ -15,6 +15,7 @@ export function ImageBlock({
         alt={imageAlt}
         objectFit="cover"
         fallbackStrategy={"onError"}
+        borderRadius="lg"
       />
       <Text fontSize={"xs"} color={"GrayText"}>
         @Bing: {imageAlt}

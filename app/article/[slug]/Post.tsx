@@ -63,15 +63,6 @@ export default function Post({ postData }: PostProps) {
             ) : (
               <Skeleton height="30px" />
             )}
-
-            {article ? (
-              <ProfileRow
-                data={new Date(article.createdAt)}
-                readTime={article.readTime}
-              />
-            ) : (
-              ProfileRowSkeleton
-            )}
           </div>
           <div className="py-6">
             {article && (
