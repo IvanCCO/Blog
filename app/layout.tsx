@@ -6,7 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { Blog, WithContext } from "schema-dts";
 import Script from "next/script";
 import { allPosts } from "@/.contentlayer/generated";
-import Header from "@/components/Header";
+import ConditionalHeader from "@/components/Header/ConditionalHeader";
 import { Agentation  } from "agentation";
 import { inter, itim } from "./fonts";
 
@@ -76,7 +76,7 @@ export default function RootLayout({
       />
       <body className={`${itim.variable} ${inter.variable} ${inter.className} bg-he-background`}>
         <Providers>
-          <Header />
+          <ConditionalHeader />
           {children}
         </Providers>
         <Analytics />

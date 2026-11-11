@@ -1,0 +1,404 @@
+.page {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  overscroll-behavior: none;
+  background: #f7f4ec;
+  color: #29251f;
+  color-scheme: light;
+  font-family: Georgia, "Times New Roman", serif;
+  isolation: isolate;
+}
+
+.intro {
+  position: absolute;
+  z-index: 5;
+  top: clamp(20px, 3vh, 32px);
+  left: 50%;
+  width: max-content;
+  text-align: center;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.intro p,
+.intro span,
+.edition {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.intro p {
+  margin: 0 0 7px;
+  color: #827968;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: clamp(40px, 5vw, 62px);
+  font-weight: 400;
+  letter-spacing: -0.09em;
+  line-height: 0.9;
+}
+
+.intro span {
+  display: block;
+  margin-top: 10px;
+  color: #756d5f;
+  font-size: 9px;
+}
+
+.stack {
+  position: absolute;
+  inset: 0;
+  perspective: 1050px;
+  perspective-origin: 55% 25%;
+  transform-style: preserve-3d;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  overscroll-behavior: none;
+}
+
+.stack:focus-visible {
+  outline: 2px solid #9a8668;
+  outline-offset: -5px;
+}
+
+.scene {
+  --orbit-center-y: calc(31% + min(22vw, 300px, 28.56svh) / 1.36);
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 180ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.draggingScene,
+.draggingScene .cover {
+  cursor: grabbing;
+}
+
+.draggingScene .scene {
+  transition: none;
+}
+
+.book {
+  position: absolute;
+  top: 31%;
+  left: 50%;
+  width: min(22vw, 300px, calc(42svh * 0.68));
+  aspect-ratio: 0.68;
+  overflow: visible;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+}
+
+.isolated .book:not([data-state="active"]) { display: none; }
+
+.blue { --cover-color: #b8c8d4; --cover-ink: #283843; }
+.rose { --cover-color: #d5aaa0; --cover-ink: #4a302d; }
+.sage { --cover-color: #bcc7a9; --cover-ink: #343c2c; }
+.lilac { --cover-color: #bdb3c8; --cover-ink: #393345; }
+
+.backCover {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px 7px 7px 4px;
+  color: var(--cover-ink);
+  background-color: var(--cover-color);
+  background-image: linear-gradient(110deg, rgb(255 255 255 / 8%), rgb(0 0 0 / 12%));
+  backface-visibility: hidden;
+  transform: translateZ(-18px) rotateY(180deg);
+}
+
+.backVolume,
+.backYear {
+  position: absolute;
+  left: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(6px, 0.6vw, 9px);
+  letter-spacing: 0.16em;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.backVolume { top: 10%; }
+.backYear { bottom: 10%; }
+.backTitle { position: absolute; top: 50%; left: 50%; font-size: clamp(20px, 3.5vw, 46px); letter-spacing: 0.08em; transform: translate(-50%, -50%); }
+
+.bookSpine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -18px;
+  width: 36px;
+  color: var(--cover-ink);
+  background-color: var(--cover-color);
+  background-image: linear-gradient(90deg, rgb(0 0 0 / 23%), rgb(255 255 255 / 12%) 35%, rgb(0 0 0 / 14%));
+  border-inline: 1px solid rgb(0 0 0 / 10%);
+  backface-visibility: hidden;
+  transform: rotateY(-90deg);
+}
+
+.spineTitle { position: absolute; top: 12%; left: 50%; font-family: Arial, Helvetica, sans-serif; font-size: 10px; letter-spacing: 0.22em; writing-mode: vertical-rl; transform: translateX(-50%); }
+.spineYear { position: absolute; bottom: 9%; left: 50%; font-size: 16px; transform: translateX(-50%); }
+
+.topPages {
+  position: absolute;
+  top: -18px;
+  left: 0;
+  width: 100%;
+  height: 36px;
+  border-radius: 5px 7px 0 0;
+  background: repeating-linear-gradient(180deg, #f6efdf 0 2px, #cfc3ae 2px 3px, #eee5d5 3px 5px);
+  transform: rotateX(90deg);
+  transform-origin: center;
+  backface-visibility: hidden;
+}
+
+.bottomPages {
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  width: 100%;
+  height: 36px;
+  background: repeating-linear-gradient(180deg, #e8dfcd 0 2px, #c7bda9 2px 3px, #f4eddf 3px 5px);
+  transform: rotateX(-90deg);
+  transform-origin: center;
+  backface-visibility: hidden;
+}
+
+.bookSide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(100% - 18px);
+  width: 36px;
+  border-radius: 0 5px 5px 0;
+  background: repeating-linear-gradient(90deg, #e8dfcd 0 2px, #c7bda9 2px 3px, #f4eddf 3px 5px);
+  transform: rotateY(90deg);
+  transform-origin: center;
+  backface-visibility: hidden;
+}
+
+.cover {
+  appearance: none;
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 4px 7px 7px 4px;
+  color: var(--cover-ink);
+  background-color: var(--cover-color);
+  background-image: linear-gradient(110deg, rgb(255 255 255 / 13%), transparent 35%, rgb(40 30 25 / 5%));
+  font-family: inherit;
+  cursor: grab;
+  touch-action: none;
+  transform: translateZ(18px);
+  backface-visibility: hidden;
+}
+
+.cover:focus-visible {
+  outline: 3px solid #87704f;
+  outline-offset: 5px;
+}
+
+.book[data-state="active"] .cover,
+.book[data-state="active"] .backCover {
+  box-shadow: 15px 20px 28px rgb(54 43 31 / 16%);
+}
+
+.spine {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 10px;
+  border-right: 1px solid rgb(40 31 25 / 14%);
+  background: linear-gradient(90deg, rgb(25 24 21 / 18%), rgb(255 255 255 / 12%), transparent);
+}
+
+.number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: clamp(100px, 17vw, 220px);
+  font-weight: 400;
+  letter-spacing: -0.12em;
+  line-height: 0.8;
+  text-shadow: 0 1px rgb(255 255 255 / 25%);
+  transform: translate(-50%, -50%);
+}
+
+.tab {
+  position: absolute;
+  top: 19%;
+  right: -12px;
+  width: 12px;
+  height: 8%;
+  min-height: 12px;
+  border-radius: 0 3px 3px 0;
+  background: var(--book-tab);
+  box-shadow: 2px 2px 4px rgb(40 30 25 / 10%);
+}
+
+.edition {
+  position: absolute;
+  right: 28px;
+  bottom: 24px;
+  color: #8a8172;
+  font-size: 8px;
+  pointer-events: none;
+}
+
+.bookNavigation {
+  position: absolute;
+  z-index: 6;
+  bottom: 6svh;
+  left: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.navigationRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.navigationButton {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #d9d0c1;
+  border-radius: 50%;
+  background: rgb(255 253 247 / 60%);
+  color: #635540;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 150ms ease-out, transform 150ms ease-out;
+}
+
+.navigationButton:disabled { opacity: 0.3; cursor: default; }
+.navigationButton:active:not(:disabled) { transform: scale(0.97); }
+
+.activeYear {
+  display: grid;
+  min-width: 80px;
+  gap: 4px;
+}
+
+.activeYearLabel { color: #867962; font-size: 9px; letter-spacing: 0.14em; }
+.bookCount { font-family: Georgia, "Times New Roman", serif; font-size: 25px; font-variant-numeric: tabular-nums; }
+.bookCount > span { color: #a69a88; font-size: 15px; }
+.navigationHint { margin: 15px 0 0; color: #8c806d; font-size: 10px; white-space: nowrap; }
+
+.controls {
+  position: fixed;
+  z-index: 20;
+  top: 50%;
+  right: 18px;
+  width: 252px;
+  max-height: calc(100svh - 32px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid rgb(105 91 66 / 18%);
+  border-radius: 18px;
+  background: rgb(250 247 239 / 96%);
+  box-shadow: 0 12px 40px rgb(49 40 29 / 16%);
+  color: #342e25;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  transform: translateY(-50%);
+}
+
+.controlsHeading,
+.controlLabelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.controlsHeading { padding: 17px; list-style: none; cursor: pointer; }
+.controlsHeading::-webkit-details-marker { display: none; }
+.controlsTitle { display: block; margin-top: 4px; font-family: Georgia, "Times New Roman", serif; font-size: 18px; }
+.controlsContent { padding: 0 17px 17px; }
+.controlEyebrow { color: #8c806d; font-size: 8px; font-weight: 700; letter-spacing: 0.12em; }
+.disclosureArrow { color: #8c806d; font-size: 18px; }
+.controls details[open] .disclosureArrow { transform: rotate(180deg); }
+
+.resetButton {
+  border: 0;
+  padding: 6px 8px;
+  border-radius: 7px;
+  background: #ebe4d6;
+  color: #655943;
+  font-size: 10px;
+  cursor: pointer;
+  transition: background 150ms ease-out, transform 150ms ease-out;
+}
+
+.resetButton:active { transform: scale(0.97); }
+.controlValue { color: #8c806d; font-variant-numeric: tabular-nums; }
+.controlGroup { margin-top: 17px; }
+.activeBookControl { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; padding-bottom: 14px; border-bottom: 1px solid #e7dfd1; }
+.activeBookControl select { max-width: 112px; min-height: 36px; padding: 5px 10px; border: 1px solid #d9d0c1; border-radius: 7px; background: #fffdf7; color: #655943; font-size: 11px; cursor: pointer; }
+.inspectionToggle { display: flex; align-items: center; gap: 8px; min-height: 36px; margin-top: 5px; color: #756750; font-size: 11px; cursor: pointer; }
+.inspectionToggle input { accent-color: #87704f; }
+.rangeLabel { display: grid; gap: 8px; margin-top: 14px; color: #675e50; font-size: 11px; }
+.rangeLabel input { width: 100%; margin: 0; accent-color: #87704f; cursor: pointer; }
+.perspectiveName { margin: 6px 0 0; color: #4c4438; font-family: Georgia, "Times New Roman", serif; font-size: 15px; text-align: center; text-transform: capitalize; }
+
+.orbitControl {
+  position: relative;
+  width: 102px;
+  height: 102px;
+  margin: 12px auto 7px;
+  overflow: hidden;
+  border: 1px solid #cfc3ae;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 44%, #fffdf9, #e9e1d3);
+  box-shadow: inset 0 2px 8px rgb(60 47 30 / 10%);
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.orbitRing { position: absolute; inset: 16px 7px; border: 1px solid rgb(125 108 81 / 38%); border-radius: 50%; transform: rotate(-28deg); }
+.orbitCrosshair { position: absolute; inset: 50% 8px auto; height: 1px; background: rgb(125 108 81 / 25%); box-shadow: 0 -16px 0 rgb(125 108 81 / 15%), 0 16px 0 rgb(125 108 81 / 15%); }
+.orbitHandle { position: absolute; width: 18px; height: 18px; border: 2px solid #fffaf0; border-radius: 50%; background: #8c7351; box-shadow: 0 2px 8px rgb(39 30 19 / 30%); transform: translate(-50%, -50%); pointer-events: none; }
+.controlHint, .dragHint { margin: 0; color: #8c806d; font-size: 10px; text-align: center; }
+.dragHint { margin-top: 16px; padding-top: 12px; border-top: 1px solid #e7dfd1; line-height: 1.45; }
+.angleInputs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.angleInputs label { display: grid; gap: 5px; color: #8c806d; font-size: 10px; }
+.angleInputs input { min-width: 0; width: 100%; min-height: 34px; padding: 5px 8px; border: 1px solid #d9d0c1; border-radius: 6px; background: #fffdf7; color: #655943; font-size: 12px; font-variant-numeric: tabular-nums; }
+.viewPresets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 10px; }
+.viewPresets button { min-height: 34px; padding: 5px 2px; border: 1px solid #d9d0c1; border-radius: 6px; background: #f6f1e7; color: #756750; font-size: 10px; cursor: pointer; }
+.viewPresets button[aria-pressed="true"] { border-color: #9a8668; background: #e9dfce; color: #463b2b; }
+
+@media (hover: hover) and (pointer: fine) {
+  .navigationButton:hover:not(:disabled), .resetButton:hover { background: #e1d6c2; }
+}
+
+@media (max-width: 700px) {
+  .intro { top: 4vh; }
+  .intro h1 { font-size: 54px; }
+  .stack { perspective: 850px; perspective-origin: 55% 16%; }
+  .scene { --orbit-center-y: calc(27% + min(42vw, 220px, 27.2svh) / 1.36); }
+  .book { top: 27%; width: min(42vw, 220px, calc(40svh * 0.68)); }
+  .number { font-size: clamp(90px, 30vw, 150px); }
+  .controls { top: auto; right: 12px; bottom: 12px; width: min(252px, calc(100vw - 24px)); max-height: 65svh; transform: none; }
+  .bookNavigation { bottom: 110px; }
+  .navigationHint { font-size: 9px; }
+  .edition { display: none; }
+  .viewPresets button { min-height: 44px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene, .navigationButton, .resetButton { transition: none; }
+}
