@@ -15,6 +15,7 @@
 }
 
 .dialog::backdrop { background: transparent; }
+.dialog:focus { outline: none; }
 .backdrop { position: absolute; inset: 0; background: rgb(247 244 236 / 96%); }
 .perspective { position: absolute; inset: 0; perspective: 1800px; pointer-events: none; }
 
@@ -22,7 +23,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  width: min(40vw, 360px, 36.72svh);
+  width: min(43vw, 440px, 44.2svh);
   aspect-ratio: 0.68;
   transform-style: preserve-3d;
   transform-origin: top left;
@@ -38,7 +39,7 @@
   transform: translateZ(-5px);
 }
 
-.firstPage,
+.paper,
 .coverFront,
 .coverInside,
 .leafFront,
@@ -50,13 +51,32 @@
   backface-visibility: hidden;
 }
 
-.firstPage {
+.paper {
   background: linear-gradient(90deg, #d8ccb7, #f3ead8 6%, #fbf6e9 22%, #f8f1e2 97%, #e7dcc7);
   box-shadow: 2px 2px #e8ddc7, 4px 4px #d5c8b0, 5px 6px #f1e7d4;
 }
 
+.leftPaper { background: linear-gradient(90deg, #f6eddd, #fbf5e8 75%, #e7dac1 96%, #cfbfa3); }
+.leftBoard { transform: translate3d(-100%, 0, -5px); }
+.leftStack { position: absolute; inset: 0; transform: translateX(-100%); }
+.volume[data-open="false"] .leftStack,
+.volume[data-open="false"] .leftBoard { visibility: hidden; }
+.volume[data-open="true"] .openingCover { visibility: hidden; }
+.pageContent { position: absolute; inset: 12% 11% 12% 12%; font-family: Georgia, "Times New Roman", serif; color: #4f4437; }
+.textLine { position: absolute; margin: 0; white-space: pre; font: inherit; letter-spacing: 0; }
+.pageImage { position: absolute; margin: 0; }
+.pageImage img { display: block; width: 100%; object-fit: cover; border-radius: 1px; }
+.pageImage figcaption { overflow: hidden; margin-top: 3px; color: #8c7b62; font-style: italic; }
+.turningSheet { pointer-events: none; }
+.turnShadow { position: absolute; inset: 0 -1% 0 -100%; background: linear-gradient(90deg, transparent, #44301a 43%, #44301a 57%, transparent); transform: translateZ(1px); pointer-events: none; }
+.sheetFront,
+.sheetBack { position: absolute; inset: 0; backface-visibility: hidden; }
+.sheetFront { transform: translateZ(0.5px); }
+.sheetBack { transform: rotateY(180deg) translateZ(0.5px); }
+.sheetFront .paper,
+.sheetBack .paper { box-shadow: none; }
+
 .runningHead,
-.eyebrow,
 .coverVolume,
 .hint {
   font: 9px/1.5 Arial, Helvetica, sans-serif;
@@ -64,10 +84,6 @@
 }
 
 .runningHead { position: absolute; top: 9%; width: 100%; text-align: center; color: #8b7b63; font-size: clamp(6px, 0.65vw, 9px); }
-.chapter { position: absolute; top: 38%; left: 12%; right: 12%; text-align: center; }
-.eyebrow { color: #938168; font-size: clamp(6px, 0.7vw, 9px); }
-.chapter h2 { margin: 16px 0 22px; font-size: clamp(26px, 4vw, 56px); font-weight: 400; letter-spacing: -0.05em; }
-.rule { width: 28px; height: 1px; margin: auto; background: #b4a084; }
 .folio { position: absolute; bottom: 7%; width: 100%; text-align: center; color: #a08e72; font-size: 11px; }
 
 .hinge { position: absolute; inset: 0; transform-origin: left center; transform-style: preserve-3d; }
@@ -84,11 +100,17 @@
 .leafFront { background: linear-gradient(90deg, #dbceb5, #faf3e4 9%, #f8efde 94%, #e7dbc4); transform: translateZ(2px); }
 .leafBack { display: grid; place-items: center; background: linear-gradient(90deg, #f7eedc, #fbf4e6 80%, #dfd1b6); transform: rotateY(180deg) translateZ(1px); color: #a18d6e; font-size: clamp(11px, 1.25vw, 17px); font-style: italic; }
 
-.close {
+.readerNavigation {
   position: absolute;
   z-index: 2;
-  top: max(22px, env(safe-area-inset-top));
-  right: 26px;
+  left: 50%;
+  bottom: max(60px, calc(env(safe-area-inset-bottom) + 48px));
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  transform: translateX(-50%);
+}
+.readerNavigation button {
   width: 44px;
   height: 44px;
   padding: 0;
@@ -96,14 +118,19 @@
   border-radius: 50%;
   background: #f7f4ec;
   color: #655a48;
-  font: 26px/1 Arial, sans-serif;
+  font: 20px/1 Arial, sans-serif;
   cursor: pointer;
   transition: transform 150ms ease, background-color 150ms ease;
 }
-.close:active { transform: scale(0.97); }
-.close:focus-visible { outline: 2px solid #87704f; outline-offset: 4px; }
+.readerNavigation button:disabled { opacity: 0.35; cursor: default; }
+.readerNavigation button:active:not(:disabled) { transform: scale(0.97); }
+.readerNavigation button:focus-visible { outline: 2px solid #87704f; outline-offset: 4px; }
+.readerNavigation output { min-width: 85px; text-align: center; font-size: 17px; font-variant-numeric: tabular-nums; }
+.readerNavigation output span { color: #9b8d78; }
 .hint { position: absolute; bottom: max(28px, env(safe-area-inset-bottom)); width: 100%; text-align: center; color: #8b7d68; pointer-events: none; }
 .hint span { margin: 0 10px; }
+.srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
-@media (hover: hover) and (pointer: fine) { .close:hover { background: #eee7db; } }
-@media (prefers-reduced-motion: reduce) { .close { transition: background-color 150ms ease; } .close:active { transform: none; } }
+@media (max-width: 600px) { .hint { padding: 0 16px; font-size: 7px; letter-spacing: 0.08em; } }
+@media (hover: hover) and (pointer: fine) { .readerNavigation button:hover:not(:disabled) { background: #eee7db; } }
+@media (prefers-reduced-motion: reduce) { .readerNavigation button { transition: background-color 150ms ease; } .readerNavigation button:active { transform: none; } }
