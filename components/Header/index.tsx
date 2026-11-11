@@ -3,7 +3,7 @@ import { Logo } from "./Logo";
 import { Hamburguer } from "./Hamburguer";
 import { useRouter, usePathname } from "next/navigation";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useMemo, useCallback } from "react";
 
 // Color mapping for each header item
 const HEADER_COLORS = {
@@ -26,7 +26,7 @@ const HeaderItem = ({
   onClick: () => void;
   isActive: boolean;
   onHover: () => void;
-  itemRef: React.RefObject<HTMLSpanElement>;
+  itemRef: React.RefObject<HTMLSpanElement | null>;
 }) => {
   return (
     <span
@@ -50,7 +50,7 @@ const HeaderItems = ({
 }: {
   onClick: (path: string) => void;
   onHover: (text: string) => void;
-  itemRefs: React.RefObject<HTMLSpanElement>[];
+  itemRefs: React.RefObject<HTMLSpanElement | null>[];
   activeItem: string;
 }) => {
   const PATHS = {
@@ -88,21 +88,15 @@ export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-  const [activeItem, setActiveItem] = useState<string>("Posts");
-  const itemRefs = [
-    useRef<HTMLSpanElement>(null),
-    useRef<HTMLSpanElement>(null),
-    useRef<HTMLSpanElement>(null),
-    useRef<HTMLSpanElement>(null),
-  ];
-
-  // Determine active item based on pathname
-  useEffect(() => {
-    if (pathname === "/about/me") setActiveItem("Eu");
-    else if (pathname === "/") setActiveItem("Posts");
-    else if (pathname === "/world") setActiveItem("Globo");
-    else if (pathname === "/about") setActiveItem("Sobre");
-  }, [pathname]);
+  const activeItem = pathname === "/about/me" ? "Eu" : pathname === "/world" ? "Globo" : pathname === "/about" ? "Sobre" : "Posts";
+  const euRef = useRef<HTMLSpanElement>(null);
+  const postsRef = useRef<HTMLSpanElement>(null);
+  const globoRef = useRef<HTMLSpanElement>(null);
+  const sobreRef = useRef<HTMLSpanElement>(null);
+  const itemRefs = useMemo(
+    () => [euRef, postsRef, globoRef, sobreRef],
+    [euRef, postsRef, globoRef, sobreRef],
+  );
 
   // Animation values
   const backgroundX = useMotionValue(0);
@@ -120,7 +114,7 @@ export default function Header() {
   const animatedWidth = useSpring(backgroundWidth, springConfig);
 
   // Calculate positions and update animation
-  const updateBackgroundPosition = (targetItem: string) => {
+  const updateBackgroundPosition = useCallback((targetItem: string) => {
     const itemIndex = ["Eu", "Posts", "Globo", "Sobre"].indexOf(targetItem);
 
     if (itemIndex === -1) return;
@@ -143,7 +137,7 @@ export default function Header() {
     // Update animation values
     backgroundX.set(targetX);
     backgroundWidth.set(targetWidth);
-  };
+  }, [itemRefs, backgroundX, backgroundWidth]);
 
   const handleHover = (itemText: string) => {
     setHoveredItem(itemText);
@@ -167,7 +161,7 @@ export default function Header() {
     }, 100);
 
     return () => clearTimeout(timer);
-  }, [activeItem]);
+  }, [activeItem, updateBackgroundPosition]);
 
   return (
     <div

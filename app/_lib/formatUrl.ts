@@ -1,4 +1,6 @@
-const STORE_URL = process.env.NEXT_PUBLIC_IMAGE_STORE_URL;
+const STORE_URL =
+  process.env.NEXT_PUBLIC_IMAGE_STORE_URL ??
+  "https://taxco-bucket.s3.us-east-2.amazonaws.com";
 
 const hasExternalProtocol = (path: string) =>
   /^https?:\/\//i.test(path);

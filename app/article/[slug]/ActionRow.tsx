@@ -15,12 +15,12 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import {
-  LinkedinIcon,
+  LinkedinLegacyIcon as LinkedinIcon,
   LinkedinShareButton,
-  TwitterShareButton,
-  WhatsappIcon,
+  XShareButton,
+  WhatsappLegacyIcon as WhatsappIcon,
   WhatsappShareButton,
-  XIcon,
+  XLegacyIcon as XIcon,
 } from "react-share";
 
 
@@ -64,18 +64,15 @@ export function ActionRow({
               <Flex justifyContent="space-evenly">
                 <LinkedinShareButton
                   url={shareUrl}
-                  title={title}
-                  summary={description}
-                  source={"xixi"}
                 >
                   <LinkedinIcon size={iconSize} round />
                 </LinkedinShareButton>
-                <TwitterShareButton url={shareUrl} title={title}>
+                <XShareButton url={shareUrl} text={title}>
                   <XIcon size={iconSize} round />
-                </TwitterShareButton>
+                </XShareButton>
                 <WhatsappShareButton
                   url={shareUrl}
-                  title={title}
+                  message={title}
                   separator={"\n".repeat(2)}
                 >
                   <WhatsappIcon size={iconSize} round />

@@ -1,15 +1,18 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { Image } from "@chakra-ui/image";
-import { Text, VStack, HStack, Center } from "@chakra-ui/layout";
-import { Button } from "@chakra-ui/button";
 import {
+  Image,
+  Text,
+  VStack,
+  HStack,
+  Center,
+  Button,
   Popover,
   PopoverTrigger,
   PopoverContent,
   PopoverArrow,
   PopoverBody,
-} from "@chakra-ui/popover";
+} from "@chakra-ui/react";
 import { QuestionOutlineIcon } from "@chakra-ui/icons";
 import NOT_FOUND_IMAGE from "../public/not-found.png";
 

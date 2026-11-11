@@ -10,7 +10,7 @@ import { BlogPosting, WithContext } from "schema-dts";
 export const generateStaticParams = async () => allPosts.map((post) => ({ slug: post._raw.flattenedPath }))
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata(
@@ -18,7 +18,8 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
 
-  const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)
+  const { slug } = await params;
+  const post = allPosts.find((post) => post._raw.flattenedPath === slug)
 
   if (!post) {
     return {
@@ -57,8 +58,9 @@ export async function generateMetadata(
 
 export default async function Page({ params }: Props) {
 
+  const { slug } = await params;
   const post: PostType | undefined
-    = allPosts.find((post) => post._raw.flattenedPath === params.slug)
+    = allPosts.find((post) => post._raw.flattenedPath === slug)
 
   if (!post) {
     notFound()

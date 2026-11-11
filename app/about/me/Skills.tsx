@@ -1,8 +1,5 @@
 import { Image, useBreakpointValue } from "@chakra-ui/react";
 import Marquee from "react-fast-marquee";
-import "swiper/css";
-import "swiper/css/autoplay";
-import "swiper/modules";
 import APIGEE from "../../../public/skills_icon/apigee-seeklogo.com.svg";
 import AWS from "../../../public/skills_icon/aws.svg";
 import GRAFANA from "../../../public/skills_icon/grafana.svg";
