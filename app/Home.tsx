@@ -43,10 +43,6 @@ export default function Home({ postsListData }: HomeProps) {
   const hasMorePosts = visiblePosts.length < filteredPosts.length;
 
   useEffect(() => {
-    setVisiblePostsCount(INITIAL_VISIBLE_POSTS);
-  }, [selectedTag]);
-
-  useEffect(() => {
     if (!hasMorePosts) return;
     const triggerNode = loadMoreTriggerRef.current;
     if (!triggerNode) return;
@@ -72,7 +68,7 @@ export default function Home({ postsListData }: HomeProps) {
     return () => observer.disconnect();
   }, [filteredPosts.length, hasMorePosts]);
 
-  const MainCardRender: React.FC = () => {
+  const renderMainCard = () => {
     return (
       <MainCard
         id={postsListData[0]._raw.sourceFilePath}
@@ -109,7 +105,7 @@ export default function Home({ postsListData }: HomeProps) {
     <>
       <main className="main space-y-8 grid place-items-center px-default-width md:px-44 sm:px-28 lg:px-52 xl:px-72 2xl:px-96 justify-center bg-he-background">
         <div className="space-y-2 text-white w-full">
-          {postsListData[0] ? <MainCardRender /> : <MainCardSkeleton />}
+          {postsListData[0] ? renderMainCard() : <MainCardSkeleton />}
         </div>
         <div className="space-y-3 w-full">
           <div className="flex justify-between place-items-center text-white">
@@ -126,6 +122,7 @@ export default function Home({ postsListData }: HomeProps) {
               w={1 / 3}
               onChange={(e) => {
                 const selectedValue = e.target.value;
+                setVisiblePostsCount(INITIAL_VISIBLE_POSTS);
                 if (selectedValue === "all") {
                   setSelectedTag(null);
                 } else {

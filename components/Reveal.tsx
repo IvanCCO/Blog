@@ -12,7 +12,7 @@ interface Animation {
 }
 
 interface Props {
-  children: JSX.Element;
+  children: React.ReactElement;
   width?: "fit-content" | "100%";
   position?: Position;
   animation?: Animation;
@@ -36,7 +36,7 @@ export const Reveal = ({
     if (isInView) {
       mainControls.start("visible");
     }
-  }, [isInView]);
+  }, [isInView, mainControls]);
 
   return (
     <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>

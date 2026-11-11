@@ -8,7 +8,6 @@ interface Props {
   buyUrl: string;
 }
 
-export default function Suggestions() {
   function goToUrl(url: string) {
     const newWindow = window.open(url, "_blank");
     if (newWindow) {
@@ -46,6 +45,7 @@ export default function Suggestions() {
     </div>
   );
 
+export default function Suggestions() {
   const books = [
     <Recomendation
       key={0}
