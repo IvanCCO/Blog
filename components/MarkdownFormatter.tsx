@@ -26,9 +26,9 @@ interface MarkdownText {
 
 export default function MarkdownFormatter({ text }: MarkdownText) {
   return (
+    <div className="text-[#f8e5e7] pb-12">
     <Markdown
       remarkPlugins={[remarkGfm, remarkToc, remarkCallout]}
-      className={"text-[#f8e5e7] pb-12"}
       components={{
         code(props) {
           const { children, className, node, ...rest } = props;
@@ -210,7 +210,7 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
           return (
             <div className="flex justify-center items-center my-6 flex-col text-center">
               <Image
-                src={props.src}
+                src={typeof props.src === "string" ? props.src : undefined}
                 boxSize={["100%", "80%", "70%"]}
                 alt={props.alt}
               />
@@ -224,5 +224,6 @@ export default function MarkdownFormatter({ text }: MarkdownText) {
     >
       {text}
     </Markdown>
+    </div>
   );
 }

@@ -27,8 +27,7 @@ export default function Post({ postData }: PostProps) {
     </Box>
   );
 
-  const PostPage: React.FC = () => {
-    return (
+  return (
       <>
         <ProgressBar />
         <main className="main space-y-2 px-default-width md:px-44 sm:px-28 lg:px-52 xl:px-72 2xl:px-[30rem] 3xl:px-[36rem] bg-he-background">
@@ -85,8 +84,5 @@ export default function Post({ postData }: PostProps) {
           <Footer />
         </main>
       </>
-    );
-  };
-
-  return <PostPage />;
+  );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { memo } from "react";
-import { motion, useTransform, type MotionStyle, type MotionValue } from "framer-motion";
+import { motion, useTransform, type MotionValue } from "framer-motion";
 import { BOOKS, getBookPose, type BookState, type LifeBook } from "./book-scene";
 import styles from "./BookTimeline.module.css";
 
@@ -12,10 +12,11 @@ interface BookProps {
   size: number;
   state: BookState;
   reducedMotion: boolean;
-  onActivate: (index: number, immediate?: boolean) => void;
+  onActivate: (index: number, element: HTMLElement, immediate: boolean) => void;
+  isOpen: boolean;
 }
 
-const Book = memo(function Book({ book, progress, spacing, size, state, reducedMotion, onActivate }: BookProps) {
+const Book = memo(function Book({ book, progress, spacing, size, state, reducedMotion, onActivate, isOpen }: BookProps) {
   const index = book.year - 1;
   const pose = useTransform(progress, (value) => getBookPose(index, value, spacing, size, reducedMotion));
   const transform = useTransform(pose, (value) => value.transform);
@@ -28,11 +29,10 @@ const Book = memo(function Book({ book, progress, spacing, size, state, reducedM
       className={`${styles.book} ${styles[book.color]}`}
       style={{
         transform,
-        visibility,
+        visibility: isOpen ? "hidden" : visibility,
         pointerEvents,
         zIndex: BOOKS.length - index,
-        "--book-tab": book.tab,
-      } as MotionStyle}
+      }}
       data-year={book.year}
       data-state={state}
       aria-label={`Ano ${book.year} da vida`}
@@ -57,14 +57,14 @@ const Book = memo(function Book({ book, progress, spacing, size, state, reducedM
         className={styles.cover}
         data-face="front"
         style={{ opacity }}
-        aria-label={`Mostrar ano ${book.year}`}
+        aria-label={`Abrir livro do ano ${book.year}`}
+        aria-haspopup="dialog"
         tabIndex={state === "passed" ? -1 : 0}
-        onClick={(event) => onActivate(index, event.detail === 0)}
+        onClick={(event) => onActivate(index, event.currentTarget, event.detail === 0)}
       >
         <span className={styles.spine} aria-hidden="true" />
         <span className={styles.number} aria-hidden="true">{book.year}</span>
       </motion.button>
-      <motion.span className={styles.tab} style={{ opacity }} aria-hidden="true" />
     </motion.article>
   );
 });

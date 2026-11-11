@@ -5,7 +5,6 @@ interface Props {
   name: string;
 }
 
-export default function Contact() {
   const SocialComponent = ({ url, name }: Props) => (
     <div className="flex-1 inline-flex place-items-center py-2 px-4 sm:px-8 sm:py-3 md:px-10 space-x-6 bg-white rounded-lg">
       <SocialIcon
@@ -18,6 +17,7 @@ export default function Contact() {
     </div>
   );
 
+export default function Contact() {
   const socialMediasList = [
     <SocialComponent
       key={0}

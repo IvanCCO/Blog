@@ -1,8 +1,8 @@
 const palette = [
-  { color: "blue", tab: "#C4774F" },
-  { color: "rose", tab: "#8A9C77" },
-  { color: "sage", tab: "#B37E69" },
-  { color: "lilac", tab: "#7E879B" },
+  { color: "blue" },
+  { color: "rose" },
+  { color: "sage" },
+  { color: "lilac" },
 ] as const;
 
 export const BOOKS = Array.from({ length: 22 }, (_, index) => ({

@@ -234,18 +234,6 @@
   transform: translate(-50%, -50%);
 }
 
-.tab {
-  position: absolute;
-  top: 19%;
-  right: -12px;
-  width: 12px;
-  height: 8%;
-  min-height: 12px;
-  border-radius: 0 3px 3px 0;
-  background: var(--book-tab);
-  box-shadow: 2px 2px 4px rgb(40 30 25 / 10%);
-}
-
 .edition {
   position: absolute;
   right: 28px;

@@ -12,7 +12,7 @@ interface Animation {
 }
 
 interface Props {
-  children: JSX.Element;
+  children: React.ReactElement;
   width?: "fit-content" | "100%";
   position?: Position;
   animation?: Animation;

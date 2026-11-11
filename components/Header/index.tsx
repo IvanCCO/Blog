@@ -26,7 +26,7 @@ const HeaderItem = ({
   onClick: () => void;
   isActive: boolean;
   onHover: () => void;
-  itemRef: React.RefObject<HTMLSpanElement>;
+  itemRef: React.RefObject<HTMLSpanElement | null>;
 }) => {
   return (
     <span
@@ -50,7 +50,7 @@ const HeaderItems = ({
 }: {
   onClick: (path: string) => void;
   onHover: (text: string) => void;
-  itemRefs: React.RefObject<HTMLSpanElement>[];
+  itemRefs: React.RefObject<HTMLSpanElement | null>[];
   activeItem: string;
 }) => {
   const PATHS = {
@@ -88,7 +88,7 @@ export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-  const [activeItem, setActiveItem] = useState<string>("Posts");
+  const activeItem = pathname === "/about/me" ? "Eu" : pathname === "/world" ? "Globo" : pathname === "/about" ? "Sobre" : "Posts";
   const euRef = useRef<HTMLSpanElement>(null);
   const postsRef = useRef<HTMLSpanElement>(null);
   const globoRef = useRef<HTMLSpanElement>(null);
@@ -97,14 +97,6 @@ export default function Header() {
     () => [euRef, postsRef, globoRef, sobreRef],
     [euRef, postsRef, globoRef, sobreRef],
   );
-
-  // Determine active item based on pathname
-  useEffect(() => {
-    if (pathname === "/about/me") setActiveItem("Eu");
-    else if (pathname === "/") setActiveItem("Posts");
-    else if (pathname === "/world") setActiveItem("Globo");
-    else if (pathname === "/about") setActiveItem("Sobre");
-  }, [pathname]);
 
   // Animation values
   const backgroundX = useMotionValue(0);

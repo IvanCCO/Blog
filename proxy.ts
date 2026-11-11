@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { get } from '@vercel/edge-config';
+import { createClient } from '@vercel/global-config';
 
 export const config = {
   matcher: ['/api/posts', '/api/world'], // Define both matchers
 };
 
-export async function middleware(req : NextRequest) {
+export async function proxy(req : NextRequest) {
   const url = req.nextUrl.pathname;
+  const { get } = createClient(process.env.GLOBAL_CONFIG ?? process.env.EDGE_CONFIG);
 
   if (url === '/api/posts') {
     const posts = await get('posts');

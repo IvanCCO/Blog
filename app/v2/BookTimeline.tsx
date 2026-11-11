@@ -3,25 +3,23 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, useTransform } from "framer-motion";
 import Book from "./Book";
+import BookReader, { type OpenBook } from "./BookReader";
 import BookSceneControls from "./BookSceneControls";
 import useBookNavigation from "./useBookNavigation";
 import useReducedMotion from "./useReducedMotion";
+import useSceneGestures from "./useSceneGestures";
 import { BOOKS, DEFAULT_SETTINGS, STORAGE_KEY, clamp, readSceneSettings, type ViewPoint } from "./book-scene";
 import styles from "./BookTimeline.module.css";
-
-type SceneDrag = { x: number; y: number; lastY: number; view: ViewPoint; moved: boolean };
 
 export default function BookTimeline() {
   const [settings, setSettings] = useState(DEFAULT_SETTINGS);
   const [settingsLoaded, setSettingsLoaded] = useState(false);
   const [compact, setCompact] = useState(false);
-  const [isDraggingScene, setIsDraggingScene] = useState(false);
   const [isolateActive, setIsolateActive] = useState(false);
-  const stageRef = useRef<HTMLElement>(null);
-  const sceneDragRef = useRef<SceneDrag | null>(null);
-  const suppressClick = useRef(false);
+  const [openBook, setOpenBook] = useState<OpenBook | null>(null);
+  const pageRef = useRef<HTMLElement>(null);
   const reducedMotion = useReducedMotion();
-  const { activeIndex, progress, goToBook, stepBook, scrollBooks } = useBookNavigation(stageRef);
+  const { activeIndex, progress, goToBook, stepBook, scrollBooks } = useBookNavigation(pageRef);
   // Orbit through the middle of the remaining stack, so a half-turn does not
   // bring the deep books through the camera's near plane.
   const orbitOrigin = useTransform(progress, (position) =>
@@ -29,17 +27,23 @@ export default function BookTimeline() {
   );
 
   useEffect(() => {
-    try {
-      setSettings(readSceneSettings(localStorage.getItem(STORAGE_KEY)));
-    } catch {
-      // The scene also works when browser storage is unavailable.
-    }
-    setSettingsLoaded(true);
+    const initialize = window.requestAnimationFrame(() => {
+      try {
+        setSettings(readSceneSettings(localStorage.getItem(STORAGE_KEY)));
+      } catch {
+        // The scene also works when browser storage is unavailable.
+      }
+      setSettingsLoaded(true);
+    });
     const query = window.matchMedia("(max-width: 700px)");
     const updateCompact = () => setCompact(query.matches);
-    updateCompact();
+    const initialCompact = window.requestAnimationFrame(updateCompact);
     query.addEventListener("change", updateCompact);
-    return () => query.removeEventListener("change", updateCompact);
+    return () => {
+      window.cancelAnimationFrame(initialize);
+      window.cancelAnimationFrame(initialCompact);
+      query.removeEventListener("change", updateCompact);
+    };
   }, []);
 
   useEffect(() => {
@@ -55,6 +59,10 @@ export default function BookTimeline() {
   }, [settingsLoaded, settings]);
 
   const setView = useCallback((view: ViewPoint) => setSettings((current) => ({ ...current, view })), []);
+  const openReader = useCallback((index: number, element: HTMLElement, immediate: boolean) => {
+    setOpenBook({ index, source: element.getBoundingClientRect(), immediate });
+  }, []);
+  const closeReader = useCallback(() => setOpenBook(null), []);
   const setSpacing = useCallback((spacing: number) => setSettings((current) => ({ ...current, spacing })), []);
   const setSize = useCallback((size: number) => setSettings((current) => ({ ...current, size })), []);
   const resetScene = useCallback(() => {
@@ -62,13 +70,10 @@ export default function BookTimeline() {
     setIsolateActive(false);
     goToBook(0, true);
   }, [goToBook]);
-  const endDrag = () => {
-    sceneDragRef.current = null;
-    setIsDraggingScene(false);
-  };
+  const isDraggingScene = useSceneGestures(pageRef, settings.view, setView, scrollBooks, openReader);
 
   return (
-    <main className={`${styles.page} ${isolateActive ? styles.isolated : ""}`} data-reduced-motion={reducedMotion}>
+    <main ref={pageRef} className={`${styles.page} ${isolateActive ? styles.isolated : ""}`} data-reduced-motion={reducedMotion}>
       <header className={styles.intro}>
         <p>UM LIVRO ABERTO</p>
         <h1>VIDA</h1>
@@ -76,7 +81,6 @@ export default function BookTimeline() {
       </header>
 
       <section
-        ref={stageRef}
         className={`${styles.stack} ${isDraggingScene ? styles.draggingScene : ""}`}
         aria-label="22 livros dos anos da vida"
         aria-describedby="book-navigation-hint"
@@ -93,46 +97,7 @@ export default function BookTimeline() {
             goToBook(event.key === "Home" ? 0 : BOOKS.length - 1, true);
           }
         }}
-        onPointerDown={(event) => {
-          if (event.button !== 0 || !event.isPrimary) return;
-          suppressClick.current = false;
-          sceneDragRef.current = { x: event.clientX, y: event.clientY, lastY: event.clientY, view: settings.view, moved: false };
-          // Capture on the cover first so a click still activates it, even if a
-          // fast drag leaves the scene before the first intermediate move.
-          const cover = event.target instanceof Element ? event.target.closest("button") : null;
-          (cover ?? event.currentTarget).setPointerCapture(event.pointerId);
-        }}
-        onPointerMove={(event) => {
-          const drag = sceneDragRef.current;
-          if (!drag) return;
-          if (!drag.moved) {
-            if (Math.hypot(event.clientX - drag.x, event.clientY - drag.y) < 5) return;
-            drag.moved = true;
-            suppressClick.current = true;
-            event.currentTarget.setPointerCapture(event.pointerId);
-            if (event.pointerType !== "touch") setIsDraggingScene(true);
-          }
-          if (event.pointerType === "touch") {
-            scrollBooks((drag.lastY - event.clientY) * 2);
-            drag.lastY = event.clientY;
-          } else {
-            setView({
-              x: Math.round(drag.view.x + (event.clientX - drag.x) * 0.45),
-              y: Math.round(drag.view.y + (event.clientY - drag.y) * 0.45),
-            });
-          }
-        }}
-        onPointerUp={endDrag}
-        onPointerCancel={endDrag}
-        onLostPointerCapture={(event) => {
-          if (event.target === event.currentTarget) endDrag();
-        }}
-        onClickCapture={(event) => {
-          if (!suppressClick.current) return;
-          event.preventDefault();
-          event.stopPropagation();
-          suppressClick.current = false;
-        }}
+
       >
         <motion.div className={styles.scene} style={{ transform: `rotateX(${settings.view.y}deg) rotateY(${settings.view.x}deg)`, transformOrigin: orbitOrigin }}>
           {BOOKS.map((book, index) => (
@@ -144,7 +109,8 @@ export default function BookTimeline() {
               size={settings.size}
               state={index === activeIndex ? "active" : index < activeIndex ? "passed" : "upcoming"}
               reducedMotion={reducedMotion}
-              onActivate={goToBook}
+              onActivate={openReader}
+              isOpen={openBook?.index === index}
             />
           ))}
         </motion.div>
@@ -180,6 +146,7 @@ export default function BookTimeline() {
           <span>Isolar livro ativo</span>
         </label>
       </BookSceneControls>
+      {openBook && <BookReader opening={openBook} reducedMotion={reducedMotion} onClose={closeReader} />}
     </main>
   );
 }

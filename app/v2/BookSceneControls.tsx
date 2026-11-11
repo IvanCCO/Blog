@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useRef, useState, type ReactNode } from "react";
 import { describeView, nearestAngle, wrapAngle, type ViewPoint } from "./book-scene";
 import styles from "./BookTimeline.module.css";
 
@@ -28,11 +28,10 @@ interface BookSceneControlsProps {
 export default function BookSceneControls({ children, compact, view, onViewChange, spacing, onSpacingChange, size, onSizeChange, onReset }: BookSceneControlsProps) {
   const orbitRef = useRef<HTMLDivElement>(null);
   const orbitDrag = useRef<{ x: number; y: number; view: ViewPoint } | null>(null);
-  const [expanded, setExpanded] = useState(true);
+  const [expandedOverride, setExpanded] = useState<boolean | null>(null);
+  const expanded = expandedOverride ?? !compact;
   const yaw = wrapAngle(view.x) * Math.PI / 180;
   const pitch = wrapAngle(view.y) * Math.PI / 180;
-
-  useEffect(() => setExpanded(!compact), [compact]);
 
   const updateViewFromPointer = (clientX: number, clientY: number) => {
     const drag = orbitDrag.current;

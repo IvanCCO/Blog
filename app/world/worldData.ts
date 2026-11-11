@@ -1,4 +1,4 @@
-import { StringFieldDef } from "contentlayer/core";
+import { StringFieldDef } from "contentlayer2/core";
 
 type LocationData = {
   type: string;

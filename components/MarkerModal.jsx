@@ -7,7 +7,6 @@ import {
   ModalCloseButton,
   Text,
 } from "@chakra-ui/react";
-import { InstagramEmbed } from "react-social-media-embed";
 
 const MarkerModal = ({ post, isOpen, onClose }) => (
   <Modal isOpen={isOpen} onClose={onClose} isCentered closeOnEsc>
@@ -33,7 +32,17 @@ const MarkerModal = ({ post, isOpen, onClose }) => (
         justifyContent="center"
         alignItems="center"
       >
-        {post.url && <InstagramEmbed url={post.url} width={328} />}
+        {post.url && (
+          <iframe
+            src={`${post.url.split("?")[0].replace(/\/$/, "")}/embed/`}
+            title={`Instagram · ${post.place}`}
+            width={328}
+            height={600}
+            loading="lazy"
+            allowFullScreen
+            style={{ border: 0, maxWidth: "100%", background: "white" }}
+          />
+        )}
       </ModalBody>
     </ModalContent>
   </Modal>
